@@ -1,4 +1,4 @@
-Full Name              UTORID   Student ID Email (utoronto only)                    Best way to contact  
+<pre>Full Name              UTORID   Student ID Email (utoronto only)                    Best way to contact  
 =========              ======   ========== ====================                     ===================  
 Andy Huang             huanga42 1005159061 and.huang@mail.utoronto.ca               Yunuki#7087@discord  
 Jeremy Tanuan          tanuanje 1003939982 jeremy.tanuan@mail.utoronto.ca           Separate Entity#2719@discord  
@@ -9,3 +9,4 @@ Kirusan Subeethakumar  subeetha 1000558434 kirusan.subeethakumar@mail.utoronto.c
 
 Discord Invite Link:  
 https://discord.gg/kdS68f5
+</pre>
