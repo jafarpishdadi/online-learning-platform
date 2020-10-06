@@ -1,5 +1,6 @@
-**Part 1: The Project Objective \
-**Build a web application service that allows subscribers of the platform to communicate with consultants for their courses. The consulting platform will allow subscribers to book an appointment(office hours) with them. The appointment’s communication method will be primarily in the form of a text chat UI.
+**Part 1: The Project Objective**
+
+Build a web application service that allows subscribers of the platform to communicate with consultants for their courses. The consulting platform will allow subscribers to book an appointment(office hours) with them. The appointment’s communication method will be primarily in the form of a text chat UI.
 
 **Part 2: The Key Personas**
 
@@ -17,7 +18,8 @@ Bilbo is having trouble with the pacing of his course and would like for the con
 
 Jason is taking a course on U Impactify and often there are some topics he needs further clarification on to improve his understanding. He would like to have a channel of communication where he can reach the impact consultant for short questions. Moreover, he would like to be able to schedule a meeting with his consultant to discuss topics in more detail.
 
-**Part 4: The Key Principles \
-**Ease of use for the user - do not incorporate any complicated elements in the application
+**Part 4: The Key Principles**
+
+Ease of use for the user - do not incorporate any complicated elements in the application
 
 Community - user should have a sense of community when using the platform and feel at ease
