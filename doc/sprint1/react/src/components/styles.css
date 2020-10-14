@@ -46,6 +46,10 @@
     color:white;
 }
 
+.sideBar ul li:hover span {
+    color: inherit;
+}
+
 .sideBar ul li:hover {
     margin-left: 0;
     padding-left: 10px;
