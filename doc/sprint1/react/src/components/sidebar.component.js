@@ -4,7 +4,6 @@ import logo from '../assets/uimpactify-logo.png'
 
 const NavItem = ({link, imgSrc, title}) => {
   return (
-    <div>
         <li>
             <a href={link} title={title}>
                 <img
@@ -14,7 +13,6 @@ const NavItem = ({link, imgSrc, title}) => {
                 <span>{title}</span>
             </a>
         </li>
-     </div>
   )
 }
 
@@ -46,6 +44,5 @@ class Sidebar extends Component {
         );
     }
 }
-
 
 export default Sidebar
