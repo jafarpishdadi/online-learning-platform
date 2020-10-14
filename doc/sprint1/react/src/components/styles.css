@@ -23,11 +23,6 @@
     padding: 0;
 }
 
-.sideBar ul {
-    padding: none;
-    margin: none;
-}
-
 .sideBar ul a li {
     margin: 10px;
     padding: 10px 10px 10px 0px;
@@ -35,28 +30,6 @@
     border-radius: 0px 15px 15px 0px;
     list-style-type: none;
     list-style-position: outside;
-}
-
-.sideBar ul a li {
-    text-decoration: none;
-}
-.sideBar ul a li:hover {
-    background: #A78EC3;
-    box-shadow: 0 20px 20px -2px rgba(0,0,0,.2);
-    color:white;
-}
-
-.sideBar ul a li:hover span {
-    color: inherit;
-}
-
-.sideBar ul a li:hover {
-    margin-left: 0;
-    padding-left: 20px;
-    text-decoration: none;
-}
-
-.sideBar ul a:hover {
     text-decoration: none;
 }
 
@@ -70,6 +43,23 @@
     font-size: 16px;
     position: relative;
 } 
+
+.sideBar ul a li:hover {
+    background: #A78EC3;
+    box-shadow: 0 20px 20px -2px rgba(0,0,0,.2);
+    color:white;
+    margin-left: 0;
+    padding-left: 20px;
+    text-decoration: none;
+}
+
+.sideBar ul a li:hover span {
+    color: inherit;
+}
+
+.sideBar ul a:hover {
+    text-decoration: none;
+}
 
 .sideBar ul a li, span:hover {
     color: white;
