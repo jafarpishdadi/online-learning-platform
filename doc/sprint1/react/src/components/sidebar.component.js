@@ -4,15 +4,17 @@ import logo from '../assets/uimpactify-logo.png'
 
 const NavItem = ({link, imgSrc, title}) => {
   return (
-        <li>
-            <a href={link} title={title}>
+        
+        <a href={link} title={title}>
+            <li>
                 <img
                 src={imgSrc}
                 alt={title}
                 />
                 <span>{title}</span>
-            </a>
-        </li>
+            </li>
+        </a>
+        
   )
 }
 

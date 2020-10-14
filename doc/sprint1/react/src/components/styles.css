@@ -28,7 +28,7 @@
     margin: none;
 }
 
-.sideBar ul li {
+.sideBar ul a li {
     margin: 10px;
     padding: 10px 10px 10px 0px;
     margin-top: 10px;
@@ -37,37 +37,44 @@
     list-style-position: outside;
 }
 
-.sideBar ul li a {
+.sideBar ul a li {
     text-decoration: none;
 }
-.sideBar ul li:hover {
+.sideBar ul a li:hover {
     background: #A78EC3;
     box-shadow: 0 20px 20px -2px rgba(0,0,0,.2);
     color:white;
 }
 
-.sideBar ul li:hover span {
+.sideBar ul a li:hover span {
     color: inherit;
 }
 
-.sideBar ul li:hover {
+.sideBar ul a li:hover {
     margin-left: 0;
-    padding-left: 10px;
+    padding-left: 20px;
+    text-decoration: none;
 }
 
-.sideBar ul li a, span{
+.sideBar ul a:hover {
     text-decoration: none;
-    text-align: center;
+}
+
+.sideBar ul a li, span{
+    text-decoration: none;
+    text-align: left;
     color: #919699;
     margin-left: 20px;
     margin-right: 12px;
+    padding-left: 0px;
     font-size: 16px;
     position: relative;
 } 
 
-.sideBar ul li a, span:hover {
+.sideBar ul a li, span:hover {
     color: white;
-    text-align: center;
+    text-decoration: none;
+    text-align: left;
     margin-left: 20px;
     margin-right: 12px;
 }
