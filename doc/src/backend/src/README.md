@@ -7,7 +7,7 @@
 
 4- Now the api is running 
 
-Endpoints (you can find these details in backend.py as well)
+**Endpoints** (you can find these details in backend.py as well)
 
 **creating a user** [POST]: **/api/db_create_use**r (creates a new user and posts it to the database when provided with a json text formatted as {user_type: user_type, user_name: user_name, password: password, email: email})
 
