@@ -39,8 +39,8 @@ def db_update_user_name():
 	content = request.json
 	user_obj = User.objects(email=content['email']).first()
 	user_obj.update(username=content['username'])
- 	
- 	return make_response("", 200)
+
+	return make_response("", 200)
 
 # updates the user's password when provided with a json text formatted as {email: email, password: password} 
 @app.route('/api/db_update_user_password', methods=['PUT'])
@@ -49,7 +49,7 @@ def db_update_user_password():
 	user_obj = User.objects(email=content['email']).first()
 	user_obj.update(password=content['password'])
  	
- 	return make_response("", 200)
+	return make_response("", 200)
 
 # updates the user's email when provided with a json text formatted as {old_email: old_email, new_email: new_email} 
 @app.route('/api/db_update_user_email', methods=['PUT'])
@@ -58,7 +58,7 @@ def db_update_user_email():
 	user_obj = User.objects(email=content['old_email']).first()
 	user_obj.update(email=content['new_email'])
  	
- 	return make_response("", 200)
+	return make_response("", 200)
 
 # deletes the user when provided with a json text formatted as {email: email} 
 @app.route('/api/db_delete_user', methods=['DELETE'])
@@ -67,7 +67,7 @@ def db_delete_single_user():
 	user_obj = User.objects(email=content['email']).first()
 	user_obj.delete()
 
- 	return make_response("", 200)
+	return make_response("", 200)
 
 # deletes all the users in the database 
 @app.route('/api/db_delete_all_users', methods=['DELETE'])
@@ -75,7 +75,7 @@ def db_delete_all_users():
 	for user in User.objects():
 		user.delete()
 	
- 	return make_response("", 200)
+	return make_response("", 200)
 	
 
 
