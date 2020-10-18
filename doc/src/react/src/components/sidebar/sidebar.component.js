@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
-import logo from '../assets/uimpactify-logo.png'
+import Logo from '../../assets/uimpactify-logo.png'
+import './sidebar.css'
 
 const NavItem = ({link, imgSrc, title}) => {
   return (
@@ -31,7 +32,7 @@ class Sidebar extends Component {
             <nav className="sideBar">
                 <img
                     className="menuIcon"
-                    src={logo}
+                    src={Logo}
                     />
                 <ul>
                     {books.map(
