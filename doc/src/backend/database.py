@@ -103,6 +103,16 @@ def db_create_account():
 		user.save()
 		return make_response(jsonify("true"), 200)
 
+# returns the username requested from the database when provided with a json text formatted as {email: email}
+@app.route('/api/db_get_username', methods=['GET'])
+def db_get_username():
+	content = request.json
+	user_obj = User.objects(email=content['email']).first()
+	if user_obj:
+		return make_response(jsonify(user_obj.username), 200)
+	else:
+		return make_response("", 404)
+
 
 # you can put in your preferred port 
 if __name__ == '__main__':   
