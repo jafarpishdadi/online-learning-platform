@@ -39,6 +39,10 @@ let navItems = [
     ReactDOM.render(
         <Router>
           <Switch>
+            // profile
+            <Route exact path="/profile">
+              <ProfilePage/>
+            </Route>
             // login page 
             <Route exact path="/login">
               <LogInPage/>
