@@ -75,7 +75,7 @@ def db_delete_all_users():
 	for user in User.objects():
 		user.delete()
 	
- 	return make_response("", 200)
+	return make_response("", 200)
 
 # when provided with a json text formatted as {email: email, password: password} returns {true} if such user exists and {false} o/w
 @app.route('/api/db_login', methods=['GET'])
@@ -86,6 +86,22 @@ def db_login():
 		return make_response(jsonify("true"), 200)
 	else:
 		return make_response(jsonify("false"), 200)
+
+# Creates a new account if it doesn't exist and posts it to the database when provided with a 
+# json text formatted as {user_type: user_type, user_name: user_name, password: password, email: email}
+# Returns true if successfull, false otherwise
+@app.route('/api/db_create_account', methods=['POST'])
+def db_create_account():
+	content = request.json
+	# Check if user already exists in the db
+
+	user_obj = User.objects(email=content['email']).first()
+	if user_obj:
+		return make_response(jsonify("false"), 400)
+	else:
+		user = User(user_type=content['user_type'], username=content['username'], password=content['password'], email=content['email'])
+		user.save()
+		return make_response(jsonify("true"), 200)
 
 
 # you can put in your preferred port 
