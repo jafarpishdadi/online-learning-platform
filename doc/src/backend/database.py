@@ -75,11 +75,20 @@ def db_delete_all_users():
 	for user in User.objects():
 		user.delete()
 	
-	return make_response("", 200)
-	
+ 	return make_response("", 200)
+
+# when provided with a json text formatted as {email: email, password: password} returns {true} if such user exists and {false} o/w
+@app.route('/api/db_login', methods=['GET'])
+def db_login():
+	content = request.json
+	user_obj = User.objects(email=content['email'], password=content['password']).first()
+	if user_obj:
+		return make_response(jsonify("true"), 200)
+	else:
+		return make_response(jsonify("false"), 200)
 
 
-
+# you can put in your preferred port 
 if __name__ == '__main__':   
-	app.run(host='0.0.0.0', port=8102)
+	app.run(host='0.0.0.0', port=8103)
 

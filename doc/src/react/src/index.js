@@ -1,11 +1,20 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter } from "react-router-dom";
-import "./login.css";
+import {
+    BrowserRouter as Router,
+    Link,
+    Route,
+    Switch,
+  } from 'react-router-dom';
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
-import Sidebar from "./components/sidebar.component.js";
-import "./components/styles.css";
+import Sidebar from "./components/sidebar/sidebar.component.js";
+import CreateAccount  from  "./components/createAccount/createAccount.component.js";
+import CreateAccountPage from './pages/createAccount/createAccount.js'
+import LogInPage from './pages/login/login.js'
+import Login from "./components/createAccount/login.component.js";
+import "./components/createAccount/loginAndSignup.css";
+import OutsideNavbar from './components/navbar/outsideNavbar.js'
 import classes from './assets/classes.png'
 import scheduling from './assets/scheduling.png'
 import community from './assets/community.png'
@@ -27,11 +36,24 @@ let navItems = [
     {id: 8, link: "", imgSrc: settings, title: "Settings" }
     ]
 
-ReactDOM.render(
-    <BrowserRouter>
-        <Sidebar books={navItems}/>
-    </BrowserRouter>,
-    document.getElementById("root")
-);
+    ReactDOM.render(
+        <Router>
+          <Switch>
+            // login page 
+            <Route exact path="/login">
+              <LogInPage/>
+            </Route>
+            // create account page
+            <Route exact path="/create">
+                <CreateAccountPage/>
+            </Route>
+            // side bar
+            <Route path="/sidebar">
+            <Sidebar books={navItems}/>
+            </Route>
+          </Switch>
+        </Router>,
+            document.getElementById("root")
+        );
 
 serviceWorker.unregister();
