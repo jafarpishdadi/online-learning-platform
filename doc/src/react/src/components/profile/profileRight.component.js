@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './profileRight.css'
 class ProfileRight extends Component {
     render() {
 		return (

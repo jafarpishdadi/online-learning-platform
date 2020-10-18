@@ -15,6 +15,9 @@ import LogInPage from './pages/login/login.js'
 import Login from "./components/createAccount/login.component.js";
 import "./components/createAccount/loginAndSignup.css";
 import OutsideNavbar from './components/navbar/outsideNavbar.js'
+import profilePage from './pages/profile.js'
+import profileLeft from '../profile/profileLeft.js'
+import profileRight from '../profile/profileRight.js'
 import classes from './assets/classes.png'
 import scheduling from './assets/scheduling.png'
 import community from './assets/community.png'

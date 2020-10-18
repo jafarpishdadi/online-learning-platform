@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import './profile.css'
-import profileLeft from "../profile/profileLeft.js"
-import profileRight from "../profile/profileRight.js"
+import profileLeft from '../profile/profileLeft.js'
+import profileRight from '../profile/profileRight.js'
 
-class Profile extends Component {
+class ProfilePage extends Component {
 	render() {
 		return(
 			<React.Fragment>
@@ -12,4 +12,4 @@ class Profile extends Component {
 		)
 	}
 }
-export default LoginPage
+export default ProfilePage
