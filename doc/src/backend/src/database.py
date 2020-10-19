@@ -17,78 +17,78 @@ db.init_app(app)
 # creates a new user and posts it to the database when provided with a json text formatted as {user_type: user_type, user_name: user_name, password: password, email: email}
 @app.route('/api/db_create_user', methods=['POST'])
 def db_create_user():
-	content = request.json
-	user = User(user_type=content['user_type'], username=content['username'], password=content['password'], email=content['email'])
-	user.save()
+    content = request.json
+    user = User(username=content['username'], password=content['password'], email=content['email'])
+    user.save()
 
-	return make_response("", 200)
+    return make_response("", 200)
 
 # returns the user requested from the database when provided with a json text formatted as {email: email}
 @app.route('/api/db_get_user', methods=['GET'])
 def db_get_user():
-	content = request.json
-	user_obj = User.objects(email=content['email']).first()
-	if user_obj:
-		return make_response(jsonify(user_obj.to_json()), 200)
-	else:
-		return make_response("", 404)
+    content = request.json
+    user_obj = User.objects(email=content['email']).first()
+    if user_obj:
+        return make_response(jsonify(user_obj.to_json()), 200)
+    else:
+        return make_response("", 404)
 
 # updates the user's name when provided with a json text formatted as {email: email, username: username} 
 @app.route('/api/db_update_user_name', methods=['PUT'])
 def db_update_user_name():
-	content = request.json
-	user_obj = User.objects(email=content['email']).first()
-	user_obj.update(username=content['username'])
- 	
- 	return make_response("", 200)
+    content = request.json
+    user_obj = User.objects(email=content['email']).first()
+    user_obj.update(username=content['username'])
+     
+    return make_response("", 200)
 
 # updates the user's password when provided with a json text formatted as {email: email, password: password} 
 @app.route('/api/db_update_user_password', methods=['PUT'])
 def db_update_user_password():
-	content = request.json
-	user_obj = User.objects(email=content['email']).first()
-	user_obj.update(password=content['password'])
- 	
- 	return make_response("", 200)
+    content = request.json
+    user_obj = User.objects(email=content['email']).first()
+    user_obj.update(password=content['password'])
+     
+    return make_response("", 200)
 
 # updates the user's email when provided with a json text formatted as {old_email: old_email, new_email: new_email} 
 @app.route('/api/db_update_user_email', methods=['PUT'])
 def db_update_user_email():
-	content = request.json
-	user_obj = User.objects(email=content['old_email']).first()
-	user_obj.update(email=content['new_email'])
- 	
- 	return make_response("", 200)
+    content = request.json
+    user_obj = User.objects(email=content['old_email']).first()
+    user_obj.update(email=content['new_email'])
+     
+    return make_response("", 200)
 
 # deletes the user when provided with a json text formatted as {email: email} 
 @app.route('/api/db_delete_user', methods=['DELETE'])
 def db_delete_single_user():
-	content = request.json
-	user_obj = User.objects(email=content['email']).first()
-	user_obj.delete()
+    content = request.json
+    user_obj = User.objects(email=content['email']).first()
+    user_obj.delete()
 
- 	return make_response("", 200)
+    return make_response("", 200)
 
 # deletes all the users in the database 
 @app.route('/api/db_delete_all_users', methods=['DELETE'])
 def db_delete_all_users():
-	for user in User.objects():
-		user.delete()
-	
- 	return make_response("", 200)
+    for user in User.objects():
+        user.delete()
+    
+    return make_response("", 200)
 
 # when provided with a json text formatted as {email: email, password: password} returns {true} if such user exists and {false} o/w
 @app.route('/api/db_login', methods=['GET'])
 def db_login():
-	content = request.json
-	user_obj = User.objects(email=content['email'], password=content['password']).first()
-	if user_obj:
-		return make_response(jsonify("true"), 200)
-	else:
-		return make_response(jsonify("false"), 200)
+    content = request.json
+    user_obj = User.objects(email=content['email'], password=content['password']).first()
+    if user_obj:
+        return make_response(jsonify("true"), 200)
+    else:
+        return make_response(jsonify("false"), 200)
 
 
 # you can put in your preferred port 
 if __name__ == '__main__':   
-	app.run(host='0.0.0.0', port=8103)
+    app.run(host='0.0.0.0', port=8103)
 

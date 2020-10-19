@@ -1,8 +1,26 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import Card from 'react-bootstrap/Card'
+import Axios from 'axios';
 class Login extends Component {
 	
+	// handleSubmit = e => {
+	// 	e.preventDefault();
+
+	// 	const data = {
+	// 		email:this.email,
+	// 		password:this.password
+	// 	}
+
+	// 	Axios.post('http://localhost:3000/login',data)
+	// 	.then(res=>{
+	// 		console.log(res)
+	// 	})
+
+	// 	.catch(err => {
+	// 		console.log(err)
+	// 	})
+	// }
 	render() {
 		return (
 			<Card className="cardStyle">
@@ -11,11 +29,13 @@ class Login extends Component {
 					<form class="flex-column">
 						<div class="form-group pt-0 pl-2 pr-2">
 							<label for="inputUsername" class="text-dark font-weight-bold">Username</label>
-							<input type="username" class="form-control" id="inputUsername" aria-describedby="usernameHelp"/>
+							<input type="username" class="form-control" id="inputUsername" aria-describedby="usernameHelp"
+							onChange = {e => this.username = e.target.value}/>
 						</div>
 						<div class="form-group pt-0 pl-2 pr-2">
 							<label for="inputPassword" class="text-dark font-weight-bold">Password</label>
-							<input type="password" class="form-control" id="inputPassword" aria-describedby="passwordHelp"/>
+							<input type="password" class="form-control" id="inputPassword" aria-describedby="passwordHelp"
+							onChange = {e => this.password = e.target.value}/>
 						</div>
 						<form class="flex-row">
 							{/* <div class="mx-auto text-center p-0 col-md-12 mb-4">
