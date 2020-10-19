@@ -1,8 +1,10 @@
 from flask import Flask, make_response, request, jsonify
+from flask_cors import CORS
 from flask_mongoengine import MongoEngine
 from user import User 
 
 app = Flask(__name__) 
+cors = CORS(app)
 
 # set the database name and the database user's name and password
 db_name = "Uimpactify"

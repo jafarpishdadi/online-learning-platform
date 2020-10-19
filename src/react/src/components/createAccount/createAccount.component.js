@@ -12,7 +12,7 @@ class Login extends Component {
 
         this.state = {
             email: '',
-            name:'',
+            username:'',
 			password: '',
 			user_type:''
         };
@@ -46,7 +46,7 @@ class Login extends Component {
 			</div>
 			<div class="form-group pt-0 pl-2 pr-2">
 				<label for="inputUsername" class="text-dark font-weight-bold">Username</label>
-				<input type="text" class="form-control" name='name' value={this.state.name} placeholder="name" onChange={this.handleChange} aria-describedby="usernameHelp" />
+				<input type="text" class="form-control" name='username' value={this.state.username} placeholder="username" onChange={this.handleChange} aria-describedby="usernameHelp" />
 			</div>
 			<div class="form-group pt-0 pl-2 pr-2">
 				<label for="inputPassword" class="text-dark font-weight-bold">Password</label>
@@ -90,12 +90,13 @@ class Login extends Component {
     submit(e) {
         e.preventDefault();
 
-        axios.post(' https://jsonplaceholder.typicode.com/users/', {user_type:this.state.student, email: this.state.email,name:this.state.name, password: this.state.password })
+        axios.post('http://127.0.0.1:8103/api/db_create_user', {user_type:this.state.student, email: this.state.email,username:this.state.username, password: this.state.password })
             .then(response => {
-
                 console.log(response.data)
-                
-            })
+			})
+			.catch((error) => {
+			console.log(error)
+		})
             ;
     }
 }
