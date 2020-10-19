@@ -90,7 +90,7 @@ class Login extends Component {
     submit(e) {
         e.preventDefault();
 
-        axios.post('https://jsonplaceholder.typicode.com/users', {user_type:this.state.student, email: this.state.email,name:this.state.name, password: this.state.password })
+        axios.post(' http://0.0.0.0:8103/api/db_create_user', {user_type:this.state.student, email: this.state.email,name:this.state.name, password: this.state.password })
             .then(response => {
 
                 console.log(response)
