@@ -1,0 +1,10 @@
+.main {
+    display: flex;
+    flex-direction: row;
+}
+.edu {
+    flex: 1;
+}
+.info {
+    flex: 1.5;
+}

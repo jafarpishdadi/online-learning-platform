@@ -1,28 +1,29 @@
 import React, { Component } from 'react'
+import { Card } from 'react-bootstrap';
 import './profile.css'
 
 class Profile extends Component {
 	render() {
 		return(
-			<nav className="navbar navbar-expand-md sticky-top custom m-2 d-flex align-content-between">
-				<div>
-					<ul className="navbar-nav p-0">
-						<li className="nav-item ml-5">
-							<a className="nav-item nav-link custom-link" href="">About</a>
-						</li>
-						<li className="nav-item ml-5">
-							<a className="nav-item nav-link custom-link" href="">Solutions</a>
-						</li>
-						<li className="nav-item ml-5">
-							<a className="nav-item nav-link custom-link" href="">Pricing</a>
-						</li>
-					</ul>
-				</div>
-				<div className="ml-auto">
-					<button className="btn btn-sign m-3">SIGN UP</button>
-  					<button className="btn btn-login m-3">LOGIN</button>
-				</div>
-			</nav>
+            <div className="main">
+                {/* card with education info */}
+                <Card className = "edu" style={{
+                    width: '200px',
+                    }}>
+                    <Card.Body>Text boi</Card.Body>
+                </Card>
+                {/* card with personal info */}
+                <Card className = "info" style={{
+                    width: '200px',
+                    }}>
+                    <Card.Body>Text boi23</Card.Body>
+                </Card>
+            </div>
+			// <div className="info">
+            //     <h1>
+            //         Hello world
+            //     </h1>
+            // </div>
             //make a flex box set into a row
             //with in the flex box have 2 card components. Use hardcoded data while designing
             //once everything is set-up use props and feed it dummy data from index.js
