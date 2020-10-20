@@ -17,10 +17,20 @@ class Login extends Component {
 			user_type:''
         };
 
-        this.handleChange = this.handleChange.bind(this);
+		this.handleChange = this.handleChange.bind(this);
+		this.onclick = this.onClick = this.onclick.bind(this);
         this.submit = this.submit.bind(this);
 
-    }
+	}
+	onclick(event){
+		let name = event.target.name;
+		let value = event.target.value;
+		console.log(name,value)
+		let data ={};
+		data[name] = value;
+
+		this.setState(data)
+	}
 
     handleChange(event) {
         let name = event.target.name;
@@ -59,13 +69,13 @@ class Login extends Component {
 				</div>
 				<div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
 					<div class="btn-group mr-2 pt-0 pl-2 pr-2" id="userStudent">
-						<button type="button" class="btn btn-outline-secondary" name='user_type' value={'Student'} >Student</button>
+						<button type="button" class="btn btn-outline-secondary" name='user_type' value={'student'} onClick={this.onclick} >Student</button>
 					</div>
 					<div class="btn-group mr-2 pt-0 pl-2 pr-2" id="userInstructor">
-						<button type="button" class="btn btn-outline-secondary">Instructor</button>
+					<button type="button" class="btn btn-outline-secondary" name='user_type' value={'instructor'} onClick={this.onclick} >Instructor</button>
 					</div>
 					<div class="btn-group mr-2 pt-0 pl-2 pr-2" id="userSocial">
-						<button type="button" class="btn btn-outline-secondary">Social Initiatives</button>
+					<button type="button" class="btn btn-outline-secondary" name='user_type' value={'initiatives'} onClick={this.onclick} >Initiatives</button>
 					</div>
 					<div class="form-group pt-2 pl-2 pr-2">
 						<small class="form-text text-muted">*By sharing your email, you agree to our Offer Terms, Terms of Service, and Privacy Policy.</small>
@@ -90,7 +100,7 @@ class Login extends Component {
     submit(e) {
         e.preventDefault();
 
-        axios.post('http://127.0.0.1:8103/api/db_create_user', {user_type:this.state.student, email: this.state.email,username:this.state.username, password: this.state.password })
+        axios.post('http://127.0.0.1:8103/api/db_create_user', {user_type:this.state.user_type, email: this.state.email,username:this.state.username, password: this.state.password })
             .then(response => {
                 console.log(response.data)
 			})

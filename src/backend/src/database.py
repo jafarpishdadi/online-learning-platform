@@ -20,7 +20,7 @@ db.init_app(app)
 @app.route('/api/db_create_user', methods=['POST'])
 def db_create_user():
     content = request.json
-    user = User(username=content['username'], password=content['password'], email=content['email'])
+    user = User(username=content['username'], password=content['password'], email=content['email'], user_type=content['user_type'])
     user.save()
 
     return make_response("", 200)
