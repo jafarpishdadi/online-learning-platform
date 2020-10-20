@@ -1,4 +1,4 @@
-**Sprint goal: **Get started with designing the web application focusing on account creation, login, as well as the user profile. 
+**Sprint goal:** Get started with designing the web application focusing on account creation, login, as well as the user profile. 
 
 **Stories for the sprint:**
 
