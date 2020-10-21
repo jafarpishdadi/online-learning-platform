@@ -25,6 +25,7 @@ import settings from './assets/settings.png'
 import dashboard from './assets/dashboard.png'
 
 
+
 let navItems = [
     {id: 1, link: "", imgSrc: dashboard, title: "Dashboard" },
     {id: 2, link: "", imgSrc: classes, title: "Classes" },
