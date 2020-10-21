@@ -4,7 +4,7 @@ import axios from 'axios';
 import Card from 'react-bootstrap/Card'
 
 
-class Login extends Component {
+class createAccount extends Component {
 
     constructor(props) {
 
@@ -111,4 +111,4 @@ class Login extends Component {
     }
 }
 
-export default Login;
+export default createAccount;

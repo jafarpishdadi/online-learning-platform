@@ -20,6 +20,7 @@ db.init_app(app)
 @app.route('/api/db_create_user', methods=['POST'])
 def db_create_user():
     content = request.json
+    print(content)
     user = User(username=content['username'], password=content['password'], email=content['email'], user_type=content['user_type'])
     user.save()
 
@@ -80,9 +81,10 @@ def db_delete_all_users():
     return make_response("", 200)
 
 # when provided with a json text formatted as {email: email, password: password} returns {true} if such user exists and {false} o/w
-@app.route('/api/db_login', methods=['GET'])
+@app.route('/api/db_login', methods=['POST'])
 def db_login():
     content = request.json
+    print(content)
     user_obj = User.objects(email=content['email'], password=content['password']).first()
     if user_obj:
         return make_response(jsonify("true"), 200)
