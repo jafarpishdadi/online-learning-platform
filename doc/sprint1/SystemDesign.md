@@ -19,7 +19,7 @@
 * [Architecture Description](#Architecture-Description)
 * [System Decomposition](#System-Decomposition)
 * [CRC Cards](CRC.md)
-* [Architecture Diagram](UML-Architechture-Diagram.pdf)
+* [Architecture Diagram](UML-Software-Architechture-Diagram.pdf)
 
 # Operating Requirements
 
