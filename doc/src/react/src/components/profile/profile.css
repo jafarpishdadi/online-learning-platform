@@ -45,6 +45,23 @@
     display: flex;
     flex-direction: row;
 }
+.pic_and_account_top {
+    display: flex;
+    flex-direction: row;
+}
+.pic_and_account_bottom {
+    display: flex;
+    flex-direction: row;
+}
+.pic {
+    flex: 1;
+}
+.linked {
+    flex: 1;
+}
+.edit2 {
+    align-self: flex-end;
+}
 .divider {
     padding: 0px;
     border: 0;

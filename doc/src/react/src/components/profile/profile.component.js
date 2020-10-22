@@ -10,10 +10,10 @@ class Profile extends Component {
                 <Card className = "edu">
                     <Card.Body>
                         <Card.Title className = "person">
-                            <div className = "picture">ello</div>
+                            <div className = "picture">(insert profile pic here)</div>
                             <div className = "name_and_date">
-                                <div>joe</div>
-                                <div>2020 lul</div>
+                                <div>Ling</div>
+                                <div>2020</div>
                             </div>
                             <button className = "edit">edit</button>
                         </Card.Title>
@@ -56,7 +56,31 @@ class Profile extends Component {
                             <Card.Text>416-731-9960</Card.Text>
                         </Card.Body>
                     </div>
-                    
+                    <div className = "pic_and_account_top">
+                        <div className = "pic">
+                            <Card.Body>
+                                <Card.Title>Picture</Card.Title>
+                            </Card.Body>
+                        </div>
+                        <div className = "linked">
+                            <Card.Body>
+                                <Card.Title>Linked Accounts</Card.Title>
+                            </Card.Body>
+                        </div>
+                    </div>
+                    <div className = "pic_and_account_bottom">
+                        <div className = "pic">
+                            <Card.Body>
+                                <Card.Title>(Insert picture here)</Card.Title>
+                            </Card.Body>
+                        </div>
+                        <div className = "linked">
+                            <Card.Body>
+                                <Card.Title>(Insert accounts here)</Card.Title>
+                            </Card.Body>
+                        </div>
+                    </div>
+                    <button className = "edit2">edit</button>
                 </Card>
             </div>
             //make a flex box set into a row
