@@ -1,10 +1,55 @@
 .main {
     display: flex;
     flex-direction: row;
+    padding: 1%;
+    background-color: gray;
+    height: fit-content;
+}
+.padding {
+    flex:0.05;
 }
 .edu {
     flex: 1;
+    border-radius: 10px;
+    height: fit-content;
+}
+.person {
+    display: flex;
+    flex-direction: row;
+    padding: 1%;
+    margin: 0px;
+}
+.picture {
+    flex: 1;
+}
+.name_and_date {
+    flex: 3;
+}
+.edit {
+    padding: 0px;
+    margin: 10px;
 }
 .info {
     flex: 1.5;
+    border-radius: 10px;
+    height: fit-content;
+}
+.info_title {
+    padding: 2%;
+}
+.top {
+    display: flex;
+    flex-direction: row;
+}
+.bottom {
+    display: flex;
+    flex-direction: row;
+}
+.divider {
+    padding: 0px;
+    border: 0;
+    width: 99%;
+    height: 5px;
+    color: gray;
+    background-color: gray;
 }
