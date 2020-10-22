@@ -85,7 +85,7 @@ class UserObj():
 		if (x):
 			return make_response("Missing required field: " + x, 400)
 
-		user_obj = sefl.User.objects(email=self.content['email']).first()
+		user_obj = self.User.objects(email=self.content['email']).first()
 		if user_obj:
 			user_obj.update(username=self.content['username'])
 			return make_response("", 200)
