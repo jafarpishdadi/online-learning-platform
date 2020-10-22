@@ -1,23 +1,48 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import Card from 'react-bootstrap/Card'
+import axios from 'axios';
 class Login extends Component {
-	
+
+	constructor(props) {
+
+        super(props);
+
+        this.state = {
+            email: '',
+			password: ''
+        };
+
+		this.handleChange = this.handleChange.bind(this);
+        this.submit = this.submit.bind(this);
+
+	}
+	handleChange(event){
+		let name=event.target.name;
+		let value=event.target.value;
+		 let data={};
+		 data[name]=value;
+  
+		 this.setState(data);
+	 
+	  
+	}
+
 	render() {
 		return (
 			<Card className="cardStyle">
 				<Card.Body>
 					<Card.Title className="cardTitleStyle">Welcome Back!</Card.Title>
-					<form class="flex-column">
-						<div class="form-group pt-0 pl-2 pr-2">
-							<label for="inputUsername" class="text-dark font-weight-bold">Username</label>
-							<input type="username" class="form-control" id="inputUsername" aria-describedby="usernameHelp"/>
+					<form class="flex-column" onSubmit = {this.submit}>
+					<div class="form-group pt-0 pl-2 pr-2">
+				<label for="inputEmail" class="text-dark font-weight-bold">Email</label>
+				<input type="text" class="form-control" name='email' value={this.state.email} placeholder="email" onChange={this.handleChange} aria-describedby="emailHelp" />
 						</div>
 						<div class="form-group pt-0 pl-2 pr-2">
-							<label for="inputPassword" class="text-dark font-weight-bold">Password</label>
-							<input type="password" class="form-control" id="inputPassword" aria-describedby="passwordHelp"/>
-						</div>
-						<form class="flex-row">
+				<label for="inputPassword" class="text-dark font-weight-bold">Password</label>
+				<input type="password" class="form-control" name='password' value={this.state.password} onChange={this.handleChange} placeholder="password" aria-describedby="passwordHelp"/>
+			</div>
+						<form class="flex-row" onSubmit = {this.submit}>
 							{/* <div class="mx-auto text-center p-0 col-md-12 mb-4">
 							Sign up with
 							</div> */}
@@ -44,6 +69,19 @@ class Login extends Component {
 			</Card>
 		)
 	}
+
+    submit(e) {
+        e.preventDefault();
+
+        axios.post('http://127.0.0.1:8103/api/db_login', {email: this.state.email, password: this.state.password })
+            .then(response => {
+                console.log(response)
+			})
+			.catch((error) => {
+			console.log(error)
+		})
+            ;
+    }
 }
 
-export default Login
+export default Login;
