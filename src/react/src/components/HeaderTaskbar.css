@@ -1,0 +1,25 @@
+.custom {
+    background-color: #FCFCFB;
+    border-color: #FCFCFB;
+    border-radius: 10px;
+    width: 80vw;
+    float: right;
+    align-items: center;
+}
+.header {
+    color: #A78EC3;
+    text-decoration-color: #A78EC3;
+}
+.searchIcon {
+    background-color: #FCFCFB;
+    border-color: #FCFCFB;
+    border-radius: 10px;
+    border-style: solid;
+}
+
+.form-control {
+    border: hsl(268, 31%, 66%);
+    border-radius: 10px;
+    max-width: 100%;
+    background-color: #F5F7FA;
+}
