@@ -23,7 +23,8 @@ import achievements from './assets/achievements.png'
 import socialInitiatives from './assets/Welfare.png'
 import settings from './assets/settings.png'
 import dashboard from './assets/dashboard.png'
-
+import Headerbar from './components/headerbar/HeaderTaskbar.js'
+import profile from './assets/profile.png'
 
 
 let navItems = [
@@ -36,6 +37,7 @@ let navItems = [
     {id: 7, link: "", imgSrc: socialInitiatives, title: "Social Initiatives" },
     {id: 8, link: "", imgSrc: settings, title: "Settings" }
     ]
+let headerItems = {link: '', title: 'Dashboard', profileImg: profile }
 
     ReactDOM.render(
         <Router>
@@ -51,6 +53,7 @@ let navItems = [
             // side bar
             <Route path="/sidebar">
             <Sidebar books={navItems}/>
+            <Headerbar icons={headerItems}/>
             </Route>
           </Switch>
         </Router>,
