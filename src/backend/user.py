@@ -33,7 +33,7 @@ class UserObj():
 		"""
 		Instantiates a new instance of UserObj
 		"""
-
+		print(content)
 		self.content = content
 		self.hash_password()
 	
@@ -154,12 +154,12 @@ class UserObj():
 		Logs in using the username and password given
 		"""
 
-		x = checkFields(self.content, fields=['password', 'email'])
+		x = checkFields(self.content, fields=['password', 'username'])
 		if (x):
 			return make_response("Missing required field: " + x, 400)
 
-		user_obj = self.User.objects(email=self.content['email'], password=self.content['password']).first()
+		user_obj = self.User.objects(username=self.content['username'], password=self.content['password']).first()
 		if user_obj:
 			return make_response(jsonify("true"), 200)
 		else:
-			return make_response(jsonify("false"), 200)
+			return make_response(jsonify("false"), 401)

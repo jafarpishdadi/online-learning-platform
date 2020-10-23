@@ -18,6 +18,7 @@ db.init_app(app)
 # creates a new user and posts it to the database when provided with a json text formatted as {user_type: user_type, user_name: user_name, password: password, email: email}
 @app.route('/api/db_create_user', methods=['POST'])
 def db_create_user():
+	print(request.json)
 	return UserObj(request.json).db_create_user()
 
 # returns the user requested from the database when provided with a json text formatted as {email: email}
@@ -48,10 +49,10 @@ def db_delete_single_user():
 # deletes all the users in the database 
 @app.route('/api/db_delete_all_users', methods=['DELETE'])
 def db_delete_all_users():
-	return UserObj().db_delete_all_users()
+	return UserObj(request.json).db_delete_all_users()
 
 # when provided with a json text formatted as {username: username, password: password} returns {true} if such user exists and {false} o/w
-@app.route('/api/db_login', methods=['GET'])
+@app.route('/api/db_login', methods=['POST'])
 def db_login():
 	return UserObj(request.json).db_login()
 
