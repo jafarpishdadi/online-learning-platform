@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom'
 import axios from 'axios';
 import Card from 'react-bootstrap/Card'
+import {Redirect} from 'react-router-dom'
 
 
 class createAccount extends Component {
@@ -45,6 +46,9 @@ class createAccount extends Component {
 	}
 	
     render() {
+		if(this.state.accountCreated){
+			return <Redirect to='/login' />
+		  }
         return (
 	<Card className="cardStyle overflow-auto">
 	<Card.Body>
@@ -102,7 +106,8 @@ class createAccount extends Component {
 
         axios.post('http://127.0.0.1:8103/api/db_create_user', {user_type:this.state.user_type, email: this.state.email,username:this.state.username, password: this.state.password })
             .then(response => {
-                console.log(response.data)
+				console.log(response.data)
+				this.setState({accountCreated:true});
 			})
 			.catch((error) => {
 			console.log(error)
