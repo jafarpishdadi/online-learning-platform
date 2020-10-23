@@ -3,11 +3,11 @@
 
 2- Install Flask-MongoEngine and dnspython (you can use pip - a package installer for python. it comes with python)
 
-3- Run backend.py at your preferred port (you can put in the port you prefer at the end of backend.py. there is already a port passed in but just in case if you want to change it)
+3- Run database.py at your preferred port (you can put in the port you prefer at the end of database.py. there is already a port passed in but just in case if you want to change it)
 
 4- Now the api is running 
 
-**Endpoints** (you can find these details in backend.py as well)
+**Endpoints** (you can find these details in database.py as well)
 
 **creating a user** [POST]: **/api/db_create_use**r (creates a new user and posts it to the database when provided with a json text formatted as {user_type: user_type, user_name: user_name, password: password, email: email})
 
