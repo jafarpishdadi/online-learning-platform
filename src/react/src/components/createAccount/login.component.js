@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import Card from 'react-bootstrap/Card'
 import axios from 'axios';
+import {Redirect} from 'react-router-dom'
 class Login extends Component {
 
 	constructor(props) {
@@ -9,7 +10,7 @@ class Login extends Component {
         super(props);
 
         this.state = {
-            email: '',
+            username: '',
 			password: ''
         };
 
@@ -29,15 +30,19 @@ class Login extends Component {
 	}
 
 	render() {
+
+		if(this.state.loggedIn){
+		  return <Redirect to='/sidebar' />
+		}
 		return (
 			<Card className="cardStyle">
 				<Card.Body>
 					<Card.Title className="cardTitleStyle">Welcome Back!</Card.Title>
 					<form class="flex-column" onSubmit = {this.submit}>
 					<div class="form-group pt-0 pl-2 pr-2">
-				<label for="inputEmail" class="text-dark font-weight-bold">Email</label>
-				<input type="text" class="form-control" name='email' value={this.state.email} placeholder="email" onChange={this.handleChange} aria-describedby="emailHelp" />
-						</div>
+				<label for="inputUsername" class="text-dark font-weight-bold">Username</label>
+				<input type="text" class="form-control" name='username' value={this.state.username} placeholder="username" onChange={this.handleChange} aria-describedby="usernameHelp" />
+			</div>
 						<div class="form-group pt-0 pl-2 pr-2">
 				<label for="inputPassword" class="text-dark font-weight-bold">Password</label>
 				<input type="password" class="form-control" name='password' value={this.state.password} onChange={this.handleChange} placeholder="password" aria-describedby="passwordHelp"/>
@@ -73,9 +78,10 @@ class Login extends Component {
     submit(e) {
         e.preventDefault();
 
-        axios.post('http://127.0.0.1:8103/api/db_login', {email: this.state.email, password: this.state.password })
+        axios.post('http://127.0.0.1:8103/api/db_login', {username: this.state.username, password: this.state.password })
             .then(response => {
-                console.log(response)
+				console.log(response);
+				this.setState({loggedIn:true});
 			})
 			.catch((error) => {
 			console.log(error)
