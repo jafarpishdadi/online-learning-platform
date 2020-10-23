@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import './HeaderTaskbar.css'
-import search from '../assets/search.png'
-import profile from '../assets/profile.png';
-import notifications from '../assets/notifications.png';
-import messaging from '../assets/messaging.png';
-import logout from '../assets/logout.png';
+import search from '../../assets/search.png'
+import profile from '../../assets/profile.png';
+import notifications from '../../assets/notifications.png';
+import messaging from '../../assets/messaging.png';
+import logout from '../../assets/logout.png';
 
 let headerIcons = [
     {id: 1, link:'', imgSrc: messaging},
