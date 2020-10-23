@@ -2,6 +2,7 @@ import mongoengine as me
 import hashlib
 from flask import Flask, make_response, request, jsonify
 from Exceptions.MissingRequiredField import checkFields
+from datetime import datetime
 
 
 class UserObj():
@@ -16,6 +17,8 @@ class UserObj():
 		username = me.StringField()
 		password = me.StringField()
 		email = me.StringField()
+		last_login = me.StringField()
+		last_logout = me.StringField()
 
 		def to_json(self):
 			"""
@@ -26,16 +29,19 @@ class UserObj():
 				"user_type": self.user_type,
 				"username": self.username,
 				"password": self.password, 
-				"email": self.email
+				"email": self.email,
+				"last_login": self.last_login, 
+				"last_logout": self.last_logout
+
 			}
 
 	def __init__(self, content):
 		"""
 		Instantiates a new instance of UserObj
 		"""
-		print(content)
 		self.content = content
-		self.hash_password()
+		if content is not None:
+			self.hash_password()
 	
 	def hash_password(self):
 		"""
@@ -58,7 +64,7 @@ class UserObj():
 		if (self.User.objects(email=self.content['email']).count() > 0):
 			return make_response("Email already in use.", 400)
 
-		self.User(user_type=self.content['user_type'], username=self.content['username'], password=self.content['password'], email=self.content['email']).save()
+		self.User(user_type=self.content['user_type'], username=self.content['username'], password=self.content['password'], email=self.content['email'], last_login='N/A', last_logout='N/A').save()
 		return make_response("", 200)
 	
 	def db_get_user(self):
@@ -160,6 +166,23 @@ class UserObj():
 
 		user_obj = self.User.objects(username=self.content['username'], password=self.content['password']).first()
 		if user_obj:
+			user_obj.update(last_login=datetime.now().strftime("%m/%d/%Y, %H:%M:%S"))
 			return make_response(jsonify("true"), 200)
 		else:
 			return make_response(jsonify("false"), 401)
+            
+	def db_logout(self):
+		"""
+		Updates the last logout date and time 
+		"""
+
+		x = checkFields(self.content, fields=['username'])
+		if (x):
+			return make_response("Missing required field: " + x, 400)
+
+		user_obj = self.User.objects(username=self.content['username']).first()
+		if user_obj:
+			user_obj.update(last_logout=datetime.now().strftime("%m/%d/%Y, %H:%M:%S"))
+			return make_response("", 200)
+		else:
+			return make_response("", 401)

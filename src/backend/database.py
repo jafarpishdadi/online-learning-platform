@@ -55,6 +55,11 @@ def db_delete_all_users():
 @app.route('/api/db_login', methods=['POST'])
 def db_login():
 	return UserObj(request.json).db_login()
+ 
+# records the data and time of the last logout when provided with a json text formatted as {email: email}
+@app.route('/api/db_logout', methods=['POST'])
+def db_logout():
+    return UserObj(request.json).db_logout()
 
 # you can put in your preferred port 
 if __name__ == '__main__':   
