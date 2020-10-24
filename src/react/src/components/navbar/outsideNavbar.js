@@ -5,7 +5,7 @@ import Logo from '../../assets/uimpactify-logo.png'
 class OutsideNavbar extends Component {
 	render () {
 		return (
-			<nav className="navbar navbar-expand-md sticky-top custom m-2 d-flex align-content-between">
+			<nav className="navbar navbar-expand-md sticky-top outsideNav m-2 d-flex align-content-between">
 				<img src={Logo} className="custom-logo"/>
 				<div>
 					<ul className="navbar-nav p-0">

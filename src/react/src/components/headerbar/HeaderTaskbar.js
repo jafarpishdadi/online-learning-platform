@@ -1,15 +1,16 @@
 import React, { Component } from 'react'
+import axios from 'axios';
 import './HeaderTaskbar.css'
 import search from '../../assets/search.png'
 import profile from '../../assets/profile.png';
 import notifications from '../../assets/notifications.png';
 import messaging from '../../assets/messaging.png';
 import logout from '../../assets/logout.png';
+import { Redirect } from 'react-router-dom';
 
 let headerIcons = [
     {id: 1, link:'', imgSrc: messaging},
-    {id: 2, link:'', imgSrc: notifications },
-    {id: 3, link:'', imgSrc: logout }
+    {id: 2, link:'', imgSrc: notifications }
 ]
 
 function HeaderIcon(props) {
@@ -48,13 +49,18 @@ class HeaderTaskbar extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            
-		}
+            username: '',
+            password: ''
+        }
+        this.submit = this.submit.bind(this);
     }
     render () {
+        if (!this.state.loggedIn) {
+            return <Redirect to='/login' />
+        }
         const { icons } = this.props
         return (
-            <nav className='navbar sticky-top custom m-2 align-content-between'>
+            <nav className='navbar sticky-top headerTask m-2 align-content-between'>
                 <div className='header'>
                     <Header
                         title={icons.title}
@@ -77,9 +83,27 @@ class HeaderTaskbar extends Component {
                         link={icon.link}
                         imgSrc={icon.imgSrc}/>
                     )}
+                    <form class="flex-row" onSubmit = {this.submit}>
+                        <button className='logoutIcon my-2 my-sm-0'>
+                            <img src={logout}></img>
+                        </button>
+						</form>
                 </div>
             </nav>
         )
+    }
+    submit(e) {
+        e.preventDefault();
+
+        axios.post('http://127.0.0.1:8103/api/db_logout', {username: this.state.username, password: this.state.password })
+            .then(response => {
+				console.log(response.data)
+                this.setState({loggedIn:false});
+            })
+			.catch((error) => {
+			console.log(error)
+		})
+            ;
     }
 }
 
