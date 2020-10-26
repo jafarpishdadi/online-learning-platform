@@ -186,3 +186,13 @@ class UserObj():
 			return make_response("", 200)
 		else:
 			return make_response("", 401)
+
+	def db_get_all_consultants(self):
+		"""
+		Gets the list of all users with user_type consultant
+		"""
+		consultants = self.User.objects(user_type__="consultant")
+		if consultants:
+			return make_response(jsonify(consultants.to_json()), 200)
+		else:
+			return make_response("No consultants in database.", 404)
