@@ -61,9 +61,9 @@ def db_login():
 def db_logout():
     return UserObj(request.json).db_logout()
 
-@app.route('/api/db_get_all_consultants', methods=['GET'])
-def db_get_all_consultants():
-	return UserObj(request.json).db_get_all_consultants()
+@app.route('/api/db_get_consultants', methods=['GET'])
+def db_get_consultants():
+	return UserObj(request.json).db_get_consultants()
 	
 # you can put in your preferred port 
 if __name__ == '__main__':   
