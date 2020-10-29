@@ -1,4 +1,4 @@
-**Sprint goal: **Work more on designing the web application focusing on the profile, dashboard, calendar and taskbar. 
+**Sprint goal:** Work more on designing the web application focusing on the profile, dashboard, calendar and taskbar. 
 
 **Stories for the sprint:**
 
