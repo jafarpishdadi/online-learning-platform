@@ -3,6 +3,7 @@ import hashlib
 from flask import Flask, make_response, request, jsonify
 from Exceptions.MissingRequiredField import checkFields
 from datetime import datetime
+from user.UserObj import User 
 
 class CalenderObj():
 
@@ -47,15 +48,20 @@ class CalenderObj():
 	def db_create_event(self):
 		"""
 		Creates a new event based on the json passed in
-		TODO: Check that email exists
 		"""
 
 		x = checkFields(self.content, fields=['class', 'start_time', 'end_time', 'section', 'lesson','location', 'lable','link', 'email','date'])
 		if (x):
 			return make_response("Missing required field: " + x, 400)
 
+		# Checks if the class name is in use
 		if (self.Event.objects(class_name=self.content['class']).count() > 0):
 			return make_response("Class name already in use.", 400)
+		
+		# Checks if the user exists
+		user_obj = User.objects(email=self.content['email']).first()
+		if not user_obj:
+			return make_response("", 404)
 
 		self.Event(
 			class_name=self.content['class'], 
