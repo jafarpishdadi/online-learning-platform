@@ -1,7 +1,9 @@
 from flask import Flask, make_response, request, jsonify
 from flask_mongoengine import MongoEngine
 from user import UserObj 
+from calender import CalenderObj
 import user
+import calender
 
 app = Flask(__name__) 
 
@@ -60,6 +62,16 @@ def db_login():
 @app.route('/api/db_logout', methods=['POST'])
 def db_logout():
     return UserObj(request.json).db_logout()
+
+# Allows Creation Of events for a user
+@app.route('/api/db_create_event', methods=['POST'])
+def db_create_event():
+    return CalenderObj(request.json).db_create_event()
+
+# Allows Creation Of events for a user
+@app.route('/api/db_get_schedule', methods=['GET'])
+def db_get_event():
+    return CalenderObj(request.json).db_get_event()
 
 # you can put in your preferred port 
 if __name__ == '__main__':   
