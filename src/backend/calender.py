@@ -3,7 +3,8 @@ import hashlib
 from flask import Flask, make_response, request, jsonify
 from Exceptions.MissingRequiredField import checkFields
 from datetime import datetime
-from user.UserObj import User 
+from user import UserObj
+User = UserObj.User 
 
 class CalenderObj():
 
