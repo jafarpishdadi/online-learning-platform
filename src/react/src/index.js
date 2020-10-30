@@ -24,6 +24,7 @@ import socialInitiatives from './assets/Welfare.png'
 import settings from './assets/settings.png'
 import dashboard from './assets/dashboard.png'
 import Headerbar from './components/headerbar/HeaderTaskbar.js'
+import Classes from './components/yourClasses/yourClasses.component.js'
 import profile from './assets/profile.png'
 
 
@@ -49,6 +50,10 @@ let headerItems = {link: '', title: 'Dashboard', profileImg: profile }
             // create account page
             <Route exact path="/create">
                 <CreateAccountPage/>
+            </Route>
+            // yourclasses comp
+            <Route exact path="/classes">
+                <Classes/>
             </Route>
             // side bar
             <Route path="/sidebar">

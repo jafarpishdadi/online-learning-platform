@@ -1,0 +1,67 @@
+.divider{
+    width:5px;
+    height:auto;
+    display:inline-block;
+}
+.classCardStyle {
+    width: 50vw;
+    height: 35vh;
+    align-items: right;
+    background-color:#FCFCFB;
+    border-color:#FCFCFB;
+    box-shadow: 0 2px 2px -2px rgba(0,0,0,.2);
+    font-family: "Open Sans";
+}
+
+.classCardTitleStyle {
+    font-family: "Open Sans";
+    font-weight: 600;
+    font-size: 35px;
+    text-align: left;
+    margin:10px;
+    margin-top: 10px;
+    color: #7A7A7A;
+}
+
+.btn-see-all{
+	border: none;
+	border-radius: 10px;
+    max-width: 100%;
+    margin-top: 40px;
+    margin-right: 2px;
+    position:absolute;
+    top:0;
+    right:0;
+    color: #FCFCFB;
+	background-color: #A78EC3;
+}
+
+
+.btn-addCourse{
+	border: none;
+    border-radius: 10px;
+    width:  150px;
+    height: 160.1px;
+    margin-top: 50px;
+    margin:10px;
+    background-color:#E3E5E5;
+    color: #919699;
+    padding-top: 105px;
+    float:left;
+    box-shadow: 5px 5px;
+}
+
+.btn-activeCourse{
+	border: none;
+    border-radius: 10px;
+    width:  150px;
+    height: 160.1px;
+    margin-top: 50px;
+    margin:10px;
+    background-color:#dfdbdb;
+    color: #7b7d7e;
+    padding-top: 105px;
+    float:left;
+    box-shadow: 5px 5px;
+}
+
