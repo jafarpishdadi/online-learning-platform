@@ -15,12 +15,10 @@ class Classes extends Component {
         <div className="ml-auto">
   		<button className="btn btn-see-all pull-right">See All</button>
 		</div>
-        <div className="ml-auto">
+
   		<button className="btn btn-activeCourse ">Active Course</button>
-		</div>
-        <div className="ml-auto">
   		<button className="btn btn-addCourse ">Add a New Course</button>
-		</div>
+
 	</Card.Body>
     <div class = 'square'></div>
     </Card>

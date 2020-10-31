@@ -25,6 +25,7 @@ import settings from './assets/settings.png'
 import dashboard from './assets/dashboard.png'
 import Headerbar from './components/headerbar/HeaderTaskbar.js'
 import Classes from './components/yourClasses/yourClasses.component.js'
+import Events from './components/events/events.component.js'
 import News from './components/news/news.component.js'
 import profile from './assets/profile.png'
 
@@ -56,7 +57,11 @@ let headerItems = {link: '', title: 'Dashboard', profileImg: profile }
             <Route exact path="/classes">
                 <Classes/>
             </Route>
-            // yourclasses comp
+            // events
+            <Route exact path="/events">
+                <Events/>
+              </Route>
+            // newscomp
             <Route exact path="/news">
                 <News/>
             </Route>

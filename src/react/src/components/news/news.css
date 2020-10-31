@@ -24,7 +24,7 @@
     margin-top: 40px;
     margin-right: 2px;
     color: #FCFCFB;
-	background-color: #A78EC3;
+  background-color: #A78EC3;
 }
 
 
@@ -57,9 +57,8 @@ body {
   padding: 10px 15px;
   background: #ffffff;
   cursor: pointer;
-  font-weight: bold;
   font-size: 18px;
-  color: #0e0e0e;
+  color: #7A7A7A;
   transition: background 0.1s, color 0.1s;
 }
 
