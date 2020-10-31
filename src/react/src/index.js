@@ -28,7 +28,7 @@ import Classes from './components/yourClasses/yourClasses.component.js'
 import Events from './components/events/events.component.js'
 import News from './components/news/news.component.js'
 import profile from './assets/profile.png'
-
+import DashPage from './pages/dashboard/dashboard.component.js'
 
 let navItems = [
     {id: 1, link: "", imgSrc: dashboard, title: "Dashboard" },
@@ -52,6 +52,10 @@ let headerItems = {link: '', title: 'Dashboard', profileImg: profile }
             // create account page
             <Route exact path="/create">
                 <CreateAccountPage/>
+            </Route>
+            // create account page
+            <Route exact path="/dashboard">
+                <DashPage/>
             </Route>
             // yourclasses comp
             <Route exact path="/classes">

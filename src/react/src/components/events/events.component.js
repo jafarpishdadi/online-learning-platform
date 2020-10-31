@@ -19,9 +19,12 @@ class Events extends Component {
   		<button className="btn btn-event ">Event Placeholder</button>
   		<button className="btn btn-event ">Event Placeholder</button>
         <button className="btn btn-event ">Event Placeholder</button>
+		<button className="btn btn-event ">Event Placeholder</button>
+
         <div className="workshopSubTitle">Upcoming Workshops</div>
   		<button className="btn btn-event ">Workshop Placeholder</button>
   		<button className="btn btn-event ">Workshop Placeholder</button>
+		<button className="btn btn-event ">Workshop Placeholder</button>
         <button className="btn btn-event ">Workshop Placeholder</button>
           
 	</Card.Body>

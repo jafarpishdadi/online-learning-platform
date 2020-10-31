@@ -1,0 +1,32 @@
+.page {
+    display:flex;
+    flex-direction: row;
+    height: 100%;
+    background-color: #FCFCFB;
+}
+body{
+    background-color: #FCFCFB;
+}
+.picture{
+    flex:1;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    width: auto; /* ie8 */
+}
+
+.events{
+    display: flex;
+    align-self: center;
+    flex-direction: row-reverse;
+}
+.news{
+    display: flex;
+    flex-direction: row-reverse;
+}
+.classes{
+    display: flex;
+    flex-direction: column-reverse;
+}

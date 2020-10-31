@@ -20,7 +20,6 @@ class Classes extends Component {
   		<button className="btn btn-addCourse ">Add a New Course</button>
 
 	</Card.Body>
-    <div class = 'square'></div>
     </Card>
 
 
