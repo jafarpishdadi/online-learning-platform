@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
-import ReactDOM from 'react-dom'
+import { Link } from 'react-router-dom';
 import Logo from '../../assets/uimpactify-logo.png'
 import './sidebar.css'
 
 const NavItem = ({link, imgSrc, title}) => {
   return (
         
-        <a href={link} title={title}>
+    <Link to={link} title={title}>
             <li>
                 <img
                 src={imgSrc}
@@ -14,7 +14,7 @@ const NavItem = ({link, imgSrc, title}) => {
                 />
                 <span>{title}</span>
             </li>
-        </a>
+        </Link>
         
   )
 }
