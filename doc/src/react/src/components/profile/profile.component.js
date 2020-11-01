@@ -1,8 +1,19 @@
 import React, { Component } from 'react'
 import { Card } from 'react-bootstrap';
+import fb from '../../assets/fb.png'
+import li from '../../assets/li.png'
+import profilePic from '../../assets/profilePic.png'
+import up from '../../assets/up.png'
+import edit from '../../assets/edit.png'
+import del from '../../assets/del.png'
+import editButton from '../../assets/editButton.png'
 import './profile.css'
+import ColourText from './colourText.component.js'
+
+let colouredTexts = {colour: "blue", text: "Hello"}
 
 class Profile extends Component {
+    
 	render() {
 		return(
             <div className="main">
@@ -10,24 +21,44 @@ class Profile extends Component {
                 <Card className = "edu">
                     <Card.Body>
                         <Card.Title className = "person">
-                            <div className = "picture">(insert profile pic here)</div>
+                            <div className = "picture">
+                                <img src={profilePic} className="picturePic"/>
+                            </div>
                             <div className = "name_and_date">
-                                <div>Ling</div>
-                                <div>2020</div>
+                                <div className = "name">Lingfeng Su</div>
+                                <div className = "date">Established: August 2020</div>
                             </div>
                             <button className = "edit">edit</button>
                         </Card.Title>
                         <hr className = "divider"></hr>
-                        <Card.Title className = "education">Education</Card.Title>
-                        <Card.Text>UofT</Card.Text>
-                        <Card.Title className = "skills">Skills </Card.Title>
-                        <Card.Text>LMAO</Card.Text>
-                        <Card.Title className = "completed_course">Completed course</Card.Title>
-                        <Card.Text>CSCC01</Card.Text>
-                        <Card.Title className = "languages">Languages</Card.Title>
-                        <Card.Text>English</Card.Text>
-                        <Card.Title className = "description">Description</Card.Title>
-                        <Card.Text>Being bad at programming</Card.Text>
+
+                        <Card.Title className = "listed_titles">Education</Card.Title>
+                        <Card.Text className = "listed_educations">UofT (IDK how to do this part)</Card.Text>
+
+                        <Card.Title className = "listed_titles">Skills</Card.Title>
+                        <Card.Text className = "listed_skills">
+                            <ColourText textInfo = {colouredTexts}/>
+                            <ColourText textInfo = {colouredTexts}/>
+                        </Card.Text>
+
+                        <Card.Title className = "listed_titles">Completed course</Card.Title>
+                        <Card.Text className = "listed_courses">
+                            <ColourText textInfo = {colouredTexts}/>
+                            <ColourText textInfo = {colouredTexts}/>
+                        </Card.Text>
+
+                        <Card.Title className = "listed_titles">Languages</Card.Title>
+                        <Card.Text className = "listed_bodies">
+                            <div>English (Native)</div>
+                            <div>Chinese (Native)</div>
+                            <div>French (Third)</div>
+                        </Card.Text>
+
+                        <Card.Title className = "listed_titles">Description</Card.Title>
+                        <Card.Text className = "listed_bodies">
+                            Being bad at programming. Can't figure out why are the text not changing colours. 
+                            And can't figure out why are the text (The hellos) not flex-row ing. 
+                        </Card.Text>
                     </Card.Body>
                 </Card>
 
@@ -35,52 +66,59 @@ class Profile extends Component {
 
                 {/* card with personal info */}
                 <Card className = "info">
-                    <Card.Title className = "info_title">PERSONAL INFO</Card.Title>
+                    <Card.Title className = "info_title">Personal Information</Card.Title>
                     <div className = "top">
                         <Card.Body>
-                            <Card.Title>First Name</Card.Title>
-                            <Card.Text>Ling</Card.Text>
+                            <Card.Title className = "title">First Name</Card.Title>
+                            <Card.Text className = "body">Ling</Card.Text>
                         </Card.Body>
                         <Card.Body>
-                            <Card.Title>Last Name</Card.Title>
-                            <Card.Text>Su</Card.Text>
+                            <Card.Title className = "title">Last Name</Card.Title>
+                            <Card.Text className = "body">Su</Card.Text>
                         </Card.Body>
                     </div>
                     <div className = "bottom">
                         <Card.Body>
-                            <Card.Title>Registered Email Address</Card.Title>
-                            <Card.Text>Ling.Su@mail.utoronto.ca</Card.Text>
+                            <Card.Title className = "title">Registered Email Address</Card.Title>
+                            <Card.Text className = "body">Ling.Su@mail.utoronto.ca</Card.Text>
                         </Card.Body>
                         <Card.Body>
-                            <Card.Title>Registered Phone Number</Card.Title>
-                            <Card.Text>416-731-9960</Card.Text>
+                            <Card.Title className = "title">Registered Phone Number</Card.Title>
+                            <Card.Text className = "body">416-731-9960</Card.Text>
                         </Card.Body>
                     </div>
                     <div className = "pic_and_account_top">
                         <div className = "pic">
                             <Card.Body>
-                                <Card.Title>Picture</Card.Title>
+                                <Card.Title className = "title">Picture</Card.Title>
                             </Card.Body>
                         </div>
                         <div className = "linked">
                             <Card.Body>
-                                <Card.Title>Linked Accounts</Card.Title>
+                                <Card.Title className = "title">Linked Accounts</Card.Title>
                             </Card.Body>
                         </div>
                     </div>
                     <div className = "pic_and_account_bottom">
                         <div className = "pic">
-                            <Card.Body>
-                                <Card.Title>(Insert picture here)</Card.Title>
-                            </Card.Body>
+                            <div className = "profile_pic_slot">
+                                <img src={profilePic} className="elementPic"/>
+                            </div>
+                            <div className = "spacer"></div>
+                            <div className = "edit_slot">
+                                <img src={up} className="element"/>
+                                <img src={edit} className="element"/>
+                                <img src={del} className="element"/>
+                            </div>
                         </div>
                         <div className = "linked">
-                            <Card.Body>
-                                <Card.Title>(Insert accounts here)</Card.Title>
-                            </Card.Body>
+                            <div className = "linked_pics">
+                                <img src={fb} className="element_image"/>
+                                <img src={li} className="element_image"/>
+                            </div>
                         </div>
                     </div>
-                    <button className = "edit2">edit</button>
+                    <img src={editButton} className="edit_button"/>
                 </Card>
             </div>
             //make a flex box set into a row

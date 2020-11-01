@@ -24,10 +24,51 @@
 }
 .name_and_date {
     flex: 3;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    margin-left: 10%;
+}
+.name {
+    color: black;
+    font-size: 34px;
+    margin-bottom: 15px;
+}
+.date {
+    color: grey;
+    font-size: 18px;
 }
 .edit {
     padding: 0px;
-    margin: 10px;
+    margin: 0px;
+    align-self: flex-start;
+    background-color: transparent;
+    border-radius: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-color: #A78EC3;
+}
+.listed_educations {
+    margin-left: 5%;
+}
+.listed_skills {
+    margin-left: 5%;
+}
+.listed_courses {
+    margin-left: 5%;
+}
+.listed_titles {
+    color: rgb(151, 151, 151);
+    font-size: 38px;
+}
+.listed_bodies {
+    color: grey;
+    font-size: 14px;
+    margin-left: 5%;
+}
+.listed_skills {
+    display: flex;
+    flex-direction: row;
 }
 .info {
     flex: 1.5;
@@ -36,6 +77,20 @@
 }
 .info_title {
     padding: 2%;
+    margin-bottom: 0%;
+    color: #A78EC3;
+    font-weight: bold;
+    font-size: 36px;
+    font-family: "Open Sans";
+}
+.title {
+    color: gray;
+    font-size: 22px;
+}
+.body {
+    color: black;
+    font-size: 18px;
+    margin-left: 4%;
 }
 .top {
     display: flex;
@@ -50,23 +105,59 @@
     flex-direction: row;
 }
 .pic_and_account_bottom {
+    margin-top: 0%;
     display: flex;
     flex-direction: row;
 }
 .pic {
     flex: 1;
+    display: flex;
+    flex-direction: row;
+}
+.profile_pic_slot {
+    margin-left: 40px;
+}
+.edit_slot {
+    display: flex;
+    flex-direction: column;
 }
 .linked {
     flex: 1;
+    display: flex;
+    flex-direction: row;
 }
-.edit2 {
+.linked_pics {
+    margin-top: 0%;
+    margin-left: 30px;
+}
+.spacer {
+    flex: 0.2;
+}
+.elemmentPic {
+    width: 150px;
+    height: 150px;
+}
+.element {
+    flex: 1;
+    width: 150px;
+    height: 15px;
+    padding-bottom: 20px;
+}
+.element_image {
+    height: 40px;
+    width: 40px;
+    margin-left: 5px;
+}
+.edit_button {
     align-self: flex-end;
+    margin: 0px 30px 40px 0px;
 }
 .divider {
     padding: 0px;
     border: 0;
     width: 99%;
-    height: 5px;
+    height: 3px;
     color: gray;
-    background-color: gray;
+    background-color: #e3dddd;
+    border-radius: 5px;
 }
