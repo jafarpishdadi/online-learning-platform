@@ -49,12 +49,27 @@
     border-color: #A78EC3;
 }
 .listed_educations {
+    color: grey;
+    display: flex;
+    flex-direction: column;
     margin-left: 5%;
 }
 .listed_skills {
+    color: grey;
+    display: flex;
+    flex-direction: column;
     margin-left: 5%;
 }
 .listed_courses {
+    color: grey;
+    display: flex;
+    flex-direction: column;
+    margin-left: 5%;
+}
+.listed_languages {
+    color: grey;
+    display: flex;
+    flex-direction: column;
     margin-left: 5%;
 }
 .listed_titles {
@@ -65,10 +80,6 @@
     color: grey;
     font-size: 14px;
     margin-left: 5%;
-}
-.listed_skills {
-    display: flex;
-    flex-direction: row;
 }
 .info {
     flex: 1.5;

@@ -10,7 +10,12 @@ class ColourText extends Component {
     render() {
         const { textInfo } = this.props
         return(
-                <div>{textInfo.text}</div>
+                <div>
+                    {textInfo.map(
+                        (texts) => 
+                            <li>{texts.text}</li>
+                    )}
+                </div>
             )
         }
 }

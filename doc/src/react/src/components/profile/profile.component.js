@@ -10,7 +10,25 @@ import editButton from '../../assets/editButton.png'
 import './profile.css'
 import ColourText from './colourText.component.js'
 
-let colouredTexts = {colour: "blue", text: "Hello"}
+let educations = [
+    {id:1, text: "University of Toronto Scarbrough Undergraduate"},
+    {id:2, text: "Demo element 2"},
+    {id:3, text: "Demo element 3"}
+]
+let skills = [
+    {id:1, text: "Demo element 1"},
+    {id:2, text: "Demo element 2"},
+    {id:3, text: "Demo element 3"},
+    {id:4, text: "Demo element 4"}
+]
+let completedCourses = [
+    {id:1, text: "Demo element 1"},
+    {id:2, text: "Demo element 2"}
+]
+let languages = [
+    {id:1, text: "English (Native)"},
+    {id:3, text: "French (Second)"}
+]
 
 class Profile extends Component {
     
@@ -33,31 +51,35 @@ class Profile extends Component {
                         <hr className = "divider"></hr>
 
                         <Card.Title className = "listed_titles">Education</Card.Title>
-                        <Card.Text className = "listed_educations">UofT (IDK how to do this part)</Card.Text>
+                        <Card.Text className = "listed_educations">
+                            <ColourText textInfo = {educations}/>
+                        </Card.Text>
 
                         <Card.Title className = "listed_titles">Skills</Card.Title>
                         <Card.Text className = "listed_skills">
-                            <ColourText textInfo = {colouredTexts}/>
-                            <ColourText textInfo = {colouredTexts}/>
+                            <ColourText textInfo = {skills}/>
                         </Card.Text>
 
                         <Card.Title className = "listed_titles">Completed course</Card.Title>
                         <Card.Text className = "listed_courses">
-                            <ColourText textInfo = {colouredTexts}/>
-                            <ColourText textInfo = {colouredTexts}/>
+                            <ColourText textInfo = {completedCourses}/>
                         </Card.Text>
 
                         <Card.Title className = "listed_titles">Languages</Card.Title>
-                        <Card.Text className = "listed_bodies">
-                            <div>English (Native)</div>
-                            <div>Chinese (Native)</div>
-                            <div>French (Third)</div>
+                        <Card.Text className = "listed_languages">
+                            <ColourText textInfo = {languages}/>
                         </Card.Text>
 
                         <Card.Title className = "listed_titles">Description</Card.Title>
                         <Card.Text className = "listed_bodies">
-                            Being bad at programming. Can't figure out why are the text not changing colours. 
-                            And can't figure out why are the text (The hellos) not flex-row ing. 
+                            According to all known laws of aviation,
+                            there is no way a bee
+                            should be able to fly.
+                            Its wings are too small to get
+                            its fat little body off the ground.
+                            The bee, of course, flies anyway
+                            because bees don't care
+                            what humans think is impossible.
                         </Card.Text>
                     </Card.Body>
                 </Card>
