@@ -10,31 +10,28 @@ import editButton from '../../assets/editButton.png'
 import './profile.css'
 import ColourText from './colourText.component.js'
 
-let educations = [
-    {id:1, text: "University of Toronto Scarbrough Undergraduate"},
-    {id:2, text: "Demo element 2"},
-    {id:3, text: "Demo element 3"}
-]
-let skills = [
-    {id:1, text: "Demo element 1"},
-    {id:2, text: "Demo element 2"},
-    {id:3, text: "Demo element 3"},
-    {id:4, text: "Demo element 4"}
-]
-let completedCourses = [
-    {id:1, text: "Demo element 1"},
-    {id:2, text: "Demo element 2"}
-]
-let languages = [
-    {id:1, text: "English (Native)"},
-    {id:3, text: "French (Second)"}
-]
-
 class Profile extends Component {
-    
+    constructor(props) {
+        super(props)
+        this.state = {
+            
+        }
+    }
 	render() {
+        const { educations } = this.props
+        const { skills } = this.props
+        const { completedCourses } = this.props
+        const { languages } = this.props
+        const { description } = this.props
+        const { name } = this.props
+        const { timeJoin } = this.props
+        const { firstName } = this.props
+        const { lastName } = this.props
+        const { email } = this.props
+        const { phoneNumber } = this.props
 		return(
             <div className="main">
+
                 {/* card with education info */}
                 <Card className = "edu">
                     <Card.Body>
@@ -43,8 +40,8 @@ class Profile extends Component {
                                 <img src={profilePic} className="picturePic"/>
                             </div>
                             <div className = "name_and_date">
-                                <div className = "name">Lingfeng Su</div>
-                                <div className = "date">Established: August 2020</div>
+                                <div className = "name">{ name }</div>
+                                <div className = "date">Established: { timeJoin }</div>
                             </div>
                             <button className = "edit">edit</button>
                         </Card.Title>
@@ -52,35 +49,26 @@ class Profile extends Component {
 
                         <Card.Title className = "listed_titles">Education</Card.Title>
                         <Card.Text className = "listed_educations">
-                            <ColourText textInfo = {educations}/>
+                            <ColourText textInfo = { educations }/>
                         </Card.Text>
 
                         <Card.Title className = "listed_titles">Skills</Card.Title>
                         <Card.Text className = "listed_skills">
-                            <ColourText textInfo = {skills}/>
+                            <ColourText textInfo = { skills }/>
                         </Card.Text>
 
                         <Card.Title className = "listed_titles">Completed course</Card.Title>
                         <Card.Text className = "listed_courses">
-                            <ColourText textInfo = {completedCourses}/>
+                            <ColourText textInfo = { completedCourses }/>
                         </Card.Text>
 
                         <Card.Title className = "listed_titles">Languages</Card.Title>
                         <Card.Text className = "listed_languages">
-                            <ColourText textInfo = {languages}/>
+                            <ColourText textInfo = { languages }/>
                         </Card.Text>
 
                         <Card.Title className = "listed_titles">Description</Card.Title>
-                        <Card.Text className = "listed_bodies">
-                            According to all known laws of aviation,
-                            there is no way a bee
-                            should be able to fly.
-                            Its wings are too small to get
-                            its fat little body off the ground.
-                            The bee, of course, flies anyway
-                            because bees don't care
-                            what humans think is impossible.
-                        </Card.Text>
+                        <Card.Text className = "listed_bodies">{ description }</Card.Text>
                     </Card.Body>
                 </Card>
 
@@ -92,21 +80,21 @@ class Profile extends Component {
                     <div className = "top">
                         <Card.Body>
                             <Card.Title className = "title">First Name</Card.Title>
-                            <Card.Text className = "body">Ling</Card.Text>
+                            <Card.Text className = "body">{ firstName }</Card.Text>
                         </Card.Body>
                         <Card.Body>
                             <Card.Title className = "title">Last Name</Card.Title>
-                            <Card.Text className = "body">Su</Card.Text>
+                            <Card.Text className = "body">{ lastName }</Card.Text>
                         </Card.Body>
                     </div>
                     <div className = "bottom">
                         <Card.Body>
                             <Card.Title className = "title">Registered Email Address</Card.Title>
-                            <Card.Text className = "body">Ling.Su@mail.utoronto.ca</Card.Text>
+                            <Card.Text className = "body">{ email }</Card.Text>
                         </Card.Body>
                         <Card.Body>
                             <Card.Title className = "title">Registered Phone Number</Card.Title>
-                            <Card.Text className = "body">416-731-9960</Card.Text>
+                            <Card.Text className = "body">{ phoneNumber }</Card.Text>
                         </Card.Body>
                     </div>
                     <div className = "pic_and_account_top">
@@ -143,13 +131,6 @@ class Profile extends Component {
                     <img src={editButton} className="edit_button"/>
                 </Card>
             </div>
-            //make a flex box set into a row
-            //with in the flex box have 2 card components. Use hardcoded data while designing
-            //once everything is set-up use props and feed it dummy data from index.js
-            //ignore the images for now, empty circle or something would be fine
-            //leave skills and completed courses blank and just try to build base components
-            //inline tags like, line 9 p-0, means padding 0. ml-5 margin left 5. 
-            //search up bootstrap inline display property/blocks. 
 		)
 	}
 }
