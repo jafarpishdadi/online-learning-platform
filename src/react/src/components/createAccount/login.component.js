@@ -32,7 +32,7 @@ class Login extends Component {
 	render() {
 
 		if(this.state.loggedIn){
-		  return <Redirect to='/sidebar' />
+		    return <Redirect to='/sidebar'/>
 		}
 		return (
 			<Card className="cardStyle">
@@ -76,11 +76,11 @@ class Login extends Component {
 	}
 
     submit(e) {
-        e.preventDefault();
-
+		e.preventDefault();
         axios.post('http://127.0.0.1:8103/api/db_login', {username: this.state.username, password: this.state.password })
             .then(response => {
 				console.log(response);
+				localStorage.setItem('token', response.data)
 				this.setState({loggedIn:true});
 			})
 			.catch((error) => {
