@@ -1,5 +1,5 @@
 # Sprint 1 Marking
-Team Name: ezclap
+Team Name: ezclap  
 Total Mark: 80.25/85 (94.4%)
 
 ## Planning Meetings (4.5/5)
