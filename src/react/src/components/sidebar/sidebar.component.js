@@ -1,23 +1,46 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import Logo from '../../assets/uimpactify-logo.png'
 import './sidebar.css'
 
-const NavItem = ({link, imgSrc, title}) => {
+const NavItem = ({link, imgSrc, title, active}) => {
+
+    function HeaderView() {
+        const location = useLocation();
+        return location.pathname
+    }
+    if (HeaderView()==link) {
+        return (
+            <Link to={link} title={title}>
+                <li className='active'>
+                    <img
+                        src={imgSrc}
+                        alt={title}
+                    />
+                    <span>{title}</span>
+                </li>
+            </Link>
+        )
+    }
   return (
-        
-    <Link to={link} title={title}>
-            <li>
-                <img
+    <Link to={link} title={title} >
+        <li>
+            <img
                 src={imgSrc}
                 alt={title}
-                />
-                <span>{title}</span>
-            </li>
-        </Link>
+            />
+            <span>{title}</span>
+        </li>
+    </Link>
         
   )
 }
+
+function HeaderView() {
+    const location = useLocation();
+    console.log(location.pathname);
+    return <span>Path : {location.pathname}</span>
+  }
 
 class Sidebar extends Component {
     constructor(props) {
@@ -37,10 +60,12 @@ class Sidebar extends Component {
                 <ul>
                     {books.map(
                         (book) => 
-                            <NavItem
+                            <NavItem 
+                                key={book.id}
                                 link={book.link} 
                                 imgSrc={book.imgSrc} 
-                                title={book.title}/>
+                                title={book.title}
+                                active={book.active}/>
                     )}
                 </ul>
             </nav>
