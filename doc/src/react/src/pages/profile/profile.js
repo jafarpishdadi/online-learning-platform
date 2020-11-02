@@ -6,7 +6,7 @@ class ProfilePage extends Component {
 	render() {
 		return(
 			<React.Fragment>
-
+				
 			</React.Fragment>
 		)
 	}
