@@ -70,7 +70,7 @@ class ProfilePage extends Component {
 			<React.Fragment>
                 <Sidebar books={navItems}/>
                 <Headerbar icons={headerItems}/>
-                <div class= "box">
+                <div className = "profileBox">
                     <Profile 
                         educations = {educations} 
                         skills = {skills} 
