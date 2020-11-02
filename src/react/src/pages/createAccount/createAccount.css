@@ -2,13 +2,14 @@
     display:flex;
     flex-direction: row;
     height: 100%;
-    background-color: #FCFCFB;
+    background-color: #FCFCFB !important;
 }
 body{
-    background-color: #FCFCFB;
+    background-color: #FCFCFB !important;
 }
 .picture{
     flex:1;
+    background-color: #FCFCFB;
 }
 
 img {

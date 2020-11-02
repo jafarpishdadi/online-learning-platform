@@ -12,7 +12,7 @@ import Sidebar from "./components/sidebar/sidebar.component.js";
 import CreateAccount  from  "./components/createAccount/createAccount.component.js";
 import CreateAccountPage from './pages/createAccount/createAccount.js'
 import LogInPage from './pages/login/login.js'
-import Login from "./components/createAccount/login.component.js";
+import Logout from "./components/createAccount/logout.component.js";
 import "./components/createAccount/loginAndSignup.css";
 import OutsideNavbar from './components/navbar/outsideNavbar.js'
 import classes from './assets/classes.png'
@@ -29,7 +29,10 @@ import Events from './components/events/events.component.js'
 import News from './components/news/news.component.js'
 import profile from './assets/profile.png'
 import DashPage from './pages/dashboard/dashboard.component.js'
+import CreateClass  from  "./components/createClass/createClass.component.js";
+import ClassList  from  "./components/createClass/classList.component.js";
 
+window.token=localStorage.getItem('token');
 let navItems = [
     {id: 1, link: "", imgSrc: dashboard, title: "Dashboard" },
     {id: 2, link: "", imgSrc: classes, title: "Classes" },
@@ -75,6 +78,16 @@ let headerItems = {link: '/sidebar', title: 'Dashboard', profileImg: profile }
             // newscomp
             <Route exact path="/news">
                 <News/>
+            </Route>
+            // newscomp
+            <Route exact path="/createclass">
+                <CreateClass/>
+            </Route>
+            <Route exact path="/classlist">
+                <ClassList/>
+            </Route>
+            <Route exact path="/logout">
+                <Logout/>
             </Route>
             // side bar
             <Route path="/sidebar">

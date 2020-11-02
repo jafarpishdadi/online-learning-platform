@@ -53,6 +53,7 @@
     display: flex;
     flex-wrap: wrap;
     margin-top: 60px;
+    width: 33vw;
     background: #ffffff;
     border-radius: 25px;
     border: 1px solid;

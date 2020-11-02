@@ -16,6 +16,7 @@ import achievements from '../../assets/achievements.png'
 import socialInitiatives from '../../assets/Welfare.png'
 import settings from '../../assets/settings.png'
 import dashboard from '../../assets/dashboard.png'
+import { Redirect } from 'react-router-dom';
 
 let headerItems = {link: '/sidebar', title: 'Dashboard', profileImg: profile }
 
@@ -32,6 +33,9 @@ let navItems = [
 
 class DashPage extends Component {
 	render() {
+        if (!localStorage.getItem('token')) {
+            return <Redirect to='/login' />
+        }
 		return(
 
 			<React.Fragment>
@@ -51,4 +55,5 @@ class DashPage extends Component {
 		)
 	}
 }
+
 export default DashPage
