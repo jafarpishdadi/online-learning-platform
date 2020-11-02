@@ -1,0 +1,43 @@
+.outsideNav {
+	background-color: #FCFCFB;
+	border-color: #FCFCFB;
+}
+
+.custom-logo {
+	max-width: 5%;
+	max-height: 5%;
+}
+
+.custom-link {
+	color: black;
+	font-family: 'Open Sans';
+}
+
+.custom-link:hover {
+	color: black;
+}
+
+.btn-sign {
+	border-color: #A78EC3;
+	border-radius: 10px;
+	max-width: 50%;
+	background-color: #FCFCFB;
+	font-family: "Open Sans";
+	color: #A78EC3;
+}
+
+.btn-login {
+	border: none;
+	border-radius: 10px;
+	max-width: 50%;
+	color: #FCFCFB;
+	background-color: #A78EC3;
+}
+
+.btn-login:hover {
+	color: inherit;
+}
+
+.custom-div {
+	flex-direction: column;
+}

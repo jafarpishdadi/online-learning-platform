@@ -1,0 +1,36 @@
+.headerTask {
+    background-color:white;
+    border-color: white;
+    border-radius: 10px;
+    width: 80vw;
+    align-items: center;
+    box-shadow: 0 3px 3px -3px rgba(0,0,0,.2);
+}
+
+.Navbar{
+    margin-left: 300px;
+    margin-top:40px;
+}
+.header {
+    color: #A78EC3;
+    text-decoration-color: #A78EC3;
+    font-size: 300px;
+}
+.searchIcon {
+    background-color: #FCFCFB;
+    border-radius: 10px;
+    border-style: none;
+}
+
+.headerIcons {
+    background-color: #FCFCFB;
+    border-radius: 10px;
+    border-style: none;
+}
+
+.form-control {
+    border: hsl(268, 31%, 66%);
+    border-radius: 10px;
+    max-width: 100%;
+    background-color: #F5F7FA;
+}
