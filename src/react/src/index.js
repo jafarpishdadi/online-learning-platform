@@ -41,12 +41,6 @@ let navItems = [
     {id: 8, link: "", imgSrc: settings, title: "Settings" }
     ]
 
-let headerItems = {link: '', title: 'Dashboard', profileImg: profile }
-
-
-
-let headerItems = {link: '/sidebar', title: 'Dashboard', profileImg: profile }
-
 
 let headerItems = {link: '/sidebar', title: 'Dashboard', profileImg: profile }
 
