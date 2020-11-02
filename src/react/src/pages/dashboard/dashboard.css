@@ -1,18 +1,8 @@
 .page {
-<<<<<<< Updated upstream
-    display:flex;
-    flex-direction: row;
-    height: 100%;
-    background-color: #FCFCFB;
-}
-body{
-    background-color: #FCFCFB;
-=======
     background-color: #7A7A7A !important;
 }
 body{
     background-color: #FCFCFB !important;
->>>>>>> Stashed changes
 }
 .picture{
     flex:1;
@@ -36,8 +26,6 @@ img {
 .classes{
     display: flex;
     flex-direction: column-reverse;
-<<<<<<< Updated upstream
-=======
 }
 
 .tophalf{
@@ -66,5 +54,4 @@ img {
     overflow-x: hidden; /* Disable horizontal scroll */
     padding-top: 60px; /* Place content 60px from the top */
     transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
->>>>>>> Stashed changes
 }

@@ -9,19 +9,6 @@ import './yourClasses.css'
 class Classes extends Component {
 	render() {
         return (
-<<<<<<< Updated upstream
-	<Card className="classCardStyle overflow-auto">
-	<Card.Body>
-		<Card.Title className="classCardTitleStyle">Your Courses</Card.Title>
-        <div className="ml-auto">
-  		<button className="btn btn-see-all pull-right">See All</button>
-		</div>
-
-  		<button className="btn btn-activeCourse ">Active Course</button>
-  		<button className="btn btn-addCourse ">Add a New Course</button>
-
-	</Card.Body>
-=======
 	<Card className="ClassCardStyle overflow-auto">
 	<Card.Body>
 		<Card.Title className="classCardTitleStyle">Your Classes</Card.Title>
@@ -32,7 +19,6 @@ class Classes extends Component {
 		<button className="btn btn-event ">Add Courses</button>
 	</Card.Body>
     <div class = 'square'></div>
->>>>>>> Stashed changes
     </Card>
 
 

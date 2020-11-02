@@ -5,9 +5,6 @@ import Events from '../..//components/events/events.component.js'
 import News from '../..//components/news/news.component.js'
 import Headerbar from  '../..//components/headerbar/HeaderTaskbar.js'
 import Sidebar from '../..//components/sidebar/sidebar.component.js'
-<<<<<<< Updated upstream
-import Picture from '../../assets/createPicture.png'
-=======
 import DashboardCalendarComponent from '../..//components/calendar/dashboardCalendar.component.js'
 import Picture from '../../assets/createPicture.png'
 import profile from '../../assets/profile.png'
@@ -32,35 +29,12 @@ let navItems = [
     {id: 7, link: "", imgSrc: socialInitiatives, title: "Social Initiatives" },
     {id: 8, link: "", imgSrc: settings, title: "Settings" }
     ]
->>>>>>> Stashed changes
 
 class DashPage extends Component {
 	render() {
 		return(
 
 			<React.Fragment>
-<<<<<<< Updated upstream
-                <div className="d-flex align-items-end flex-row">
-               
-               <div class="order-1 p-2">
-                <Classes/>
-                </div>
-                
-                <div class="order-2 p-2">
-                <Events/>
-                </div>
-				</div>
-				<div className="d-flex align-items-end flex-row">
-               
-               <div class="order-1 p-2">
-                <Classes/>
-                </div>
-                
-                <div class="order-2 p-2">
-                <News/>
-                </div>
-				</div>
-=======
             <Sidebar books={navItems}/>
             <Headerbar icons={headerItems}/>
             <div class= "box">
@@ -73,7 +47,6 @@ class DashPage extends Component {
             <div><Events/></div>
 
             </div>
->>>>>>> Stashed changes
 			</React.Fragment>
 		)
 	}
