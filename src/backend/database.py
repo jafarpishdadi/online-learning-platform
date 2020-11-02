@@ -126,7 +126,11 @@ def db_update_course_instructor():
 def db_delete_single_course():
 	return CourseObj(request.json).db_delete_single_course()
 
+@app.route('/api/get_all_courses', methods=['GET'])
+def db_get_all_courses():
+	return CourseObj(request.json).db_get_all_courses()
+
 # you can put in your preferred port 
 if __name__ == '__main__':   
-	app.run(host='0.0.0.0', port=8105)
+	app.run(host='0.0.0.0', port=8103)
 

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 import './HeaderTaskbar.css'
 import search from '../../assets/search.png'
 import profile from '../../assets/profile.png';
@@ -9,19 +10,21 @@ import logout from '../../assets/logout.png';
 import { Redirect } from 'react-router-dom';
 
 let headerIcons = [
-    {id: 1, link:'', imgSrc: messaging},
-    {id: 2, link:'', imgSrc: notifications }
+    {id: 1, link:'/sidebar', imgSrc: messaging},
+    {id: 2, link:'/sidebar', imgSrc: notifications }
 ]
 
 function HeaderIcon(props) {
     return (
         <div className='p-2'>
-        <a href={props.link} imgSrc={props.imgSrc}>
+        <Link to={props.link}>
+            <button className='headerIcons'>
             <img
             src={props.imgSrc}
             alt={props.imgSrc}
             />
-        </a>
+            </button>
+        </Link>
         </div>
     );
 }
@@ -29,12 +32,14 @@ function HeaderIcon(props) {
 function Profile(props) {
     return (
         <div className='p-2'>
-        <a href={props.link} imgSrc={props.profileImg}>
+        <Link to={props.link}>
+            <button className='headerIcons'>
             <img
             src={props.profileImg}
             alt={profile}
             />
-        </a>
+            </button>
+        </Link>
         </div>
     );
 }
@@ -44,26 +49,33 @@ function Header(props) {
     <h1 classname='header'>{props.title}</h1>
     )
 }
-
 class HeaderTaskbar extends Component {
     constructor(props) {
         super(props)
         this.state = {
             username: '',
-            password: ''
+            password: '',
+            redirect: false,
         }
         this.submit = this.submit.bind(this);
     }
+    setRedirect = () => {
+        this.setState({
+          redirect: true,
+        })
+      }
+      renderRedirect = () => {
+        if (this.state.redirect)  {
+                return <Redirect to='/logout' />
+            }
+        }
     render () {
-        // if (!localStorage.getItem('token')) {
-        //     return <Redirect to='/login' />
-        // }
         const { icons } = this.props
         return (
             <div className='Navbar'>
             <nav className='navbar sticky-top headerTask m-2 align-content-between'>
                 <div className='header'>
-                    <Header
+                <Header
                         title={icons.title}
                     />
                 </div> 
@@ -84,28 +96,29 @@ class HeaderTaskbar extends Component {
                         link={icon.link}
                         imgSrc={icon.imgSrc}/>
                     )}
-                    <form class="flex-row" onSubmit = {this.submit}>
-                        <button className='logoutIcon my-2 my-sm-0'>
+                    {this.renderRedirect()}
+                    <form class="logout p-2" onClick={this.setRedirect}>
+                        <button className='headerIcons'>
                             <img src={logout}></img>
                         </button>
 						</form>
-                </div>
+                        </div>
             </nav>
             </div>
+
         )
     }
-    submit(e) {
-        e.preventDefault();
-
-        axios.post('http://127.0.0.1:8103/api/db_logout', {username: this.state.username, password: this.state.password })
-            .then(response => {
-				console.log(response.data)
-                this.setState({loggedIn:false});
-            })
-			.catch((error) => {
-			console.log(error)
-		})
-            ;
+    submit() {
+        localStorage.clear();
+        // e.preventDefault();
+        // axios.post('http://127.0.0.1:8103/api/db_logout', {username: this.state.username })
+        //     .then(response => {
+		// 		console.log(response.data)
+        //           this.setState({loggedIn:false});
+        //     })
+		//   	.catch((error) => {
+        //     console.log(error)
+		// });
     }
 }
 

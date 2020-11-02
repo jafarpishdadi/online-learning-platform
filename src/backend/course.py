@@ -196,4 +196,13 @@ class CourseObj():
 			return make_response("", 200)
 		else:
 			return make_response("Course does not exist.", 404)
-	
+
+	def db_get_all_courses(self):
+		"""
+		gets all courses in the database
+		"""
+		courses = []
+
+		for course in self.Course.objects():
+			courses.append(course)
+		return make_response(jsonify(courses), 200)
