@@ -31,6 +31,8 @@ import profile from './assets/profile.png'
 import DashPage from './pages/dashboard/dashboard.component.js'
 import CreateClass  from  "./components/createClass/createClass.component.js";
 import ClassList  from  "./components/createClass/classList.component.js";
+import ProfilePage from "./pages/profile/profilePage.js";
+
 
 window.token=localStorage.getItem('token');
 
@@ -51,6 +53,11 @@ let headerItems = {link: '/sidebar', title: 'Dashboard', profileImg: profile }
     ReactDOM.render(
         <Router>
           <Switch>
+
+          // profile page
+            <Route exact path="/profile">
+              <ProfilePage/>
+            </Route>
             // login page 
             <Route exact path="/login">
               <LogInPage/>

@@ -9,7 +9,6 @@ import calender
 import course
 import profile
 
-
 app = Flask(__name__) 
 
 # set the database name and the database user's name and password
