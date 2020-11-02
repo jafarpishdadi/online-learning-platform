@@ -18,9 +18,14 @@
 }
 .searchIcon {
     background-color: #FCFCFB;
-    border-color: #FCFCFB;
     border-radius: 10px;
-    border-style: solid;
+    border-style: none;
+}
+
+.headerIcons {
+    background-color: #FCFCFB;
+    border-radius: 10px;
+    border-style: none;
 }
 
 .form-control {
