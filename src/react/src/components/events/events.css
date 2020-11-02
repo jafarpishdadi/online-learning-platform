@@ -1,0 +1,67 @@
+.divider{
+    width:5px;
+    height:auto;
+    display:inline-block;
+}
+
+.eventsCardStyle {
+    display:flex;
+    width: 45vw;
+    height: 50vh;
+    align-items: right;
+    background-color:#FCFCFB;
+    border-color:#FCFCFB;
+    font-family: "Open Sans";
+}
+
+.classCardTitleStyle {
+    font-family: "Open Sans";
+    font-weight: 600;
+    font-size: 35px;
+    text-align: left;
+    margin:10px;
+    margin-top: 10px;
+    color: #7A7A7A;
+}
+.eventSubTitle{
+    font-family: "Open Sans";
+    text-align: left;
+    margin:10px;
+    margin-top: 20px;
+    color: #181616; 
+}
+.workshopSubTitle{
+    font-family: "Open Sans";
+    text-align: left;
+    margin:10px;
+    margin-top: 200px;
+    color: #181616; 
+}
+.btn-see-all{
+	border: none;
+	border-radius: 10px;
+    max-width: 100%;
+    margin-top: 40px;
+    margin-right: 20px;
+    position:absolute;
+    top:0;
+    right:0;
+    color: #FCFCFB;
+	background-color: #A78EC3;
+}
+
+.btn-event{
+	border: none;
+    border-radius: 10px;
+    width:  150px;
+    height: 160.1px;
+    margin-top: 50px;
+    margin:10px;
+    border-radius: 25px;
+    border: 1px solid;
+    padding: 10px;
+    box-shadow: 5px 10px 18px #b6b5b5;
+    border-color: white;
+    float:left;
+}
+

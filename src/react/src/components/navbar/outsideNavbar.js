@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import './outsideNavbar.css' 
 import Logo from '../../assets/uimpactify-logo.png'
+import { Link } from 'react-router-dom';
 
 class OutsideNavbar extends Component {
 	render () {
@@ -10,19 +11,23 @@ class OutsideNavbar extends Component {
 				<div>
 					<ul className="navbar-nav p-0">
 						<li className="nav-item ml-5">
-							<a className="nav-item nav-link custom-link" href="">About</a>
+						<Link to='/login' className="nav-item nav-link custom-link">About</Link>
 						</li>
 						<li className="nav-item ml-5">
-							<a className="nav-item nav-link custom-link" href="">Solutions</a>
+						<Link to='/login' className="nav-item nav-link custom-link">Solutions</Link>
 						</li>
 						<li className="nav-item ml-5">
-							<a className="nav-item nav-link custom-link" href="">Pricing</a>
+						<Link to='/login' className="nav-item nav-link custom-link">Pricing</Link>
 						</li>
 					</ul>
 				</div>
 				<div className="ml-auto">
-					<button className="btn btn-sign m-3">SIGN UP</button>
-  					<button className="btn btn-login m-3">LOGIN</button>
+					<Link to='/create'> 
+						<button className="btn btn-login m-3">SIGN UP</button> 
+					</Link>
+					<Link to='/login'> 
+						<button className="btn btn-login m-3">LOGIN</button> 
+					</Link>
 				</div>
 			</nav>
 		)
