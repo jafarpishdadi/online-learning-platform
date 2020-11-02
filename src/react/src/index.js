@@ -33,6 +33,7 @@ import CreateClass  from  "./components/createClass/createClass.component.js";
 import ClassList  from  "./components/createClass/classList.component.js";
 
 window.token=localStorage.getItem('token');
+
 let navItems = [
     {id: 1, link: "", imgSrc: dashboard, title: "Dashboard" },
     {id: 2, link: "", imgSrc: classes, title: "Classes" },
