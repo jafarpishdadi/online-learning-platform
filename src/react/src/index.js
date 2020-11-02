@@ -33,6 +33,7 @@ import CreateClass  from  "./components/createClass/createClass.component.js";
 import ClassList  from  "./components/createClass/classList.component.js";
 import ProfilePage from "./pages/profile/profilePage.js";
 
+
 window.token=localStorage.getItem('token');
 let navItems = [
     {id: 1, link: "", imgSrc: dashboard, title: "Dashboard" },
@@ -51,6 +52,7 @@ let headerItems = {link: '/sidebar', title: 'Dashboard', profileImg: profile }
     ReactDOM.render(
         <Router>
           <Switch>
+
           // profile page
             <Route exact path="/profile">
               <ProfilePage/>
