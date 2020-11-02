@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import './createClass.css'
+import './classlist.css'
 
 
 class ClassList extends Component {
@@ -19,14 +19,15 @@ class ClassList extends Component {
   render() {
     return (
       <ul>
-                <h1>All Courses</h1>
-        { this.state.persons.map(person => 
-        <li >Course Name: {person.course_name}  
-        <li >Course Category: {person.course_category}
-        <li>Course Instructor: {person.course_instructor}
-        </li>
-        </li>
-        </li>)}
+        <h1>All Courses</h1>
+        { this.state.persons.map(person =>
+          <h2 >Course Name: {person.course_name}
+          <body>
+          <span>Course Category: {person.course_category} </span>
+          <span>Course Instructor:{person.course_instructor}</span>
+          </body>
+          </h2>)}
+          
       </ul>
     )
   }

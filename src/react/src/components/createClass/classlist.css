@@ -1,0 +1,25 @@
+p {
+    font-weight: bold;
+}
+h1{
+    font-size: 30px;
+}
+
+h2{
+    font-size: 20px;
+}
+
+/* body span {
+    display: block;
+    color: black;
+    text-align: center;
+  } */
+  
+body span:hover{color:black;}
+
+ul {
+    width:100%;
+    display: block;
+    height:20px;
+    text-align:left;
+}
