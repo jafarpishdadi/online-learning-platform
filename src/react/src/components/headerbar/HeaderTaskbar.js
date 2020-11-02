@@ -61,11 +61,21 @@ class HeaderTaskbar extends Component {
     }
 
     render () {
+
+        if (!this.state.loggedIn) {
+=======
         if (!localStorage.getItem('token')) {
+
             return <Redirect to='/login' />
         }
+=======
+        // if (!localStorage.getItem('token')) {
+        //     return <Redirect to='/login' />
+        // }
+
         const { icons } = this.props
         return (
+            <div className='Navbar'>
             <nav className='navbar sticky-top headerTask m-2 align-content-between'>
                 <div className='header'>
                     <Header
@@ -96,6 +106,7 @@ class HeaderTaskbar extends Component {
 						</form>
                 </div>
             </nav>
+            </div>
         )
     }
     submit() {

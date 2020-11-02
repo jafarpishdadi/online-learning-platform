@@ -1,0 +1,117 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+/* Calendar */
+
+.react-calendar {
+	display: flex;
+	font-family: "Open Sans" !important;
+	font-size: 30px;
+	border: 0px !important;
+	overflow: hidden;
+	border-color: white;
+	min-width: 30vw;
+	margin-top: 40px;
+	min-height: 20vh;
+	border-radius: 20px;
+	box-shadow: 0 2px 2px -2px rgba(0,0,0,.2);
+}
+
+.react-calendar__navigation {
+	background-color: #A78EC3;
+	color: white;
+	margin-bottom: 0 !important;
+}
+.react-calendar__month-view__days__day--weekend {
+	color: inherit !important;
+}
+
+.react-calendar__month-view__days__day--neighboringMonth {
+	color: #757575 !important;
+}
+
+.react-calendar__tile--now {
+	background: none !important;
+	font-weight: bold;
+	font-size:30px;
+}
+
+.react-calendar__tile--now:hover {
+	background: #e6e6e6 !important;
+	font-weight: bold;
+}
+
+.react-calendar__tile--active {
+	background: #9ED9D9 !important;
+}
+
+.react-calendar__navigation button{
+	color: white;
+}
+
+.react-calendar__navigation__label span {
+	color: white;
+	font-weight: bold;
+	font-size:40px;
+}
+
+.react-calendar__navigation__label:hover {
+	background-color: #c257e2;
+}
+
+.react-calendar__month-view__weekdays {
+	background-color: #F5F7FA !important;
+}
+
+.custom-div {
+	border-radius: 20px;
+	border-color: none;
+}
+
+/* SmallCards */
+
+.custom-card {
+	filter: drop-shadow(0px 8px 16px rgba(137, 176, 175, 0.25));
+	border-radius: 20px;
+	border: none;
+	max-width: 45rem;
+	display: inline-block;
+	font-family: "Open Sans" !important;
+}
+
+.custom-p {
+	color: #7A7A7A;
+	text-align: center;
+}
+
+.custom-a:hover {
+	text-decoration: none;
+	background-color: #e6e6e6;
+}
+
+/* Schedule */
+
+.dot {
+  height: 40px;
+  width: 40px;
+  background-color: none;
+  border-radius: 50%;
+  border-color: #A78EC3;
+  border-style: solid;
+  display: inline-block;
+}
+
+.schedule-card {
+	background: none;
+	border: none;
+}
+
+.custom-header {
+	color: #7A7A7A;
+	font-family: "Open Sans" !important;
+	font-weight: bold;
+}
+
+.custom-time {
+	color: #7A7A7A;
+	font-family: "Open Sans" !important;
+}
