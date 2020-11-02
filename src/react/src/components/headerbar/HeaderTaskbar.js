@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 import './HeaderTaskbar.css'
 import search from '../../assets/search.png'
 import profile from '../../assets/profile.png';
@@ -49,26 +49,33 @@ function Header(props) {
     <h1 className='header'>{props.title}</h1>
     )
 }
-
 class HeaderTaskbar extends Component {
     constructor(props) {
         super(props)
         this.state = {
             username: '',
-            password: ''
+            password: '',
+            redirect: false,
         }
         this.submit = this.submit.bind(this);
     }
-
-    render () {
-        if (!localStorage.getItem('token')) {
-            return <Redirect to='/login' />
+    setRedirect = () => {
+        this.setState({
+          redirect: true,
+        })
+      }
+      renderRedirect = () => {
+        if (this.state.redirect)  {
+                return <Redirect to='/logout' />
+            }
         }
+    render () {
         const { icons } = this.props
         return (
+            <div className='Navbar'>
             <nav className='navbar sticky-top headerTask m-2 align-content-between'>
                 <div className='header'>
-                    <Header
+                <Header
                         title={icons.title}
                     />
                 </div> 
@@ -90,13 +97,19 @@ class HeaderTaskbar extends Component {
                         link={icon.link}
                         imgSrc={icon.imgSrc}/>
                     )}
-                    <form className="logout p-2" onSubmit = {this.submit}>
+
+
+                    {this.renderRedirect()}
+                    <form class="logout p-2" onClick={this.setRedirect}>
+
                         <button className='headerIcons'>
                             <img src={logout}></img>
                         </button>
 						</form>
-                </div>
+                        </div>
             </nav>
+            </div>
+
         )
     }
     submit() {

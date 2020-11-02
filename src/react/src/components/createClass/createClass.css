@@ -4,6 +4,7 @@
     margin: 20px 85px;
     cursor: pointer;
 }
+
 .sideBar {
     display: flex;
     position: absolute;
@@ -16,9 +17,9 @@
     color: white;
     font-family: "Open Sans";
     font-weight: bold;
-    padding: 20px 20px 20px 50px;
+    padding: 20px 10px 20px 0px;
     border-radius: 0px 15px 15px 0px;
-    box-shadow: 0 8px 8px -1px rgba(0,0,0,.2) !important;
+    box-shadow: 0 2px 2px -2px rgba(0,0,0,.2);
 }
 
 .sideBar ul {
@@ -30,19 +31,6 @@
     text-decoration: none;
 }
 
-.sideBar ul a li.active {
-    background: #A78EC3;
-    margin-left: 0;
-    padding-left: 20px;
-    text-decoration: none;
-}
-.sideBar ul a li.active span{
-    color: white;
-    text-decoration: none;
-    text-align: left;
-    margin-left: 20px;
-    margin-right: 12px;
-}
 .sideBar ul a li {
     margin: 10px;
     padding: 10px 10px 10px 0px;
@@ -53,7 +41,7 @@
     text-decoration: none;
 }
 
-.sideBar ul a li span{
+.sideBar ul a li, span{
     text-decoration: none;
     text-align: left;
     color: #919699;
@@ -64,7 +52,7 @@
     position: relative;
 } 
 
-.sideBar ul li a:hover:not(.active) {
+.sideBar ul a li:hover {
     background: #A78EC3;
     box-shadow: 0 20px 20px -2px rgba(0,0,0,.2);
     color:white;
@@ -88,3 +76,37 @@
     margin-left: 20px;
     margin-right: 12px;
 }
+
+/*Create Account Styles*/
+
+.cardStyle {
+    width: 40vw;
+    height: 85vh;
+    align-items: right;
+    background-color: #F7F7FF;
+    box-shadow: 0 2px 2px -2px rgba(0,0,0,.2);
+    font-family: "Open Sans";
+}
+
+.cardTitleStyle {
+    font-family: "Open Sans";
+    font-weight: 600;
+    font-size: 35px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.btnSignUp {
+    background-color: #A78EC3;
+    color: white;
+    width: 120px;
+    height: 50px;
+    font-weight: 600;
+    font-family: "Open Sans";
+    box-shadow: none;
+    border: none;
+    border-radius: 10px;
+    position: center;
+}
+
+
