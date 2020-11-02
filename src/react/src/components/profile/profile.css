@@ -153,14 +153,40 @@
     height: 15px;
     padding-bottom: 20px;
 }
+.element_button {
+    flex: 1;
+    width: 150px;
+    height: 15px;
+    padding-bottom: 20px;
+    padding: 0px;
+    margin: 0px;
+    background-color: transparent;
+    border-radius: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-color: #A78EC3;
+}
 .element_image {
     height: 40px;
     width: 40px;
     margin-left: 5px;
 }
+.invis_button {
+    border-color: transparent;
+    background-color: transparent;
+}
 .edit_button {
     align-self: flex-end;
     margin: 0px 30px 40px 0px;
+    width: 150px;
+    height: 50px;
+    padding-bottom: 20px;
+    padding: 0px;
+    background-color: transparent;
+    border-radius: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-color: #A78EC3;
 }
 .divider {
     padding: 0px;

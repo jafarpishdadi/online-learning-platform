@@ -116,19 +116,26 @@ class Profile extends Component {
                             </div>
                             <div className = "spacer"></div>
                             <div className = "edit_slot">
-                                <img src={up} className="element"/>
+                                {/* <img src={up} className="element"/>
                                 <img src={edit} className="element"/>
-                                <img src={del} className="element"/>
+                                <img src={del} className="element"/> */}
+                                <button className = "element_button">Upload</button>
+                                <button className = "element_button">Edit</button>
+                                <button className = "element_button">Delete</button>
                             </div>
                         </div>
                         <div className = "linked">
                             <div className = "linked_pics">
-                                <img src={fb} className="element_image"/>
-                                <img src={li} className="element_image"/>
+                                <button className = "invis_button">
+                                    <img src={fb} className="element_image"/>
+                                </button>
+                                <button className = "invis_button">
+                                    <img src={li} className="element_image"/>
+                                </button>
                             </div>
                         </div>
                     </div>
-                    <img src={editButton} className="edit_button"/>
+                    <button className = "edit_button">Edit</button>
                 </Card>
             </div>
 		)
