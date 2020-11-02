@@ -18,17 +18,28 @@ class Events extends Component {
         <div className="eventSubTitle">Upcoming Network Events</div>
   		<button className="btn btn-event ">Event Placeholder</button>
   		<button className="btn btn-event ">Event Placeholder</button>
+<<<<<<< Updated upstream
         <button className="btn btn-event ">Event Placeholder</button>
+=======
+		<button className="btn btn-event ">Event Placeholder</button>
+>>>>>>> Stashed changes
 		<button className="btn btn-event ">Event Placeholder</button>
 
         <div className="workshopSubTitle">Upcoming Workshops</div>
   		<button className="btn btn-event ">Workshop Placeholder</button>
   		<button className="btn btn-event ">Workshop Placeholder</button>
+<<<<<<< Updated upstream
 		<button className="btn btn-event ">Workshop Placeholder</button>
         <button className="btn btn-event ">Workshop Placeholder</button>
           
 	</Card.Body>
     <div class = 'square'></div>
+=======
+        <button className="btn btn-event ">Workshop Placeholder</button>
+		<button className="btn btn-event ">Workshop Placeholder</button>
+          
+	</Card.Body>
+>>>>>>> Stashed changes
     </Card>
 
 

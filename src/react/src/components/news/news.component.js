@@ -3,7 +3,10 @@ import ReactDOM from 'react-dom'
 import Card from 'react-bootstrap/Card'
 import axios from 'axios';
 import { Redirect } from 'react-router-dom'
+<<<<<<< Updated upstream
 import pic from '../../assets/change.png'
+=======
+>>>>>>> Stashed changes
 import './news.css'
 
 

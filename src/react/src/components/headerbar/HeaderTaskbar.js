@@ -55,11 +55,18 @@ class HeaderTaskbar extends Component {
         this.submit = this.submit.bind(this);
     }
     render () {
+<<<<<<< Updated upstream
         if (!this.state.loggedIn) {
             return <Redirect to='/login' />
         }
+=======
+        // if (!localStorage.getItem('token')) {
+        //     return <Redirect to='/login' />
+        // }
+>>>>>>> Stashed changes
         const { icons } = this.props
         return (
+            <div className='Navbar'>
             <nav className='navbar sticky-top headerTask m-2 align-content-between'>
                 <div className='header'>
                     <Header
@@ -90,6 +97,7 @@ class HeaderTaskbar extends Component {
 						</form>
                 </div>
             </nav>
+            </div>
         )
     }
     submit(e) {

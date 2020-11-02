@@ -1,5 +1,10 @@
 .classCardStyle {
+<<<<<<< Updated upstream
   width: 50vw;
+=======
+  display: flex;
+  width: 45vw;
+>>>>>>> Stashed changes
   height: 35vh;
   align-items: right;
   background-color:#FCFCFB;
@@ -9,6 +14,7 @@
 }
 
 .classCardTitleStyle {
+<<<<<<< Updated upstream
   font-family: "Open Sans";
   font-weight: 600;
   font-size: 35px;
@@ -16,6 +22,17 @@
   margin:10px;
   margin-top: 10px;
   color: #7A7A7A;
+=======
+  display: flex;
+  font-family: "Open Sans";
+  font-weight: 600;
+  font-size: 35px;
+  text-align: right;
+  margin:10px;
+  margin-top: 10px;
+  color: #7A7A7A;
+
+>>>>>>> Stashed changes
 }
 .btn-learn-more{
 	border: none;
@@ -30,11 +47,19 @@
 
 * {
   box-sizing: border-box;
+<<<<<<< Updated upstream
+=======
+  
+>>>>>>> Stashed changes
 }
 
 body {
   padding: 10px;
   background: #ffffff;
+<<<<<<< Updated upstream
+=======
+  
+>>>>>>> Stashed changes
 }
 .tabs {
   display: flex;
@@ -45,6 +70,10 @@ body {
   border: 1px solid;
   padding: 10px;
   box-shadow: 5px 10px 18px #888888;
+<<<<<<< Updated upstream
+=======
+  border-color: white;
+>>>>>>> Stashed changes
 }
 
 .input {

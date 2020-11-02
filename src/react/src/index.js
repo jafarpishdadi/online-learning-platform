@@ -40,7 +40,13 @@ let navItems = [
     {id: 7, link: "", imgSrc: socialInitiatives, title: "Social Initiatives" },
     {id: 8, link: "", imgSrc: settings, title: "Settings" }
     ]
+<<<<<<< Updated upstream
 let headerItems = {link: '', title: 'Dashboard', profileImg: profile }
+=======
+
+
+let headerItems = {link: '/sidebar', title: 'Dashboard', profileImg: profile }
+>>>>>>> Stashed changes
 
     ReactDOM.render(
         <Router>
@@ -48,6 +54,11 @@ let headerItems = {link: '', title: 'Dashboard', profileImg: profile }
             // login page 
             <Route exact path="/login">
               <LogInPage/>
+            </Route>
+            // dashboard
+            <Route exact path="/dashboard">
+              
+                <DashPage/>
             </Route>
             // create account page
             <Route exact path="/create">

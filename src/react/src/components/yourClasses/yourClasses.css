@@ -3,9 +3,15 @@
     height:auto;
     display:inline-block;
 }
+<<<<<<< Updated upstream
 .classCardStyle {
     width: 600vw;
     height: 10vh;
+=======
+.ClassCardStyle{
+    width: 35vw;
+    height: 35vh;
+>>>>>>> Stashed changes
     align-items: right;
     background-color:#FCFCFB;
     border-color:#FCFCFB;
