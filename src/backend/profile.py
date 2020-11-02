@@ -189,7 +189,7 @@ class ProfileObj():
 
 	def db_delete_profile_language(self):
 		"""
-		Adds a profile language in the database for the corresponding username
+		deletes a profile language in the database for the corresponding username
 		"""
 
 		x = checkFields(self.content, fields=['language', 'username'])
@@ -199,6 +199,102 @@ class ProfileObj():
 		prof_obj = self.Profile.objects(username=self.content['username']).first()
 		if prof_obj:
 			prof_obj.update(pull__languages=self.content['language'])
+			return make_response("", 200)
+		else:
+			return make_response("User does not exist.", 404)
+
+	def db_add_profile_completed_course(self):
+		"""
+		Adds a profile completed_course in the database for the corresponding username
+		"""
+
+		x = checkFields(self.content, fields=['completed_course', 'username'])
+		if (x):
+			return make_response("Missing required field: " + x, 400)
+
+		prof_obj = self.Profile.objects(username=self.content['username']).first()
+		if prof_obj:
+			prof_obj.update(add_to_set__completed_courses=self.content['completed_course'])
+			return make_response("", 200)
+		else:
+			return make_response("User does not exist.", 404)
+
+	def db_delete_profile_completed_course(self):
+		"""
+		deleteds a profile completed_course in the database for the corresponding username
+		"""
+
+		x = checkFields(self.content, fields=['completed_course', 'username'])
+		if (x):
+			return make_response("Missing required field: " + x, 400)
+
+		prof_obj = self.Profile.objects(username=self.content['username']).first()
+		if prof_obj:
+			prof_obj.update(pull__completed_courses=self.content['completed_course'])
+			return make_response("", 200)
+		else:
+			return make_response("User does not exist.", 404)
+
+	def db_add_profile_skill(self):
+		"""
+		Adds a profile skill in the database for the corresponding username
+		"""
+
+		x = checkFields(self.content, fields=['skill', 'username'])
+		if (x):
+			return make_response("Missing required field: " + x, 400)
+
+		prof_obj = self.Profile.objects(username=self.content['username']).first()
+		if prof_obj:
+			prof_obj.update(add_to_set__skills=self.content['skill'])
+			return make_response("", 200)
+		else:
+			return make_response("User does not exist.", 404)
+
+	def db_delete_profile_skill(self):
+		"""
+		deleteds a profile skill in the database for the corresponding username
+		"""
+
+		x = checkFields(self.content, fields=['skill', 'username'])
+		if (x):
+			return make_response("Missing required field: " + x, 400)
+
+		prof_obj = self.Profile.objects(username=self.content['username']).first()
+		if prof_obj:
+			prof_obj.update(pull__skills=self.content['skill'])
+			return make_response("", 200)
+		else:
+			return make_response("User does not exist.", 404)
+
+	def db_add_profile_education(self):
+		"""
+		Adds a profile education in the database for the corresponding username
+		"""
+
+		x = checkFields(self.content, fields=['education', 'username'])
+		if (x):
+			return make_response("Missing required field: " + x, 400)
+
+		prof_obj = self.Profile.objects(username=self.content['username']).first()
+		if prof_obj:
+			prof_obj.update(add_to_set__educations=self.content['education'])
+			return make_response("", 200)
+		else:
+			return make_response("User does not exist.", 404)
+
+	def db_delete_profile_education(self):
+		"""
+		deleteds a profile educations in the database for the corresponding username
+		"""
+
+		x = checkFields(self.content, fields=['education', 'username'])
+		if (x):
+			return make_response("Missing required field: " + x, 400)
+
+		prof_obj = self.Profile.objects(username=self.content['username']).first()
+		if prof_obj:
+			prof_obj.update(pull__educations=self.content['education'])
 			return make_response("", 200)
 		else:
 			return make_response("User does not exist.", 404)

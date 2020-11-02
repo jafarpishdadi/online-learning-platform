@@ -113,6 +113,36 @@ def db_add_profile_language():
 def db_delete_profile_language():
 	return ProfileObj(request.json).db_delete_profile_language()
 
+# adds to the user's completed courses when provided with a json text formatted as {completed_course: completed_course, username: username} 
+@app.route('/api/db_add_profile_completed_course', methods=['PUT'])
+def db_add_profile_completed_course():
+	return ProfileObj(request.json).db_add_profile_completed_course()
+
+# deletes from the user's completed courses when provided with a json text formatted as {completed_course: completed_course, username: username} 
+@app.route('/api/db_delete_profile_completed_course', methods=['DELETE'])
+def db_delete_profile_completed_course():
+	return ProfileObj(request.json).db_delete_profile_completed_course()
+
+# adds to the user's skills when provided with a json text formatted as {skill: skill, username: username} 
+@app.route('/api/db_add_profile_skill', methods=['PUT'])
+def db_add_profile_skill():
+	return ProfileObj(request.json).db_add_profile_skill()
+
+# deletes from the user's skills when provided with a json text formatted as {skill: skill, username: username} 
+@app.route('/api/db_delete_profile_skill', methods=['DELETE'])
+def db_delete_profile_skill():
+	return ProfileObj(request.json).db_delete_profile_skill()
+
+# adds to the user's educations when provided with a json text formatted as {education: education, username: username} 
+@app.route('/api/db_add_profile_education', methods=['PUT'])
+def db_add_profile_education():
+	return ProfileObj(request.json).db_add_profile_education()
+
+# deletes from the user's educations when provided with a json text formatted as {education: education, username: username} 
+@app.route('/api/db_delete_profile_education', methods=['DELETE'])
+def db_delete_profile_education():
+	return ProfileObj(request.json).db_delete_profile_education()
+
 # you can put in your preferred port 
 if __name__ == '__main__':   
 	app.run(host='0.0.0.0', port=8103)
