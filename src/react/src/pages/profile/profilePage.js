@@ -18,38 +18,24 @@ import dashboard from '../../assets/dashboard.png'
 
 
 let educations = [
-    {id:1, text: "University of Toronto Scarbrough Undergraduate"},
-    {id:2, text: "Demo element 2"},
-    {id:3, text: "Demo element 3"}
+    {id:1, text: "UTSC Undergrad"}
 ]
 let skills = [
-    {id:1, text: "Demo element 1"},
-    {id:2, text: "Demo element 2"},
-    {id:3, text: "Demo element 3"},
-    {id:4, text: "Demo element 4"}
+    {id:1, text: "Demo element 2"}
 ]
 let completedCourses = [
-    {id:1, text: "Demo element 1"},
-    {id:2, text: "Demo element 2"}
+    {id:1, text: "CSCC01"}
 ]
 let languages = [
-    {id:1, text: "English (Native)"},
-    {id:2, text: "French (Second)"}
+    {id:2, text: "French"}
 ]
-let description = "According to all known laws of aviation, \
-    there is no way a bee \
-    should be able to fly. \
-    Its wings are too small to get \
-    its fat little body off the ground. \
-    The bee, of course, flies anyway \
-    because bees don't care \
-    what humans think is impossible."
-let name = "Lingfeng Su"
-let timeJoin = "August 2020"
-let firstName = "Lingfeng"
-let lastName = "Su"
-let email =  "Ling.Su@mail.utoronto.ca"
-let phoneNumber = "416-731-9960"
+let description = "literally a genuinely awesome guy"
+let name = "osman de Awesome"
+let timeJoin = "11/02/2020, 15:15:44"
+let firstName = "osman"
+let lastName = "de Awesome"
+let email =  "osman.deAwesome@mail.utoronto.ca"
+let phoneNumber = "555-555-5555"
 
 let headerItems = {link: '/sidebar', title: 'Dashboard', profileImg: profile }
 
