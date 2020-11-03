@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Profile from '../../components/profile/profile.component.js'
 import './profilePage.css'
 import { Redirect } from 'react-router-dom';
+import axios from 'axios';
 // Bunch of pictures
 import Headerbar from  '../..//components/headerbar/HeaderTaskbar.js'
 import Sidebar from '../..//components/sidebar/sidebar.component.js'
@@ -15,6 +16,26 @@ import socialInitiatives from '../../assets/Welfare.png'
 import settings from '../../assets/settings.png'
 import dashboard from '../../assets/dashboard.png'
 // End of pictures
+
+// let educations = [
+//     {id:1, text: "UTSC Undergrad"}
+// ]
+// let skills = [
+//     {id:1, text: "Demo element 2"}
+// ]
+// let completedCourses = [
+//     {id:1, text: "CSCC01"}
+// ]
+// let languages = [
+//     {id:2, text: "French"}
+// ]
+// let description = "literally a genuinely awesome guy"
+// let name = "osman de Awesome"
+// let timeJoin = "11/02/2020, 15:15:44"
+// let firstName = "osman"
+// let lastName = "de Awesome"
+// let email =  "osman.deAwesome@mail.utoronto.ca"
+// let phoneNumber = "555-555-5555"
 
 
 let educations = [
@@ -51,7 +72,7 @@ let lastName = "Su"
 let email =  "Ling.Su@mail.utoronto.ca"
 let phoneNumber = "416-731-9960"
 
-let headerItems = {link: '/sidebar', title: 'Dashboard', profileImg: profile }
+let headerItems = {link: '/sidebar', title: 'Profile', profileImg: profile }
 
 let navItems = [
     {id: 1, link: "", imgSrc: dashboard, title: "Dashboard" },
@@ -65,7 +86,35 @@ let navItems = [
     ]
 
 class ProfilePage extends Component {
+    parser(list) {
+        const obj = {};
+
+        for (let i = 0; i < list.length; i++) {
+            obj[i] = list[i];
+}
+    }
+
 	render() {
+        var user = JSON.parse(localStorage.getItem('username'))
+        axios.get('http://127.0.0.1:8103/api/db_get_profile', {"username": user})
+            .then(response => {
+                console.log(response);
+                let educationsList = JSON.parse(response.educations)
+                let skillsList = JSON.parse(response.skills)
+                let completedCoursesList = JSON.parse(response.completed_courses)
+                let languagesList = JSON.parse(response.language)
+
+                let name = response.name
+                let description = response.description
+                let timeJoin = response.time_join
+                let firstName = response.first_name
+                let lastName = response.last_name
+                let email =  response.email
+                let phoneNumber = response.phone_number
+			})
+			.catch((error) => {
+			console.log(error)
+		});
 		return(
 			<React.Fragment>
                 <Sidebar books={navItems}/>

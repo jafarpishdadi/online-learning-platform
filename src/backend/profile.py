@@ -84,10 +84,12 @@ class ProfileObj():
 			return make_response("Missing required field: " + x, 400)
 
 		prof_obj = self.Profile.objects(username=self.content['username']).first()
+		print("Before")
 		if prof_obj:
 			return make_response(jsonify(prof_obj.to_json()), 200)
 		else:
-			return make_response("", 404)
+			return make_response("Username does not exist", 404)
+		print("After")
 
 	def db_update_profile_user_name(self):
 		"""
