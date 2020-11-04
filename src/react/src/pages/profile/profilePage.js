@@ -39,23 +39,23 @@ import dashboard from '../../assets/dashboard.png'
 
 
 let educations = [
-    {id:1, text: "University of Toronto Scarbrough Undergraduate"},
-    {id:2, text: "Demo element 2"},
-    {id:3, text: "Demo element 3"}
+    "University of Toronto Scarbrough Undergraduate",
+    "Demo element 2",
+    "Demo element 3"
 ]
 let skills = [
-    {id:1, text: "Demo element 1"},
-    {id:2, text: "Demo element 2"},
-    {id:3, text: "Demo element 3"},
-    {id:4, text: "Demo element 4"}
+    "Demo element 1",
+    "Demo element 2",
+    "Demo element 3",
+    "Demo element 4"
 ]
 let completedCourses = [
-    {id:1, text: "Demo element 1"},
-    {id:2, text: "Demo element 2"}
+    "Demo element 1",
+    "Demo element 2"
 ]
 let languages = [
-    {id:1, text: "English (Native)"},
-    {id:2, text: "French (Second)"}
+    "English (Native)",
+    "French (Second)"
 ]
 let description = "According to all known laws of aviation, \
     there is no way a bee \
@@ -86,35 +86,27 @@ let navItems = [
     ]
 
 class ProfilePage extends Component {
-    parser(list) {
-        const obj = {};
-
-        for (let i = 0; i < list.length; i++) {
-            obj[i] = list[i];
-}
-    }
 
 	render() {
-        var user = JSON.parse(localStorage.getItem('username'))
-        axios.get('http://127.0.0.1:8103/api/db_get_profile', {"username": user})
-            .then(response => {
-                console.log(response);
-                let educationsList = JSON.parse(response.educations)
-                let skillsList = JSON.parse(response.skills)
-                let completedCoursesList = JSON.parse(response.completed_courses)
-                let languagesList = JSON.parse(response.language)
+        // axios.post('http://127.0.0.1:8103/api/db_get_profile', {'username': localStorage.getItem('username')})
+        //     .then(response => {
+        //         console.log(response);
+        //         let educationsList = JSON.parse(response.educations)
+        //         let skillsList = JSON.parse(response.skills)
+        //         let completedCoursesList = JSON.parse(response.completed_courses)
+        //         let languagesList = JSON.parse(response.language)
 
-                let name = response.name
-                let description = response.description
-                let timeJoin = response.time_join
-                let firstName = response.first_name
-                let lastName = response.last_name
-                let email =  response.email
-                let phoneNumber = response.phone_number
-			})
-			.catch((error) => {
-			console.log(error)
-		});
+        //         let name = response.name
+        //         let description = response.description
+        //         let timeJoin = response.time_join
+        //         let firstName = response.first_name
+        //         let lastName = response.last_name
+        //         let email =  response.email
+        //         let phoneNumber = response.phone_number
+		// 	})
+		// 	.catch((error) => {
+		// 	console.log(error)
+		// });
 		return(
 			<React.Fragment>
                 <Sidebar books={navItems}/>
