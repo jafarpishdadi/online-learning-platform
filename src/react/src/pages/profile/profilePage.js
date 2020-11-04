@@ -17,40 +17,6 @@ import settings from '../../assets/settings.png'
 import dashboard from '../../assets/dashboard.png'
 // End of pictures
 
-let educations = [
-    "University of Toronto Scarbrough Undergraduate",
-    "Demo element 2",
-    "Demo element 3"
-]
-let skills = [
-    "Demo element 1",
-    "Demo element 2",
-    "Demo element 3",
-    "Demo element 4"
-]
-let completedCourses = [
-    "Demo element 1",
-    "Demo element 2"
-]
-let languages = [
-    "English (Native)",
-    "French (Second)"
-]
-let description = "According to all known laws of aviation, \
-    there is no way a bee \
-    should be able to fly. \
-    Its wings are too small to get \
-    its fat little body off the ground. \
-    The bee, of course, flies anyway \
-    because bees don't care \
-    what humans think is impossible."
-let name = "Lingfeng Su"
-let timeJoin = "August 2020"
-let firstName = "Lingfeng"
-let lastName = "Su"
-let email =  "Ling.Su@mail.utoronto.ca"
-let phoneNumber = "416-731-9960"
-
 let headerItems = {link: '/sidebar', title: 'Profile', profileImg: profile }
 
 let navItems = [
