@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import SchedulingPage from '../../pages/scheduling/scheduling'
 import './calendar.css'
 import TitleImage from '../../assets/schedule.png'
 
