@@ -62,7 +62,7 @@ class CalenderObj():
 		# Checks if the user exists
 		user_obj = User.objects(email=self.content['email']).first()
 		if not user_obj:
-			return make_response("", 404)
+			return make_response("User does not exist", 404)
 
 		self.Event(
 			class_name=self.content['class'], 
@@ -93,4 +93,31 @@ class CalenderObj():
 				schedule.append(event.to_json())
 			return make_response(jsonify(schedule), 200)
 		else:
-			return make_response("", 404)
+			return make_response("Event for user does not exist", 404)
+	
+	def db_update_event(self):
+		"""
+		Updates the event in the database for the corresponding email
+		"""
+
+		x = checkFields(self.content, fields=['class', 'start_time', 'end_time', 'section', 'lesson','location', 'lable','link', 'email','date'])
+		if (x):
+			return make_response("Missing required field: " + x, 400)
+
+		# Checks if the event exists for the user
+		event = self.Event.objects(class_name=self.content['class'], email=self.content['email']).first()
+		if event:
+			event.update(
+				class_name=self.content['class'], 
+				start_time=self.content['start_time'], 
+				end_time=self.content['end_time'],
+				section=self.content['section'], 
+				lesson=self.content['lesson'],
+				location=self.content['location'], 
+				lable=self.content['lable'],
+				link=self.content['link'], 
+				email=self.content['email'],
+				date=self.content['date'])
+			return make_response("", 200)
+		else:
+			return make_response("Event not found", 400)
