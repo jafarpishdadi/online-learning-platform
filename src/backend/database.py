@@ -78,7 +78,7 @@ def db_create_profile():
 	return ProfileObj(request.json).db_create_profile()
 
 # returns the profile requested from the database when provided with a json text formatted as {username: username}
-@app.route('/api/db_get_profile', methods=['GET'])
+@app.route('/api/db_get_profile', methods=['POST'])
 def db_get_profile():
 	print(request.json)
 	return ProfileObj(request.json).db_get_profile()

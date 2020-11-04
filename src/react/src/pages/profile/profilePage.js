@@ -17,27 +17,6 @@ import settings from '../../assets/settings.png'
 import dashboard from '../../assets/dashboard.png'
 // End of pictures
 
-// let educations = [
-//     {id:1, text: "UTSC Undergrad"}
-// ]
-// let skills = [
-//     {id:1, text: "Demo element 2"}
-// ]
-// let completedCourses = [
-//     {id:1, text: "CSCC01"}
-// ]
-// let languages = [
-//     {id:2, text: "French"}
-// ]
-// let description = "literally a genuinely awesome guy"
-// let name = "osman de Awesome"
-// let timeJoin = "11/02/2020, 15:15:44"
-// let firstName = "osman"
-// let lastName = "de Awesome"
-// let email =  "osman.deAwesome@mail.utoronto.ca"
-// let phoneNumber = "555-555-5555"
-
-
 let educations = [
     "University of Toronto Scarbrough Undergraduate",
     "Demo element 2",
@@ -86,44 +65,59 @@ let navItems = [
     ]
 
 class ProfilePage extends Component {
+    state = {
+        educations: [],
+        skills: [],
+        completedCourses:[],
+        languages: [],
+        name: '',
+        description: '',
+        timeJoin: '',
+        firstName: '',
+        lastName: '',
+        email:  '',
+        phoneNumber: '',
+    };
+    componentDidMount() {
+        axios.post('http://127.0.0.1:8103/api/db_get_profile', {'username': 'osman2'})
+            .then(response => {
+                console.log(response);
+                this.setState({educations: response.data['educations']})
+                this.setState({skills: response.data['skills']})
+                this.setState({completedCourses:response.data['completed_courses']})
+                this.setState({languages: response.data['languages']})
+                this.setState({name: response.data['name']})
+                this.setState({description: response.data['educations']})
+                this.setState({timeJoin: response.data['time_join']})
+                this.setState({firstName: response.data['first_name']})
+                this.setState({lastName: response.data['last_name']})
+                this.setState({email: response.data['phone_number']}) //Change this later XD no EMAIL yet
+                this.setState({phoneNumber: response.data['phone_number']})
+            })
+			.catch((error) => {
+			console.log(error)
+        });
+    }
 
 	render() {
-        // axios.post('http://127.0.0.1:8103/api/db_get_profile', {'username': localStorage.getItem('username')})
-        //     .then(response => {
-        //         console.log(response);
-        //         let educationsList = JSON.parse(response.educations)
-        //         let skillsList = JSON.parse(response.skills)
-        //         let completedCoursesList = JSON.parse(response.completed_courses)
-        //         let languagesList = JSON.parse(response.language)
-
-        //         let name = response.name
-        //         let description = response.description
-        //         let timeJoin = response.time_join
-        //         let firstName = response.first_name
-        //         let lastName = response.last_name
-        //         let email =  response.email
-        //         let phoneNumber = response.phone_number
-		// 	})
-		// 	.catch((error) => {
-		// 	console.log(error)
-		// });
+        
 		return(
 			<React.Fragment>
                 <Sidebar books={navItems}/>
                 <Headerbar icons={headerItems}/>
                 <div className = "profileBox">
                     <Profile 
-                        educations = {educations} 
-                        skills = {skills} 
-                        completedCourses = {completedCourses} 
-                        languages = {languages}
-                        name = {name}
-                        description = {description}
-                        timeJoin = {timeJoin}
-                        firstName = {firstName}
-                        lastName = {lastName}
-                        email =  {email}
-                        phoneNumber = {phoneNumber}
+                        educations = {this.state.educations} 
+                        skills = {this.state.skills} 
+                        completedCourses = {this.state.completedCourses} 
+                        languages = {this.state.languages}
+                        name = {this.state.name}
+                        description = {this.state.description}
+                        timeJoin = {this.state.timeJoin}
+                        firstName = {this.state.firstName}
+                        lastName = {this.state.lastName}
+                        email =  {this.state.email}
+                        phoneNumber = {this.state.phoneNumber}
                         />
                 </div>
                     
