@@ -9,7 +9,7 @@ class SmallCards extends Component {
 	render() {
 		return (
 			<div class="d-flex flex-column">
-				<div class="card-deck pt-4 pl-0">
+				<div class="card-deck pt-4">
 					<a href="#" class="card custom-card pl-0 custom-a">
 						<img class="rounded mx-auto d-block pl-3 pt-2" src={AddEvent}/>
 						<p class="card-text custom-p mx-auto p-2 align-text">Add/Join <br />an Event</p>

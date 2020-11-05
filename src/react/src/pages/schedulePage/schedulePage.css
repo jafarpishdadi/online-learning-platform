@@ -18,3 +18,8 @@
 .SmallCards {
 	max-width: 20%;
 }
+
+.custom-div {
+	width: 25%;
+	margin-left: 300px;
+}

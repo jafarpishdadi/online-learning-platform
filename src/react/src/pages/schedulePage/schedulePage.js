@@ -36,7 +36,6 @@ class SchedulePage extends Component {
 				<div class="d-flex flex-row p-2">
 					<div class="d-flex flex-column">
 						<Calendar />
-						<SmallCards />
 					</div>
 					<Schedule />
 				</div>
