@@ -22,16 +22,21 @@ app.config["MONGODB_HOST"] = DB_URI
 db = MongoEngine()
 db.init_app(app)
 
-# creates a new user and posts it to the database when provided with a json text formatted as {user_type: user_type, user_name: user_name, password: password, email: email}
+# creates a new user and posts it to the database when provided with a json text formatted as {user_type: user_type, username: username, password: password, email: email}
 @app.route('/api/db_create_user', methods=['POST'])
 def db_create_user():
 	print(request.json)
 	return UserObj(request.json).db_create_user()
 
 # returns the user requested from the database when provided with a json text formatted as {email: email}
-@app.route('/api/db_get_user', methods=['GET'])
+@app.route('/api/db_get_user', methods=['POST'])
 def db_get_user():
 	return UserObj(request.json).db_get_user()
+
+# returns the user email requested from the database when provided with a json text formatted as {username: username}
+@app.route('/api/db_get_user_email', methods=['POST'])
+def db_get_user_email():
+	return UserObj(request.json).db_get_user_email()
 
 # updates the user's name when provided with a json text formatted as {email: email, username: username} 
 @app.route('/api/db_update_user_name', methods=['PUT'])
@@ -68,7 +73,7 @@ def db_login():
 def db_logout():
     return UserObj(request.json).db_logout()
 
-@app.route('/api/db_get_consultants', methods=['GET'])
+@app.route('/api/db_get_consultants', methods=['POST'])
 def db_get_consultants():
 	return UserObj(request.json).db_get_consultants()
 	
