@@ -87,7 +87,7 @@ class ProfileObj():
 		if prof_obj:
 			return make_response(jsonify(prof_obj.to_json()), 200)
 		else:
-			return make_response("", 404)
+			return make_response("Username does not exist", 404)
 
 	def db_update_profile_user_name(self):
 		"""
