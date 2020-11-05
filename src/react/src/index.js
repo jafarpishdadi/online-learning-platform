@@ -64,16 +64,11 @@ let headerItems = {link: '/sidebar', title: 'Dashboard', profileImg: profile }
             </Route>
             // dashboard
             <Route exact path="/dashboard">
-              
                 <DashPage/>
             </Route>
             // create account page
             <Route exact path="/create">
                 <CreateAccountPage/>
-            </Route>
-            // create account page
-            <Route exact path="/dashboard">
-                <DashPage/>
             </Route>
             // yourclasses comp
             <Route exact path="/classes">

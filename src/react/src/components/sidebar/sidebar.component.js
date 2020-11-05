@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import Logo from '../../assets/uimpactify-logo.png'
 import './sidebar.css'
 
-const NavItem = ({link, imgSrc, title, active}) => {
+const NavItem = ({link, imgSrc, title}) => {
 
     function HeaderView() {
         const location = useLocation();
@@ -36,11 +36,6 @@ const NavItem = ({link, imgSrc, title, active}) => {
   )
 }
 
-function HeaderView() {
-    const location = useLocation();
-    console.log(location.pathname);
-    return <span>Path : {location.pathname}</span>
-  }
 
 class Sidebar extends Component {
     constructor(props) {

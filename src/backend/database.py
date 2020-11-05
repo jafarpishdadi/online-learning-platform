@@ -1,4 +1,5 @@
 from flask import Flask, make_response, request, jsonify
+from flask_cors import CORS
 from flask_mongoengine import MongoEngine
 from user import UserObj 
 from profile import ProfileObj
@@ -189,7 +190,7 @@ def db_get_courses_of_instructor():
 	return CourseObj(request.json).db_get_courses_of_instructor()
 
 # returns all of the courses taken by the given student when provided with a json text formatted as {course_name: course_name, student: student}
-@app.route('/api/db_get_courses_of_student', methods=['GET'])
+@app.route('/api/db_get_courses_of_student', methods=['POST'])
 def db_get_courses_of_student():
 	return CourseObj(request.json).db_get_courses_of_student()
 

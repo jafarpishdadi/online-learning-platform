@@ -21,7 +21,7 @@ import { Redirect } from 'react-router-dom';
 let headerItems = {link: '/sidebar', title: 'Dashboard', profileImg: profile }
 
 let navItems = [
-    {id: 1, link: "", imgSrc: dashboard, title: "Dashboard" },
+    {id: 1, link: "/dashboard", imgSrc: dashboard, title: "Dashboard" },
     {id: 2, link: "", imgSrc: classes, title: "Classes" },
     {id: 3, link: "", imgSrc: scheduling, title: "Scheduling" },
     {id: 4, link: "", imgSrc: community, title: "Community" },
