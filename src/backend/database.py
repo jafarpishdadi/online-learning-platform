@@ -68,7 +68,8 @@ def db_login():
 def db_logout():
     return UserObj(request.json).db_logout()
 
-@app.route('/api/db_get_consultants', methods=['GET'])
+# returns list of consultants with optional parameters formetted as {email: email, username: username, name: name}
+@app.route('/api/db_get_consultants', methods=['POST'])
 def db_get_consultants():
 	return UserObj(request.json).db_get_consultants()
 	
