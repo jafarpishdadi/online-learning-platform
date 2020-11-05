@@ -26,6 +26,7 @@ db.init_app(app)
 @app.route('/api/db_create_user', methods=['POST'])
 def db_create_user():
 	print(request.json)
+	ProfileObj(request.json).db_create_profile()
 	return UserObj(request.json).db_create_user()
 
 # returns the user requested from the database when provided with a json text formatted as {email: email}
