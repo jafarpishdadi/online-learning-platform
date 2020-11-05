@@ -27,13 +27,14 @@ Collaborators:
 * Same as Parent
 * Course
 _______
-Class name: ConsultantUser <br />
+Class name: InstructorUser <br />
 Parent class (if any): 
 * User
 Classname Subclasses (if any): <br />
 Responsibilities: 
 * Same as Parent
 * Book an appointment (event) with a student
+* Create a course
 Collaborators: 
 * Same as Parent
 _______
@@ -91,6 +92,7 @@ Responsibilities:
 * Access, create and update calendar events
 Collaborators: 
 * User
+* Calendar
 _______
 Class name: Message <br />
 Parent class (if any): <br />
@@ -101,3 +103,33 @@ Responsibilities:
 * Access and create conversations with particular users
 Collaborators: 
 * User
+_______
+Class name: Dashboard <br />
+Parent class (if any): <br />
+Classname Subclasses (if any): <br />
+Responsibilities: 
+* Display Calendar, Courses, News
+Collaborators: 
+* Calendar
+* Courses
+* News
+_______
+Class name: Calendar <br />
+Parent class (if any): <br />
+Classname Subclasses (if any): <br />
+Responsibilities: 
+* Display Events
+* Organize events
+Collaborators: 
+* Dashboard
+* User
+* Event
+_______
+Class name: News <br />
+Parent class (if any): <br />
+Classname Subclasses (if any): <br />
+Responsibilities: 
+* Display News
+Collaborators: 
+* Dashboard
+
