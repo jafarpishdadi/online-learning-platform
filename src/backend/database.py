@@ -84,11 +84,6 @@ def db_get_profile():
 	print(request.json)
 	return ProfileObj(request.json).db_get_profile()
 
-# updates the user's username when provided with a json text formatted as {new_username: new_username, old_username: old_username} 
-@app.route('/api/db_update_profile_user_name', methods=['PUT'])
-def db_update_profile_user_name():
-	return ProfileObj(request.json).db_update_profile_user_name()
-
 # updates the user's phone number when provided with a json text formatted as {phone_number: phone_number, username: username} 
 @app.route('/api/db_update_profile_phone_number', methods=['PUT'])
 def db_update_profile_phone_number():

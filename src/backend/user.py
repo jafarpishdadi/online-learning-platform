@@ -3,6 +3,8 @@ import hashlib
 from flask import Flask, make_response, request, jsonify
 from Exceptions.MissingRequiredField import checkFields
 from datetime import datetime
+from profile import ProfileObj
+import profile
 
 
 class UserObj():
@@ -93,6 +95,8 @@ class UserObj():
 
 		user_obj = self.User.objects(email=self.content['email']).first()
 		if user_obj:
+			prof_obj = ProfileObj.Profile.objects(username=user_obj.username).first()
+			prof_obj.update(username=self.content['username'])
 			user_obj.update(username=self.content['username'])
 			return make_response("", 200)
 		else:
