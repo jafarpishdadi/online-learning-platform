@@ -155,7 +155,7 @@ def db_create_event():
     return CalenderObj(request.json).db_create_event()
 
 # Gets an event for the user
-@app.route('/api/db_get_schedule', methods=['GET'])
+@app.route('/api/db_get_schedule', methods=['PUT'])
 def db_get_event():
     return CalenderObj(request.json).db_get_event()
 
