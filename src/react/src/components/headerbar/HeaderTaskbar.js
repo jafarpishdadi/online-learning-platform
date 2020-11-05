@@ -46,7 +46,7 @@ function Profile(props) {
 
 function Header(props) {
     return (
-    <h1 classname='header'>{props.title}</h1>
+    <h1 className='header'>{props.title}</h1>
     )
 }
 class HeaderTaskbar extends Component {
@@ -81,7 +81,7 @@ class HeaderTaskbar extends Component {
                 </div> 
                 <div className='icons d-flex flex-row'>
                     <form className='form-inline'>
-                        <input class='form-control mr-sm-2' type='text' placeholder='Search'></input>
+                        <input className='form-control mr-sm-2' type='text' placeholder='Search'></input>
                         <button className='searchIcon my-2 my-sm-0' type='submit'>
                             <img src={search}></img>
                         </button>
@@ -93,11 +93,15 @@ class HeaderTaskbar extends Component {
                     {headerIcons.map(
                         (icon) =>
                         <HeaderIcon
+                        key={icon.id}
                         link={icon.link}
                         imgSrc={icon.imgSrc}/>
                     )}
+
+
                     {this.renderRedirect()}
                     <form class="logout p-2" onClick={this.setRedirect}>
+
                         <button className='headerIcons'>
                             <img src={logout}></img>
                         </button>

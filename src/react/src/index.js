@@ -35,6 +35,7 @@ import ProfilePage from "./pages/profile/profilePage.js";
 
 
 window.token=localStorage.getItem('token');
+
 let navItems = [
     {id: 1, link: "", imgSrc: dashboard, title: "Dashboard" },
     {id: 2, link: "", imgSrc: classes, title: "Classes" },
@@ -63,16 +64,11 @@ let headerItems = {link: '/sidebar', title: 'Dashboard', profileImg: profile }
             </Route>
             // dashboard
             <Route exact path="/dashboard">
-              
                 <DashPage/>
             </Route>
             // create account page
             <Route exact path="/create">
                 <CreateAccountPage/>
-            </Route>
-            // create account page
-            <Route exact path="/dashboard">
-                <DashPage/>
             </Route>
             // yourclasses comp
             <Route exact path="/classes">

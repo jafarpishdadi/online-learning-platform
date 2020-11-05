@@ -14,7 +14,7 @@ class Classes extends Component {
 	  listRedirect = () => {
 		this.setState({
 		  redirect: true,
-		  component:'seeall'
+		  component:'seeAll'
 		})
 	  }
 
@@ -29,7 +29,7 @@ class Classes extends Component {
 			if (this.state.component == "class"){
 				return <Redirect to='/createclass' />
 			}
-			else if(this.state.component == "seeall"){
+			else if(this.state.component == "seeAll"){
 				return <Redirect to='/classlist' />
 			}
 	  }

@@ -1,4 +1,5 @@
 from flask import Flask, make_response, request, jsonify
+from flask_cors import CORS
 from flask_mongoengine import MongoEngine
 from user import UserObj 
 from profile import ProfileObj
@@ -153,10 +154,15 @@ def db_delete_profile_education():
 def db_create_event():
     return CalenderObj(request.json).db_create_event()
 
-# Allows Creation Of events for a user
+# Gets an event for the user
 @app.route('/api/db_get_schedule', methods=['GET'])
 def db_get_event():
     return CalenderObj(request.json).db_get_event()
+
+#updates events for a user
+@app.route('/api/db_update_event', methods=['PUT'])
+def db_update_event():
+    return CalenderObj(request.json).db_update_event()
 
 # creates a new course and posts it to the database when provided with a json text formatted as {course_category: course_category, course_name: course_name, course_instructor: course_instructor}
 @app.route('/api/db_create_course', methods=['POST'])
@@ -185,7 +191,7 @@ def db_get_courses_of_instructor():
 	return CourseObj(request.json).db_get_courses_of_instructor()
 
 # returns all of the courses taken by the given student when provided with a json text formatted as {course_name: course_name, student: student}
-@app.route('/api/db_get_courses_of_student', methods=['GET'])
+@app.route('/api/db_get_courses_of_student', methods=['POST'])
 def db_get_courses_of_student():
 	return CourseObj(request.json).db_get_courses_of_student()
 
