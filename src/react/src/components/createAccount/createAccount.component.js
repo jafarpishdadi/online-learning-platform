@@ -108,12 +108,20 @@ class createAccount extends Component {
             .then(response => {
 				console.log(response.data)
 				this.setState({accountCreated:true});
+				localStorage.setItem('username', (this.state.username))
 				localStorage.setItem('token', response.data.auth.access_token)
 			})
 			.catch((error) => {
 			console.log(error)
-		})
-            ;
+		});
+
+		axios.post('http://127.0.0.1:8103/api/db_create_profile', {'username': this.state.username})
+            .then(response => {
+                console.log(response);
+            })
+			.catch((error) => {
+			console.log(error)
+        });
     }
 }
 

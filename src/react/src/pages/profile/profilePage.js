@@ -66,7 +66,9 @@ class ProfilePage extends Component {
     }
 
 	render() {
-        
+        if (!localStorage.getItem('token')) {
+            return <Redirect to='/login' />
+        }
 		return(
 			<React.Fragment>
                 <Sidebar books={navItems}/>

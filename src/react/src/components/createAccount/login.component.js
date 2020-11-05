@@ -88,8 +88,9 @@ class Login extends Component {
             .then(response => {
 				console.log(response);
 				localStorage.setItem('token', response.data)
-				localStorage.setItem('username', JSON.stringify(this.state.username))
+				localStorage.setItem('username', (this.state.username))
 				this.setState({loggedIn:true});
+				console.log(localStorage.getItem('username'))
 			})
 			.catch((error) => {
 			console.log(error)
