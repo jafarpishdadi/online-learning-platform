@@ -7,7 +7,7 @@ class Schedule extends Component {
 	render() {
 		return (
 			<React.Fragment>
-			<div class="d-flex flex-column p-2">
+			<div class="d-flex flex-column p-2 custom-div">
 				<div class="card card-header d-flex flex-row schedule-card">
 					<span class="dot pt-1">
 						<img class="rounded mx-auto my-auto d-block" src={TitleImage}></img>

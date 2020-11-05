@@ -33,9 +33,14 @@ class SchedulePage extends Component {
 			<React.Fragment>
 				<Sidebar books={navItems}/>
 				<Header icons={headerItems}/>
-				<Calendar />
-				<SmallCards />
-				<Schedule />
+				<div class="d-flex flex-row p-2">
+					<div class="d-flex flex-column">
+						<Calendar />
+						<SmallCards />
+					</div>
+					<Schedule />
+				</div>
+				
 			</React.Fragment>
 		)
 	}

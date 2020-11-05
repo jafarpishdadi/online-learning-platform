@@ -2,6 +2,11 @@
 
 /* Calendar */
 
+.react-calendar {
+	margin-left: 300px;
+	margin-top: 20px;
+}
+
 /* .react-calendar {
 	display: flex;
 	font-family: "Open Sans" !important;
@@ -88,6 +93,10 @@
 	background-color: #e6e6e6;
 }
 
+.custom-a {
+	max-width: 45px;
+}
+
 /* Schedule */
 
 .dot {
@@ -114,4 +123,8 @@
 .custom-time {
 	color: #7A7A7A;
 	font-family: "Open Sans" !important;
+}
+
+.custom-div {
+	margin-left: 25px;
 }
