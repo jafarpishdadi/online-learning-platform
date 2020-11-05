@@ -45,7 +45,7 @@ class ProfilePage extends Component {
         phoneNumber: '',
     };
     componentDidMount() {
-        axios.post('http://127.0.0.1:8103/api/db_get_profile', {'username': 'osman2'})
+        axios.post('http://127.0.0.1:8103/api/db_get_profile', {'username': localStorage.getItem('username')})
             .then(response => {
                 console.log(response);
                 this.setState({educations: response.data['educations']})
