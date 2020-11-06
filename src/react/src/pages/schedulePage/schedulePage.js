@@ -25,7 +25,12 @@ let navItems = [
     {id: 6, link: "", imgSrc: achievements, title: "Achievements" },
     {id: 7, link: "", imgSrc: socialInitiatives, title: "Social Initiatives" },
     {id: 8, link: "", imgSrc: settings, title: "Settings" }
-    ]
+	]
+	
+let selectedDate = [
+	{id: 1, date: window.localStorage.getItem('date')}
+]
+
 
 class SchedulePage extends Component {
 	render() {
@@ -35,9 +40,13 @@ class SchedulePage extends Component {
 				<Header icons={headerItems}/>
 				<div class="d-flex flex-row p-2">
 					<div class="d-flex flex-column">
-						<Calendar />
+						<Calendar theDate={selectedDate}/>
+						<div class="custom-div">
+							<SmallCards />
+						</div>
 					</div>
-					<Schedule />
+					{/* <Schedule /> */}
+					
 				</div>
 				
 			</React.Fragment>

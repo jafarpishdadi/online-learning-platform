@@ -2,7 +2,6 @@ import mongoengine as me
 import hashlib
 from flask import Flask, make_response, request, jsonify
 from Exceptions.MissingRequiredField import checkFields
-from Exceptions.MissingRequiredField import checkFieldsReturnAll
 from datetime import datetime
 from profile import ProfileObj
 import profile
