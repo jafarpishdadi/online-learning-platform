@@ -9,15 +9,27 @@ class CalendarComponent extends Component {
 
 	state = {
 		date: new Date(),
+		selectedDay: String,
+		email: String,
 	  }
 
 	onChange = date => this.setState({ date })
 
 	componentDidMount() {
-		console.log(localStorage.getItem('token'));
-		console.log(localStorage.getItem('username'));
-		console.log(localStorage);
-	  }
+		axios.post('http://127.0.0.1:8103/api/db_get_user_email', {'username': localStorage.getItem('username')})
+			.then(res => {
+				this.state.email = res.data;
+			})
+	}
+
+	clickDay(date) {
+		this.state.selectedDay = (date.getFullYear() + ", " + date.getMonth() + ", " + date.getDate()).toString();
+		console.log(this.state.selectedDay);
+		axios.post('http://127.0.0.1:8103/api/db_get_schedule', {'date': this.state.selectedDay, 'email': this.state.email})
+			.then(res => {
+				console.log(res);
+			})
+	}
 
 	render () {
 
@@ -41,6 +53,7 @@ class CalendarComponent extends Component {
 						minDetail={"year"}
 						calendarType={"US"}
 						showDoubleView={false}
+						onClickDay={this.clickDay(this.state.date)}
 						/>
 				</div>
 			</div>
