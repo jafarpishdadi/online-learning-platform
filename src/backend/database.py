@@ -1,4 +1,5 @@
 from flask import Flask, make_response, request, jsonify
+from flask_cors import CORS
 from flask_mongoengine import MongoEngine
 from user import UserObj 
 from profile import ProfileObj
@@ -25,6 +26,7 @@ db.init_app(app)
 @app.route('/api/db_create_user', methods=['POST'])
 def db_create_user():
 	print(request.json)
+	ProfileObj(request.json).db_create_profile()
 	return UserObj(request.json).db_create_user()
 
 # returns the user requested from the database when provided with a json text formatted as {email: email}
@@ -67,7 +69,8 @@ def db_login():
 def db_logout():
     return UserObj(request.json).db_logout()
 
-@app.route('/api/db_get_consultants', methods=['GET'])
+# returns list of consultants with optional parameters formetted as {email: email, username: username, name: name}
+@app.route('/api/db_get_consultants', methods=['POST'])
 def db_get_consultants():
 	return UserObj(request.json).db_get_consultants()
 	
@@ -78,8 +81,9 @@ def db_create_profile():
 	return ProfileObj(request.json).db_create_profile()
 
 # returns the profile requested from the database when provided with a json text formatted as {username: username}
-@app.route('/api/db_get_profile', methods=['GET'])
+@app.route('/api/db_get_profile', methods=['POST'])
 def db_get_profile():
+	print(request.json)
 	return ProfileObj(request.json).db_get_profile()
 
 # updates the user's username when provided with a json text formatted as {new_username: new_username, old_username: old_username} 
@@ -189,7 +193,7 @@ def db_get_courses_of_instructor():
 	return CourseObj(request.json).db_get_courses_of_instructor()
 
 # returns all of the courses taken by the given student when provided with a json text formatted as {course_name: course_name, student: student}
-@app.route('/api/db_get_courses_of_student', methods=['GET'])
+@app.route('/api/db_get_courses_of_student', methods=['POST'])
 def db_get_courses_of_student():
 	return CourseObj(request.json).db_get_courses_of_student()
 
