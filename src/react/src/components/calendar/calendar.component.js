@@ -25,13 +25,18 @@ class CalendarComponent extends Component {
 
 	clickDay(date) {
 		this.state.selectedDay = (date.getFullYear() + ", " + date.getMonth() + ", " + date.getDate()).toString();
-		// console.log(this.state.selectedDay);
-		window.localStorage.setItem('date', this.state.selectedDay);
-
+		window.localStorage.setItem('date', date.toDateString());
 		axios.post('http://127.0.0.1:8103/api/db_get_schedule', {'date': this.state.selectedDay, 'email': this.state.email})
 			.then(res => {
 				console.log(res);
-			})
+				// if it works print new schedule
+			});
+			// .catch((error) => {
+			// 	axios.post('http://127.0.0.1:8103/api/db_create_event', {'class': null, 'start_time': null, 'end_time': null, 'section': null, 'lesson': null, 'location': null, 'lable': null, 'link': null, 'date': this.state.selectedDay, 'email': this.state.email})
+			// 		.then(res => {
+			// 			console.log(res);
+			// 		})
+			// });
 	}
 
 	render () {
@@ -64,7 +69,7 @@ class CalendarComponent extends Component {
 					<span class="dot pt-1">
 						<img class="rounded mx-auto my-auto d-block" src={TitleImage}></img>
 					</span>
-					<h4 class="p-1 custom-header">{this.state.selectedDay}</h4>
+					<h4 class="p-1 custom-header">{localStorage.getItem('date')}</h4>
 				</div>
 				<div class="d-flex flex-row justify-content-center">
 					<ul class="list-group time-box">
