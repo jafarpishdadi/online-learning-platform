@@ -87,7 +87,8 @@ class Login extends Component {
         axios.post('http://127.0.0.1:8103/api/db_login', {username: this.state.username, password: this.state.password })
             .then(response => {
 				console.log(response);
-				localStorage.setItem('token', response.data)
+				localStorage.setItem('token', response.data);
+				localStorage.setItem('username', this.state.username);
 				this.setState({loggedIn:true});
 			})
 			.catch((error) => {

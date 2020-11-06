@@ -17,7 +17,7 @@ import dashboard from '../../assets/dashboard.png'
 let headerItems = {link: '/sidebar', title: 'Schedule', profileImg: profile }
 
 let navItems = [
-    {id: 1, link: "", imgSrc: dashboard, title: "Dashboard" },
+    {id: 1, link: "/dashboard", imgSrc: dashboard, title: "Dashboard" },
     {id: 2, link: "", imgSrc: classes, title: "Classes" },
     {id: 3, link: "/schedule", imgSrc: scheduling, title: "Scheduling" },
     {id: 4, link: "", imgSrc: community, title: "Community" },
