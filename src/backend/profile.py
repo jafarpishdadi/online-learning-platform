@@ -15,7 +15,7 @@ class ProfileObj():
 	# generic user class inheriting the mongo document 
 	class Profile(me.Document):
 
-		username = me.StringField()
+		username = me.StringField(required=True)
 		phone_number = me.StringField()
 		first_name = me.StringField()
 		last_name = me.StringField()

@@ -26,6 +26,7 @@ db.init_app(app)
 @app.route('/api/db_create_user', methods=['POST'])
 def db_create_user():
 	print(request.json)
+	ProfileObj(request.json).db_create_profile()
 	return UserObj(request.json).db_create_user()
 
 # returns the user requested from the database when provided with a json text formatted as {email: email}
@@ -73,6 +74,7 @@ def db_login():
 def db_logout():
     return UserObj(request.json).db_logout()
 
+# returns list of consultants with optional parameters formetted as {email: email, username: username, name: name}
 @app.route('/api/db_get_consultants', methods=['POST'])
 def db_get_consultants():
 	return UserObj(request.json).db_get_consultants()
