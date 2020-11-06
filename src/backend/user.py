@@ -9,6 +9,7 @@ import profile
 import re
 
 
+
 class UserObj():
 	"""
 	This class holds all the CRUD methods for the users
@@ -86,6 +87,21 @@ class UserObj():
 		else:
 			return make_response("", 404)
 
+	def db_get_user_email(self):
+		"""
+		Gets email based off of the username passed in.
+		"""
+
+		x = checkFields(self.content, fields=['username'])
+		if (x):
+			return make_response("Missing required field: " + x, 400)
+
+		user_obj = self.User.objects(username=self.content['username']).first()
+		if user_obj:
+			return make_response(jsonify(user_obj.email), 200)
+		else:
+			return make_response("", 404)
+
 	def db_update_user_name(self):
 		"""
 		Updates the username in the database for the corresponding email
@@ -97,6 +113,8 @@ class UserObj():
 
 		user_obj = self.User.objects(email=self.content['email']).first()
 		if user_obj:
+			prof_obj = ProfileObj.Profile.objects(username=user_obj.username).first()
+			prof_obj.update(username=self.content['username'])
 			user_obj.update(username=self.content['username'])
 			return make_response("", 200)
 		else:

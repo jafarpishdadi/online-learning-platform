@@ -88,22 +88,6 @@ class ProfileObj():
 			return make_response(jsonify(prof_obj.to_json()), 200)
 		else:
 			return make_response("Username does not exist", 404)
-
-	def db_update_profile_user_name(self):
-		"""
-		Updates the username in the database for the corresponding email
-		"""
-
-		x = checkFields(self.content, fields=['new_username', 'old_username'])
-		if (x):
-			return make_response("Missing required field: " + x, 400)
-
-		prof_obj = self.Profile.objects(username=self.content['old_username']).first()
-		if prof_obj:
-			prof_obj.update(username=self.content['new_username'])
-			return make_response("", 200)
-		else:
-			return make_response("User does not exist.", 404)
 	
 	def db_update_profile_phone_number(self):
 		"""
