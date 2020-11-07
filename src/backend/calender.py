@@ -11,15 +11,10 @@ class CalenderObj():
     # generic user class inheriting the mongo document 
 	class Event(me.Document):
 
-		class_name = me.StringField()
+		name = me.StringField()
 		date = me.StringField()
 		start_time = me.StringField()
-		end_time = me.StringField()
-		section = me.StringField()
-		lesson = me.StringField()
-		location = me.StringField()
-		lable = me.StringField()
-		link = me.StringField()
+		event_type = me.StringField()
 		email = me.StringField()
 
 		def to_json(self):
@@ -28,16 +23,12 @@ class CalenderObj():
 			"""
 
 			return {
-				"class": self.class_name,
+				"name": self.name,
 				"start_time": self.start_time,
-				"end_time": self.end_time,
-				"section": self.section,
-				"lesson": self.lesson,
-				"location": self.location,
-				"lable": self.lable,
-				"link": self.link,
+				"event_type": self.event_type,
 				"email": self.email,
 				"date": self.date,
+				"_id": str(self.pk)
 			}
 
 	def __init__(self, content):
@@ -51,28 +42,19 @@ class CalenderObj():
 		Creates a new event based on the json passed in
 		"""
 
-		x = checkFields(self.content, fields=['class', 'start_time', 'end_time', 'section', 'lesson','location', 'lable','link', 'email','date'])
+		x = checkFields(self.content, fields=['name', 'start_time', 'event_type', 'email','date'])
 		if (x):
 			return make_response("Missing required field: " + x, 400)
-
-		# Checks if the class name is in use
-		if (self.Event.objects(class_name=self.content['class']).count() > 0):
-			return make_response("Class name already in use.", 400)
-		
+	
 		# Checks if the user exists
 		user_obj = User.objects(email=self.content['email']).first()
 		if not user_obj:
 			return make_response("User does not exist", 404)
 
 		self.Event(
-			class_name=self.content['class'], 
+			name=self.content['name'], 
 			start_time=self.content['start_time'], 
-			end_time=self.content['end_time'],
-			section=self.content['section'], 
-			lesson=self.content['lesson'],
-			location=self.content['location'], 
-			lable=self.content['lable'],
-			link=self.content['link'], 
+			event_type=self.content['event_type'],
 			email=self.content['email'],
 			date=self.content['date']).save()
 		return make_response("", 200)
@@ -100,24 +82,36 @@ class CalenderObj():
 		Updates the event in the database for the corresponding email
 		"""
 
-		x = checkFields(self.content, fields=['class', 'start_time', 'end_time', 'section', 'lesson','location', 'lable','link', 'email','date'])
+		x = checkFields(self.content, fields=['_id','class', 'start_time', 'event_type', 'email','date'])
 		if (x):
 			return make_response("Missing required field: " + x, 400)
 
 		# Checks if the event exists for the user
-		event = self.Event.objects(class_name=self.content['class'], email=self.content['email']).first()
+		event = self.Event.objects(class_name=self.content['_id'], email=self.content['email']).first()
 		if event:
 			event.update(
+				pk=self.content['_id']
 				class_name=self.content['class'], 
 				start_time=self.content['start_time'], 
-				end_time=self.content['end_time'],
-				section=self.content['section'], 
-				lesson=self.content['lesson'],
-				location=self.content['location'], 
-				lable=self.content['lable'],
-				link=self.content['link'], 
+				event_type=self.content['event_type'],
 				email=self.content['email'],
 				date=self.content['date'])
 			return make_response("", 200)
 		else:
 			return make_response("Event not found", 400)
+	
+	def db_delete_event(self):
+		"""
+		Delete a single event in the database
+		"""
+
+		x = checkFields(self.content, fields=['_id'])
+		if (x):
+			return make_response("Missing required field: " + x, 400)
+
+		event = self.Event.objects(pk=self.content['_id']).first()
+		if event:
+			event.delete()
+			return make_response("", 200)
+		else:
+			return make_response("Event does not exist.", 404)
