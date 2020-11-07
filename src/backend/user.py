@@ -2,7 +2,12 @@ import mongoengine as me
 import hashlib
 from flask import Flask, make_response, request, jsonify
 from Exceptions.MissingRequiredField import checkFields
+from Exceptions.MissingRequiredField import checkFieldsReturnAll
 from datetime import datetime
+from profile import ProfileObj
+import profile
+import re
+
 
 
 class UserObj():
@@ -13,10 +18,10 @@ class UserObj():
 	# generic user class inheriting the mongo document 
 	class User(me.Document):
 
-		user_type = me.StringField()
-		username = me.StringField()
-		password = me.StringField()
-		email = me.StringField()
+		user_type = me.StringField(required=True)
+		username = me.StringField(required=True)
+		password = me.StringField(required=True)
+		email = me.StringField(required=True)
 		last_login = me.StringField()
 		last_logout = me.StringField()
 
@@ -82,6 +87,21 @@ class UserObj():
 		else:
 			return make_response("", 404)
 
+	def db_get_user_email(self):
+		"""
+		Gets email based off of the username passed in.
+		"""
+
+		x = checkFields(self.content, fields=['username'])
+		if (x):
+			return make_response("Missing required field: " + x, 400)
+
+		user_obj = self.User.objects(username=self.content['username']).first()
+		if user_obj:
+			return make_response(jsonify(user_obj.email), 200)
+		else:
+			return make_response("", 404)
+
 	def db_update_user_name(self):
 		"""
 		Updates the username in the database for the corresponding email
@@ -93,6 +113,8 @@ class UserObj():
 
 		user_obj = self.User.objects(email=self.content['email']).first()
 		if user_obj:
+			prof_obj = ProfileObj.Profile.objects(username=user_obj.username).first()
+			prof_obj.update(username=self.content['username'])
 			user_obj.update(username=self.content['username'])
 			return make_response("", 200)
 		else:
@@ -189,24 +211,29 @@ class UserObj():
 
 	def db_get_consultants(self):
 		"""
-		Gets the list of users with user_type consultant and additional parameters (username, email, name, phone number)
+		Gets the list of users with user_type instructor (instructors are consultants) and additional parameters (username, email, name)
 		"""
-		if not (self.content is None):
-			x = checkFields(self.content, fields=['username', 'email'])
-			if (x == 'username'):
-				x = checkFields(self.content, fields=['email'])
-				if not (x):
-					consultants = self.User.objects(user_type="consultant", email__icontains=self.content['email'])
-			elif (x == 'email'):
-				x = checkFields(self.content, fields=['username'])
-				if not (x):
-					consultants = self.User.objects(user_type="consultant", username__icontains=self.content['username'])
-			else:
-				consultants = self.User.objects(user_type="consultant", email__icontains=self.content['email'], username__icontains=self.content['username'])
-		else:
-			consultants = self.User.objects(user_type="consultant")
+		fields=['username', 'email', 'name']
+		f_dict = dict()
 
-		if consultants:
-			return make_response(jsonify(consultants.to_json()), 200)
+		missing_fields = checkFieldsReturnAll(self.content, fields)
+
+		given = list(set(fields) - set(missing_fields))
+		for f in given:
+			f_dict[f] = re.compile('.*' + self.content[f] + '.*', re.IGNORECASE)
+		for f in missing_fields:
+			f_dict[f] = re.compile('.*')
+
+		consultants = self.User.objects(user_type="instructor", email=f_dict['email'], username=f_dict['username'])
+		
+
+		all_profiles = []
+		for c in consultants:
+			cur_profile = ProfileObj.Profile.objects(username=c.username, name=f_dict['name']).first()
+			if cur_profile:
+				all_profiles.append(cur_profile.to_json())
+
+		if len(all_profiles) > 0:
+			return make_response(jsonify(all_profiles), 200)
 		else:
 			return make_response("No consultants in database.", 404)
