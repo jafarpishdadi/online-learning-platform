@@ -82,7 +82,7 @@ class CalenderObj():
 		Updates the event in the database for the corresponding email
 		"""
 
-		x = checkFields(self.content, fields=['_id','class', 'start_time', 'event_type', 'email','date'])
+		x = checkFields(self.content, fields=['_id','name', 'start_time', 'event_type', 'email','date'])
 		if (x):
 			return make_response("Missing required field: " + x, 400)
 
@@ -90,8 +90,8 @@ class CalenderObj():
 		event = self.Event.objects(class_name=self.content['_id'], email=self.content['email']).first()
 		if event:
 			event.update(
-				pk=self.content['_id']
-				class_name=self.content['class'], 
+				pk=self.content['_id'],
+				name=self.content['name'], 
 				start_time=self.content['start_time'], 
 				event_type=self.content['event_type'],
 				email=self.content['email'],
