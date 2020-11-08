@@ -44,11 +44,8 @@ class SchedulePage extends Component {
 						<div class="custom-div">
 							<SmallCards />
 						</div>
-					</div>
-					{/* <Schedule /> */}
-					
+					</div>					
 				</div>
-				
 			</React.Fragment>
 		)
 	}

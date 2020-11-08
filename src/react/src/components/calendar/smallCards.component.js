@@ -5,6 +5,7 @@ import Refresh from '../../assets/externalSync.png'
 import AddEvent from '../../assets/addEvent.png'
 import Modal from '../popUp/Modal.js'
 import ReactDOM from "react-dom";
+import axios from 'axios';
 
 class SmallCards extends Component {
   state = { show: false };
@@ -21,8 +22,7 @@ class SmallCards extends Component {
 		return (
 			<div class="d-flex flex-column">
 				<Modal show={this.state.show} handleClose={this.hideModal}>
-					<p>Modal</p>
-					<p>Data</p>
+					<p>{window.localStorage.getItem('date')}</p>
 				</Modal>
 				<div class="card-deck pt-4 custom-deck">
 					<a href="#" class="card custom-card pl-0 custom-a" onClick={this.showModal}>

@@ -20,6 +20,7 @@ class CalendarComponent extends Component {
 		axios.post('http://127.0.0.1:8103/api/db_get_user_email', {'username': localStorage.getItem('username')})
 			.then(res => {
 				this.state.email = res.data;
+				window.localStorage.setItem('email', this.state.email);
 			})
 	}
 
