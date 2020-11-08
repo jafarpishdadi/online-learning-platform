@@ -157,7 +157,7 @@ def db_create_event():
     return CalenderObj(request.json).db_create_event()
 
 # Gets an event for the user
-@app.route('/api/db_get_schedule', methods=['POST'])
+@app.route('/api/db_get_schedule', methods=['PUT'])
 def db_get_event():
     return CalenderObj(request.json).db_get_event()
 
@@ -165,6 +165,11 @@ def db_get_event():
 @app.route('/api/db_update_event', methods=['PUT'])
 def db_update_event():
     return CalenderObj(request.json).db_update_event()
+
+#updates events for a user
+@app.route('/api/db_delete_event', methods=['DELETE'])
+def db_delete_event():
+    return CalenderObj(request.json).db_delete_event()
 
 # creates a new course and posts it to the database when provided with a json text formatted as {course_category: course_category, course_name: course_name, course_instructor: course_instructor}
 @app.route('/api/db_create_course', methods=['POST'])

@@ -26,7 +26,7 @@ class CalendarComponent extends Component {
 	clickDay(date) {
 		this.state.selectedDay = (date.getFullYear() + ", " + date.getMonth() + ", " + date.getDate()).toString();
 		window.localStorage.setItem('date', date.toDateString());
-		axios.post('http://127.0.0.1:8103/api/db_get_schedule', {'date': this.state.selectedDay, 'email': this.state.email})
+		axios.put('http://127.0.0.1:8103/api/db_get_schedule', {'date': this.state.selectedDay, 'email': this.state.email})
 			.then(res => {
 				console.log(res);
 				// if it works print new schedule
