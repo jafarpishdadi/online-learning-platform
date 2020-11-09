@@ -51,6 +51,17 @@ class CalenderObj():
 		if not user_obj:
 			return make_response("User does not exist", 404)
 
+		# Checks if there are events on the same date
+		sameDateEvent = self.Event.objects(date=self.content['date'])
+		for event in sameDateEvent:
+			# make sure no event has the same name,type,or time on the same date
+			if event.name == self.content['name']:
+				return make_response("Event with the same name exists on date", 400)
+			if event.start_time == self.content['start_time']:
+				return make_response("Event with the same start_time exists on date", 400)
+			if event.event_type == self.content['event_type']:
+				return make_response("Event with the same event_type exists on date", 400)
+
 		self.Event(
 			name=self.content['name'], 
 			start_time=self.content['start_time'], 
