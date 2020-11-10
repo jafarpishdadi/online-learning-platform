@@ -94,7 +94,7 @@
 }
 
 .custom-a {
-	max-width: 45px;
+	max-width: 90px;
 }
 
 /* Schedule */
@@ -112,6 +112,7 @@
 .schedule-card {
 	background: none;
 	border: none;
+	margin-left: 2vw;
 }
 
 .custom-header {

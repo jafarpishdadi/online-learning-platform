@@ -7,7 +7,7 @@ class Schedule extends Component {
 	constructor(props) {
 		super(props) 
 		this.state = {
-			selectedDate: String,
+
 		}
 	}
 
@@ -15,14 +15,8 @@ class Schedule extends Component {
 		return (
 			<React.Fragment>
 				<div class="d-flex flex-column p-2 custom-div">
-					<div class="card card-header d-flex flex-row schedule-card">
-						<span class="dot pt-1">
-							<img class="rounded mx-auto my-auto d-block" src={TitleImage}></img>
-						</span>
-						<h4 class="p-1 custom-header">{}</h4>
-					</div>
 					<div class="d-flex flex-row justify-content-center">
-						<ul class="list-group">
+						<ul class="list-group time-box">
 							<li class="list-group-item text-secondary custom-time border-light">
 								8 AM
 							</li>

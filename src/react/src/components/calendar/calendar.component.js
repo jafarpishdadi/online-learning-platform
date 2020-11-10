@@ -5,6 +5,9 @@ import 'react-calendar/dist/Calendar.css';
 import axios from 'axios'
 import { Redirect } from 'react-router-dom';
 import TitleImage from '../../assets/schedule.png'
+import Schedule from './schedule.component';
+
+let events;
 
 class CalendarComponent extends Component {
 
@@ -21,7 +24,7 @@ class CalendarComponent extends Component {
 			.then(res => {
 				this.state.email = res.data;
 				window.localStorage.setItem('email', this.state.email);
-			})
+			});
 	}
 
 	clickDay(date) {
@@ -30,15 +33,13 @@ class CalendarComponent extends Component {
 		window.localStorage.setItem('selectedDay', this.state.selectedDay);
 		axios.put('http://127.0.0.1:8103/api/db_get_schedule', {'date': this.state.selectedDay, 'email': this.state.email})
 			.then(res => {
-				console.log(res);
-				// if it works print new schedule
+				localStorage.setItem('events', JSON.stringify(res.data));
+				// JSON.parse(localStorage.get('events'))
+			})
+			.catch((error) => {
+				localStorage.setItem('events', null);
 			});
-			// .catch((error) => {
-			// 	axios.post('http://127.0.0.1:8103/api/db_create_event', {'class': null, 'start_time': null, 'end_time': null, 'section': null, 'lesson': null, 'location': null, 'lable': null, 'link': null, 'date': this.state.selectedDay, 'email': this.state.email})
-			// 		.then(res => {
-			// 			console.log(res);
-			// 		})
-			// });
+			
 	}
 
 	render () {
@@ -74,91 +75,8 @@ class CalendarComponent extends Component {
 					<h4 class="p-1 custom-header">{localStorage.getItem('date')}</h4>
 				</div>
 				<div class="d-flex flex-row justify-content-center">
-					<ul class="list-group time-box">
-						<li class="list-group-item text-secondary custom-time border-light">
-							8 AM
-						</li>
-						<li class="list-group-item custom-time border-light">
-							9 AM
-						</li>
-						<li class="list-group-item custom-time border-light">
-							10 AM
-						</li>
-						<li class="list-group-item custom-time border-light">
-							11 AM
-						</li>
-						<li class="list-group-item custom-time border-light">
-							12 PM
-						</li>
-						<li class="list-group-item custom-time border-light">
-							1 PM
-						</li>
-						<li class="list-group-item custom-time border-light">
-							2 PM
-						</li>
-						<li class="list-group-item custom-time border-light">
-							3 PM
-						</li>
-						<li class="list-group-item custom-time border-light">
-							4 PM
-						</li>
-						<li class="list-group-item custom-time border-light">
-							5 PM
-						</li>
-						<li class="list-group-item custom-time border-light">
-							6 PM
-						</li>
-						<li class="list-group-item custom-time border-light">
-							7 PM
-						</li>
-						<li class="list-group-item custom-time border-light">
-							8 PM
-						</li>
-					</ul>
-					<ul class="list-group">
-						<li class="list-group-item d-flex justify-content-between align-items-center custom-time border-light">
-							Learn React
-							<span class="badge badge-light badge-pill">Workshop</span>
-						</li>
-						<li class="list-group-item d-flex justify-content-between align-items-center custom-time border-light">
-							-
-						</li>
-						<li class="list-group-item d-flex justify-content-between align-items-center custom-time border-light">
-							-
-						</li>
-						<li class="list-group-item d-flex justify-content-between align-items-center custom-time border-light">
-							-
-						</li>
-						<li class="list-group-item d-flex justify-content-between align-items-center custom-time border-light">
-							-
-						</li>
-						<li class="list-group-item d-flex justify-content-between align-items-center custom-time border-light">
-							Meeting with Instructor
-							<span class="badge badge-warning badge-pill">Meeting</span>
-						</li>
-						<li class="list-group-item d-flex justify-content-between align-items-center custom-time border-light">
-							-
-						</li>
-						<li class="list-group-item d-flex justify-content-between align-items-center custom-time border-light">
-							-
-						</li>
-						<li class="list-group-item d-flex justify-content-between align-items-center custom-time border-light">
-							-
-						</li>
-						<li class="list-group-item d-flex justify-content-between align-items-center custom-time border-light">
-							-
-						</li>
-						<li class="list-group-item d-flex justify-content-between align-items-center custom-time border-light">
-							Do homework
-							<span class="badge badge-primary badge-pill">Study</span>
-						</li>
-						<li class="list-group-item d-flex justify-content-between align-items-center custom-time border-light">
-							-
-						</li>
-						<li class="list-group-item d-flex justify-content-between align-items-center custom-time border-light">
-							-
-						</li>
-					</ul>
+					{console.log(localStorage.getItem('events'))}
+					<Schedule/>
 				</div>
 			</div>
 
