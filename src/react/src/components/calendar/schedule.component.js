@@ -58,7 +58,7 @@ class Schedule extends Component {
 							</li>
 						</ul>
 						<ul class="list-group">
-							<li class="list-group-item d-flex justify-content-between align-items-center custom-time border-light">
+							{/* <li class="list-group-item d-flex justify-content-between align-items-center custom-time border-light">
 								Learn React
 								<span class="badge badge-light badge-pill">Workshop</span>
 							</li>
@@ -99,7 +99,9 @@ class Schedule extends Component {
 							</li>
 							<li class="list-group-item d-flex justify-content-between align-items-center custom-time border-light">
 								-
-							</li>
+							</li> */}
+							{/* {console.log(JSON.parse(localStorage.getItem('events')))} */}
+							{localStorage.getItem('events')}
 						</ul>
 					</div>
 				</div>

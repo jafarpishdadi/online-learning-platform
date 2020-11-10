@@ -33,11 +33,11 @@ class CalendarComponent extends Component {
 		window.localStorage.setItem('selectedDay', this.state.selectedDay);
 		axios.put('http://127.0.0.1:8103/api/db_get_schedule', {'date': this.state.selectedDay, 'email': this.state.email})
 			.then(res => {
-				localStorage.setItem('events', JSON.stringify(res.data));
+				window.localStorage.setItem('events', JSON.stringify(res.data));
 				// JSON.parse(localStorage.get('events'))
 			})
 			.catch((error) => {
-				localStorage.setItem('events', null);
+				window.localStorage.setItem('events', null);
 			});
 			
 	}
@@ -75,8 +75,7 @@ class CalendarComponent extends Component {
 					<h4 class="p-1 custom-header">{localStorage.getItem('date')}</h4>
 				</div>
 				<div class="d-flex flex-row justify-content-center">
-					{console.log(localStorage.getItem('events'))}
-					<Schedule/>
+					<Schedule />
 				</div>
 			</div>
 
