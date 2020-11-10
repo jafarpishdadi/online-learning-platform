@@ -26,10 +26,10 @@ class Classes extends Component {
 	  }
 	  renderRedirect = () => {
 		if (this.state.redirect)  {
-			if (this.state.component == "class"){
+			if (this.state.component == 'class'){
 				return <Redirect to='/createclass' />
 			}
-			else if(this.state.component == "seeAll"){
+			else if(this.state.component == 'seeAll'){
 				return <Redirect to='/classlist' />
 			}
 	  }
@@ -37,15 +37,15 @@ class Classes extends Component {
 
 	render() {
         return (
-	<Card className="ClassCardStyle overflow-auto">
+	<Card className='ClassCardStyle overflow-auto'>
 	<Card.Body>
-		<Card.Title className="classCardTitleStyle">Classes</Card.Title>
-        <div className="ml-auto">
+		<Card.Title className='classCardTitleStyle'>Classes</Card.Title>
+        <div className='ml-auto'>
 		{this.renderRedirect()}
-  		<button className="btn btn-see-all pull-right"onClick={this.listRedirect}>See All</button>
+  		<button className='btn btn-see-all pull-right'onClick={this.listRedirect}>See All</button>
 		</div>
-  		<button className="btn btn-event " >Active Courses</button>
-		<button className="btn btn-event "onClick={this.classRedirect}>Add Courses</button>
+  		<button className='btn btn-event ' >Active Courses</button>
+		<button className='btn btn-event 'onClick={this.classRedirect}>Add Courses</button>
 	</Card.Body>
     <div class = 'square'></div>
     </Card>

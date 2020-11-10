@@ -16,16 +16,16 @@ class CalendarComponent extends Component {
 		const { value } = this.state;
 
 		return (
-			<div className="custom-div">
-				<div className="react-component">
+			<div className='custom-div'>
+				<div className='react-component'>
 						<Calendar
 						onChange={this.onChange}
 						value={value}
 						locale={'en-US'}
-						returnValue={"start"}
-						maxDetail={"month"}
-						minDetail={"year"}
-						calendarType={"US"}
+						returnValue={'start'}
+						maxDetail={'month'}
+						minDetail={'year'}
+						calendarType={'US'}
 						showDoubleView={false}
 						/>
 				</div>

@@ -4,7 +4,7 @@
 
 .react-calendar {
 	display: flex;
-	font-family: "Open Sans" !important;
+	font-family: 'Open Sans' !important;
 	font-size: 30px;
 	border: 0px !important;
 	overflow: hidden;
@@ -75,7 +75,7 @@
 	border: none;
 	max-width: 45rem;
 	display: inline-block;
-	font-family: "Open Sans" !important;
+	font-family: 'Open Sans' !important;
 }
 
 .custom-p {
@@ -107,11 +107,11 @@
 
 .custom-header {
 	color: #7A7A7A;
-	font-family: "Open Sans" !important;
+	font-family: 'Open Sans' !important;
 	font-weight: bold;
 }
 
 .custom-time {
 	color: #7A7A7A;
-	font-family: "Open Sans" !important;
+	font-family: 'Open Sans' !important;
 }

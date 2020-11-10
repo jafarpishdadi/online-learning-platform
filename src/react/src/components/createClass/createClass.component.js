@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import axios from 'axios';
 import Card from 'react-bootstrap/Card'
 import {Redirect} from 'react-router-dom'
-import { useHistory } from "react-router-dom";
+import { useHistory } from 'react-router-dom';
 
 
 
@@ -51,26 +51,26 @@ class CreateClass extends Component {
 			return <Redirect to='/dashboard' />
 		  }
         return (
-	<Card className="cardStyle overflow-auto">
+	<Card className='cardStyle overflow-auto'>
 	<Card.Body>
-		<Card.Title className="cardTitleStyle">Create a Class</Card.Title>
-		<form class="flex-column" onSubmit = {this.submit}>
-			<div class="form-group pt-0 pl-2 pr-2">
-				<label for="inputcourse_category" class="text-dark font-weight-bold">course_category</label>
-				<input type="text" class="form-control" name='course_category' value={this.state.course_category} placeholder="course_category" onChange={this.handleChange} aria-describedby="course_categoryHelp" />
+		<Card.Title className='cardTitleStyle'>Create a Class</Card.Title>
+		<form class='flex-column' onSubmit = {this.submit}>
+			<div class='form-group pt-0 pl-2 pr-2'>
+				<label for='inputcourse_category' class='text-dark font-weight-bold'>course_category</label>
+				<input type='text' class='form-control' name='course_category' value={this.state.course_category} placeholder='course_category' onChange={this.handleChange} aria-describedby='course_categoryHelp' />
 			</div>
-			<div class="form-group pt-0 pl-2 pr-2">
-				<label for="inputcourse_name" class="text-dark font-weight-bold">course_name</label>
-				<input type="text" class="form-control" name='course_name' value={this.state.course_name} placeholder="course_name" onChange={this.handleChange} aria-describedby="course_nameHelp" />
+			<div class='form-group pt-0 pl-2 pr-2'>
+				<label for='inputcourse_name' class='text-dark font-weight-bold'>course_name</label>
+				<input type='text' class='form-control' name='course_name' value={this.state.course_name} placeholder='course_name' onChange={this.handleChange} aria-describedby='course_nameHelp' />
 			</div>
-			<div class="form-group pt-0 pl-2 pr-2">
-				<label for="inputcourse_instructor" class="text-dark font-weight-bold">course_instructor</label>
-				<input type="course_instructor" class="form-control" name='course_instructor' value={this.state.course_instructor} onChange={this.handleChange} placeholder="course_instructor" aria-describedby="course_instructorHelp"/>
+			<div class='form-group pt-0 pl-2 pr-2'>
+				<label for='inputcourse_instructor' class='text-dark font-weight-bold'>course_instructor</label>
+				<input type='course_instructor' class='form-control' name='course_instructor' value={this.state.course_instructor} onChange={this.handleChange} placeholder='course_instructor' aria-describedby='course_instructorHelp'/>
 			</div>
 
 
-			<div class="mx-auto text-center p-0 col-md-12 mb-4 text-sm">
-				<button className="btnSignUp">Submit</button>
+			<div class='mx-auto text-center p-0 col-md-12 mb-4 text-sm'>
+				<button className='btnSignUp'>Submit</button>
 			</div>
 
 		</form>

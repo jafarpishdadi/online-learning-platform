@@ -100,7 +100,7 @@ class HeaderTaskbar extends Component {
 
 
                     {this.renderRedirect()}
-                    <form class="logout p-2" onClick={this.setRedirect}>
+                    <form class='logout p-2' onClick={this.setRedirect}>
 
                         <button className='headerIcons'>
                             <img src={logout}></img>

@@ -6,12 +6,12 @@
   background-color:#FCFCFB;
   border-color:#FCFCFB;
   box-shadow: 0 2px 2px -2px rgba(0,0,0,.2);
-  font-family: "Open Sans";
+  font-family: 'Open Sans';
 }
 
 .classCardTitleStyle {
   display: flex;
-  font-family: "Open Sans";
+  font-family: 'Open Sans';
   font-weight: 600;
   font-size: 35px;
   text-align: right;

@@ -20,14 +20,14 @@ import dashboard from '../../assets/dashboard.png'
 let headerItems = {link: '/sidebar', title: 'Profile', profileImg: profile }
 
 let navItems = [
-    {id: 1, link: "", imgSrc: dashboard, title: "Dashboard" },
-    {id: 2, link: "", imgSrc: classes, title: "Classes" },
-    {id: 3, link: "", imgSrc: scheduling, title: "Scheduling" },
-    {id: 4, link: "", imgSrc: community, title: "Community" },
-    {id: 5, link: "", imgSrc: mailbox, title: "Mailbox" },
-    {id: 6, link: "", imgSrc: achievements, title: "Achievements" },
-    {id: 7, link: "", imgSrc: socialInitiatives, title: "Social Initiatives" },
-    {id: 8, link: "", imgSrc: settings, title: "Settings" }
+    {id: 1, link: '', imgSrc: dashboard, title: 'Dashboard' },
+    {id: 2, link: '', imgSrc: classes, title: 'Classes' },
+    {id: 3, link: '', imgSrc: scheduling, title: 'Scheduling' },
+    {id: 4, link: '', imgSrc: community, title: 'Community' },
+    {id: 5, link: '', imgSrc: mailbox, title: 'Mailbox' },
+    {id: 6, link: '', imgSrc: achievements, title: 'Achievements' },
+    {id: 7, link: '', imgSrc: socialInitiatives, title: 'Social Initiatives' },
+    {id: 8, link: '', imgSrc: settings, title: 'Settings' }
     ]
 
 class ProfilePage extends Component {
@@ -73,7 +73,7 @@ class ProfilePage extends Component {
 			<React.Fragment>
                 <Sidebar books={navItems}/>
                 <Headerbar icons={headerItems}/>
-                <div className = "profileBox">
+                <div className = 'profileBox'>
                     <Profile 
                         educations = {this.state.educations} 
                         skills = {this.state.skills} 

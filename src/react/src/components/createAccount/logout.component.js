@@ -11,7 +11,7 @@ class Logout extends Component {
   render() {
 
     return (
-          <div className="App">
+          <div className='App'>
             
            <p>You are logged out!</p>
 

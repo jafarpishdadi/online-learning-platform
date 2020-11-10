@@ -21,14 +21,14 @@ import { Redirect } from 'react-router-dom';
 let headerItems = {link: '/sidebar', title: 'Dashboard', profileImg: profile }
 
 let navItems = [
-    {id: 1, link: "/dashboard", imgSrc: dashboard, title: "Dashboard" },
-    {id: 2, link: "", imgSrc: classes, title: "Classes" },
-    {id: 3, link: "", imgSrc: scheduling, title: "Scheduling" },
-    {id: 4, link: "", imgSrc: community, title: "Community" },
-    {id: 5, link: "", imgSrc: mailbox, title: "Mailbox" },
-    {id: 6, link: "", imgSrc: achievements, title: "Achievements" },
-    {id: 7, link: "", imgSrc: socialInitiatives, title: "Social Initiatives" },
-    {id: 8, link: "", imgSrc: settings, title: "Settings" }
+    {id: 1, link: '/dashboard', imgSrc: dashboard, title: 'Dashboard' },
+    {id: 2, link: '', imgSrc: classes, title: 'Classes' },
+    {id: 3, link: '', imgSrc: scheduling, title: 'Scheduling' },
+    {id: 4, link: '', imgSrc: community, title: 'Community' },
+    {id: 5, link: '', imgSrc: mailbox, title: 'Mailbox' },
+    {id: 6, link: '', imgSrc: achievements, title: 'Achievements' },
+    {id: 7, link: '', imgSrc: socialInitiatives, title: 'Social Initiatives' },
+    {id: 8, link: '', imgSrc: settings, title: 'Settings' }
     ]
 
 class DashPage extends Component {
@@ -41,12 +41,12 @@ class DashPage extends Component {
 			<React.Fragment>
             <Sidebar books={navItems}/>
             <Headerbar icons={headerItems}/>
-            <div class= "box">
+            <div class= 'box'>
             <div><Classes/></div>
             <div><News/></div>
             </div>
 
-            <div class= "tophalf">
+            <div class= 'tophalf'>
             <DashboardCalendarComponent/>
             <div><Events/></div>
 

@@ -47,9 +47,9 @@ class Sidebar extends Component {
     render() {
         const { books } = this.props
         return (
-            <nav className="sideBar">
+            <nav className='sideBar'>
                 <img
-                    className="menuIcon"
+                    className='menuIcon'
                     src={Logo}
                     />
                 <ul>

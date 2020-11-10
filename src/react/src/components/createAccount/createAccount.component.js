@@ -50,48 +50,48 @@ class createAccount extends Component {
 			return <Redirect to='/login' />
 		  }
         return (
-	<Card className="cardStyle overflow-auto">
+	<Card className='cardStyle overflow-auto'>
 	<Card.Body>
-		<Card.Title className="cardTitleStyle">Create an Account</Card.Title>
-		<form class="flex-column" onSubmit = {this.submit}>
-			<div class="form-group pt-0 pl-2 pr-2">
-				<label for="inputEmail" class="text-dark font-weight-bold">Email</label>
-				<input type="text" class="form-control" name='email' value={this.state.email} placeholder="email" onChange={this.handleChange} aria-describedby="emailHelp" />
+		<Card.Title className='cardTitleStyle'>Create an Account</Card.Title>
+		<form class='flex-column' onSubmit = {this.submit}>
+			<div class='form-group pt-0 pl-2 pr-2'>
+				<label for='inputEmail' class='text-dark font-weight-bold'>Email</label>
+				<input type='text' class='form-control' name='email' value={this.state.email} placeholder='email' onChange={this.handleChange} aria-describedby='emailHelp' />
 			</div>
-			<div class="form-group pt-0 pl-2 pr-2">
-				<label for="inputUsername" class="text-dark font-weight-bold">Username</label>
-				<input type="text" class="form-control" name='username' value={this.state.username} placeholder="username" onChange={this.handleChange} aria-describedby="usernameHelp" />
+			<div class='form-group pt-0 pl-2 pr-2'>
+				<label for='inputUsername' class='text-dark font-weight-bold'>Username</label>
+				<input type='text' class='form-control' name='username' value={this.state.username} placeholder='username' onChange={this.handleChange} aria-describedby='usernameHelp' />
 			</div>
-			<div class="form-group pt-0 pl-2 pr-2">
-				<label for="inputPassword" class="text-dark font-weight-bold">Password</label>
-				<input type="password" class="form-control" name='password' value={this.state.password} onChange={this.handleChange} placeholder="password" aria-describedby="passwordHelp"/>
+			<div class='form-group pt-0 pl-2 pr-2'>
+				<label for='inputPassword' class='text-dark font-weight-bold'>Password</label>
+				<input type='password' class='form-control' name='password' value={this.state.password} onChange={this.handleChange} placeholder='password' aria-describedby='passwordHelp'/>
 			</div>
-			<form class="flex-row" onSubmit = {this.submit}>
-				<div class="form-group pt-0 pl-2 pr-2">
-					<label class="text-dark font-weight-bold">Are you joining as a Student or Instructor?</label>
-					<small class="form-text text-muted">Please select your answer below.</small>
+			<form class='flex-row' onSubmit = {this.submit}>
+				<div class='form-group pt-0 pl-2 pr-2'>
+					<label class='text-dark font-weight-bold'>Are you joining as a Student or Instructor?</label>
+					<small class='form-text text-muted'>Please select your answer below.</small>
 				</div>
-				<div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
-					<div class="btn-group mr-2 pt-0 pl-2 pr-2" id="userStudent">
-						<button type="button" class="btn btn-outline-secondary" name='user_type' value={'student'} onClick={this.onclick} >Student</button>
+				<div class='btn-toolbar' role='toolbar' aria-label='Toolbar with button groups'>
+					<div class='btn-group mr-2 pt-0 pl-2 pr-2' id='userStudent'>
+						<button type='button' class='btn btn-outline-secondary' name='user_type' value={'student'} onClick={this.onclick} >Student</button>
 					</div>
-					<div class="btn-group mr-2 pt-0 pl-2 pr-2" id="userInstructor">
-					<button type="button" class="btn btn-outline-secondary" name='user_type' value={'instructor'} onClick={this.onclick} >Instructor</button>
+					<div class='btn-group mr-2 pt-0 pl-2 pr-2' id='userInstructor'>
+					<button type='button' class='btn btn-outline-secondary' name='user_type' value={'instructor'} onClick={this.onclick} >Instructor</button>
 					</div>
-					<div class="btn-group mr-2 pt-0 pl-2 pr-2" id="userSocial">
-					<button type="button" class="btn btn-outline-secondary" name='user_type' value={'initiatives'} onClick={this.onclick} >Initiatives</button>
+					<div class='btn-group mr-2 pt-0 pl-2 pr-2' id='userSocial'>
+					<button type='button' class='btn btn-outline-secondary' name='user_type' value={'initiatives'} onClick={this.onclick} >Initiatives</button>
 					</div>
-					<div class="form-group pt-2 pl-2 pr-2">
-						<small class="form-text text-muted">*By sharing your email, you agree to our Offer Terms, Terms of Service, and Privacy Policy.</small>
+					<div class='form-group pt-2 pl-2 pr-2'>
+						<small class='form-text text-muted'>*By sharing your email, you agree to our Offer Terms, Terms of Service, and Privacy Policy.</small>
 					</div>
 				</div>
 			</form>
-			<div class="mx-auto text-center p-0 col-md-12 mb-4 text-sm">
+			<div class='mx-auto text-center p-0 col-md-12 mb-4 text-sm'>
 				Already have an account? 
-				<a href="" class="ml-1 text-dark font-weight-bold"><u>Log in</u></a>
+				<a href='' class='ml-1 text-dark font-weight-bold'><u>Log in</u></a>
 			</div>
-			<div class="mx-auto text-center p-0 col-md-12 mb-4 text-sm">
-				<button className="btnSignUp">SIGN UP</button>
+			<div class='mx-auto text-center p-0 col-md-12 mb-4 text-sm'>
+				<button className='btnSignUp'>SIGN UP</button>
 			</div>
 
 		</form>
