@@ -74,14 +74,14 @@ class UserObj():
 	
 	def db_get_user(self):
 		"""
-		Creates the user based off of the email passed in.
+		Creates the user based off of the username passed in.
 		"""
 
-		x = checkFields(self.content, fields=['email'])
+		x = checkFields(self.content, fields=['username'])
 		if (x):
 			return make_response("Missing required field: " + x, 400)
 
-		user_obj = self.User.objects(email=self.content['email']).first()
+		user_obj = self.User.objects(username=self.content['username']).first()
 		if user_obj:
 			return make_response(jsonify(user_obj.to_json()), 200)
 		else:
@@ -104,32 +104,32 @@ class UserObj():
 
 	def db_update_user_name(self):
 		"""
-		Updates the username in the database for the corresponding email
+		Updates the username in the database for the corresponding old_username with a new_username
 		"""
 
-		x = checkFields(self.content, fields=['username', 'email'])
+		x = checkFields(self.content, fields=['old_username', 'new_username'])
 		if (x):
 			return make_response("Missing required field: " + x, 400)
 
-		user_obj = self.User.objects(email=self.content['email']).first()
+		user_obj = self.User.objects(username=self.content['old_username']).first()
 		if user_obj:
 			prof_obj = ProfileObj.Profile.objects(username=user_obj.username).first()
-			prof_obj.update(username=self.content['username'])
-			user_obj.update(username=self.content['username'])
+			prof_obj.update(username=self.content['new_username'])
+			user_obj.update(username=self.content['new_username'])
 			return make_response("", 200)
 		else:
 			return make_response("User does not exist.", 404)
 	
 	def db_update_user_password(self):
 		"""
-		Updates the password in the database for the corresponding email
+		Updates the password in the database for the corresponding username
 		"""
 
-		x = checkFields(self.content, fields=['password', 'email'])
+		x = checkFields(self.content, fields=['password', 'username'])
 		if (x):
 			return make_response("Missing required field: " + x, 400)
 
-		user_obj = self.User.objects(email=self.content['email']).first()
+		user_obj = self.User.objects(username=self.content['username']).first()
 		if user_obj:
 			user_obj.update(password=self.content['password'])
 			return make_response("", 200)
@@ -138,30 +138,30 @@ class UserObj():
 
 	def db_update_user_email(self):
 		"""
-		Updates the email in the database for the corresponding email
+		Updates the email in the database for the corresponding username
 		"""
 
-		x = checkFields(self.content, fields=['old_email', 'new_email'])
+		x = checkFields(self.content, fields=['email', 'username'])
 		if (x):
 			return make_response("Missing required field: " + x, 400)
 
-		user_obj = self.User.objects(email=self.content['old_email']).first()
+		user_obj = self.User.objects(username=self.content['username']).first()
 		if user_obj:
-			user_obj.update(email=self.content['new_email'])
+			user_obj.update(email=self.content['email'])
 			return make_response("", 200)
 		else:
 			return make_response("User does not exist.", 404)
 
 	def db_delete_single_user(self):
 		"""
-		Delete a single user in the database
+		Delete a single user in the database based on username
 		"""
 
-		x = checkFields(self.content, fields=['email'])
+		x = checkFields(self.content, fields=['username'])
 		if (x):
 			return make_response("Missing required field: " + x, 400)
 
-		user_obj = self.User.objects(email=self.content['email']).first()
+		user_obj = self.User.objects(username=self.content['username']).first()
 		if user_obj:
 			user_obj.delete()
 			return make_response("", 200)
