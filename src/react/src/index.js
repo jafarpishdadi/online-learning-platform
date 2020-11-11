@@ -32,7 +32,8 @@ import DashPage from './pages/dashboard/dashboard.component.js'
 import CreateClass  from  "./components/createClass/createClass.component.js";
 import ClassList  from  "./components/createClass/classList.component.js";
 import ProfilePage from "./pages/profile/profilePage.js";
-
+import Studentclasses from './components/Classes-Student/studentClasses.component.js'
+import AllClassList from './components/Classes-Student/enrollClasses.component.js'
 
 window.token=localStorage.getItem('token');
 
@@ -74,6 +75,10 @@ let headerItems = {link: '/sidebar', title: 'Dashboard', profileImg: profile }
             <Route exact path="/classes">
                 <Classes/>
             </Route>
+            // studentclasses comp
+            <Route exact path="/studentclasses">
+                <Studentclasses/>
+            </Route>
             // events
             <Route exact path="/events">
                 <Events/>
@@ -88,6 +93,9 @@ let headerItems = {link: '/sidebar', title: 'Dashboard', profileImg: profile }
             </Route>
             <Route exact path="/classlist">
                 <ClassList/>
+            </Route>
+            <Route exact path="/allclasslist">
+                <AllClassList/>
             </Route>
             <Route exact path="/logout">
                 <Logout/>

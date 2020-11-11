@@ -1,0 +1,42 @@
+.courseCards {
+  display: inline-flex;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  border-radius: 5px; /* 5px rounded corners */
+  height: 150px;
+  width:200px;
+  margin: 0 10px;
+  margin-bottom: 20px;
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+/* Add some padding inside the card container */
+.container {
+  padding: 2px 16px;
+}
+
+.header{
+  font-weight: bold;
+  font-size: 10px;
+}
+.instructorHeader{
+  text-align: end;
+}
+.btnRegister{
+  background-color: #A78EC3;
+  color: white;
+  width: 75px;
+  height: 30px;
+  font-weight: 60;
+  font-family: "Open Sans";
+  box-shadow: none;
+  border: none;
+  border-radius: 10px;
+  position: absolute;
+  bottom: 8px;
+  right: 16px;
+}
