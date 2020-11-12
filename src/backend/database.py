@@ -234,7 +234,7 @@ def db_send_message():
 	return MessageObj(request.json).db_send_message()
 
 # Gets all messages for two users
-@app.route('/api/db_get_messages', methods=['GET'])
+@app.route('/api/db_get_messages', methods=['POST'])
 def db_get_messages():
 	return MessageObj(request.json).db_get_messages()
 
