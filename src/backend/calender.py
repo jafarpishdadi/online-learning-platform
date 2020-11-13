@@ -77,7 +77,8 @@ class CalenderObj():
 		if (x):
 			return make_response("Missing required field: " + x, 400)
 		
-		events = self.Event.objects(email=self.content['email'],date=self.content['date']).order_by(self.Event.start_time).all()
+		events = self.Event.objects(email=self.content['email'],date=self.content['date']).all()
+		events.sort(key=lambda x: x.start_time)
 		if len(events) > 0:
 			schedule = []
 			for event in events:
