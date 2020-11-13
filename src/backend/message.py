@@ -74,7 +74,8 @@ class MessageObj():
             self.content['username1'] = temp
             flipped = True
 
-        raw = self.Message.objects(username1=self.content['username1'],username2=self.content['username2']).order_by(self.Message.time).all()
+        raw = self.Message.objects(username1=self.content['username1'],username2=self.content['username2']).all()
+	raw.sort(key=lambda x: x.time)
         if len(raw) > 0:
             messages = []
             for message in raw:
