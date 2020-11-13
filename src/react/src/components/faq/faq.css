@@ -1,0 +1,17 @@
+.faqQuestion {
+    background: white;
+    border: grey;
+    width: 807px;
+    height: 60px;
+    font-size: 20px;
+    text-align: left;
+}
+
+.faqQuestion:hover {
+    text-decoration-color: underline;
+    cursor: pointer;
+}
+
+.faqAnswer-hidden {
+    display: none;
+}
