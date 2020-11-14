@@ -34,7 +34,6 @@ class CalendarComponent extends Component {
 		axios.put('http://127.0.0.1:8103/api/db_get_schedule', {'date': this.state.selectedDay, 'email': this.state.email})
 			.then(res => {
 				window.localStorage.setItem('events', JSON.stringify(res.data));
-				// JSON.parse(localStorage.get('events'))
 			})
 			.catch((error) => {
 				window.localStorage.setItem('events', null);

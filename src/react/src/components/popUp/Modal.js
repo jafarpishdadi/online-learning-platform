@@ -70,19 +70,19 @@ export default Modal = ({ handleClose, show, children }) => {
 					<div class="form-group pt-0 pl-2 pr-2">
 					<label class="text-dark font-weight-bold">Start Time</label>
 						<select class="form-control" name='time' onChange={handleChangeTime}>
-							<option>8 AM</option>
-							<option>9 AM</option>
-							<option>10 AM</option>
-							<option>11 AM</option>
-							<option>12 PM</option>
-							<option>1 PM</option>
-							<option>2 PM</option>
-							<option>3 PM</option>
-							<option>4 PM</option>
-							<option>5 PM</option>
-							<option>6 PM</option>
-							<option>7 PM</option>
-							<option>8 PM</option>
+							<option value="1">8 AM</option>
+							<option value="2">9 AM</option>
+							<option value="3">10 AM</option>
+							<option value="4">11 AM</option>
+							<option value="5">12 PM</option>
+							<option value="6">1 PM</option>
+							<option value="7">2 PM</option>
+							<option value="8">3 PM</option>
+							<option value="9">4 PM</option>
+							<option value="10">5 PM</option>
+							<option value="11">6 PM</option>
+							<option value="12">7 PM</option>
+							<option value="13">8 PM</option>
 						</select>
 					</div>
 					<div class="form-group pt-0 pl-2 pr-2">

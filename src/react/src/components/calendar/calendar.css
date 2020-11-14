@@ -125,6 +125,13 @@
 .custom-time {
 	color: #7A7A7A;
 	font-family: "Open Sans" !important;
+	width: 8vw;
+}
+
+.custom-timeTwo {
+	color: #7A7A7A;
+	font-family: "Open Sans" !important;
+	width: 20vw;
 }
 
 .custom-div {
