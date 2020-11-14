@@ -108,12 +108,10 @@ class createAccount extends Component {
             .then(response => {
 				console.log(response.data)
 				this.setState({accountCreated:true});
-				localStorage.setItem('token', response.data.auth.access_token)
 			})
 			.catch((error) => {
 			console.log(error)
-		})
-            ;
+		});
     }
 }
 

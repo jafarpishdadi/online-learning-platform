@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom'
 import axios from 'axios';
 import Card from 'react-bootstrap/Card'
 import {Redirect} from 'react-router-dom'
+import { useHistory } from "react-router-dom";
+
 
 
 class CreateClass extends Component {
@@ -72,6 +74,7 @@ class CreateClass extends Component {
 			</div>
 
 		</form>
+		
 	</Card.Body>
 </Card>
 
