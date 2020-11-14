@@ -14,6 +14,7 @@ import CreateAccountPage from './pages/createAccount/createAccount.js'
 import LogInPage from './pages/login/login.js'
 import Logout from "./components/createAccount/logout.component.js";
 import "./components/createAccount/loginAndSignup.css";
+import SchedulePage from './pages/schedulePage/schedulePage.js'
 import OutsideNavbar from './components/navbar/outsideNavbar.js'
 import classes from './assets/classes.png'
 import scheduling from './assets/scheduling.png'
@@ -81,6 +82,10 @@ let headerItems = {link: '/sidebar', title: 'Dashboard', profileImg: profile }
             // newscomp
             <Route exact path="/news">
                 <News/>
+            </Route>
+            // schedule page
+            <Route exact path="/schedule">
+                <SchedulePage />
             </Route>
             // newscomp
             <Route exact path="/createclass">
