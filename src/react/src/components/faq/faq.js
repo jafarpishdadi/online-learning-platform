@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import classNames from "classnames";
 import "./faq.css";
 
+// Borrowed code from https://medium.com/javascript-in-plain-english/react-building-an-accessible-faq-component-bac135116532
+
 function FAQ({
   children,
-  defaultOpen = [0, 1],
+  defaultOpen = [0, 0],
   open: openFromProps,
   onToggle: onToggleFromProps = () => {}
 }) {
@@ -39,13 +41,13 @@ function FAQ({
   );
 }
 
-function Question(props) {
+function Question({ children, isOpen, answerId, onToggle }) {
   return (
     <dt>
-      <button 
-        className='faqQuestion'
-        aria-expanded={props.isOpen}
-        aria-controls={props.answerId}
+      <button
+        className="faqQuestion"
+        aria-expanded={isOpen}
+        aria-controls={answerId}
         onClick={onToggle}
       >
         {children(isOpen, onToggle)}
@@ -54,27 +56,28 @@ function Question(props) {
   );
 }
 
-function Answer(props) {
-  const mergedClassname = className('faqAnswer', {
-    'faqAnswer-hidden': !props.isOpen
+function Answer({ children, id, isOpen }) {
+  const mergedClassname = classNames("faqAnswer", {
+    "faqAnswer-hidden": !isOpen
   });
   return (
     <dd>
-      <p className={mergedClassname} id={props.id}>
-        {props.children}
+      <p className={mergedClassname} id={id}>
+        {children}
       </p>
     </dd>
   );
 }
 
-function QAItem(props) {
-  return React.Children.map(props.children, (child, index) => {
+function QAItem({ children, isOpen, onToggle }) {
+  return React.Children.map(children, (child, index) => {
     return React.cloneElement(child, {
-      isOpen: props.isOpen,
-      onToggle: props.onToggle
+      isOpen: isOpen,
+      onToggle: onToggle
     });
   });
 }
+
 
 FAQ.QAItem = QAItem;
 FAQ.Question = Question;

@@ -32,7 +32,7 @@ import DashPage from './pages/dashboard/dashboard.component.js'
 import CreateClass  from  "./components/createClass/createClass.component.js";
 import ClassList  from  "./components/createClass/classList.component.js";
 import ProfilePage from "./pages/profile/profilePage.js";
-
+import FAQPage from "./pages/faq/faqPage.js";
 
 window.token=localStorage.getItem('token');
 
@@ -53,7 +53,10 @@ let headerItems = {link: '/sidebar', title: 'Dashboard', profileImg: profile }
     ReactDOM.render(
         <Router>
           <Switch>
-
+            // FAQ page
+            <Route exact path="/FAQ">
+              <FAQPage/>
+            </Route>
           // profile page
             <Route exact path="/profile">
               <ProfilePage/>

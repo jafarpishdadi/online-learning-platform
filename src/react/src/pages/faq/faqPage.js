@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import Profile from '../../components/FAQ/FAQ.component.js'
-import './FAQPage.css'
+import FAQ from '../../components/faq/faq.js'
+import './faqPage.css'
 import { Redirect } from 'react-router-dom';
 
 // Bunch of pictures
@@ -16,6 +16,8 @@ import socialInitiatives from '../../assets/Welfare.png'
 import settings from '../../assets/settings.png'
 import dashboard from '../../assets/dashboard.png'
 // End of pictures
+
+// Borrowed code from https://medium.com/javascript-in-plain-english/react-building-an-accessible-faq-component-bac135116532
 
 let headerItems = {link: '/sidebar', title: 'Frequently Asked Questions', profileImg: profile }
 
@@ -36,6 +38,9 @@ class FAQPage extends Component {
             return <Redirect to='/login' />
         }
 		return (
+      <React.Fragment>
+                <Sidebar books={navItems}/>
+                <Headerbar icons={headerItems}/>
             <div className="FAQBox">
               <FAQ>
                 <FAQ.QAItem>
@@ -62,7 +67,7 @@ class FAQPage extends Component {
                       );
                     }}
                   </FAQ.Question>
-                  <FAQ.Answer id="q2"> After your free trial, you automatically will be chared for a subscription on a monthly or annual basis (at your choice) unless you cancel. </FAQ.Answer>
+                  <FAQ.Answer id="q2"> After your free trial, you automatically will be charged for a subscription on a monthly or annual basis (at your choice) unless you cancel. </FAQ.Answer>
                 </FAQ.QAItem>
                 <FAQ.QAItem>
                   <FAQ.Question answerId="q3">
@@ -83,7 +88,7 @@ class FAQPage extends Component {
                       return (
                         <>
                           {isOpen ? "⋁" : "⋀"}
-                          <span>Can I cange or canel my plan later on?</span>
+                          <span>Can I change or cancel my plan later on?</span>
                         </>
                       );
                     }}
@@ -118,6 +123,7 @@ class FAQPage extends Component {
                 </FAQ.QAItem>
               </FAQ>
             </div>
+      </React.Fragment>
           );
 	}
 }
