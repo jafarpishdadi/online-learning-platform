@@ -2,117 +2,47 @@ import React, { Component } from 'react'
 import './calendar.css'
 import TitleImage from '../../assets/schedule.png'
 
-function compare (a, b) {
-	if (parseInt(a.start_time, 10) < parseInt(b.start_time, 10)) return -1;
-	if (parseInt(a.start_time, 10) > parseInt(b.start_time, 10)) return 1;
-	return 0;
-}
-
-const NoEvent = ({}) => {
-	return (
-		<ul class="list-group">
-				<li class="list-group-item d-flex justify-content-between align-items-center custom-timeTwo border-light">
-					-
-					<span class="badge badge-secondary">No event</span>
-								{/* Learn React
-								<span class="badge badge-light badge-pill">Workshop</span> */}
-				</li>
-				<li class="list-group-item d-flex justify-content-between align-items-center custom-timeTwo border-light">
-					-
-					<span class="badge badge-secondary">No event</span>
-				</li>
-				<li class="list-group-item d-flex justify-content-between align-items-center custom-timeTwo border-light">
-					-
-					<span class="badge badge-secondary">No event</span>
-				</li>
-				<li class="list-group-item d-flex justify-content-between align-items-center custom-timeTwo border-light">
-					-
-					<span class="badge badge-secondary">No event</span>
-				</li>
-				<li class="list-group-item d-flex justify-content-between align-items-center custom-timeTwo border-light">
-					-
-					<span class="badge badge-secondary">No event</span>
-				</li>
-				<li class="list-group-item d-flex justify-content-between align-items-center custom-timeTwo border-light">
-					-
-					<span class="badge badge-secondary">No event</span>
-								{/* Meeting with Instructor
-								<span class="badge badge-warning badge-pill">Meeting</span> */}
-				</li>
-				<li class="list-group-item d-flex justify-content-between align-items-center custom-timeTwo border-light">
-					-
-					<span class="badge badge-secondary">No event</span>
-				</li>
-				<li class="list-group-item d-flex justify-content-between align-items-center custom-timeTwo border-light">
-					-
-					<span class="badge badge-secondary">No event</span>
-				</li>
-				<li class="list-group-item d-flex justify-content-between align-items-center custom-timeTwo border-light">
-					-
-					<span class="badge badge-secondary">No event</span>
-				</li>
-				<li class="list-group-item d-flex justify-content-between align-items-center custom-timeTwo border-light">
-					-
-					<span class="badge badge-secondary">No event</span>
-				</li>
-				<li class="list-group-item d-flex justify-content-between align-items-center custom-timeTwo border-light">
-					-
-					<span class="badge badge-secondary">No event</span>
-								{/* Do homework
-								<span class="badge badge-primary badge-pill">Study</span> */}
-				</li>
-				<li class="list-group-item d-flex justify-content-between align-items-center custom-timeTwo border-light">
-					-
-					<span class="badge badge-secondary">No event</span>
-				</li>
-				<li class="list-group-item d-flex justify-content-between align-items-center custom-timeTwo border-light">
-					-
-					<span class="badge badge-secondary">No event</span>
-				</li>
-			</ul>
-	)
-}
-
-const EventTime = ({}) => {
-	let size = 0;
-	let times = [];
-	if (window.localStorage.getItem('events') != null) {
-		try {
-			let vals;
-			vals = JSON.parse(window.localStorage.getItem('events'));
-			size = vals.length;
-			console.log(size)
-			vals = vals.sort(compare);
-			console.log(vals);
-			for (let i = 0; i < size; i++) {
-				times.push(parseInt(vals[i].start_time));
-			}
-		} catch (Exception) {
-
-		}
-	}
-	if (size == 0) {
+const EventItem = ({name, eventType}) => {
+	if (eventType == null) {
 		return (
-			<NoEvent />
-		)
-	} else {
-		return (
-			<React.Fragment>
-				{times.map(
-					(event) => 
-					<React.Fragment>
-						
-					</React.Fragment>
-				)}
-			</React.Fragment>
+			<li class="list-group-item d-flex justify-content-between align-items-center custom-timeTwo border-light">
+				-
+				<span class="badge badge-secondary">No event</span>
+			</li>
 		)
 	}
-
-	return (
-		<React.Fragment>
-
-		</React.Fragment>
-	)
+	else if (eventType == "Workshop") {
+		return (
+			<li class="list-group-item d-flex justify-content-between align-items-center custom-timeTwo border-light">
+				{name}
+				<span class="badge badge-light badge-pill">Workshop</span>
+			</li>
+		)
+	}
+	else if (eventType == "Meeting") {
+		return (
+			<li class="list-group-item d-flex justify-content-between align-items-center custom-timeTwo border-light">
+				{name}
+				<span class="badge badge-warning badge-pill">Meeting</span>
+			</li>
+		)
+	}
+	else if (eventType == "Study") {
+		return (
+			<li class="list-group-item d-flex justify-content-between align-items-center custom-timeTwo border-light">
+				{name}
+				<span class="badge badge-primary badge-pill">Study</span>
+			</li>
+		)
+	}
+	else if (eventType == "Class") {
+		return (
+			<li class="list-group-item d-flex justify-content-between align-items-center custom-timeTwo border-light">
+				{name}
+				<span class="badge badge-info badge-pill">Class</span>
+			</li>
+		)
+	}
 }
 
 class Schedule extends Component {
@@ -125,6 +55,7 @@ class Schedule extends Component {
 	}
 
 	render() {
+		const { books } = this.props
 		return (
 			<React.Fragment>
 				<div class="d-flex flex-column p-2 custom-div">
@@ -170,10 +101,17 @@ class Schedule extends Component {
 								8 PM
 							</li>
 						</ul>
-						<EventTime />
+						<ul class="list-group">
+							{books.map(
+								(book) =>
+								<EventItem
+									name={book.name}
+									eventType={book.event_type}
+								/>
+							)}
+						</ul>
 					</div>
 				</div>
-
 			</React.Fragment>
 		)
 	}

@@ -7,7 +7,15 @@ import { Redirect } from 'react-router-dom';
 import TitleImage from '../../assets/schedule.png'
 import Schedule from './schedule.component';
 
-let events;
+let size = 0;
+let times = [];
+let allTimes = [];
+
+function compare (a, b) {
+	if (parseInt(a.start_time, 10) < parseInt(b.start_time, 10)) return -1;
+	if (parseInt(a.start_time, 10) > parseInt(b.start_time, 10)) return 1;
+	return 0;
+}
 
 class CalendarComponent extends Component {
 
@@ -38,7 +46,32 @@ class CalendarComponent extends Component {
 			.catch((error) => {
 				window.localStorage.setItem('events', null);
 			});
-			
+		if (window.localStorage.getItem('events') != null) {
+			try {
+				allTimes = [];
+				let vals;
+				vals = JSON.parse(window.localStorage.getItem('events'));
+				size = vals.length;
+				vals = vals.sort(compare);
+				for (let i = 0; i < size; i++) {
+					times.push(parseInt(vals[i].start_time));
+				}
+				for (let i = 1; i <= 13; i++) {
+					if (times.includes(i)) {
+						allTimes.push(vals[0]);
+						vals.shift();
+					}
+					else {
+						allTimes.push({"_id": null, "date": null, "email": null, "event_type": null, "name": null, "start_time": null});
+					}
+				}
+			} catch (Exception) {
+				allTimes = [];
+				for (let i = 0; i < 13; i++) {
+					allTimes.push({"_id": null, "date": null, "email": null, "event_type": null, "name": null, "start_time": null});
+				}
+			}
+		}	
 	}
 
 	render () {
@@ -74,7 +107,7 @@ class CalendarComponent extends Component {
 					<h4 class="p-1 custom-header">{localStorage.getItem('date')}</h4>
 				</div>
 				<div class="d-flex flex-row justify-content-center">
-					<Schedule />
+					<Schedule books={allTimes}/>
 				</div>
 			</div>
 
