@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import FAQ from '../../components/faq/faq.js'
 import './faqPage.css'
 import { Redirect } from 'react-router-dom';
+import OutsideNavbar from '../../components/navbar/outsideNavbar.js'
 
 // Bunch of pictures
 import Headerbar from  '../..//components/headerbar/HeaderTaskbar.js'
@@ -34,13 +35,13 @@ let navItems = [
 
 class FAQPage extends Component {
 	render() {
-        if (!localStorage.getItem('token')) {
-            return <Redirect to='/login' />
-        }
 		return (
       <React.Fragment>
-                <Sidebar books={navItems}/>
-                <Headerbar icons={headerItems}/>
+      <OutsideNavbar/>
+      <header className="faq-header">
+        Frequently Asked Questions
+      </header>
+				<div className="d-flex-page">
             <div className="FAQBox">
               <FAQ>
                 <FAQ.QAItem>
@@ -48,7 +49,7 @@ class FAQPage extends Component {
                     {(isOpen, onToggle) => {
                       return (
                         <>
-                          {isOpen ? "⋁" : "⋀"}
+                          {isOpen ? "⋀" : "⋁"}
                           <span>What additional features or benefits does U-Impactiy Learning provide?</span>
                         </>
                       );
@@ -61,7 +62,7 @@ class FAQPage extends Component {
                     {(isOpen, onToggle) => {
                       return (
                         <>
-                          {isOpen ? "⋁" : "⋀"}
+                          {isOpen ? "⋀" : "⋁"}
                           <span>What happens at the end of my free trial?</span>
                         </>
                       );
@@ -74,7 +75,7 @@ class FAQPage extends Component {
                     {(isOpen, onToggle) => {
                       return (
                         <>
-                          {isOpen ? "⋁" : "⋀"}
+                          {isOpen ? "⋀" : "⋁"}
                           <span>How will you bill me?</span>
                         </>
                       );
@@ -87,7 +88,7 @@ class FAQPage extends Component {
                     {(isOpen, onToggle) => {
                       return (
                         <>
-                          {isOpen ? "⋁" : "⋀"}
+                          {isOpen ? "⋀" : "⋁"}
                           <span>Can I change or cancel my plan later on?</span>
                         </>
                       );
@@ -100,7 +101,7 @@ class FAQPage extends Component {
                     {(isOpen, onToggle) => {
                       return (
                         <>
-                          {isOpen ? "⋁" : "⋀"}
+                          {isOpen ? "⋀" : "⋁"}
                           <span>What is your refund policy?</span>
                         </>
                       );
@@ -113,7 +114,7 @@ class FAQPage extends Component {
                     {(isOpen, onToggle) => {
                       return (
                         <>
-                          {isOpen ? "⋁" : "⋀"}
+                          {isOpen ? "⋀" : "⋁"}
                           <span>Can I expense my membership?</span>
                         </>
                       );
@@ -123,6 +124,7 @@ class FAQPage extends Component {
                 </FAQ.QAItem>
               </FAQ>
             </div>
+          </div>
       </React.Fragment>
           );
 	}
