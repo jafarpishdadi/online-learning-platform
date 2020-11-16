@@ -180,7 +180,7 @@ def db_create_course():
 	return CourseObj(request.json).db_create_course()
 
 # adds the passed in student to the given course when provided with a json text formatted as {course_name: course_name, student: student}
-@app.route('/api/db_add_student_to_course', methods=['PUT'])
+@app.route('/api/db_add_student_to_course', methods=['POST'])
 def db_add_student_to_course():
 	return CourseObj(request.json).db_add_student_to_course()
 

@@ -10,35 +10,20 @@ import pen from '../../assets/pen.png'
 
 class AllClassList extends Component {
     
-    constructor(props) {
 
-        super(props);
-
-        this.state = {
+        state = {
         courses: [],
         show:false,
-        course_name:''
         };
 
-        this.handleChange = this.handleChange.bind(this);
 
-
-    }
-    handleChange(event){
-        this.setState({ show: true});
-        let name='gofgof';
-        let value=event.target.value;
-         let data={};
-         data[name]=value;
-         this.setState(data);
-         console.log(name)
-    }
-
-
-    
-      hideModal = () => {
-        this.setState({ show: false });
-      };
+    showModal = () => {
+      this.setState({ show: true });
+    };
+  
+    hideModal = () => {
+      this.setState({ show: false });
+    };
 
     componentDidMount() {
         axios.get(`http://127.0.0.1:8103/api/get_all_courses`)
@@ -54,7 +39,7 @@ class AllClassList extends Component {
                 <Modal show={this.state.show} handleClose={this.hideModal}></Modal>
                 <h1>Course List</h1>
                 { this.state.courses.map(courses =>
-                    <Card className='courseCards'  bg="light" text="black" style={{ height:'14rem', width: '25rem' }} name='course_name' value={courses.course_name.toString()} onClick={this.handleChange} >
+                    <Card className='courseCards'  bg="light" text="black" style={{ height:'14rem', width: '25rem' }} name='course_name' value={courses.course_name.toString()} onClick={this.showModal} >
                         <Card.Header className='instructorHeader' style={{height:'10rem', color:'white',background:'black' }}></Card.Header>
                         <div class="numberCircle" ></div>
                         <div class="titleCircle">{courses.course_instructor}</div>
