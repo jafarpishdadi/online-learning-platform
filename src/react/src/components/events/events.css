@@ -12,6 +12,7 @@
     background-color:#FCFCFB;
     border-color:#FCFCFB;
     font-family: "Open Sans";
+    box-shadow: inherit !important;
 }
 
 .classCardTitleStyle {
@@ -65,3 +66,6 @@
     float:left;
 }
 
+card-body{
+    box-shadow: none !important;
+}
