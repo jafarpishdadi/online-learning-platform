@@ -131,6 +131,7 @@
     box-shadow: 5px 10px 18px #888888;
 }
 
+
 .btn-e{
 	border: none;
     border-radius: 10px;
@@ -138,12 +139,14 @@
     height: 14rem;
     margin-top: 50px;
     margin:10px;
-    background-color:#ffffff;
-    color: #7b7d7e;
-    padding-top: 105px;
-    float:left;
     border-radius: 25px;
     border: 1px solid;
     padding: 10px;
-    box-shadow: 5px 10px 18px #888888;
+    box-shadow: 5px 10px 18px #b6b5b5;
+    border-color: white;
+    float:left;
+}
+
+.btn-e:hover {
+  box-shadow: 0 30px 16px 0 rgba(0,0,0,0.2);
 }

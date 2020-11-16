@@ -7,6 +7,20 @@ import './events.css'
 
 
 class Events extends Component {
+	state = {
+		date: new Date(),
+		selectedDay: String,
+		email: String,
+	  }
+
+
+	componentDidMount() {
+		axios.post('http://127.0.0.1:8103/api/db_get_user_email', {'username': localStorage.getItem('username')})
+			.then(res => {
+				this.state.email = res.data;
+				window.localStorage.setItem('email', this.state.email);
+			});
+	}
 	render() {
         return (
 	<Card className="eventsCardStyle overflow-auto">

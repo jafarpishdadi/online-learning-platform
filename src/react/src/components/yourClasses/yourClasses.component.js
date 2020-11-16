@@ -55,6 +55,7 @@ class Classes extends Component {
 				</div>
 				<button className="btn btn-e"onClick={this.classRedirect}>Add A New Course</button>
             </div>
+            
         )
     }
 }
