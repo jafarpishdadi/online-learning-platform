@@ -14,7 +14,7 @@
 .header {
     color: #A78EC3;
     text-decoration-color: #A78EC3;
-    font-size: 30px;
+    font-size: 30px !important;
 }
 .searchIcon {
     background-color: #FCFCFB;

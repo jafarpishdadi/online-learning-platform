@@ -9,6 +9,7 @@ import './news.css'
 class News extends Component {
     render() {
         return (
+            
             <Card className="classCardStyle overflow-auto">
             <Card.Body>
                 <Card.Title className="classCardTitleStyle">News</Card.Title>
