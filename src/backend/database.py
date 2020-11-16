@@ -5,10 +5,12 @@ from user import UserObj
 from profile import ProfileObj
 from calender import CalenderObj
 from course import CourseObj
+from message import MessageObj
 import user
 import calender
 import course
 import profile
+import message
 
 app = Flask(__name__) 
 
@@ -22,16 +24,22 @@ app.config["MONGODB_HOST"] = DB_URI
 db = MongoEngine()
 db.init_app(app)
 
-# creates a new user and posts it to the database when provided with a json text formatted as {user_type: user_type, user_name: user_name, password: password, email: email}
+# creates a new user and posts it to the database when provided with a json text formatted as {user_type: user_type, username: username, password: password, email: email}
 @app.route('/api/db_create_user', methods=['POST'])
 def db_create_user():
 	print(request.json)
+	ProfileObj(request.json).db_create_profile()
 	return UserObj(request.json).db_create_user()
 
 # returns the user requested from the database when provided with a json text formatted as {email: email}
-@app.route('/api/db_get_user', methods=['GET'])
+@app.route('/api/db_get_user', methods=['POST'])
 def db_get_user():
 	return UserObj(request.json).db_get_user()
+
+# returns the user email requested from the database when provided with a json text formatted as {username: username}
+@app.route('/api/db_get_user_email', methods=['POST'])
+def db_get_user_email():
+	return UserObj(request.json).db_get_user_email()
 
 # updates the user's name when provided with a json text formatted as {email: email, username: username} 
 @app.route('/api/db_update_user_name', methods=['PUT'])
@@ -68,7 +76,8 @@ def db_login():
 def db_logout():
     return UserObj(request.json).db_logout()
 
-@app.route('/api/db_get_consultants', methods=['GET'])
+# returns list of consultants with optional parameters formetted as {email: email, username: username, name: name}
+@app.route('/api/db_get_consultants', methods=['POST'])
 def db_get_consultants():
 	return UserObj(request.json).db_get_consultants()
 	
@@ -79,14 +88,10 @@ def db_create_profile():
 	return ProfileObj(request.json).db_create_profile()
 
 # returns the profile requested from the database when provided with a json text formatted as {username: username}
-@app.route('/api/db_get_profile', methods=['GET'])
+@app.route('/api/db_get_profile', methods=['POST'])
 def db_get_profile():
+	print(request.json)
 	return ProfileObj(request.json).db_get_profile()
-
-# updates the user's username when provided with a json text formatted as {new_username: new_username, old_username: old_username} 
-@app.route('/api/db_update_profile_user_name', methods=['PUT'])
-def db_update_profile_user_name():
-	return ProfileObj(request.json).db_update_profile_user_name()
 
 # updates the user's phone number when provided with a json text formatted as {phone_number: phone_number, username: username} 
 @app.route('/api/db_update_profile_phone_number', methods=['PUT'])
@@ -153,10 +158,20 @@ def db_delete_profile_education():
 def db_create_event():
     return CalenderObj(request.json).db_create_event()
 
-# Allows Creation Of events for a user
-@app.route('/api/db_get_schedule', methods=['GET'])
+# Gets an event for the user
+@app.route('/api/db_get_schedule', methods=['PUT'])
 def db_get_event():
     return CalenderObj(request.json).db_get_event()
+
+#updates events for a user
+@app.route('/api/db_update_event', methods=['PUT'])
+def db_update_event():
+    return CalenderObj(request.json).db_update_event()
+
+#updates events for a user
+@app.route('/api/db_delete_event', methods=['DELETE'])
+def db_delete_event():
+    return CalenderObj(request.json).db_delete_event()
 
 # creates a new course and posts it to the database when provided with a json text formatted as {course_category: course_category, course_name: course_name, course_instructor: course_instructor}
 @app.route('/api/db_create_course', methods=['POST'])
@@ -212,6 +227,16 @@ def db_delete_single_course():
 @app.route('/api/get_all_courses', methods=['GET'])
 def db_get_all_courses():
 	return CourseObj(request.json).db_get_all_courses()
+
+# Sends a message from a user to another
+@app.route('/api/db_send_message', methods=['POST'])
+def db_send_message():
+	return MessageObj(request.json).db_send_message()
+
+# Gets all messages for two users
+@app.route('/api/db_get_messages', methods=['POST'])
+def db_get_messages():
+	return MessageObj(request.json).db_get_messages()
 
 # you can put in your preferred port 
 if __name__ == '__main__':   

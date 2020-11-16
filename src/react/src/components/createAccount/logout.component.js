@@ -4,6 +4,7 @@ class Logout extends Component {
 
     componentDidMount(){
         localStorage.removeItem('token')
+        localStorage.removeItem('username')
     }
 
  

@@ -9,9 +9,16 @@ class ColourText extends Component {
     }
     render() {
         const { textInfo } = this.props
+        var res = {};
+        var array = []
+        for (var i = 0; i < textInfo.length; i++){
+            res['text'] = textInfo[i];
+            array[i] = JSON.parse(JSON.stringify(res));
+        }
+        // console.log(array)
         return(
                 <div>
-                    {textInfo.map(
+                    {array.map(
                         (texts) => 
                             <li>{texts.text}</li>
                     )}

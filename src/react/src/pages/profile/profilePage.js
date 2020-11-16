@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Profile from '../../components/profile/profile.component.js'
 import './profilePage.css'
 import { Redirect } from 'react-router-dom';
+import axios from 'axios';
 // Bunch of pictures
 import Headerbar from  '../..//components/headerbar/HeaderTaskbar.js'
 import Sidebar from '../..//components/sidebar/sidebar.component.js'
@@ -16,42 +17,7 @@ import settings from '../../assets/settings.png'
 import dashboard from '../../assets/dashboard.png'
 // End of pictures
 
-
-let educations = [
-    {id:1, text: "University of Toronto Scarbrough Undergraduate"},
-    {id:2, text: "Demo element 2"},
-    {id:3, text: "Demo element 3"}
-]
-let skills = [
-    {id:1, text: "Demo element 1"},
-    {id:2, text: "Demo element 2"},
-    {id:3, text: "Demo element 3"},
-    {id:4, text: "Demo element 4"}
-]
-let completedCourses = [
-    {id:1, text: "Demo element 1"},
-    {id:2, text: "Demo element 2"}
-]
-let languages = [
-    {id:1, text: "English (Native)"},
-    {id:2, text: "French (Second)"}
-]
-let description = "According to all known laws of aviation, \
-    there is no way a bee \
-    should be able to fly. \
-    Its wings are too small to get \
-    its fat little body off the ground. \
-    The bee, of course, flies anyway \
-    because bees don't care \
-    what humans think is impossible."
-let name = "Lingfeng Su"
-let timeJoin = "August 2020"
-let firstName = "Lingfeng"
-let lastName = "Su"
-let email =  "Ling.Su@mail.utoronto.ca"
-let phoneNumber = "416-731-9960"
-
-let headerItems = {link: '/sidebar', title: 'Dashboard', profileImg: profile }
+let headerItems = {link: '/sidebar', title: 'Profile', profileImg: profile }
 
 let navItems = [
     {id: 1, link: "", imgSrc: dashboard, title: "Dashboard" },
@@ -65,24 +31,61 @@ let navItems = [
     ]
 
 class ProfilePage extends Component {
+    state = {
+        educations: [],
+        skills: [],
+        completedCourses:[],
+        languages: [],
+        name: '',
+        description: '',
+        timeJoin: '',
+        firstName: '',
+        lastName: '',
+        email:  '',
+        phoneNumber: '',
+    };
+    componentDidMount() {
+        axios.post('http://127.0.0.1:8103/api/db_get_profile', {'username': localStorage.getItem('username')})
+            .then(response => {
+                console.log(response);
+                this.setState({educations: response.data['educations']})
+                this.setState({skills: response.data['skills']})
+                this.setState({completedCourses:response.data['completed_courses']})
+                this.setState({languages: response.data['languages']})
+                this.setState({name: response.data['name']})
+                this.setState({description: response.data['educations']})
+                this.setState({timeJoin: response.data['time_join']})
+                this.setState({firstName: response.data['first_name']})
+                this.setState({lastName: response.data['last_name']})
+                this.setState({email: response.data['phone_number']}) //Change this later XD no EMAIL yet
+                this.setState({phoneNumber: response.data['phone_number']})
+            })
+			.catch((error) => {
+			console.log(error)
+        });
+    }
+
 	render() {
+        if (!localStorage.getItem('token')) {
+            return <Redirect to='/login' />
+        }
 		return(
 			<React.Fragment>
                 <Sidebar books={navItems}/>
                 <Headerbar icons={headerItems}/>
                 <div className = "profileBox">
                     <Profile 
-                        educations = {educations} 
-                        skills = {skills} 
-                        completedCourses = {completedCourses} 
-                        languages = {languages}
-                        name = {name}
-                        description = {description}
-                        timeJoin = {timeJoin}
-                        firstName = {firstName}
-                        lastName = {lastName}
-                        email =  {email}
-                        phoneNumber = {phoneNumber}
+                        educations = {this.state.educations} 
+                        skills = {this.state.skills} 
+                        completedCourses = {this.state.completedCourses} 
+                        languages = {this.state.languages}
+                        name = {this.state.name}
+                        description = {this.state.description}
+                        timeJoin = {this.state.timeJoin}
+                        firstName = {this.state.firstName}
+                        lastName = {this.state.lastName}
+                        email =  {this.state.email}
+                        phoneNumber = {this.state.phoneNumber}
                         />
                 </div>
                     

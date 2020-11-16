@@ -21,8 +21,8 @@ class createAccount extends Component {
 		this.handleChange = this.handleChange.bind(this);
 		this.onclick = this.onClick = this.onclick.bind(this);
         this.submit = this.submit.bind(this);
-
 	}
+	
 	onclick(event){
 		let name = event.target.name;
 		let value = event.target.value;
@@ -111,8 +111,7 @@ class createAccount extends Component {
 			})
 			.catch((error) => {
 			console.log(error)
-		})
-            ;
+		});
     }
 }
 
