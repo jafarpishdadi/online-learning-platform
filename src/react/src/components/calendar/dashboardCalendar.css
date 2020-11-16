@@ -19,6 +19,7 @@
     background-color:#FCFCFB;
     border-color:#FCFCFB;
     font-family: "Open Sans";
+    box-shadow: inherit !important;
 }
 
 .btn-class{
