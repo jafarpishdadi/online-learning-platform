@@ -29,11 +29,11 @@ import Events from './components/events/events.component.js'
 import News from './components/news/news.component.js'
 import profile from './assets/profile.png'
 import DashPage from './pages/dashboard/dashboard.component.js'
+import AllClassListPage from './pages/Classes/classes.js'
 import CreateClass  from  "./components/createClass/createClass.component.js";
 import ClassList  from  "./components/createClass/classList.component.js";
 import ProfilePage from "./pages/profile/profilePage.js";
 import Studentclasses from './components/Classes-Student/studentClasses.component.js'
-import AllClassList from './components/Classes-Student/enrollClasses.component.js'
 
 window.token=localStorage.getItem('token');
 
@@ -95,7 +95,7 @@ let headerItems = {link: '/sidebar', title: 'Dashboard', profileImg: profile }
                 <ClassList/>
             </Route>
             <Route exact path="/allclasslist">
-                <AllClassList/>
+                <AllClassListPage/>
             </Route>
             <Route exact path="/logout">
                 <Logout/>

@@ -1,0 +1,24 @@
+.page {
+    display:flex;
+    flex-direction: row;
+    height: 100%;
+    background-color: #FCFCFB !important;
+}
+body{
+    background-color: #FCFCFB !important;
+}
+.picture{
+    flex:1;
+    background-color: #FCFCFB;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    width: auto; /* ie8 */
+}
+
+.box-2{
+    margin-top: 10px;
+    margin-left: 300px;
+}

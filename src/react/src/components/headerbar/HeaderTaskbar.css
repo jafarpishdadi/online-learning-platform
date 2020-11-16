@@ -8,13 +8,13 @@
 }
 
 .Navbar{
-    margin-left: 300px;
-    margin-top:40px;
+    margin-left: 280px;
+    margin-top: 5px;
 }
 .header {
     color: #A78EC3;
     text-decoration-color: #A78EC3;
-    font-size: 30px;
+    font-size: 30px !important;
 }
 .searchIcon {
     background-color: #FCFCFB;
