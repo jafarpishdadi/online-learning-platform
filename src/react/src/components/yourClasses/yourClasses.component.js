@@ -1,58 +1,71 @@
 import React, { Component } from 'react'
-import ReactDOM from 'react-dom'
+import axios from 'axios'
 import Card from 'react-bootstrap/Card'
-import axios from 'axios';
-import {Redirect} from 'react-router-dom'
 import './yourClasses.css'
-
+import Modal from '../popUp/Modal.js'
+import gradhat from '../../assets/gradhat.png'
+import youtube from '../../assets/youtube.png'
+import pen from '../../assets/pen.png'
+import {Redirect} from 'react-router-dom'
 
 class Classes extends Component {
-	state = {
-		redirect: false,
-		component:''
-	  }
-	  listRedirect = () => {
-		this.setState({
-		  redirect: true,
-		  component:'seeAll'
-		})
-	  }
+    state = {
+        courses: [],
+        show:false
+    }
+    showModal = () => {
+        this.setState({ show: true });
+      };
+    
+      hideModal = () => {
+        this.setState({ show: false });
+      };
+    componentDidMount() {
+		axios.post(`http://127.0.0.1:8103/api/db_get_courses_of_student`,{'student': localStorage.getItem('username')} )
+            .then(res => {
+                const courses = res.data;
+				this.setState({ courses });
+				console.log(localStorage.getItem('username'))
+            })
+	}
 
-	  classRedirect = () => {
+	classRedirect = () => {
 		this.setState({
 		  redirect: true,
 		  component:'class'
 		})
 	  }
-	  renderRedirect = () => {
+
+	renderRedirect = () => {
 		if (this.state.redirect)  {
 			if (this.state.component == 'class'){
-				return <Redirect to='/createclass' />
+				return <Redirect to='/allclassList' />
 			}
-			else if(this.state.component == 'seeAll'){
-				return <Redirect to='/classlist' />
-			}
-	  }
+		}
 	}
 
-	render() {
+    render() {
         return (
-	<Card className='ClassCardStyle overflow-auto'>
-	<Card.Body>
-		<Card.Title className='classCardTitleStyle'>Classes</Card.Title>
-        <div className='ml-auto'>
-		{this.renderRedirect()}
-  		<button className='btn btn-see-all pull-right'onClick={this.listRedirect}>See All</button>
-		</div>
-  		<button className='btn btn-event ' >Active Courses</button>
-		<button className='btn btn-event 'onClick={this.classRedirect}>Add Courses</button>
-	</Card.Body>
-    <div class = 'square'></div>
-    </Card>
-
-
-
-        );
+            <div>
+                <h1>Your Courses</h1>
+				<div>
+                <Modal show={this.state.show} handleClose={this.hideModal}>
+                </Modal>
+				{ this.state.courses.map(courses =>
+                    <Card className='courseCards' bg='light' text='black' style={{ height:'14rem', width: '14rem' }}>
+						{this.renderRedirect()}
+                        <Card.Header className='instructorClassHeader' style={{height:'10rem', color:'white',background:'black' }}></Card.Header>
+                        <Card.Body>
+                            <Card.Title>{courses}</Card.Title>
+                            <Card.Text>
+                            </Card.Text>
+                        </Card.Body>
+                    </Card>
+                )}
+				</div>
+				<button className='btn btn-e'onClick={this.classRedirect}>Add A New Course</button>
+            </div>
+        )
     }
 }
-export default Classes;
+export default Classes

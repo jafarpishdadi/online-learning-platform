@@ -9,18 +9,19 @@
 	overflow: hidden;
 	border-color: white;
     border-radius: 20px;
-	box-shadow: 0 10px 10px -2px rgba(0,0,0,.2) !important;
+    box-shadow: 0 10px 10px -2px rgba(0,0,0,.2) !important;
+    margin-left: 10px;
 }
 .dashCardStyle {
     display:flex;
-    width: 70vw;
-    height: 50vh;
+    width: 40vw;
+    height: 45vh;
     align-items: right;
     background-color:#FCFCFB;
     border-color:#FCFCFB;
     font-family: 'Open Sans';
+    box-shadow: inherit !important;
 }
-
 .btn-class{
     display: flex;
 	border: none;
@@ -136,7 +137,8 @@
 
 .custom-div {
 	border-radius: 20px;
-	border-color: none;
+    border-color: none;
+    margin-left: 0;
 }
 
 /* SmallCards */

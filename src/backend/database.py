@@ -5,10 +5,12 @@ from user import UserObj
 from profile import ProfileObj
 from calender import CalenderObj
 from course import CourseObj
+from message import MessageObj
 import user
 import calender
 import course
 import profile
+import message
 
 app = Flask(__name__) 
 
@@ -178,7 +180,7 @@ def db_create_course():
 	return CourseObj(request.json).db_create_course()
 
 # adds the passed in student to the given course when provided with a json text formatted as {course_name: course_name, student: student}
-@app.route('/api/db_add_student_to_course', methods=['PUT'])
+@app.route('/api/db_add_student_to_course', methods=['POST'])
 def db_add_student_to_course():
 	return CourseObj(request.json).db_add_student_to_course()
 
@@ -225,6 +227,16 @@ def db_delete_single_course():
 @app.route('/api/get_all_courses', methods=['GET'])
 def db_get_all_courses():
 	return CourseObj(request.json).db_get_all_courses()
+
+# Sends a message from a user to another
+@app.route('/api/db_send_message', methods=['POST'])
+def db_send_message():
+	return MessageObj(request.json).db_send_message()
+
+# Gets all messages for two users
+@app.route('/api/db_get_messages', methods=['POST'])
+def db_get_messages():
+	return MessageObj(request.json).db_get_messages()
 
 # you can put in your preferred port 
 if __name__ == '__main__':   
