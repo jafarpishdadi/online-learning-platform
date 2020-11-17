@@ -127,4 +127,3 @@ class HeaderTaskbar extends Component {
 }
 
 export default HeaderTaskbar
- 

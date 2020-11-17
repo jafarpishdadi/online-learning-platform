@@ -19,30 +19,8 @@ img {
     align-self: center;
     flex-direction: row-reverse;
 }
-.news{
-    display: flex;
-    flex-direction: row-reverse;
-}
-.classes{
-    display: flex;
-    flex-direction: column-reverse;
-}
 
-.tophalf{
-    display:flex; 
-    align-items: stretch;
-    margin-left: 375px;
-    margin-top: -950px;
-    justify-content: space-between;
-}
-.box{
-    display:flex;
-    background-color: #FCFCFB;
-    align-items: stretch;
-    margin-left: 375px;
-    margin-top: 600px;
-    justify-content: space-between;
-}
+
 .Sidebar{
     height: 100%; /* 100% Full-height */
     width: 0; /* 0 width - change this with JavaScript */
@@ -55,3 +33,17 @@ img {
     padding-top: 60px; /* Place content 60px from the top */
     transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
 }
+.container-dash {
+    display: flex;
+    margin-left: 300px;
+
+  }
+.left-half {
+    flex: 1;
+    padding: 1rem;
+  }
+  
+  .right-half {
+    flex: 1;
+    padding: 1rem;
+  }

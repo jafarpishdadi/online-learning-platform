@@ -14,6 +14,7 @@ import CreateAccountPage from './pages/createAccount/createAccount.js'
 import LogInPage from './pages/login/login.js'
 import Logout from "./components/createAccount/logout.component.js";
 import "./components/createAccount/loginAndSignup.css";
+import SchedulePage from './pages/schedulePage/schedulePage.js'
 import OutsideNavbar from './components/navbar/outsideNavbar.js'
 import classes from './assets/classes.png'
 import scheduling from './assets/scheduling.png'
@@ -29,10 +30,13 @@ import Events from './components/events/events.component.js'
 import News from './components/news/news.component.js'
 import profile from './assets/profile.png'
 import DashPage from './pages/dashboard/dashboard.component.js'
+import AllClassListPage from './pages/Classes/classes.js'
 import CreateClass  from  "./components/createClass/createClass.component.js";
 import ClassList  from  "./components/createClass/classList.component.js";
 import ProfilePage from "./pages/profile/profilePage.js";
 import FAQPage from "./pages/faq/faqPage.js";
+import Studentclasses from './components/Classes-Student/studentClasses.component.js'
+
 
 window.token=localStorage.getItem('token');
 
@@ -77,6 +81,10 @@ let headerItems = {link: '/sidebar', title: 'Dashboard', profileImg: profile }
             <Route exact path="/classes">
                 <Classes/>
             </Route>
+            // studentclasses comp
+            <Route exact path="/studentclasses">
+                <Studentclasses/>
+            </Route>
             // events
             <Route exact path="/events">
                 <Events/>
@@ -85,12 +93,19 @@ let headerItems = {link: '/sidebar', title: 'Dashboard', profileImg: profile }
             <Route exact path="/news">
                 <News/>
             </Route>
+            // schedule page
+            <Route exact path="/schedule">
+                <SchedulePage />
+            </Route>
             // newscomp
             <Route exact path="/createclass">
                 <CreateClass/>
             </Route>
             <Route exact path="/classlist">
                 <ClassList/>
+            </Route>
+            <Route exact path="/allclasslist">
+                <AllClassListPage/>
             </Route>
             <Route exact path="/logout">
                 <Logout/>

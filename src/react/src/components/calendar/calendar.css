@@ -3,6 +3,11 @@
 /* Calendar */
 
 .react-calendar {
+	margin-left: 300px;
+	margin-top: 20px;
+}
+
+/* .react-calendar {
 	display: flex;
 	font-family: "Open Sans" !important;
 	font-size: 30px;
@@ -65,7 +70,7 @@
 .custom-div {
 	border-radius: 20px;
 	border-color: none;
-}
+} */
 
 /* SmallCards */
 
@@ -88,6 +93,10 @@
 	background-color: #e6e6e6;
 }
 
+.custom-a {
+	max-width: 90px;
+}
+
 /* Schedule */
 
 .dot {
@@ -103,15 +112,41 @@
 .schedule-card {
 	background: none;
 	border: none;
+	margin-left: 2vw;
 }
 
 .custom-header {
 	color: #7A7A7A;
 	font-family: "Open Sans" !important;
 	font-weight: bold;
+	margin-left: 3vw;
 }
 
 .custom-time {
 	color: #7A7A7A;
 	font-family: "Open Sans" !important;
+	width: 8vw;
+}
+
+.custom-timeTwo {
+	color: #7A7A7A;
+	font-family: "Open Sans" !important;
+	width: 20vw;
+}
+
+.custom-div2 {
+	margin-left: 300px;
+}
+
+.custom-deck {
+	width: 15vw;
+	margin-left: 290px;
+}
+.custom-a:hover {
+	text-decoration: none;
+	background-color: #e6e6e6;
+	box-shadow: none !important;
+}
+.time-box {
+	width: 10vw;
 }

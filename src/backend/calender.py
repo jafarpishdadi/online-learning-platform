@@ -54,13 +54,11 @@ class CalenderObj():
 		# Checks if there are events on the same date
 		sameDateEvent = self.Event.objects(date=self.content['date'])
 		for event in sameDateEvent:
-			# make sure no event has the same name,type,or time on the same date
+			# make sure no event has the same name, or time on the same date
 			if event.name == self.content['name']:
 				return make_response("Event with the same name exists on date", 400)
 			if event.start_time == self.content['start_time']:
 				return make_response("Event with the same start_time exists on date", 400)
-			if event.event_type == self.content['event_type']:
-				return make_response("Event with the same event_type exists on date", 400)
 
 		self.Event(
 			name=self.content['name'], 
@@ -80,6 +78,7 @@ class CalenderObj():
 			return make_response("Missing required field: " + x, 400)
 		
 		events = self.Event.objects(email=self.content['email'],date=self.content['date']).all()
+		events = sorted(events, key=lambda x: x.start_time)
 		if len(events) > 0:
 			schedule = []
 			for event in events:
