@@ -1,0 +1,26 @@
+.faqQuestion {
+    background: whitesmoke;
+    border: whitesmoke;
+    width: 807px;
+    height: 60px;
+    font-size: 20px;
+    text-align: left;
+    text-decoration-color: #A78EC3;
+}
+
+.faqQuestion:hover {
+    text-decoration-color: underline;
+    cursor: pointer;
+}
+
+.faqAnswer-hidden {
+    display: none;
+}
+
+.faqAnswer {
+    font-size: 14px;
+    padding-left: 40px;
+    width: 807px;
+    font-weight: lighter;
+    background-color: white;
+}
