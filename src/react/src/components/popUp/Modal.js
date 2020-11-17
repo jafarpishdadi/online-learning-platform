@@ -9,7 +9,7 @@ export default Modal = ({ handleClose, show, children }) => {
 	const showHideClassName = show ? "modal display-block" : "modal display-none";
 
 	let state = {
-		time: '8 AM',
+		time: '1',
 		eventName:' ',
 		eventType: 'Workshop'
 	};

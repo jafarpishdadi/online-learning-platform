@@ -134,15 +134,19 @@
 	width: 20vw;
 }
 
-.custom-div {
-	margin-left: 25px;
+.custom-div2 {
+	margin-left: 300px;
 }
 
 .custom-deck {
-	width: 25vw;
+	width: 15vw;
 	margin-left: 290px;
 }
-
+.custom-a:hover {
+	text-decoration: none;
+	background-color: #e6e6e6;
+	box-shadow: none !important;
+}
 .time-box {
 	width: 10vw;
 }

@@ -32,7 +32,6 @@ class DashboardCalendarComponent extends Component {
 						minDetail={"year"}
 						calendarType={"US"}
 						showDoubleView={false}
-						// onClickDay={}
 						/>
 				</div>
 			</div>

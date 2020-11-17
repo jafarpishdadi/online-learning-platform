@@ -18,7 +18,7 @@ let headerItems = {link: '/sidebar', title: 'Schedule', profileImg: profile }
 
 let navItems = [
     {id: 1, link: "/dashboard", imgSrc: dashboard, title: "Dashboard" },
-    {id: 2, link: "", imgSrc: classes, title: "Classes" },
+    {id: 2, link: "/allclasslist", imgSrc: classes, title: "Classes" },
     {id: 3, link: "/schedule", imgSrc: scheduling, title: "Scheduling" },
     {id: 4, link: "", imgSrc: community, title: "Community" },
     {id: 5, link: "", imgSrc: mailbox, title: "Mailbox" },

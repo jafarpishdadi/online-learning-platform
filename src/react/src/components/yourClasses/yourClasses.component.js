@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import Card from 'react-bootstrap/Card'
 import './yourClasses.css'
+import Modal from '../popUp/Modal.js'
 import gradhat from '../../assets/gradhat.png'
 import youtube from '../../assets/youtube.png'
 import pen from '../../assets/pen.png'
@@ -9,9 +10,16 @@ import {Redirect} from 'react-router-dom'
 
 class Classes extends Component {
     state = {
-        courses: []
+        courses: [],
+        show:false
     }
-
+    showModal = () => {
+        this.setState({ show: true });
+      };
+    
+      hideModal = () => {
+        this.setState({ show: false });
+      };
     componentDidMount() {
 		axios.post(`http://127.0.0.1:8103/api/db_get_courses_of_student`,{'student': localStorage.getItem('username')} )
             .then(res => {
@@ -41,6 +49,8 @@ class Classes extends Component {
             <div>
                 <h1>Your Courses</h1>
 				<div>
+                <Modal show={this.state.show} handleClose={this.hideModal}>
+                </Modal>
 				{ this.state.courses.map(courses =>
                     <Card className='courseCards' bg="light" text="black" style={{ height:'14rem', width: '14rem' }}>
 						{this.renderRedirect()}
