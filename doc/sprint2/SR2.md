@@ -21,7 +21,7 @@
 4. **what should you avoid doing next sprint**
 *   not starting to work in the beginning of the sprint 
 *   not asking what needs to be done 
-5. **worst experience in sprint 1**
+5. **worst experience in sprint 2**
 *   finding a way to store lists in the database
 *   debugging mongo queries
 *   aligning items on dash page
