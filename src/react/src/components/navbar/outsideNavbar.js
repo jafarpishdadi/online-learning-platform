@@ -17,7 +17,7 @@ class OutsideNavbar extends Component {
 						<Link to='/login' className="nav-item nav-link custom-link">Solutions</Link>
 						</li>
 						<li className="nav-item ml-5">
-						<Link to='/login' className="nav-item nav-link custom-link">Pricing</Link>
+						<Link to='/faq' className="nav-item nav-link custom-link">Pricing</Link>
 						</li>
 					</ul>
 				</div>

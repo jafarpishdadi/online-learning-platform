@@ -81,6 +81,10 @@
 	max-width: 45rem;
 	display: inline-block;
 	font-family: "Open Sans" !important;
+	box-shadow: none !important;
+}
+.card-header{
+	box-shadow: none !important;
 }
 
 .custom-p {
@@ -140,7 +144,7 @@
 
 .custom-deck {
 	width: 15vw;
-	margin-left: 290px;
+	margin-left: 340px !important;
 }
 .custom-a:hover {
 	text-decoration: none;

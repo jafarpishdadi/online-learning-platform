@@ -46,7 +46,7 @@ class DashPage extends Component {
                     <div class="left-half">
                         <article>
                         <div><DashboardCalendarComponent/></div>
-                        <div><Classes/></div>
+                        <div class='classesbox'><Classes/></div>
                         </article>
                     </div>
                     <div class="right-half">

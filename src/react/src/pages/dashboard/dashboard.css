@@ -42,7 +42,9 @@ img {
     flex: 1;
     padding: 1rem;
   }
-  
+  .classesbox{
+      margin-top:85px;
+  }
   .right-half {
     flex: 1;
     padding: 1rem;
