@@ -9,7 +9,7 @@ class LoginPage extends Component {
 		return(
 			<React.Fragment>
 				<OutsideNavbar/>
-				<div className="d-flex-page">
+				<div className="d-flex page">
 					<div className="picture">
 						<img src={Picture} alt="Map"></img>
 					</div>

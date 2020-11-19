@@ -16,6 +16,7 @@ import achievements from '../../assets/achievements.png'
 import socialInitiatives from '../../assets/Welfare.png'
 import settings from '../../assets/settings.png'
 import dashboard from '../../assets/dashboard.png'
+import Pricing from '../../assets/pricing.PNG'
 // End of pictures
 
 // Borrowed code from https://medium.com/javascript-in-plain-english/react-building-an-accessible-faq-component-bac135116532
@@ -38,6 +39,9 @@ class FAQPage extends Component {
 		return (
       <React.Fragment>
       <OutsideNavbar/>
+      <div className="picture">
+						<img src={Pricing} alt="Map"></img>
+					</div>
       <header className="faq-header">
         Frequently Asked Questions
       </header>
@@ -49,8 +53,8 @@ class FAQPage extends Component {
                     {(isOpen, onToggle) => {
                       return (
                         <>
-                          {isOpen ? "⋀" : "⋁"}
-                          <span>What additional features or benefits does U-Impactiy Learning provide?</span>
+                          <b>What additional features or benefits does U-Impactiy Learning provide?</b>
+                          {isOpen ? "     ▲" : "     ▼"}
                         </>
                       );
                     }}
@@ -62,8 +66,8 @@ class FAQPage extends Component {
                     {(isOpen, onToggle) => {
                       return (
                         <>
-                          {isOpen ? "⋀" : "⋁"}
-                          <span>What happens at the end of my free trial?</span>
+                          <b>What happens at the end of my free trial?</b>
+                          {isOpen ? "     ▲" : "     ▼"}
                         </>
                       );
                     }}
@@ -75,8 +79,8 @@ class FAQPage extends Component {
                     {(isOpen, onToggle) => {
                       return (
                         <>
-                          {isOpen ? "⋀" : "⋁"}
-                          <span>How will you bill me?</span>
+                          <b>How will you bill me?</b>
+                          {isOpen ? "     ▲" : "     ▼"}
                         </>
                       );
                     }}
@@ -88,8 +92,8 @@ class FAQPage extends Component {
                     {(isOpen, onToggle) => {
                       return (
                         <>
-                          {isOpen ? "⋀" : "⋁"}
-                          <span>Can I change or cancel my plan later on?</span>
+                          <b>Can I change or cancel my plan later on?</b>
+                          {isOpen ? "     ▲" : "     ▼"}
                         </>
                       );
                     }}
@@ -101,8 +105,8 @@ class FAQPage extends Component {
                     {(isOpen, onToggle) => {
                       return (
                         <>
-                          {isOpen ? "⋀" : "⋁"}
-                          <span>What is your refund policy?</span>
+                          <b>What is your refund policy?</b>
+                          {isOpen ? "     ▲" : "     ▼"}
                         </>
                       );
                     }}
@@ -114,8 +118,8 @@ class FAQPage extends Component {
                     {(isOpen, onToggle) => {
                       return (
                         <>
-                          {isOpen ? "⋀" : "⋁"}
-                          <span>Can I expense my membership?</span>
+                          <b>Can I expense my membership?</b>
+                          {isOpen ? "     ▲" : "     ▼"}
                         </>
                       );
                     }}

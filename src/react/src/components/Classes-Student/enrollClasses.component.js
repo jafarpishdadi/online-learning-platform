@@ -14,11 +14,16 @@ class AllClassList extends Component {
         state = {
         courses: [],
         show:false,
+        clicked_course:"",
+        clicked_name:""
+        
         };
 
 
-    showModal = () => {
+    showModal = (clicked_course) => {
       this.setState({ show: true });
+      console.log(this.state.clicked_course)
+      console.log(this.state.clicked_name)
     };
   
     hideModal = () => {
@@ -39,10 +44,10 @@ class AllClassList extends Component {
                 <Modal show={this.state.show} handleClose={this.hideModal}></Modal>
                 <h1>Course List</h1>
                 { this.state.courses.map(courses =>
-                    <Card className='courseCards'  bg="light" text="black" style={{ height:'14rem', width: '25rem' }} name='course_name' value={courses.course_name.toString()} onClick={this.showModal} >
-                        <Card.Header className='instructorHeader' style={{height:'10rem', color:'white',background:'black' }}></Card.Header>
+                    <Card className='courseCards'  bg="light" text="black" style={{ height:'14rem', width: '25rem' }} name='course_name' value={courses.course_name}  onClick={() => this.setState({clicked_course: courses.course_name, clicked_name:courses.course_instructor}) }>
+                        <Card.Header className='instructorHeader' style={{height:'10rem', color:'white',background:'black' } }></Card.Header>
                         <div class="numberCircle" ></div>
-                        <div class="titleCircle">{courses.course_instructor}</div>
+                        <div class="titleCircle" onClick={this.showModal}>{courses.course_instructor}</div>
                         <Card.Body>                                          
                             <Card.Title>{courses.course_name}</Card.Title>
                             <Card.Text>

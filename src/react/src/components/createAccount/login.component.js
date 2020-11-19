@@ -43,7 +43,7 @@ class Login extends Component {
 		}
 
 		return (
-			<Card className="cardStyle">
+			<Card className="cardStyle2">
 				<Card.Body>
 					<Card.Title className="cardTitleStyle">Welcome Back!</Card.Title>
 

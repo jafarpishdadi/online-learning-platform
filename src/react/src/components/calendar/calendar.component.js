@@ -56,7 +56,7 @@ class CalendarComponent extends Component {
 				for (let i = 0; i < size; i++) {
 					times.push(parseInt(vals[i].start_time));
 				}
-				for (let i = 0; i < 13; i++) {
+				for (let i = 1; i <= 13; i++) {
 					if (times.includes(i)) {
 						allTimes.push(vals[0]);
 						vals.shift();

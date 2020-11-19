@@ -50,7 +50,7 @@ class createAccount extends Component {
 			return <Redirect to='/login' />
 		  }
         return (
-	<Card className="cardStyle overflow-auto">
+	<Card className="cardStyle2 overflow-auto">
 	<Card.Body>
 		<Card.Title className="cardTitleStyle">Create an Account</Card.Title>
 		<form class="flex-column" onSubmit = {this.submit}>

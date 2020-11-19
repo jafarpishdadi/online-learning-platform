@@ -53,8 +53,8 @@ export default Modal = ({ handleClose, show, children }) => {
 					</form>
 				</div>
 			<div class="text-right p-2">
-				<button type="button" class="btn btn-outline-success mr-2" onClick={submit}>Yes</button>
-				<button type="button" class="btn btn-outline-danger" onClick={handleClose}>No</button>
+				<button type="button" class="btn btn-outline-success mr-2" onClick={submit}>Enroll</button>
+				<button type="button" class="btn btn-outline-danger" onClick={handleClose}>Cancel</button>
 			</div>
 		</section>
 	  </div>
