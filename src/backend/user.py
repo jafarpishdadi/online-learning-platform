@@ -237,3 +237,17 @@ class UserObj():
 			return make_response(jsonify(all_profiles), 200)
 		else:
 			return make_response("No consultants in database.", 404)
+
+	def db_get_user_type(self):
+		"""
+		Gets the user_type based on username
+		"""
+		x = checkFields(self.content, fields=['username'])
+		if (x):
+			return make_response("Missing required field: " + x, 400)
+
+		user_obj = self.User.objects(username=self.content['username']).first()
+		if user_obj:
+			return make_response(jsonify(user_obj.user_type), 200)
+		else:
+			return make_response("", 404)
