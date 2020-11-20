@@ -1,3 +1,5 @@
+
+
 <table>
   <tr>
    <td>User Story 
@@ -36,7 +38,7 @@
    </td>
    <td>3
    </td>
-   <td>Work in progress
+   <td>done
    </td>
   </tr>
   <tr>
@@ -46,7 +48,7 @@
    </td>
    <td>4
    </td>
-   <td>To be started
+   <td>done
    </td>
   </tr>
   <tr>
@@ -56,7 +58,7 @@
    </td>
    <td>5
    </td>
-   <td>To be started
+   <td>Work in progress
    </td>
   </tr>
   <tr>
@@ -66,7 +68,7 @@
    </td>
    <td>6
    </td>
-   <td>To be started
+   <td>done
    </td>
   </tr>
   <tr>
@@ -76,7 +78,7 @@
    </td>
    <td>7
    </td>
-   <td>To be started
+   <td>done
    </td>
   </tr>
   <tr>
@@ -86,7 +88,7 @@
    </td>
    <td>8
    </td>
-   <td>To be started
+   <td>done
    </td>
   </tr>
   <tr>
@@ -96,7 +98,7 @@
    </td>
    <td>9
    </td>
-   <td>To be started
+   <td>done
    </td>
   </tr>
   <tr>
@@ -106,7 +108,7 @@
    </td>
    <td>10
    </td>
-   <td>To be started
+   <td>Work in progress
    </td>
   </tr>
   <tr>
@@ -116,7 +118,7 @@
    </td>
    <td>11
    </td>
-   <td>To be started
+   <td>Work in progress
    </td>
   </tr>
   <tr>
@@ -126,7 +128,7 @@
    </td>
    <td>12
    </td>
-   <td>To be started
+   <td>Work in progress
    </td>
   </tr>
   <tr>
@@ -136,7 +138,7 @@
    </td>
    <td>13
    </td>
-   <td>To be started
+   <td>Work in progress
    </td>
   </tr>
   <tr>
@@ -146,7 +148,7 @@
    </td>
    <td>14
    </td>
-   <td>To be started
+   <td>Deleted
    </td>
   </tr>
   <tr>
@@ -156,7 +158,7 @@
    </td>
    <td>15
    </td>
-   <td>To be started
+   <td>Deleted
    </td>
   </tr>
   <tr>
@@ -166,7 +168,7 @@
    </td>
    <td>16
    </td>
-   <td>To be started
+   <td>Deleted
    </td>
   </tr>
   <tr>
@@ -176,7 +178,7 @@
    </td>
    <td>17
    </td>
-   <td>To be started
+   <td>Deleted
    </td>
   </tr>
   <tr>
@@ -186,8 +188,129 @@
    </td>
    <td>18
    </td>
-   <td>To be started
+   <td>Work in progress
+   </td>
+  </tr>
+  <tr>
+   <td>As a user, I can access dashboard based on my user type
+   </td>
+   <td>2
+   </td>
+   <td>19
+   </td>
+   <td>Work in progress
+   </td>
+  </tr>
+  <tr>
+   <td>
+As a user, after my first login I have the ability to access a specific creation page tailored to the user type
+   </td>
+   <td>3
+   </td>
+   <td>20
+   </td>
+   <td>Work in progress
+   </td>
+  </tr>
+  <tr>
+   <td>
+As a user I want to have a discussion board where I can send messages to users using U-Impactify
+   </td>
+   <td>4
+   </td>
+   <td>21
+   </td>
+   <td>Work in progress
+   </td>
+  </tr>
+  <tr>
+   <td>
+As a user, I have access to a Homepage to provide a summary of what U-Impactify does
+   </td>
+   <td>2
+   </td>
+   <td>22
+   </td>
+   <td>Work in progress
+   </td>
+  </tr>
+  <tr>
+   <td>
+As a user, I have access to a Solutions page to learn about the features of U-Impactify for both Instructors and Students
+   </td>
+   <td>2
+   </td>
+   <td>23
+   </td>
+   <td>Work in progress
+   </td>
+  </tr>
+  <tr>
+   <td>
+As a user, I want to have a discussion board where I can reply to user's messages using U-Impactify
+   </td>
+   <td>4
+   </td>
+   <td>24
+   </td>
+   <td>Work in progress
+   </td>
+  </tr>
+  <tr>
+   <td>
+As a user, I have access to a social initiatives page where I am able to join a social initiative
+   </td>
+   <td>2
+   </td>
+   <td>25
+   </td>
+   <td>Work in progress
+   </td>
+  </tr>
+  <tr>
+   <td>
+As a user, I have access to an About page to learn about U-Impactify
+   </td>
+   <td>2
+   </td>
+   <td>26
+   </td>
+   <td>Work in progress
+   </td>
+  </tr>
+  <tr>
+   <td>
+As a user, I have access to a course details page giving me specific information about a selected course
+   </td>
+   <td>2
+   </td>
+   <td>27
+   </td>
+   <td>Work in progress
+   </td>
+  </tr>
+  <tr>
+   <td>
+As a user I have access to an events page where I can see all events 
+   </td>
+   <td>2
+   </td>
+   <td>28
+   </td>
+   <td>Work in progress
+   </td>
+  </tr>
+  <tr>
+   <td>
+As a user I have access to an events page where I can join events 
+   </td>
+   <td>2
+   </td>
+   <td>29
+   </td>
+   <td>Work in progress
    </td>
   </tr>
 </table>
+
 
