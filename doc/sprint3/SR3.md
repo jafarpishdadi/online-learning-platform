@@ -17,14 +17,12 @@
 3. **what are practices that you should continue during next sprint**
 *   Good communication
 *   Seek help
-*   Learn quickly
+*   Have frequent meetings 
 4. **what are some new practices that you might want to use during next sprint**
 *   Time management
-*   More frequent meetings
 5. **what are (if any) harmful practices you should stop using during next sprint**
-*   Don’t be afraid of asking questions
-*   not starting to work in the beginning of the sprint
-*   not asking what needs to be done
+*   Not starting to work in the beginning of the sprint
+*   Not asking what needs to be done
 6. **what was your best/worst experience during sprint 3**
 *   Seeing our user stories work in the project
 *   Debugging some of the problems we faced as a result of some small mistakes
