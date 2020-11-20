@@ -80,6 +80,11 @@ def db_logout():
 @app.route('/api/db_get_consultants', methods=['POST'])
 def db_get_consultants():
 	return UserObj(request.json).db_get_consultants()
+
+# returns user_type when provided with username formetted as {username: username}
+@app.route('/api/db_get_user_type', methods=['POST'])
+def db_get_user_type():
+	return UserObj(request.json).db_get_user_type()
 	
 # creates a new profile and posts it to the database when provided with a json text formatted as {username: username}
 @app.route('/api/db_create_profile', methods=['POST'])
