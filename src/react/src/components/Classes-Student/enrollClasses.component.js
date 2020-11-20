@@ -22,6 +22,8 @@ class AllClassList extends Component {
 
     showModal = (clicked_course) => {
       this.setState({ show: true });
+      localStorage.setItem('course_name', (this.state.clicked_course))
+      localStorage.setItem('instructor_name', (this.state.clicked_name))
       console.log(this.state.clicked_course)
       console.log(this.state.clicked_name)
     };
@@ -29,7 +31,6 @@ class AllClassList extends Component {
     hideModal = () => {
       this.setState({ show: false });
     };
-
     componentDidMount() {
         axios.get(`http://127.0.0.1:8103/api/get_all_courses`)
             .then(res => {
@@ -44,7 +45,7 @@ class AllClassList extends Component {
                 <Modal show={this.state.show} handleClose={this.hideModal}></Modal>
                 <h1>Course List</h1>
                 { this.state.courses.map(courses =>
-                    <Card className='courseCards'  bg="light" text="black" style={{ height:'14rem', width: '25rem' }} name='course_name' value={courses.course_name}  onClick={() => this.setState({clicked_course: courses.course_name, clicked_name:courses.course_instructor}) }>
+                    <Card className='courseCards'  bg="light" text="black" style={{ height:'14rem', width: '25rem' }} name='course_name' value={courses.course_name}>
                         <Card.Header className='instructorHeader' style={{height:'10rem', color:'white',background:'black' } }></Card.Header>
                         <div class="numberCircle" ></div>
                         <div class="titleCircle" onClick={this.showModal}>{courses.course_instructor}</div>
@@ -64,6 +65,7 @@ class AllClassList extends Component {
                                 <img src={youtube} className="cardIcon" />
                                 </div>
                                 <p class="col p-2 m-0">2 hours</p>
+                                <button type="button" class="btn btn-primary"  onClick={() => this.setState({clicked_course: courses.course_name, clicked_name:courses.course_instructor}) }>Set class</button>
                                 </div>
                             </Card.Text>
                         </Card.Body>
