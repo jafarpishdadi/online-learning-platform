@@ -243,6 +243,11 @@ def db_send_message():
 def db_get_messages():
 	return MessageObj(request.json).db_get_messages()
 
+# Gets all messaged users
+@app.route('/api/db_get_messaged_users', methods=['POST'])
+def db_get_messages():
+	return MessageObj(request.json).db_get_messaged_users()
+
 # you can put in your preferred port 
 if __name__ == '__main__':   
 	app.run(host='0.0.0.0', port=8103)
