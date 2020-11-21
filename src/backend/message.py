@@ -91,3 +91,21 @@ class MessageObj():
             return make_response(jsonify(messages), 200)
         else:
             return make_response("Messages between users does not exist", 404)
+
+    def db_get_messaged_users(self):
+        x = checkFields(self.content, fields=['username'])
+        if (x):
+            return make_response("Missing required field: " + x, 400)
+        
+        messages = []
+
+        raw = self.Message.objects(username1=self.content['username']).all()
+        for message in raw:
+            messages.append(message.username2)
+
+        raw = self.Message.objects(username2=self.content['username']).all()
+        for message in raw:
+            messages.append(message.username1)
+
+
+        return make_response(jsonify(messages), 200)
