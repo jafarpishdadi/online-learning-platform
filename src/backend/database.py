@@ -6,6 +6,7 @@ from profile import ProfileObj
 from calender import CalenderObj
 from course import CourseObj
 from message import MessageObj
+from board import Board
 import user
 import calender
 import course
@@ -245,8 +246,28 @@ def db_get_messages():
 
 # Gets all messaged users
 @app.route('/api/db_get_messaged_users', methods=['POST'])
-def db_get_messages():
+def db_get_messaged_users():
 	return MessageObj(request.json).db_get_messaged_users()
+
+#Get all threads
+@app.route('/api/db_get_all_threads', methods=['GET'])
+def db_get_all_threads():
+	return Board(request.json).db_get_all_threads()
+
+#Get threads by id
+@app.route('/api/db_get_thread_id', methods=['POST'])
+def db_get_thread_id():
+	return Board(request.json).db_get_thread_id()
+
+#Put a reply in a thread
+@app.route('/api/db_put_thread_reply', methods=['PUT'])
+def db_put_thread_reply():
+	return Board(request.json).db_put_thread_reply()
+
+#Create a thread
+@app.route('/api/db_create_thread', methods=['POST'])
+def db_create_thread():
+	return Board(request.json).db_create_thread()
 
 # you can put in your preferred port 
 if __name__ == '__main__':   
