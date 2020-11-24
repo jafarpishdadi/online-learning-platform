@@ -53,6 +53,9 @@ class MessageObj():
         self.Message(username1=self.content['username1'], username2=self.content['username2'], message=self.content['message'], time=datetime.now().strftime("%m/%d/%Y, %H:%M:%S")).save()
         return make_response("", 200)
     
+    def _extract_time(json):
+        return int(json['time'])
+
     def db_get_messages(self):
         """
         Gets all the messages between two users
@@ -76,6 +79,7 @@ class MessageObj():
         if len(message) == 0:
             return make_response("Messages between users does not exist", 404)
         else:
+            messages = sorted(messages, key=lambda k: k['time'], reverse=True)
             return make_response(jsonify(messages), 200)
 
     def db_get_messaged_users(self):
