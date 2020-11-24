@@ -2,7 +2,9 @@ import React, { Component } from 'react'
 import './calendar.css'
 import TitleImage from '../../assets/schedule.png'
 
-const EventItem = ({name, eventType}) => {
+let theEvents;
+
+const EventItem = ({ name, eventType }) => {
 	if (eventType == null) {
 		return (
 			<li class="list-group-item d-flex justify-content-between align-items-center custom-timeTwo border-light">
@@ -45,10 +47,12 @@ const EventItem = ({name, eventType}) => {
 	}
 }
 
+
+
 class Schedule extends Component {
 
 	constructor(props) {
-		super(props) 
+		super(props)
 		this.state = {
 
 		}
@@ -104,10 +108,10 @@ class Schedule extends Component {
 						<ul class="list-group">
 							{books.map(
 								(book) =>
-								<EventItem
-									name={book.name}
-									eventType={book.event_type}
-								/>
+									<EventItem
+										name={book.name}
+										eventType={book.event_type}
+									/>
 							)}
 						</ul>
 					</div>
