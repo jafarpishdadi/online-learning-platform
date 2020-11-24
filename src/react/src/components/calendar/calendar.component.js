@@ -49,6 +49,7 @@ class CalendarComponent extends Component {
 		if (window.localStorage.getItem('events') != null) {
 			try {
 				allTimes = [];
+				times = [];
 				let vals;
 				vals = JSON.parse(window.localStorage.getItem('events'));
 				size = vals.length;
