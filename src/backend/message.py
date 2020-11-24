@@ -45,9 +45,9 @@ class MessageObj():
         if (x):
             return make_response("Missing required field: " + x, 400)
 
-        if (self.User.objects(username=self.content['username1']).count() <= 0):
+        if (User.objects(username=self.content['username1']).count() <= 0):
             return make_response("Username1 does not exist.", 404)
-        if (self.User.objects(username=self.content['username2']).count() <= 0):
+        if (User.objects(username=self.content['username2']).count() <= 0):
             return make_response("Username2 does not exist.", 404)
 
         if self.content['username1'] > self.content['username2']:

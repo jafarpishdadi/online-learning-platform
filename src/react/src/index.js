@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useReducer } from "react";
 import ReactDOM from "react-dom";
 import {
     BrowserRouter as Router,
@@ -36,6 +36,8 @@ import ClassList  from  "./components/createClass/classList.component.js";
 import ProfilePage from "./pages/profile/profilePage.js";
 import FAQPage from "./pages/faq/faqPage.js";
 import Studentclasses from './components/Classes-Student/studentClasses.component.js'
+import User from './components/messages/User.js'
+import Message from './components/messages/Message.js'
 
 
 window.token=localStorage.getItem('token');
@@ -109,6 +111,12 @@ let headerItems = {link: '/sidebar', title: 'Dashboard', profileImg: profile }
             </Route>
             <Route exact path="/logout">
                 <Logout/>
+            </Route>
+            <Route exact path='/messageuser'>
+                <User/>
+            </Route>
+            <Route exact path='/message'>=
+                <Message/>
             </Route>
             // side bar
             <Route path="/sidebar">
