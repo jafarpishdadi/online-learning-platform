@@ -79,7 +79,7 @@ class MessageObj():
         if len(message) == 0:
             return make_response("Messages between users does not exist", 404)
         else:
-            messages = sorted(messages, key=lambda k: k['time'], reverse=True)
+            messages = sorted(messages, key=lambda k: k['time'], reverse=False)
             return make_response(jsonify(messages), 200)
 
     def db_get_messaged_users(self):

@@ -1,0 +1,12 @@
+.send-message {
+    display: flex;
+    box-sizing: content-box;
+    height: 40px;
+    width: 100px;
+}
+
+.message-pos {
+    background-color: #FCFCFB;
+    margin-left: 290px;
+    margin-top: 0px;
+}

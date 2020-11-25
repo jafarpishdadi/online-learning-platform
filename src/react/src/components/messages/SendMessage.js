@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import './SendMessage.css'
 
-class SendMessage extends React.Component {
+class SendMessage extends Component {
     constructor() {
         super()
         this.state = {
@@ -20,7 +20,7 @@ class SendMessage extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault()
-        axios.post('http://127.0.0.1:8103/api/db_send_message', {'username1': 'wolf', 'username2': localStorage.getItem('targetUser'), 'message': this.state.message})
+        axios.post('http://127.0.0.1:8103/api/db_send_message', {'username1': localStorage.getItem('username'), 'username2': localStorage.getItem('targetUser'), 'message': this.state.message})
         .then(res => {
         });
         this.setState({
@@ -30,15 +30,17 @@ class SendMessage extends React.Component {
 
     render() {
         return (
-            <form
-                onSubmit={this.handleSubmit}
-                className='send-message'>
-                <input
-                    onChange={this.handleChange}
-                    value={this.state.message}
-                    placeholder='Enter your message'
-                    type='text'/>
-            </form>
+            <div className='message-pos'>
+                <form
+                    onSubmit={this.handleSubmit}
+                    className='send-message'>
+                    <input
+                        onChange={this.handleChange}
+                        value={this.state.message}
+                        placeholder='Enter your message'
+                        type='text'/>
+                </form>
+            </div>
         )
     }
 

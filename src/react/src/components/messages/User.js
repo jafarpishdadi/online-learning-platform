@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
+import './User.css'
 
-class User extends React.Component {
+class User extends Component {
     constructor() {
         super()
         this.state = {
@@ -33,16 +34,19 @@ class User extends React.Component {
             return <Redirect to='message'/>
         }
         return (
-            <form
-                onSubmit={this.handleSubmit}
-                className='targetUser'>
-                <input
-                    onChange={this.handleChange}
-                    value={this.state.targetUser}
-                    placeholder='Recipient&#39;s username'
-                    type='text'/>
-                <button onClick={this.handleSubmit}>Enter</button>
-            </form>
+            <div>
+                <b className='prompt'>Please enter the username of who you want to message</b>
+                <form
+                    onSubmit={this.handleSubmit}
+                    className='targetUser'>
+                    <input
+                        onChange={this.handleChange}
+                        value={this.state.targetUser}
+                        placeholder='Recipient&#39;s username'
+                        type='text'/>
+                    <button onClick={this.handleSubmit}>Enter</button>
+                </form>
+            </div>
         )
     }
 

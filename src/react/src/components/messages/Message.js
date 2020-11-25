@@ -3,7 +3,7 @@ import axios from 'axios';
 import MessageList from './MessageList.js'
 import SendMessage from './SendMessage.js'
 
-class Message extends React.Component {
+class Message extends Component {
     constructor() {
         super()
         this.state = {
@@ -12,7 +12,7 @@ class Message extends React.Component {
     }
 
     componentDidMount() {
-        axios.post('http://127.0.0.1:8103/api/db_get_messages', {'username1': 'wolf', 'username2': localStorage.getItem('targetUser')})
+        axios.post('http://127.0.0.1:8103/api/db_get_messages', {'username1': localStorage.getItem('username'), 'username2': localStorage.getItem('targetUser')})
             .then(res => {
                 this.setState({
                     messages: res.data
@@ -22,7 +22,7 @@ class Message extends React.Component {
 
     render() {
         return (
-            <div className='messagebox'>
+            <div>
                 <p className='targetUser'>{localStorage.getItem('targetUser')}</p>
                 <MessageList
                     messages={this.state.messages}

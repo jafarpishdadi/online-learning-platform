@@ -36,8 +36,8 @@ import ClassList  from  "./components/createClass/classList.component.js";
 import ProfilePage from "./pages/profile/profilePage.js";
 import FAQPage from "./pages/faq/faqPage.js";
 import Studentclasses from './components/Classes-Student/studentClasses.component.js'
-import User from './components/messages/User.js'
-import Message from './components/messages/Message.js'
+import MessagePage from './pages/message/MessagePage.js'
+import SpecifyUserPage from './pages/message/SpecifyUserPage.js'
 
 
 window.token=localStorage.getItem('token');
@@ -54,7 +54,7 @@ let navItems = [
     ]
 
 
-let headerItems = {link: '/sidebar', title: 'Dashboard', profileImg: profile }
+let headerItems = {link: '/profile', title: 'Dashboard', profileImg: profile }
 
     ReactDOM.render(
         <Router>
@@ -113,10 +113,10 @@ let headerItems = {link: '/sidebar', title: 'Dashboard', profileImg: profile }
                 <Logout/>
             </Route>
             <Route exact path='/messageuser'>
-                <User/>
+                <SpecifyUserPage/>
             </Route>
-            <Route exact path='/message'>=
-                <Message/>
+            <Route exact path='/message'>
+                <MessagePage/>
             </Route>
             // side bar
             <Route path="/sidebar">
