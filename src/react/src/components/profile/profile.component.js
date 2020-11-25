@@ -10,11 +10,48 @@ import editButton from '../../assets/editButton.png'
 import './profile.css'
 import ColourText from './colourText.component.js'
 
+// Very helpful code below to make edit button work: 
+// {this.state.editing ? (
+//     <span className="birth-year">{birthYear}</span>
+//   ) : (
+//     <input
+//       type="text"
+//       defaultValue={birthYear}
+//       ref={node => {
+//         this.newbirthYear = node;
+//       }}
+//     />
+//   )}
+
+{/* <p>
+<span>Homeworld:</span>
+{this.state.editing ? (
+    <span className="home-world">{homeWorld}</span>
+) : (
+    <input
+    type="text"
+    defaultValue={homeWorld}
+    ref={node => {
+        this.newHomeWorld = node;
+    }}
+    />
+)}
+</p>
+<div align="center">
+<button
+    onClick={() => {
+    this.setState({ editing: true });
+    }}
+>
+    Edit
+</button>
+</div> */}
+
 class Profile extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            
+            editing: false
         }
     }
 	render() {
