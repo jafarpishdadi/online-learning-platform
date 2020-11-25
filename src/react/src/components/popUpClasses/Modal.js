@@ -43,12 +43,12 @@ export default Modal = ({ handleClose, show, children }) => {
 		<section className="modal-main p-2">
 			<div class="d-flex flex-column">
 				<div class="p-2">
-					<p>Please confirm that you would like to enroll in the following course:</p>{children}
+					<h4>Please confirm that you would like to enroll in the following course:</h4>{children}
 					</div>
 					<form>
                     <div class="form-group pt-0 pl-2 pr-2">
-					<p>{localStorage.getItem('course_name')}</p>
-					<p>{localStorage.getItem('instructor_name')}</p>
+					<div>Course Name:   {localStorage.getItem('course_name')}</div>
+					<div>Course Instructor:    {localStorage.getItem('instructor_name')}</div>
                     </div>
 					</form>
 				</div>

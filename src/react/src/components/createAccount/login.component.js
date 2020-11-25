@@ -89,12 +89,18 @@ class Login extends Component {
 				console.log(response);
 				localStorage.setItem('token', response.data)
 				localStorage.setItem('username', (this.state.username))
-				this.setState({loggedIn:true});
 				console.log(localStorage.getItem('username'))
+				axios.post('http://127.0.0.1:8103/api/db_get_user_type', {username: this.state.username})
+				.then(response => {
+					console.log(response);
+					localStorage.setItem('usertype', response.data)
+					this.setState({loggedIn:true});
+					console.log(localStorage.getItem('usertype'))
+				})
+				.catch((error) => {
+				console.log(error)
+			});
 			})
-			.catch((error) => {
-			console.log(error)
-		});
     }
 }
 
