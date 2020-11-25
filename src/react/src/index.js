@@ -36,6 +36,8 @@ import ClassList  from  "./components/createClass/classList.component.js";
 import ProfilePage from "./pages/profile/profilePage.js";
 import FAQPage from "./pages/faq/faqPage.js";
 import Studentclasses from './components/Classes-Student/studentClasses.component.js'
+import DiscussionList from './components/discussion/discussionList.component.js'
+import DiscussionDetail from './components/discussion/discussionDetail.component.js'
 
 
 window.token=localStorage.getItem('token');
@@ -57,11 +59,19 @@ let headerItems = {link: '/sidebar', title: 'Dashboard', profileImg: profile }
     ReactDOM.render(
         <Router>
           <Switch>
+            // discussionList
+            <Route exact path="/discussionList">
+              <DiscussionList/>
+            </Route>
+            // discussionDetail
+            <Route exact path="/discussionDetail">
+              <DiscussionDetail/>
+            </Route>
             // FAQ page
             <Route exact path="/FAQ">
               <FAQPage/>
             </Route>
-          // profile page
+            // profile page
             <Route exact path="/profile">
               <ProfilePage/>
             </Route>
