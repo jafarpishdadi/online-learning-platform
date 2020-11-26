@@ -179,7 +179,7 @@ def db_update_event():
 def db_delete_event():
     return CalenderObj(request.json).db_delete_event()
 
-# creates a new course and posts it to the database when provided with a json text formatted as {course_category: course_category, course_name: course_name, course_instructor: course_instructor}
+# creates a new course and posts it to the database when provided with a json text formatted as {course_category: course_category, course_name: course_name, course_instructor: course_instructor, extra_info: extra_info}
 @app.route('/api/db_create_course', methods=['POST'])
 def db_create_course():
 	print(request.json)
