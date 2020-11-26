@@ -20,6 +20,15 @@ class Message extends Component {
             })
     }
 
+    componentDidUpdate() {
+        axios.post('http://127.0.0.1:8103/api/db_get_messages', {'username1': localStorage.getItem('username'), 'username2': localStorage.getItem('targetUser')})
+            .then(res => {
+                this.setState({
+                    messages: res.data
+                })
+            })
+    }
+
     render() {
         return (
             <div>
