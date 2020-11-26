@@ -18,6 +18,7 @@ class CourseObj():
 		course_name = me.StringField()
 		course_instructor = me.StringField()
 		students = me.ListField(me.StringField())
+		extra_info = me.StringField()
 
 		def to_json(self):
 			"""
@@ -28,7 +29,8 @@ class CourseObj():
 				"course_category": self.course_category,
 				"course_name": self.course_name,
 				"course_instructor": self.course_instructor, 
-				"students": ''.join(self.students)
+				"students": ''.join(self.students),
+				"extra_info": self.extra_info
 			}
 
 	def __init__(self, content):
@@ -42,14 +44,14 @@ class CourseObj():
 		Saves the current course to the database.
 		"""
 
-		x = checkFields(self.content, fields=['course_category', 'course_name', 'course_instructor'])
+		x = checkFields(self.content, fields=['course_category', 'course_name', 'course_instructor', 'extra_info'])
 		if (x):
 			return make_response("Missing required field: " + x, 400)
 
 		if (self.Course.objects(course_name=self.content['course_name']).count() > 0):
 			return make_response("There already exists a course with the same name.", 400)
 
-		self.Course(course_category=self.content['course_category'], course_name=self.content['course_name'], course_instructor=self.content['course_instructor'], students = []).save()
+		self.Course(course_category=self.content['course_category'], course_name=self.content['course_name'], course_instructor=self.content['course_instructor'], students = [], extra_info=self.content['extra_info']).save()
 		return make_response("", 200)
 
 	def db_add_student_to_course(self):
