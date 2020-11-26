@@ -31,3 +31,8 @@
   .display-none {
 	display: none;
   }
+
+  .display-date {
+	  color: #A78EC3;
+	  font-weight: bold;
+  }

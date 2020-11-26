@@ -11,7 +11,7 @@ let size = 0;
 let times = [];
 let allTimes = [];
 
-function compare (a, b) {
+function compare(a, b) {
 	if (parseInt(a.start_time, 10) < parseInt(b.start_time, 10)) return -1;
 	if (parseInt(a.start_time, 10) > parseInt(b.start_time, 10)) return 1;
 	return 0;
@@ -23,12 +23,12 @@ class CalendarComponent extends Component {
 		date: new Date(),
 		selectedDay: String,
 		email: String,
-	  }
+	}
 
 	onChange = date => this.setState({ date })
 
 	componentDidMount() {
-		axios.post('http://127.0.0.1:8103/api/db_get_user_email', {'username': localStorage.getItem('username')})
+		axios.post('http://127.0.0.1:8103/api/db_get_user_email', { 'username': localStorage.getItem('username') })
 			.then(res => {
 				this.state.email = res.data;
 				window.localStorage.setItem('email', this.state.email);
@@ -39,7 +39,7 @@ class CalendarComponent extends Component {
 		this.state.selectedDay = (date.getFullYear() + ", " + date.getMonth() + ", " + date.getDate()).toString();
 		window.localStorage.setItem('date', date.toDateString());
 		window.localStorage.setItem('selectedDay', this.state.selectedDay);
-		axios.put('http://127.0.0.1:8103/api/db_get_schedule', {'date': this.state.selectedDay, 'email': this.state.email})
+		axios.put('http://127.0.0.1:8103/api/db_get_schedule', { 'date': this.state.selectedDay, 'email': this.state.email })
 			.then(res => {
 				window.localStorage.setItem('events', JSON.stringify(res.data));
 			})
@@ -63,32 +63,32 @@ class CalendarComponent extends Component {
 						vals.shift();
 					}
 					else {
-						allTimes.push({"_id": null, "date": null, "email": null, "event_type": null, "name": null, "start_time": null});
+						allTimes.push({ "_id": null, "date": null, "email": null, "event_type": null, "name": null, "start_time": null });
 					}
 				}
 			} catch (Exception) {
 				allTimes = [];
 				for (let i = 0; i < 13; i++) {
-					allTimes.push({"_id": null, "date": null, "email": null, "event_type": null, "name": null, "start_time": null});
+					allTimes.push({ "_id": null, "date": null, "email": null, "event_type": null, "name": null, "start_time": null });
 				}
 			}
-		}	
+		}
 	}
 
-	render () {
+	render() {
 
 		const { value } = this.state;
 
-		if(!localStorage.getItem('token')) {
+		if (!localStorage.getItem('token')) {
 			return <Redirect to="/login" />
 		}
 
 		return (
-			
+
 			<div className="custom-div2 d-flex flex-row">
-				
+
 				<div className="react-component">
-						<Calendar
+					<Calendar
 						onChange={this.onChange}
 						value={value}
 						locale={'en-US'}
@@ -98,23 +98,28 @@ class CalendarComponent extends Component {
 						calendarType={"US"}
 						showDoubleView={false}
 						onClickDay={this.clickDay(this.state.date)}
-						/>
+					/>
 				</div>
 				<div class="d-flex flex-column p-2 custom-div">
-				<div class="card card-header d-flex flex-row schedule-card">
-					<span class="dot pt-1">
-						<img class="rounded mx-auto my-auto d-block" src={TitleImage}></img>
-					</span>
-					<h4 class="p-1 custom-header">{localStorage.getItem('date')}</h4>
+					<div class="card card-header d-flex flex-row schedule-card">
+						<span class="dot pt-1">
+							<img class="rounded mx-auto my-auto d-block" src={TitleImage}></img>
+						</span>
+						<h4 class="p-1 custom-header">{localStorage.getItem('date')}</h4>
+					</div>
+					<div class="d-flex flex-row justify-content-center">
+						<Schedule books={allTimes} />
+					</div>
 				</div>
-				<div class="d-flex flex-row justify-content-center">
-					<Schedule books={allTimes}/>
+				<div class="d-flex flex-column p-2 custom-div">
+					<div class="card card-header d-flex flex-row schedule-card">
+					<h4 class="p-1 custom-header">Events</h4>
+					</div>
 				</div>
-			</div>
 
 			</div>
-			
-		  );
+
+		);
 	}
 }
 
