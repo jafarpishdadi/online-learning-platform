@@ -15,6 +15,7 @@ class CalenderObj():
 		date = me.StringField()
 		start_time = me.StringField()
 		event_type = me.StringField()
+		event_info = me.StringField()
 		email = me.StringField()
 
 		def to_json(self):
@@ -26,6 +27,7 @@ class CalenderObj():
 				"name": self.name,
 				"start_time": self.start_time,
 				"event_type": self.event_type,
+				"event_info": self.event_info,
 				"email": self.email,
 				"date": self.date,
 				"_id": str(self.pk)
@@ -42,7 +44,7 @@ class CalenderObj():
 		Creates a new event based on the json passed in
 		"""
 
-		x = checkFields(self.content, fields=['name', 'start_time', 'event_type', 'email','date'])
+		x = checkFields(self.content, fields=['name', 'start_time', 'event_type', 'email','date','event_info'])
 		if (x):
 			return make_response("Missing required field: " + x, 400)
 	
@@ -64,6 +66,7 @@ class CalenderObj():
 			name=self.content['name'], 
 			start_time=self.content['start_time'], 
 			event_type=self.content['event_type'],
+			event_info=self.content['event_info'],
 			email=self.content['email'],
 			date=self.content['date']).save()
 		return make_response("", 200)
@@ -92,7 +95,7 @@ class CalenderObj():
 		Updates the event in the database for the corresponding email
 		"""
 
-		x = checkFields(self.content, fields=['_id','name', 'start_time', 'event_type', 'email','date'])
+		x = checkFields(self.content, fields=['_id','name', 'start_time', 'event_type', 'email','date','event_info'])
 		if (x):
 			return make_response("Missing required field: " + x, 400)
 
@@ -104,6 +107,7 @@ class CalenderObj():
 				name=self.content['name'], 
 				start_time=self.content['start_time'], 
 				event_type=self.content['event_type'],
+				event_info=self.content['event_info'],
 				email=self.content['email'],
 				date=self.content['date'])
 			return make_response("", 200)
