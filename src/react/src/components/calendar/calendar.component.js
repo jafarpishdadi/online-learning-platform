@@ -6,10 +6,12 @@ import axios from 'axios'
 import { Redirect } from 'react-router-dom';
 import TitleImage from '../../assets/schedule.png'
 import Schedule from './schedule.component';
+import Events from './events.component'
 
 let size = 0;
 let times = [];
 let allTimes = [];
+let allEvents = [];
 
 function compare(a, b) {
 	if (parseInt(a.start_time, 10) < parseInt(b.start_time, 10)) return -1;
@@ -113,7 +115,10 @@ class CalendarComponent extends Component {
 				</div>
 				<div class="d-flex flex-column p-2 custom-div">
 					<div class="card card-header d-flex flex-row schedule-card">
-					<h4 class="p-1 custom-header">Events</h4>
+						<h4 class="p-1 custom-header">Events</h4>
+					</div>
+					<div class="d-flex flex-row justify-content-center">
+						<Events/>
 					</div>
 				</div>
 
