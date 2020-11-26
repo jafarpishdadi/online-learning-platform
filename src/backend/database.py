@@ -272,4 +272,3 @@ def db_create_thread():
 # you can put in your preferred port 
 if __name__ == '__main__':   
 	app.run(host='0.0.0.0', port=8103)
-
