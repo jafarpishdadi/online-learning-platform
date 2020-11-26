@@ -45,19 +45,17 @@ class MessageObj():
         if (x):
             return make_response("Missing required field: " + x, 400)
 
-        if (self.User.objects(username=self.content['username1']).count() <= 0):
+        if (User.objects(username=self.content['username1']).count() <= 0):
             return make_response("Username1 does not exist.", 404)
-        if (self.User.objects(username=self.content['username2']).count() <= 0):
+        if (User.objects(username=self.content['username2']).count() <= 0):
             return make_response("Username2 does not exist.", 404)
-
-        if self.content['username1'] > self.content['username2']:
-            temp = self.content['username2']
-            self.content['username2'] = self.content['username1']
-            self.content['username1'] = temp
 
         self.Message(username1=self.content['username1'], username2=self.content['username2'], message=self.content['message'], time=datetime.now().strftime("%m/%d/%Y, %H:%M:%S")).save()
         return make_response("", 200)
     
+    def _extract_time(json):
+        return int(json['time'])
+
     def db_get_messages(self):
         """
         Gets all the messages between two users
@@ -65,29 +63,39 @@ class MessageObj():
         x = checkFields(self.content, fields=['username1','username2'])
         if (x):
             return make_response("Missing required field: " + x, 400)
-               
-        flipped = False # checks if the username order is flipped
 
-        if self.content['username1'] > self.content['username2']:
-            temp = self.content['username2']
-            self.content['username2'] = self.content['username1']
-            self.content['username1'] = temp
-            flipped = True
-        
+        messages = []
+
         raw = self.Message.objects(username1=self.content['username1'],username2=self.content['username2']).all()
-        raw = sorted(raw, key=lambda x: x.start_time)
-        
-        if len(raw) > 0:
-            messages = []
-            for message in raw:
-                if flipped:
-                    mess = message
-                    temp = mess['username2']
-                    mess['username2'] = mess['username1']
-                    mess['username1'] = temp
-                    messages.append(mess.to_json())
-                else:
-                    messages.append(message.to_json())
-            return make_response(jsonify(messages), 200)
-        else:
+
+        for message in raw:
+            messages.append(message.to_json())
+
+        raw = self.Message.objects(username2=self.content['username1'],username1=self.content['username2']).all()
+
+        for message in raw:
+            messages.append(message.to_json())
+
+        if len(message) == 0:
             return make_response("Messages between users does not exist", 404)
+        else:
+            messages = sorted(messages, key=lambda k: k['time'], reverse=False)
+            return make_response(jsonify(messages), 200)
+
+    def db_get_messaged_users(self):
+        x = checkFields(self.content, fields=['username'])
+        if (x):
+            return make_response("Missing required field: " + x, 400)
+        
+        messages = []
+
+        raw = self.Message.objects(username1=self.content['username']).all()
+        for message in raw:
+            messages.append(message.username2)
+
+        raw = self.Message.objects(username2=self.content['username']).all()
+        for message in raw:
+            messages.append(message.username1)
+
+
+        return make_response(jsonify(messages), 200)

@@ -19,14 +19,14 @@ import dashboard from '../../assets/dashboard.png'
 import { Redirect } from 'react-router-dom';
 import Split from 'split.js'
 
-let headerItems = { link: '/sidebar', title: 'Dashboard', profileImg: profile }
+let headerItems = { link: '/profile', title: 'Dashboard', profileImg: profile }
 
 let navItems = [
     { id: 1, link: "/dashboard", imgSrc: dashboard, title: "Dashboard" },
     { id: 2, link: "/allclasslist", imgSrc: classes, title: "Classes" },
     { id: 3, link: "/schedule", imgSrc: scheduling, title: "Scheduling" },
     { id: 4, link: "", imgSrc: community, title: "Community" },
-    { id: 5, link: "", imgSrc: mailbox, title: "Mailbox" },
+    { id: 5, link: "/messageuser", imgSrc: mailbox, title: "Messaging" },
     { id: 6, link: "", imgSrc: achievements, title: "Achievements" },
     { id: 7, link: "", imgSrc: socialInitiatives, title: "Social Initiatives" },
     { id: 8, link: "", imgSrc: settings, title: "Settings" }
