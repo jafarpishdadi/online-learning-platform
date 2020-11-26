@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
-import Calendar from '../../components/calendar/calendar.component.js'
-import Schedule from '../../components/calendar/schedule.component.js'
-import SmallCards from '../../components/calendar/smallCards.component.js'
+import Message from '../../components/messages/Message.js'
 import Header from '../../components/headerbar/HeaderTaskbar.js'
 import profile from '../../assets/profile.png'
 import Sidebar from '../..//components/sidebar/sidebar.component.js'
@@ -14,7 +12,7 @@ import socialInitiatives from '../../assets/Welfare.png'
 import settings from '../../assets/settings.png'
 import dashboard from '../../assets/dashboard.png'
 
-let headerItems = {link: '/profile', title: 'Schedule', profileImg: profile }
+let headerItems = {link: '/profile', title: 'Messaging', profileImg: profile }
 
 let navItems = [
     {id: 1, link: "/dashboard", imgSrc: dashboard, title: "Dashboard" },
@@ -26,29 +24,18 @@ let navItems = [
     {id: 7, link: "", imgSrc: socialInitiatives, title: "Social Initiatives" },
     {id: 8, link: "", imgSrc: settings, title: "Settings" }
 	]
-	
-let selectedDate = [
-	{id: 1, date: window.localStorage.getItem('date')}
-]
 
 
-class SchedulePage extends Component {
+class MessagePage extends Component {
 	render() {
 		return (
 			<React.Fragment>
 				<Sidebar books={navItems}/>
 				<Header icons={headerItems}/>
-				<div class="d-flex flex-row p-2">
-					<div class="d-flex flex-column">
-						<Calendar theDate={selectedDate}/>
-						<div class="custom-div">
-							<SmallCards />
-						</div>
-					</div>					
-				</div>
+				<Message/>
 			</React.Fragment>
 		)
 	}
 }
 
-export default SchedulePage
+export default MessagePage

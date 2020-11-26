@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import axios from 'axios';
 import { Link } from 'react-router-dom';
 import './HeaderTaskbar.css'
 import search from '../../assets/search.png'
@@ -10,8 +9,8 @@ import logout from '../../assets/logout.png';
 import { Redirect } from 'react-router-dom';
 
 let headerIcons = [
-    {id: 1, link:'/sidebar', imgSrc: messaging},
-    {id: 2, link:'/sidebar', imgSrc: notifications }
+    {id: 1, link:'/messageuser', imgSrc: messaging},
+    {id: 2, link:'/messageuser', imgSrc: notifications }
 ]
 
 function HeaderIcon(props) {
@@ -114,15 +113,6 @@ class HeaderTaskbar extends Component {
     }
     submit() {
         localStorage.clear();
-        // e.preventDefault();
-        // axios.post('http://127.0.0.1:8103/api/db_logout', {username: this.state.username })
-        //     .then(response => {
-		// 		console.log(response.data)
-        //           this.setState({loggedIn:false});
-        //     })
-		//   	.catch((error) => {
-        //     console.log(error)
-		// });
     }
 }
 
