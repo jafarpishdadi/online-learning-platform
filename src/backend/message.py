@@ -75,7 +75,24 @@ class MessageObj():
             flipped = True
         
         raw = self.Message.objects(username1=self.content['username1'],username2=self.content['username2']).all()
-        raw = sorted(raw, key=lambda x: x.time)
+
+        for message in raw:
+            messages.append(message.to_json())
+
+        raw = self.Message.objects(username2=self.content['username1'],username1=self.content['username2']).all()
+
+        for message in raw:
+            messages.append(message.to_json())
+
+        if len(message) == 0:
+            return make_response("Messages between users does not exist", 404)
+        else:
+            return make_response(jsonify(messages), 200)
+
+    def db_get_messaged_users(self):
+        x = checkFields(self.content, fields=['username'])
+        if (x):
+            return make_response("Missing required field: " + x, 400)
         
         if len(raw) > 0:
             messages = []
