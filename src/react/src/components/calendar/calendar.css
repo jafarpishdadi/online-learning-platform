@@ -122,7 +122,6 @@
 .custom-header {
 	color: #7A7A7A;
 	font-family: "Open Sans" !important;
-	font-weight: bold;
 	margin-left: 3vw;
 }
 
@@ -136,6 +135,12 @@
 	color: #7A7A7A;
 	font-family: "Open Sans" !important;
 	width: 20vw;
+}
+
+.custom-no-events {
+	color: #7A7A7A;
+	font-family: "Open Sans" !important;
+	width: 200px;
 }
 
 .custom-div2 {
@@ -154,3 +159,5 @@
 .time-box {
 	width: 10vw;
 }
+
+/* Event Cards */
