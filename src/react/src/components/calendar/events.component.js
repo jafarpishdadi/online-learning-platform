@@ -2,6 +2,12 @@ import React, { Component } from 'react'
 
 let vals;
 
+function compare(a, b) {
+	if (parseInt(a.start_time, 10) < parseInt(b.start_time, 10)) return -1;
+	if (parseInt(a.start_time, 10) > parseInt(b.start_time, 10)) return 1;
+	return 0;
+}
+
 const EventItem = ({ name, eventType, eventInfo, time }) => {
 	let start = parseInt(time);
 	let str;
@@ -78,9 +84,14 @@ const EventItem = ({ name, eventType, eventInfo, time }) => {
 
 class Events extends Component {
 
+	sortEvents() {
+		vals = vals.sort(compare);
+	}
+
 	buildEvents() {
 		vals = JSON.parse(window.localStorage.getItem('events'));
 		if (vals) {
+			this.sortEvents();
 			return (
 				vals.map((book) =>
 					<EventItem
