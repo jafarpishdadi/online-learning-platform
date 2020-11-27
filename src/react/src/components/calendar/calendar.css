@@ -149,7 +149,9 @@
 .move-small-cards {
 	margin-left: -340px;
 }
-
+.custom-no-events:hover {
+    box-shadow: none !important;
+}
 .custom-deck {
 	width: 15vw;
 	margin-left: 340px !important;
