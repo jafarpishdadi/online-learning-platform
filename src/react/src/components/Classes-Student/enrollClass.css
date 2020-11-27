@@ -18,6 +18,13 @@
 .container {
   padding: 2px 16px;
 }
+.btn-primary2{
+  background: #A78EC3;
+	color:white;
+	border:none;
+  font-size:12px;
+  width:100px;
+}
 h1 {
   color: #999999;
   font-weight: bold;

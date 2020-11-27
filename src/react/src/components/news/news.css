@@ -1,13 +1,16 @@
 .classCardStyle {
   display: flex;
   width: 40vw;
-  height: vh;
   align-items: right;
   background-color:#FCFCFB;
   border-color:#FCFCFB;
   box-shadow:none;
   font-family: "Open Sans";
   box-shadow: inherit !important;
+  margin-top:150px;
+}
+h1{
+  font-size: 20px!important;
 }
 
 .classCardTitleStyle {
@@ -20,12 +23,19 @@
   margin-top: 10px;
   color: #7A7A7A;
 }
+.textbox{
+  float: left;
+  margin-right: 20px;
+}
+a {
+  color: rgb(255, 255, 255);
+}
 .btn-learn-more{
 	border: none;
 	border-radius: 10px;
     max-width: 100%;
     margin-top: 40px;
-    margin-right: 2px;
+    margin-left: 500px;
     color: #FCFCFB;
   background-color: #A78EC3;
 }

@@ -5,11 +5,13 @@ from user import UserObj
 from profile import ProfileObj
 from calender import CalenderObj
 from course import CourseObj
+from dashevent import dasheventObj
 from message import MessageObj
 from board import Board
 import user
 import calender
 import course
+import dashevent
 import profile
 import message
 
@@ -268,6 +270,71 @@ def db_put_thread_reply():
 @app.route('/api/db_create_thread', methods=['POST'])
 def db_create_thread():
 	return Board(request.json).db_create_thread()
+
+# adds a new dashevent and posts it to the database when provided with a json text formatted as {dashevent_category: dashevent_category, dashevent_name: dashevent_name, dashevent_instructor: dashevent_instructor, extra_info: extra_info}
+@app.route('/api/db_add_dashevent', methods=['POST'])
+def db_add_dashevent():
+	print(request.json)
+	return dasheventObj(request.json).db_add_dashevent()
+
+# adds the passed in student to the given dashevent when provided with a json text formatted as {dashevent_name: dashevent_name, student: student}
+@app.route('/api/db_add_student_to_dashevent', methods=['POST'])
+def db_add_student_to_dashevent():
+	return dasheventObj(request.json).db_add_student_to_dashevent()
+
+# removes the passed in student from the given dashevent when provided with a json text formatted as {dashevent_name: dashevent_name, student: student}
+@app.route('/api/db_remove_student_from_dashevent', methods=['PUT'])
+def db_remove_student_from_dashevent():
+	return dasheventObj(request.json).db_remove_student_from_dashevent()
+
+# returns the dashevent requested from the database when provided with a json text formatted as {dashevent_name: dashevent_name}
+@app.route('/api/db_retrieve_dashevent', methods=['GET'])
+def db_retrieve_dashevent():
+	return dasheventObj(request.json).db_retrieve_dashevent()
+
+# returns all of the dashevents instructed by the given instructor when provided with a json text formatted as {dashevent_name: dashevent_name, dashevent_instructor: dashevent_instructor}
+@app.route('/api/db_get_dashevents_of_instructor', methods=['GET'])
+def db_get_dashevents_of_instructor():
+	return dasheventObj(request.json).db_get_dashevents_of_instructor()
+
+# returns all of the dashevents taken by the given student when provided with a json text formatted as {dashevent_name: dashevent_name, student: student}
+@app.route('/api/db_get_dashevents_of_student', methods=['POST'])
+def db_get_dashevents_of_student():
+	return dasheventObj(request.json).db_get_dashevents_of_student()
+
+# updates the dashevent category when provided with a json text formatted as {dashevent_name: dashevent_name, dashevent_category: dashevent_category} 
+@app.route('/api/db_update_dashevent_category', methods=['PUT'])
+def db_update_dashevent_category():
+	return dasheventObj(request.json).db_update_dashevent_category()
+
+# updates the dashevent name when provided with a json text formatted as {old_dashevent_name: old_dashevent_name, new_dashevent_name: new_dashevent_name} 
+@app.route('/api/db_update_dashevent_name', methods=['PUT'])
+def db_update_dashevent_name():
+	return dasheventObj(request.json).db_update_dashevent_name()
+
+# updates the dashevent instructor when provided with a json text formatted as {dashevent_name: dashevent_name, dashevent_instructor: dashevent_instructor} 
+@app.route('/api/db_update_dashevent_instructor', methods=['PUT'])
+def db_update_dashevent_instructor():
+	return dasheventObj(request.json).db_update_dashevent_instructor()
+
+# deletes the dashevent when provided with a json text formatted as {dashevent_name: dashevent_name} 
+@app.route('/api/db_delete_dashevent', methods=['DELETE'])
+def db_delete_single_dashevent():
+	return dasheventObj(request.json).db_delete_single_dashevent()
+
+@app.route('/api/get_all_dashevents', methods=['GET'])
+def db_get_all_dashevents():
+	return dasheventObj(request.json).db_get_all_dashevents()
+
+# adds to the user's completed dashevents when provided with a json text formatted as {completed_dashevent: completed_dashevent, username: username} 
+@app.route('/api/db_add_profile_completed_dashevent', methods=['PUT'])
+def db_add_profile_completed_dashevent():
+	return ProfileObj(request.json).db_add_profile_completed_dashevent()
+
+# deletes from the user's completed dashevents when provided with a json text formatted as {completed_dashevent: completed_dashevent, username: username} 
+@app.route('/api/db_delete_profile_completed_dashevent', methods=['DELETE'])
+def db_delete_profile_completed_dashevent():
+	return ProfileObj(request.json).db_delete_profile_completed_dashevent()
 
 # you can put in your preferred port 
 if __name__ == '__main__':   

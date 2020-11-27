@@ -46,6 +46,7 @@ img {
       margin-top:85px;
   }
   .right-half {
+    margin-top:25px;
     flex: 1;
     padding: 1rem;
   }

@@ -52,9 +52,17 @@ class Classes extends Component {
                             </Card.Body>
                         </Card>
                     )}
-                </div>
-                <button className="btn btn-e" onClick={this.classRedirect}>Add A New Course</button>
+                <Card className='courseCards' onClick={this.classRedirect} bg="light" text="black" style={{ height: '14rem', width: '14rem' }}>
+                            {this.renderRedirect()}
+                            <Card.Header className='addClassHeader' style={{ height: '10rem', color: 'white', background: 'black' }}></Card.Header>
+                            <Card.Body>
+                                <Card.Title>Add new Course</Card.Title>
+                                <Card.Text>
+                                </Card.Text>
+                            </Card.Body>
+                        </Card>
             </div>
+                        </div>
         )
     }
 }

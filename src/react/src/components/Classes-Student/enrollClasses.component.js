@@ -65,8 +65,8 @@ class AllClassList extends Component {
                                 <img src={youtube} className="cardIcon" />
                                 </div>
                                 <p class="col p-2 m-0">2 hours</p>
-                                <button type="button" class="btn btn-primary"  onClick={() => this.setState({clicked_course: courses.course_name, clicked_name:courses.course_instructor}) }>Select</button>
-                                <button type="button" class="btn btn-primary"  onClick={this.showModal}>Enroll</button>
+                                <button type="button" class="btn btn-primary2"  onClick={() => this.setState({clicked_course: courses.course_name, clicked_name:courses.course_instructor}) }>Select</button>
+                                <button type="button" class="btn btn-primary2"  onClick={this.showModal}>Enroll</button>
                                 </div>
                             </Card.Text>
                         </Card.Body>
