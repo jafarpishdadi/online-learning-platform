@@ -65,7 +65,8 @@ class ProfilePage extends Component {
         axios.post('http://127.0.0.1:8103/api/db_get_user_email', {'username': localStorage.getItem('username')})
             .then(response => {
                 console.log(response);
-                this.setState({email: response.data['email']})
+                console.log(response.data['email'])
+                this.setState({email: response.data})
             })
 			.catch((error) => {
 			console.log(error)

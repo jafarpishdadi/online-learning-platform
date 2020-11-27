@@ -51,8 +51,14 @@ class Profile extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            editing: false
+            displaying: true
         }
+        this.newFirstName = ""
+        this.newLastName = ""
+        this.newEmail = ""
+        this.newPhoneNumber = ""
+        this.newName = ""
+        this.newDescription = ""
     }
 	render() {
         const { educations } = this.props
@@ -72,18 +78,19 @@ class Profile extends Component {
                 {/* card with education info */}
                 <Card className = "edu">
                     <Card.Body>
-                        <Card.Title className = "person">
-                            <div className = "picture">
-                                <img src={profilePic} className="picturePic"/>
-                            </div>
-                            <div className = "name_and_date">
-                                <div className = "name">{ name }</div>
-                                <div className = "date">Established: { timeJoin }</div>
-                            </div>
-                            <button className = "edit">edit</button>
-                        </Card.Title>
-                        <hr className = "divider"></hr>
-
+                        {this.state.displaying ? (
+                            <div className = "name">{ name }</div>
+                        ) : (
+                            <input
+                            className = "name"
+                            type="text"
+                            defaultValue={name}
+                            ref={node => {
+                                this.newName = node;
+                            }}
+                            />
+                        )}
+                        <div className = "date">Established: { timeJoin }</div>
                         <Card.Title className = "listed_titles">Education</Card.Title>
                         <Card.Text className = "listed_educations">
                             <ColourText textInfo = { educations }/>
@@ -105,7 +112,18 @@ class Profile extends Component {
                         </Card.Text>
 
                         <Card.Title className = "listed_titles">Description</Card.Title>
-                        <Card.Text className = "listed_bodies">{ description }</Card.Text>
+                        {this.state.displaying ? (
+                            <Card.Text className = "listed_bodies">{ description }</Card.Text>
+                        ) : (
+                            <input
+                            className = "description"
+                            type="text"
+                            defaultValue={description}
+                            ref={node => {
+                                this.newDescription = node;
+                            }}
+                            />
+                        )}
                     </Card.Body>
                 </Card>
 
@@ -117,21 +135,54 @@ class Profile extends Component {
                     <div className = "top">
                         <Card.Body>
                             <Card.Title className = "title">First Name</Card.Title>
-                            <Card.Text className = "body">{ firstName }</Card.Text>
+                            {this.state.displaying ? (
+                                <Card.Text className = "body">{ firstName }</Card.Text>
+                            ) : (
+                                <input
+                                className = "body"
+                                type="text"
+                                defaultValue={firstName}
+                                ref={node => {
+                                    this.newFirstName = node;
+                                }}
+                                />
+                            )}
                         </Card.Body>
                         <Card.Body>
                             <Card.Title className = "title">Last Name</Card.Title>
-                            <Card.Text className = "body">{ lastName }</Card.Text>
+                            {this.state.displaying ? (
+                                <Card.Text className = "body">{ lastName }</Card.Text>
+                            ) : (
+                                <input
+                                className = "body"
+                                type="text"
+                                defaultValue={lastName}
+                                ref={node => {
+                                    this.newLastName = node;
+                                }}
+                                />
+                            )}
                         </Card.Body>
                     </div>
                     <div className = "bottom">
-                        <Card.Body>
+                        <Card.Body style = {{flex: 1}}>
                             <Card.Title className = "title">Registered Email Address</Card.Title>
                             <Card.Text className = "body">{ email }</Card.Text>
                         </Card.Body>
-                        <Card.Body>
+                        <Card.Body style = {{flex: 1}}>
                             <Card.Title className = "title">Registered Phone Number</Card.Title>
-                            <Card.Text className = "body">{ phoneNumber }</Card.Text>
+                            {this.state.displaying ? (
+                                <Card.Text className = "body">{ phoneNumber }</Card.Text>
+                            ) : (
+                                <input
+                                className = "body"
+                                type="text"
+                                defaultValue={phoneNumber}
+                                ref={node => {
+                                    this.newPhoneNumber = node;
+                                }}
+                                />
+                            )}
                         </Card.Body>
                     </div>
                     <div className = "pic_and_account_top">
@@ -153,9 +204,6 @@ class Profile extends Component {
                             </div>
                             <div className = "spacer"></div>
                             <div className = "edit_slot">
-                                {/* <img src={up} className="element"/>
-                                <img src={edit} className="element"/>
-                                <img src={del} className="element"/> */}
                                 <button className = "element_button">Upload</button>
                                 <button className = "element_button">Edit</button>
                                 <button className = "element_button">Delete</button>
@@ -172,7 +220,22 @@ class Profile extends Component {
                             </div>
                         </div>
                     </div>
-                    <button className = "edit_button">Edit</button>
+                    {this.state.displaying ? (
+                        <button 
+                        className = "edit_button" 
+                        onClick={() => {this.setState({ displaying: false });}
+                        }>
+                            Edit
+                        </button>
+                    ) : (
+                        <button 
+                        className = "edit_button" 
+                        onClick={() => {this.setState({ displaying: true });}
+                        }>
+                            Save
+                        </button>
+                    )}
+                    
                 </Card>
             </div>
 		)
