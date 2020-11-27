@@ -4,7 +4,7 @@ import TitleImage from '../../assets/schedule.png'
 
 let theEvents;
 
-const EventItem = ({ name, eventType }) => {
+const EventItem = ({name, eventType}) => {
 	if (eventType == null) {
 		return (
 			<li class="list-group-item d-flex justify-content-between align-items-center custom-timeTwo border-light">
@@ -52,9 +52,9 @@ const EventItem = ({ name, eventType }) => {
 class Schedule extends Component {
 
 	constructor(props) {
-		super(props)
+		super(props) 
 		this.state = {
-
+			
 		}
 	}
 
@@ -62,7 +62,7 @@ class Schedule extends Component {
 		const { books } = this.props
 		return (
 			<React.Fragment>
-				<div class="d-flex flex-column p-2 custom-div">
+				<div class="d-flex flex-column p-2 custom-div shadow-me">
 					<div class="d-flex flex-row justify-content-center">
 						<ul class="list-group time-box">
 							<li class="list-group-item text-secondary custom-time border-light">
@@ -108,10 +108,10 @@ class Schedule extends Component {
 						<ul class="list-group">
 							{books.map(
 								(book) =>
-									<EventItem
-										name={book.name}
-										eventType={book.event_type}
-									/>
+								<EventItem
+									name={book.name}
+									eventType={book.event_type}
+								/>
 							)}
 						</ul>
 					</div>
