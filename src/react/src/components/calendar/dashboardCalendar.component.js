@@ -143,7 +143,7 @@ class DashboardCalendarComponent extends Component {
 								/>
 							</div>
 						</div>
-						<div class="d-flex flex-column card-subheading">
+						<div class="d-flex2 flex-column card-subheading mt-6">
 							<div>{localStorage.getItem('date')}</div>
 							{this.buildEvents(vals)}
 						</div>
