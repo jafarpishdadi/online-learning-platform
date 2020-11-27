@@ -122,7 +122,12 @@
 .custom-header {
 	color: #7A7A7A;
 	font-family: "Open Sans" !important;
+	font-weight: bold;
 	margin-left: 3vw;
+}
+
+.move-title-up {
+	margin-top: -70px;
 }
 
 .custom-time {
@@ -137,14 +142,12 @@
 	width: 20vw;
 }
 
-.custom-no-events {
-	color: #7A7A7A;
-	font-family: "Open Sans" !important;
-	width: 200px;
-}
-
 .custom-div2 {
 	margin-left: 300px;
+}
+
+.move-small-cards {
+	margin-left: -340px;
 }
 
 .custom-deck {
@@ -160,4 +163,29 @@
 	width: 10vw;
 }
 
-/* Event Cards */
+.event-card {
+	width: 300px;
+}
+
+.event-card:hover {
+	box-shadow: none !important;
+	filter: drop-shadow(0px 8px 16px rgba(137, 176, 175, 0.25)) !important;
+}
+
+.event-header {
+	font-family: "Open Sans" !important;
+	font-weight: lighter;
+}
+
+.event-info-body {
+	font-family: "Open Sans" !important;
+	font-weight: lighter;
+}
+
+.custom-no-events {
+	width: 300px;
+}
+
+.shadow-me {
+	filter: drop-shadow(0px 8px 16px rgba(137, 176, 175, 0.25));
+}

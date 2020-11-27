@@ -1,17 +1,17 @@
-import React, { Component } from 'react'
-import './calendar.css'
+import React, { Component } from 'react';
+import './calendar.css';
 import Calendar, { MonthView } from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
-import axios from 'axios'
+import axios from 'axios';
 import { Redirect } from 'react-router-dom';
-import TitleImage from '../../assets/schedule.png'
+import TitleImage from '../../assets/schedule.png';
 import Schedule from './schedule.component';
-import Events from './events.component'
+import Events from './events.component';
+import SmallCards from './smallCards.component';
 
 let size = 0;
 let times = [];
 let allTimes = [];
-let allEvents = [];
 
 function compare(a, b) {
 	if (parseInt(a.start_time, 10) < parseInt(b.start_time, 10)) return -1;
@@ -88,19 +88,22 @@ class CalendarComponent extends Component {
 		return (
 
 			<div className="custom-div2 d-flex flex-row">
-
-				<div className="react-component">
-					<Calendar
-						onChange={this.onChange}
-						value={value}
-						locale={'en-US'}
-						returnValue={"start"}
-						maxDetail={"month"}
-						minDetail={"year"}
-						calendarType={"US"}
-						showDoubleView={false}
-						onClickDay={this.clickDay(this.state.date)}
-					/>
+				<div class="d-flex flex-column">
+					<div className="react-component">
+						<Calendar
+							onChange={this.onChange}
+							value={value}
+							locale={'en-US'}
+							returnValue={"start"}
+							maxDetail={"month"}
+							minDetail={"year"}
+							calendarType={"US"}
+							showDoubleView={false}
+							onClickDay={this.clickDay(this.state.date)}
+						/>
+					</div>
+					<div class="move-small-cards"><SmallCards /></div>
+					
 				</div>
 				<div class="d-flex flex-column p-2 custom-div">
 					<div class="card card-header d-flex flex-row schedule-card">
@@ -111,14 +114,12 @@ class CalendarComponent extends Component {
 					</div>
 					<div class="d-flex flex-row justify-content-center">
 						<Schedule books={allTimes} />
-					</div>
-				</div>
-				<div class="d-flex flex-column p-2 custom-div">
-					<div class="card card-header d-flex flex-row schedule-card">
-						<h4 class="p-1 custom-header">Events</h4>
-					</div>
-					<div class="d-flex flex-row justify-content-center">
-						<Events/>
+						<div>
+							<div class="card card-header d-flex flex-row schedule-card move-title-up">
+								<h4 class="p-1 custom-header">Details</h4>
+							</div>
+							<Events />
+						</div>
 					</div>
 				</div>
 

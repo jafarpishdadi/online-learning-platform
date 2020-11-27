@@ -62,7 +62,7 @@ class Schedule extends Component {
 		const { books } = this.props
 		return (
 			<React.Fragment>
-				<div class="d-flex flex-column p-2 custom-div">
+				<div class="d-flex flex-column p-2 custom-div shadow-me">
 					<div class="d-flex flex-row justify-content-center">
 						<ul class="list-group time-box">
 							<li class="list-group-item text-secondary custom-time border-light">
