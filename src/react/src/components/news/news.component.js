@@ -58,9 +58,9 @@ class News extends Component {
                         <input name="tabs" type="radio" id="tab-4" class="input" />
                         <label for="tab-4" class="label">Other</label>
                         <div class="panel">
-                        <h1>AI system discovers new useful material</h1>
+                        <h1>Want to know more about UImpactify</h1>
                             <img class="textbox" src={logo} ></img>
-                            <p>learn more about uimpactify!</p>
+                            <p>learn more about UImpactify!</p>
                             <div className="btn-learn">
                                 <button className="btn-learn-more"><a href="http://localhost:3000/faq">learn more</a></button>
                             </div>
