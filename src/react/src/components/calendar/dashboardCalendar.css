@@ -70,6 +70,13 @@
 .react-calendar__month-view__days__day--weekend {
 	color: inherit !important;
 }
+
+.event-subheading {
+    font-family: "Open Sans";
+    font-weight: lighter;
+    border-radius: 10px;
+}
+
 .card-subheading{
     display: flex;
     font-weight: bold;

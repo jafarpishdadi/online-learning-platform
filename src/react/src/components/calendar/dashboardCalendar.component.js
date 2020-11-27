@@ -48,19 +48,19 @@ const EventItem = ({ eventType, eventName, eventTime }) => {
 
 	if (eventType == "Workshop") {
 		return (
-			<button type="button" class="btn btn-dark text-left mt-1">{str} | Workshop-{eventName}</button>
+			<button type="button" class="btn btn-dark event-subheading text-left mt-1">{str} | Workshop-{eventName}</button>
 		)
 	} else if (eventType == "Meeting") {
 		return (
-			<button type="button" class="btn btn-warning text-left mt-1">{str} | Meeting-{eventName}</button>
+			<button type="button" class="btn btn-warning event-subheading text-left mt-1">{str} | Meeting-{eventName}</button>
 		)
 	} else if (eventType == "Study") {
 		return (
-			<button type="button" class="btn btn-primary text-left mt-1">{str} | Study-{eventName}</button>
+			<button type="button" class="btn btn-primary event-subheading text-left mt-1">{str} | Study-{eventName}</button>
 		)
 	} else if (eventType == "Class") {
 		return (
-			<button type="button" class="btn btn-info text-left mt-1">{str} | Class-{eventName}</button>
+			<button type="button" class="btn btn-info event-subheading text-left mt-1">{str} | Class-{eventName}</button>
 		)
 	}
 }
@@ -97,7 +97,7 @@ class DashboardCalendarComponent extends Component {
 			)
 		} else {
 			return (
-				<button type="button" class="btn btn-secondary text-left mt-1">No events</button>
+				<button type="button" class="btn btn-secondary event-subheading text-left mt-1">No events</button>
 			)
 		}
 	}
