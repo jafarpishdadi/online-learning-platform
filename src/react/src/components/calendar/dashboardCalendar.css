@@ -28,7 +28,7 @@
 	border-radius: 10px;
     max-width: 100%;
     margin-left: 400px;
-    margin-top: 180px;
+    margin-top: 200px;
     position:absolute;
     top:0;
     right:10;
@@ -42,7 +42,7 @@
 	border-radius: 10px;
     max-width: 100%;
     margin-left: 400px;
-    margin-top: 230px;
+    margin-top: 250px;
     position:absolute;
     top:0;
     right:10;
@@ -70,12 +70,20 @@
 .react-calendar__month-view__days__day--weekend {
 	color: inherit !important;
 }
+
+.event-subheading {
+    font-family: "Open Sans";
+    font-weight: lighter;
+    border-radius: 10px;
+}
+
 .card-subheading{
     display: flex;
     font-weight: bold;
     margin-left: 400px;
-    margin-top: 150px;
+    margin-top: 160px;
     position:absolute;
+    width: 200px;
     top:0;
     right:10;
     justify-content: space-between;
