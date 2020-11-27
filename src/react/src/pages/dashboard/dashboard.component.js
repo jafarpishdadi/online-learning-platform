@@ -37,6 +37,7 @@ class DashPage extends Component {
         if (!localStorage.getItem('token')) {
             return <Redirect to='/login' />
         }
+        if (localStorage.getItem('usertype') == 'student'){
         return (
 
             <React.Fragment>
@@ -59,6 +60,29 @@ class DashPage extends Component {
             </React.Fragment>
         )
     }
+    if (localStorage.getItem('usertype') == 'instructor'){
+        return(
+
+            <React.Fragment>
+                <Sidebar books={navItems} />
+                <Headerbar icons={headerItems} />
+                <section class="container-dash">
+                    <div class="left-half">
+                        <article>
+                        <div><DashboardCalendarComponent/></div>
+                        </article>
+                    </div>
+                    <div class="right-half">
+                        <article>
+                        <div><Events/></div>
+                        <div><News/></div>
+                        </article>
+                    </div>
+                </section>
+            </React.Fragment>
+        )
+}
+}
 }
 
-export default DashPage
+export default DashPage;
