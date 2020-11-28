@@ -35,7 +35,7 @@ class News extends Component {
                         <label for="tab-2" class="label">Social initiative</label>
                         <div class="panel">
                             <h1>CFC launches new campaign</h1>
-                            <div className="picture">
+                            <div className="picture-cfc">
                                 <img class="textbox" src={change} ></img>
                                 <p>Technology for improved education Guatemela is a project designed to improve the quality of eduction in Guatemala</p>
                             </div>

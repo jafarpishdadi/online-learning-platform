@@ -17,10 +17,11 @@ import achievements from '../../assets/achievements.png'
 import socialInitiatives from '../../assets/Welfare.png'
 import settings from '../../assets/settings.png'
 import dashboard from '../../assets/dashboard.png'
+import bookclass from '../../assets/book-class.png'
 import { Redirect } from 'react-router-dom';
 import CreateClass from '../..//components/createClass/createClass.component.js'
 
-let headerItems = {link: '/profile', title: 'Create a New Class', profileImg: profile }
+let headerItems = {link: '/profile', title: 'Create a New Course', profileImg: profile }
 
 let navItems = [
     {id: 1, link: "/dashboard", imgSrc: dashboard, title: "Dashboard" },
@@ -43,7 +44,8 @@ class CreateClassPage extends Component {
             <Sidebar books={navItems}/>
             <Headerbar icons={headerItems}/>
             <div class= "box-2">
-                <h1>Create a Class</h1>
+                <div class="picture-book"><img src={bookclass} alt="Map"></img>
+                <h1 class="header-create-class">Create the Course</h1></div>
                 <div>
                 <p>Use the form below to create a class that students can register in for UImpactify</p>
                 <div class="picture"> <img src={Laptop} alt="Map"></img></div>
