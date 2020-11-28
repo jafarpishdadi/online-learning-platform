@@ -38,7 +38,7 @@ import FAQPage from "./pages/faq/faqPage.js";
 import Studentclasses from './components/Classes-Student/studentClasses.component.js'
 import MessagePage from './pages/message/MessagePage.js'
 import SpecifyUserPage from './pages/message/SpecifyUserPage.js'
-
+import CreateClassPage from './pages/createClass/createClassPage.js'
 
 window.token=localStorage.getItem('token');
 
@@ -117,6 +117,9 @@ let headerItems = {link: '/profile', title: 'Dashboard', profileImg: profile }
             </Route>
             <Route exact path='/message'>
                 <MessagePage/>
+            </Route>
+            <Route exact path='/classcreation'>
+                <CreateClassPage/>
             </Route>
             // side bar
             <Route path="/sidebar">
