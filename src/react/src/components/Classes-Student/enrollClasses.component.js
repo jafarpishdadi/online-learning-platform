@@ -45,7 +45,7 @@ class AllClassList extends Component {
                 <Modal show={this.state.show} handleClose={this.hideModal}></Modal>
                 <h1>Course List</h1>
                 { this.state.courses.map(courses =>
-                    <Card className='courseCards'  bg="light" text="black" style={{ height:'18rem', width: '25rem' }} name='course_name' value={courses.course_name}>
+                    <Card className='courseCards'  bg="light" text="black" style={{ height:'15rem', width: '25rem' }} name='course_name' value={courses.course_name}>
                         <Card.Header className='instructorHeader' style={{height:'10rem', color:'white',background:'black' } }></Card.Header>
                         <div class="numberCircle" ></div>
                         <div class="titleCircle">{courses.course_instructor}</div>

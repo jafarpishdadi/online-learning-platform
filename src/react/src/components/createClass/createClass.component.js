@@ -57,19 +57,19 @@ class CreateClass extends Component {
 					<form class="flex-column" onSubmit={this.submit}>
 						<div class="form-group pt-0 pl-2 pr-2">
 							<label for="inputcourse_category" class="category-text">Course Category</label>
-							<input type="text" class="form-control" name='course_category' value={this.state.course_category} placeholder="enter the course category" onChange={this.handleChange} aria-describedby="course_categoryHelp" />
+							<input type="text" class="form-control" name='course_category' value={this.state.course_category} placeholder="Enter the course category" onChange={this.handleChange} aria-describedby="course_categoryHelp" />
 						</div>
 						<div class="form-group pt-0 pl-2 pr-2">
 							<label for="inputcourse_name" class="category-text">Course Name</label>
-							<input type="text" class="form-control" name='course_name' value={this.state.course_name} placeholder="enter the course name" onChange={this.handleChange} aria-describedby="course_nameHelp" />
+							<input type="text" class="form-control" name='course_name' value={this.state.course_name} placeholder="Enter the course name" onChange={this.handleChange} aria-describedby="course_nameHelp" />
 						</div>
 						<div class="form-group pt-0 pl-2 pr-2">
 							<label for="inputcourse_instructor" class="category-text">Course Instructor</label>
-							<input type="course_instructor" class="form-control" name='course_instructor' value={this.state.course_instructor} onChange={this.handleChange} placeholder="enter your name" aria-describedby="course_instructorHelp" />
+							<input type="course_instructor" class="form-control" name='course_instructor' value={this.state.course_instructor} onChange={this.handleChange} placeholder="Enter your name" aria-describedby="course_instructorHelp" />
 						</div>
 						<div class="form-group pt-0 pl-2 pr-2">
 							<label for="inputcourse_info" class="category-text">Course Description</label>
-							<input type="course_info" class="form-control" name='extra_info' value={this.state.extra_info} onChange={this.handleChange} placeholder="enter the course description" aria-describedby="course_infoHelp" />
+							<input type="course_info" class="form-control" name='extra_info' value={this.state.extra_info} onChange={this.handleChange} placeholder="Enter the course description" aria-describedby="course_infoHelp" />
 						</div>
 
 						<div class="mx-auto text-right p-0 col-md-12 mb-4 text-sm">

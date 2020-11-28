@@ -31,6 +31,7 @@ import News from './components/news/news.component.js'
 import profile from './assets/profile.png'
 import DashPage from './pages/dashboard/dashboard.component.js'
 import AllClassListPage from './pages/Classes/classes.js'
+import AllEventListPage from './pages/Events/events.js'
 import CreateClass  from  "./components/createClass/createClass.component.js";
 import CreateEvent  from  "./components/createEvent/createEvent.component.js";
 import ClassList  from  "./components/createClass/classList.component.js";
@@ -40,6 +41,7 @@ import Studentclasses from './components/Classes-Student/studentClasses.componen
 import MessagePage from './pages/message/MessagePage.js'
 import SpecifyUserPage from './pages/message/SpecifyUserPage.js'
 import CreateClassPage from './pages/createClass/createClassPage.js'
+import AllEventsList from "./components/events/eventlist";
 
 window.token=localStorage.getItem('token');
 
@@ -110,6 +112,9 @@ let headerItems = {link: '/profile', title: 'Dashboard', profileImg: profile }
             <Route exact path="/allclasslist">
                 <AllClassListPage/>
             </Route>
+            <Route exact path="/alleventlist">
+                <AllEventListPage/>
+            </Route>
             <Route exact path="/logout">
                 <Logout/>
             </Route>
@@ -124,6 +129,9 @@ let headerItems = {link: '/profile', title: 'Dashboard', profileImg: profile }
             </Route>
             <Route exact path='/createevent'>
                 <CreateEvent/>
+            </Route>
+            <Route exact path='/eventlist'>
+                <AllEventsList/>
             </Route>
             // side bar
             <Route path="/sidebar">
