@@ -30,7 +30,7 @@ class Events extends Component {
     renderRedirect = () => {
         if (this.state.redirect) {
             if (this.state.component == "class") {
-                return <Redirect to='/allclassList' />
+                return <Redirect to='/alleventList' />
             }
         }
     }
