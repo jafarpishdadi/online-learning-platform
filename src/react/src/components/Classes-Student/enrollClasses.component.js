@@ -46,8 +46,8 @@ class AllClassList extends Component {
                 <h1>Course List</h1>
                 { this.state.courses.map(courses =>
                     <Card className='courseCards'  bg="light" text="black" style={{ height:'15rem', width: '25rem' }} name='course_name' value={courses.course_name}>
-                        <Card.Header className='instructorHeader' style={{height:'10rem', color:'white',background:'black' } }></Card.Header>
-                        <div class="numberCircle" ></div>
+                        <Card.Header className='instructorHeader' style={{height:'9rem', color:'white',background:'black' } }></Card.Header>
+                        <div class="numberCircle2" ></div>
                         <div class="titleCircle">{courses.course_instructor}</div>
                         <Card.Body>                                          
                             <Card.Title>{courses.course_name}</Card.Title>

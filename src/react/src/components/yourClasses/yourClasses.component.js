@@ -56,7 +56,7 @@ class Classes extends Component {
                             {this.renderRedirect()}
                             <Card.Header className='addClassHeader' style={{ height: '10rem', color: 'white', background: 'black' }}></Card.Header>
                             <Card.Body>
-                                <Card.Title>Add new Course</Card.Title>
+                                <Card.Title>Join new Course</Card.Title>
                                 <Card.Text>
                                 </Card.Text>
                             </Card.Body>
