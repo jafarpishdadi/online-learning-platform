@@ -21,8 +21,8 @@ class AllEventsList extends Component {
         
     showModal = (clicked_course) => {
       this.setState({ show: true });
-      localStorage.setItem('course_name', (this.state.clicked_course))
-      localStorage.setItem('instructor_name', (this.state.clicked_name))
+      localStorage.setItem('dashevent_name', (this.state.clicked_course))
+      localStorage.setItem('dashevent_instructor', (this.state.clicked_name))
       console.log(this.state.clicked_course)
       console.log(this.state.clicked_name)
     };
@@ -49,11 +49,11 @@ class AllEventsList extends Component {
                         <Card.Header className='eventHeader' style={{height:'10rem', color:'white',background:'black' } }></Card.Header>
                         <div class="numberCircle" ></div>
                         <div class="titleCircle">{courses.dashevent_name}</div>
-                        <Card.Body style={{height:'10rem', width:  '18rem', color:'white' } }>                                          
+                        <Card.Body style={{height:'10rem', width:  '18rem', color:'white'} }>                                          
                             <p>{courses.extra_info}</p>
                             <div className = 'buttons'>
-                            <button type="button" class="btn btn-primary3"  onClick={() => this.setState({clicked_course: courses.course_name, clicked_name:courses.course_instructor}) }>Select</button>
-                                <button type="button" class="btn btn-primary3"  onClick={this.showModal}>Enroll</button>
+                            <button type="button" class="btn btn-primary3"  onClick={() => this.setState({clicked_course: courses.dashevent_name, clicked_name:courses.extra_info}) }>Select</button>
+                                <button type="button" class="btn btn-primary3"  onClick={this.showModal}>Join</button>
                             </div>
                         </Card.Body>
                     </Card>
