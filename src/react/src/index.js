@@ -41,6 +41,7 @@ import Studentclasses from './components/Classes-Student/studentClasses.componen
 import MessagePage from './pages/message/MessagePage.js'
 import SpecifyUserPage from './pages/message/SpecifyUserPage.js'
 import CreateClassPage from './pages/createClass/createClassPage.js'
+import CreateEventPage from './pages/createEvent/createEventPage.js'
 import AllEventsList from "./components/events/eventlist";
 
 window.token=localStorage.getItem('token');
@@ -126,6 +127,9 @@ let headerItems = {link: '/profile', title: 'Dashboard', profileImg: profile }
             </Route>
             <Route exact path='/classcreation'>
                 <CreateClassPage/>
+            </Route>
+            <Route exact path='/eventcreation'>
+                <CreateEventPage/>
             </Route>
             <Route exact path='/createevent'>
                 <CreateEvent/>

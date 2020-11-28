@@ -57,19 +57,19 @@ class CreateEvent extends Component {
 					<form class="flex-column" onSubmit={this.submit}>
 						<div class="form-group pt-0 pl-2 pr-2">
 							<label for="inputcourse_category" class="category-text">Event Category</label>
-							<input type="text" class="form-control" name='dashevent_category' value={this.state.dashevent_category} placeholder="enter the event category" onChange={this.handleChange} aria-describedby="course_categoryHelp" />
+							<input type="text" class="form-control" name='dashevent_category' value={this.state.dashevent_category} placeholder="Enter the event category" onChange={this.handleChange} aria-describedby="course_categoryHelp" />
 						</div>
 						<div class="form-group pt-0 pl-2 pr-2">
 							<label for="inputcourse_name" class="category-text">Event Name</label>
-							<input type="text" class="form-control" name='dashevent_name' value={this.state.dashevent_name} placeholder="enter the event name" onChange={this.handleChange} aria-describedby="course_nameHelp" />
+							<input type="text" class="form-control" name='dashevent_name' value={this.state.dashevent_name} placeholder="Enter the event name" onChange={this.handleChange} aria-describedby="course_nameHelp" />
 						</div>
 						<div class="form-group pt-0 pl-2 pr-2">
 							<label for="inputcourse_instructor" class="category-text">Event Host</label>
-							<input type="course_instructor" class="form-control" name='dashevent_instructor' value={this.state.dashevent_instructor} onChange={this.handleChange} placeholder="enter the name of the event host" aria-describedby="course_instructorHelp" />
+							<input type="course_instructor" class="form-control" name='dashevent_instructor' value={this.state.dashevent_instructor} onChange={this.handleChange} placeholder="Enter the name of the event host" aria-describedby="course_instructorHelp" />
 						</div>
 						<div class="form-group pt-0 pl-2 pr-2">
 							<label for="inputcourse_info" class="category-text">Event Description</label>
-							<input type="course_info" class="form-control" name='extra_info' value={this.state.extra_info} onChange={this.handleChange} placeholder="enter the event description" aria-describedby="course_infoHelp" />
+							<input type="course_info" class="form-control" name='extra_info' value={this.state.extra_info} onChange={this.handleChange} placeholder="Enter the event description" aria-describedby="course_infoHelp" />
 						</div>
 
 						<div class="mx-auto text-right p-0 col-md-12 mb-4 text-sm">
