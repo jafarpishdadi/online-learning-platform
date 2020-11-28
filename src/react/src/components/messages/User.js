@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
+import createMessage from '../../assets/createMessage.png'
 import './User.css'
 
 class User extends Component {
@@ -38,13 +39,17 @@ class User extends Component {
                 <b className='prompt'>Please enter the username of who you want to message</b>
                 <form
                     onSubmit={this.handleSubmit}
-                    className='targetUser'>
-                    <input
+                    className='targetUser form-inline'>
+                    <input className='form-control form-lg w-25'
                         onChange={this.handleChange}
                         value={this.state.targetUser}
                         placeholder='Recipient&#39;s username'
                         type='text'/>
-                    <button onClick={this.handleSubmit}>Enter</button>
+                    <button className='writeButton' onClick={this.handleSubmit}>
+                         <img
+                             src={createMessage}
+                             alt={createMessage}/>
+                         </button>
                 </form>
             </div>
         )

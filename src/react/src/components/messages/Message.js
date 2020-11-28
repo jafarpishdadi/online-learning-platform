@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios';
 import MessageList from './MessageList.js'
 import SendMessage from './SendMessage.js'
+import './Message.css'
 
 class Message extends Component {
     constructor() {
