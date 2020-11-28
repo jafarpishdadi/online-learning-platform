@@ -1,0 +1,120 @@
+/*Sidebar Styles*/
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+.menuIcon {
+    margin: 20px 85px;
+    cursor: pointer;
+}
+
+.sideBar {
+    display: flex;
+    position: absolute;
+    margin-left: 0px;
+    flex-direction: column;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    background: none repeat scroll 0 0 white;
+    color: white;
+    font-family: "Open Sans";
+    font-weight: bold;
+    padding: 20px 10px 20px 0px;
+    border-radius: 0px 15px 15px 0px;
+    box-shadow: 0 2px 2px -2px rgba(0,0,0,.2);
+}
+
+.sideBar ul {
+    margin: 0;
+    padding: 0;
+}
+
+.sideBar ul a {
+    text-decoration: none;
+}
+
+.sideBar ul a li {
+    margin: 10px;
+    padding: 10px 10px 10px 0px;
+    margin-top: 10px;
+    border-radius: 0px 15px 15px 0px;
+    list-style-type: none;
+    list-style-position: outside;
+    text-decoration: none;
+}
+
+.sideBar ul a li, span{
+    text-decoration: none;
+    text-align: left;
+    color: #919699;
+    margin-left: 20px;
+    margin-right: 12px;
+    padding-left: 0px;
+    font-size: 16px;
+    position: relative;
+} 
+
+.sideBar ul a li:hover {
+    background: #A78EC3;
+    box-shadow: 0 20px 20px -2px rgba(0,0,0,.2);
+    color:white;
+    margin-left: 0;
+    padding-left: 20px;
+    text-decoration: none;
+}
+
+.sideBar ul a li:hover span {
+    color: inherit;
+}
+
+.sideBar ul a:hover {
+    text-decoration: none;
+}
+
+.sideBar ul a li, span:hover {
+    color: white;
+    text-decoration: none;
+    text-align: left;
+    margin-left: 20px;
+    margin-right: 12px;
+}
+
+/*Create Account Styles*/
+
+.cardStyle {
+    width: 40vw;
+    height: 85vh;
+    align-items: right;
+    background-color: #F7F7FF;
+    box-shadow: none !important;
+    font-family: "Open Sans";
+}
+createCardStyle{
+    background-color: black !important;
+}
+.cardTitleStyle {
+    font-family: "Open Sans";
+    font-weight: 600;
+    font-size: 35px;
+    text-align: center;
+    margin-top: 10px;
+    
+}
+.createCardStyle{
+    background-color: black !important;
+}
+.btnCreate {
+    background-color: #A78EC3;
+    color: white;
+    width: 100px;
+    height: 40px;
+    font-weight: 600;
+    font-family: "Open Sans";
+    box-shadow: none;
+    border: none;
+    border-radius: 10px;
+    position: center;
+}
+.category-text{
+    font-weight: bold;
+    color:#7a7a7a;
+}
+

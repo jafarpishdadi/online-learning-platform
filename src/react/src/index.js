@@ -32,6 +32,7 @@ import profile from './assets/profile.png'
 import DashPage from './pages/dashboard/dashboard.component.js'
 import AllClassListPage from './pages/Classes/classes.js'
 import CreateClass  from  "./components/createClass/createClass.component.js";
+import CreateEvent  from  "./components/createEvent/createEvent.component.js";
 import ClassList  from  "./components/createClass/classList.component.js";
 import ProfilePage from "./pages/profile/profilePage.js";
 import FAQPage from "./pages/faq/faqPage.js";
@@ -120,6 +121,9 @@ let headerItems = {link: '/profile', title: 'Dashboard', profileImg: profile }
             </Route>
             <Route exact path='/classcreation'>
                 <CreateClassPage/>
+            </Route>
+            <Route exact path='/createevent'>
+                <CreateEvent/>
             </Route>
             // side bar
             <Route path="/sidebar">

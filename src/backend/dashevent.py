@@ -39,7 +39,7 @@ class dasheventObj():
 		"""
 		self.content = content
 	
-	def db_create_dashevent(self):
+	def db_add_dashevent(self):
 		"""
 		Saves the current dashevent to the database.
 		"""

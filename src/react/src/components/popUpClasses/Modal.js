@@ -40,7 +40,7 @@ export default Modal = ({ handleClose, show, children }) => {
   
 	return (
 	  <div className={showHideClassName}>
-		<section className="modal-main p-2">
+		<section className="modal-main-class p-2">
 			<div class="d-flex flex-column">
 				<div class="p-2">
 					</div>
