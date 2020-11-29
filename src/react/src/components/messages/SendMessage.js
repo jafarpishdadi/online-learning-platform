@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios';
+import createMessage from '../../assets/createMessage.png'
 import './SendMessage.css'
 
 class SendMessage extends Component {
@@ -33,12 +34,17 @@ class SendMessage extends Component {
             <div className='message-pos'>
                 <form
                     onSubmit={this.handleSubmit}
-                    className='send-message'>
-                    <input
+                    className='form-inline'>
+                    <input className='form-control form-lg'
                         onChange={this.handleChange}
                         value={this.state.message}
                         placeholder='Enter your message'
                         type='text'/>
+                    <button className='writeButton ml-2' onClick={this.handleSubmit}>
+                         <img
+                             src={createMessage}
+                             alt={createMessage}/>
+                    </button>
                 </form>
             </div>
         )
