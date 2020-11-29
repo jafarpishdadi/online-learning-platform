@@ -126,6 +126,10 @@
 	margin-left: 3vw;
 }
 
+.move-title-up {
+	margin-top: -70px;
+}
+
 .custom-time {
 	color: #7A7A7A;
 	font-family: "Open Sans" !important;
@@ -142,6 +146,12 @@
 	margin-left: 300px;
 }
 
+.move-small-cards {
+	margin-left: -340px;
+}
+.custom-no-events:hover {
+    box-shadow: none !important;
+}
 .custom-deck {
 	width: 15vw;
 	margin-left: 340px !important;
@@ -153,4 +163,31 @@
 }
 .time-box {
 	width: 10vw;
+}
+
+.event-card {
+	width: 300px;
+}
+
+.event-card:hover {
+	box-shadow: none !important;
+	filter: drop-shadow(0px 8px 16px rgba(137, 176, 175, 0.25)) !important;
+}
+
+.event-header {
+	font-family: "Open Sans" !important;
+	font-weight: lighter;
+}
+
+.event-info-body {
+	font-family: "Open Sans" !important;
+	font-weight: lighter;
+}
+
+.custom-no-events {
+	width: 300px;
+}
+
+.shadow-me {
+	filter: drop-shadow(0px 8px 16px rgba(137, 176, 175, 0.25));
 }

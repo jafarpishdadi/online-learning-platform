@@ -13,6 +13,7 @@ class Login extends Component {
             username: '',
 			password: '',
 			loggedIn:false,
+			firstLogIn:false,
         };
 
 		this.handleChange = this.handleChange.bind(this);
@@ -22,7 +23,7 @@ class Login extends Component {
 
 	componentDidMount() {
 		if(window.token){
-		  this.setState({loggedIn:true});
+			this.setState({loggedIn:true});
 		}
 	}
 
@@ -39,7 +40,12 @@ class Login extends Component {
 
 	render() {
 		if(this.state.loggedIn){
-		    return <Redirect to='/dashboard'/>
+			if (this.state.firstLogIn){
+				return <Redirect to='/Questionaire'/>
+			}
+			else{
+		    	return <Redirect to='/dashboard'/>
+			}
 		}
 
 		return (
@@ -84,15 +90,30 @@ class Login extends Component {
 
     submit(e) {
 		e.preventDefault();
-        axios.post('http://127.0.0.1:8103/api/db_login', {username: this.state.username, password: this.state.password })
-            .then(response => {
-				console.log(response);
-				localStorage.setItem('token', response.data)
-				localStorage.setItem('username', (this.state.username))
-				this.setState({loggedIn:true});
-				console.log(localStorage.getItem('username'))
+		//Check if this is the first login
+		axios.post('http://127.0.0.1:8103/api/db_last_login', {username: this.state.username})
+		.then(response => {
+			console.log(response);
+			this.state.firstLogIn = (response.data == "N/A");
+			console.log(this.state.firstLogIn)
+			axios.post('http://127.0.0.1:8103/api/db_login', {username: this.state.username, password: this.state.password })
+				.then(response => {
+					console.log(response);
+					localStorage.setItem('token', response.data)
+					localStorage.setItem('username', (this.state.username))
+					console.log(localStorage.getItem('username'))
+					axios.post('http://127.0.0.1:8103/api/db_get_user_type', {username: this.state.username})
+					.then(response => {
+						console.log(response);
+						localStorage.setItem('usertype', response.data)
+						this.setState({loggedIn:true});
+						console.log(localStorage.getItem('usertype'))
+					})
+					.catch((error) => {
+					console.log(error)
+				});
 			})
-			.catch((error) => {
+		}).catch((error) => {
 			console.log(error)
 		});
     }

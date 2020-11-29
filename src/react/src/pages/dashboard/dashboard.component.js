@@ -17,16 +17,16 @@ import socialInitiatives from '../../assets/Welfare.png'
 import settings from '../../assets/settings.png'
 import dashboard from '../../assets/dashboard.png'
 import { Redirect } from 'react-router-dom';
-import Split from 'split.js'
 
-let headerItems = { link: '/sidebar', title: 'Dashboard', profileImg: profile }
+
+let headerItems = { link: '/profile', title: 'Dashboard', profileImg: profile }
 
 let navItems = [
     { id: 1, link: "/dashboard", imgSrc: dashboard, title: "Dashboard" },
     { id: 2, link: "/allclasslist", imgSrc: classes, title: "Classes" },
     { id: 3, link: "/schedule", imgSrc: scheduling, title: "Scheduling" },
     { id: 4, link: "", imgSrc: community, title: "Community" },
-    { id: 5, link: "", imgSrc: mailbox, title: "Mailbox" },
+    { id: 5, link: "/messageuser", imgSrc: mailbox, title: "Messaging" },
     { id: 6, link: "", imgSrc: achievements, title: "Achievements" },
     { id: 7, link: "", imgSrc: socialInitiatives, title: "Social Initiatives" },
     { id: 8, link: "", imgSrc: settings, title: "Settings" }
@@ -37,6 +37,7 @@ class DashPage extends Component {
         if (!localStorage.getItem('token')) {
             return <Redirect to='/login' />
         }
+        if (localStorage.getItem('usertype') == 'student'){
         return (
 
             <React.Fragment>
@@ -59,6 +60,29 @@ class DashPage extends Component {
             </React.Fragment>
         )
     }
+    if (localStorage.getItem('usertype') == 'instructor'){
+        return(
+
+            <React.Fragment>
+                <Sidebar books={navItems} />
+                <Headerbar icons={headerItems} />
+                <section class="container-dash">
+                    <div class="left-half">
+                        <article>
+                        <div><DashboardCalendarComponent/></div>
+                        </article>
+                    </div>
+                    <div class="right-half">
+                        <article>
+                        <div><Events/></div>
+                        <div><News/></div>
+                        </article>
+                    </div>
+                </section>
+            </React.Fragment>
+        )
+}
+}
 }
 
-export default DashPage
+export default DashPage;

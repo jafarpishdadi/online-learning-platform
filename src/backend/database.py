@@ -77,15 +77,20 @@ def db_login():
 def db_logout():
     return UserObj(request.json).db_logout()
 
-# returns list of consultants with optional parameters formetted as {email: email, username: username, name: name}
+# returns list of consultants with optional parameters formatted as {email: email, username: username, name: name}
 @app.route('/api/db_get_consultants', methods=['POST'])
 def db_get_consultants():
 	return UserObj(request.json).db_get_consultants()
 
-# returns user_type when provided with username formetted as {username: username}
+# returns user_type when provided with username formatted as {username: username}
 @app.route('/api/db_get_user_type', methods=['POST'])
 def db_get_user_type():
 	return UserObj(request.json).db_get_user_type()
+
+# returns last_logout when provided with username formatted as {username: username}
+@app.route('/api/db_last_login', methods=['POST'])
+def db_last_login():
+	return UserObj(request.json).db_last_login()
 	
 # creates a new profile and posts it to the database when provided with a json text formatted as {username: username}
 @app.route('/api/db_create_profile', methods=['POST'])
@@ -177,7 +182,7 @@ def db_update_event():
 def db_delete_event():
     return CalenderObj(request.json).db_delete_event()
 
-# creates a new course and posts it to the database when provided with a json text formatted as {course_category: course_category, course_name: course_name, course_instructor: course_instructor}
+# creates a new course and posts it to the database when provided with a json text formatted as {course_category: course_category, course_name: course_name, course_instructor: course_instructor, extra_info: extra_info}
 @app.route('/api/db_create_course', methods=['POST'])
 def db_create_course():
 	print(request.json)
@@ -270,4 +275,3 @@ def db_create_thread():
 # you can put in your preferred port 
 if __name__ == '__main__':   
 	app.run(host='0.0.0.0', port=8103)
-
