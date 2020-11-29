@@ -51,15 +51,41 @@ class Profile extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            displaying: true
+            displaying : true,
+            
         }
-        this.newFirstName = ""
-        this.newLastName = ""
-        this.newEmail = ""
-        this.newPhoneNumber = ""
-        this.newName = ""
-        this.newDescription = ""
+        this.newFirstName = "";
+        this.newLastName = "";
+        this.newEmail = "";
+        this.newPhoneNumber = "";
+        this.newName = "";
+        this.newDescription = "";
+        this.handleChange = this.handleChange.bind(this);
+		this.onclick = this.onClick = this.onclick.bind(this);
+        this.submit = this.submit.bind(this);
     }
+
+    onclick(event){
+		let name = event.target.name;
+		let value = event.target.value;
+		console.log(name,value)
+		let data ={};
+		data[name] = value;
+
+		this.setState(data)
+	}
+
+    handleChange(event) {
+        let name = event.target.name;
+        let value = event.target.value;
+        console.log(name, value)
+        let data = {};
+        data[name] = value;
+
+        this.setState(data);
+
+
+	}
 	render() {
         const { educations } = this.props
         const { skills } = this.props
@@ -74,7 +100,7 @@ class Profile extends Component {
         const { phoneNumber } = this.props
 		return(
             <div className="main">
-
+            <form id='my-form' onSubmit={this.submit}>
                 {/* card with education info */}
                 <Card className = "edu">
                     <Card.Body>
@@ -230,15 +256,37 @@ class Profile extends Component {
                     ) : (
                         <button 
                         className = "edit_button" 
+                        form = "my-form"
+                        type = "submit"
                         onClick={() => {this.setState({ displaying: true });}
                         }>
                             Save
                         </button>
                     )}
-                    
                 </Card>
+            </form>
             </div>
 		)
-	}
+    }
+    submit(e) {
+        e.preventDefault();
+        console.log(this.newFirstName)
+        console.log(this.newLastName)
+        console.log(this.newEmail)
+        // this.newPhoneNumber
+        // this.newName
+        // this.newDescription
+
+        
+
+        // axios.post('http://127.0.0.1:8103/api/db_create_user', {user_type:this.state.user_type, email: this.state.email,username:this.state.username, password: this.state.password })
+        //     .then(response => {
+		// 		console.log(response.data)
+		// 		this.setState({accountCreated:true});
+		// 	})
+		// 	.catch((error) => {
+		// 	console.log(error)
+		// });
+    }
 }
 export default Profile
