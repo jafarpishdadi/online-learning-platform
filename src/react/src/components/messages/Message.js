@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios';
 import MessageList from './MessageList.js'
 import SendMessage from './SendMessage.js'
+import './Message.css'
 
 class Message extends Component {
     constructor() {
@@ -32,7 +33,7 @@ class Message extends Component {
     render() {
         return (
             <div>
-                <p className='targetUser'>{localStorage.getItem('targetUser')}</p>
+                <h1 className='targetUser'>{localStorage.getItem('targetUser')}</h1>
                 <MessageList
                     messages={this.state.messages}
                 />
