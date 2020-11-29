@@ -116,8 +116,12 @@ class ProfileObj():
 
 		prof_obj = self.Profile.objects(username=self.content['username']).first()
 		if prof_obj:
+			prof_obj.save()
 			prof_obj.update(first_name=self.content['first_name'])
+			prof_obj.reload()
+			prof_obj.save()
 			prof_obj.update(name=self.content['first_name'] + " " + prof_obj.last_name)
+			prof_obj.reload()
 			return make_response("", 200)
 		else:
 			return make_response("User does not exist.", 404)
@@ -133,8 +137,12 @@ class ProfileObj():
 
 		prof_obj = self.Profile.objects(username=self.content['username']).first()
 		if prof_obj:
+			prof_obj.save()
 			prof_obj.update(last_name=self.content['last_name'])
+			prof_obj.reload()
+			prof_obj.save()
 			prof_obj.update(name=prof_obj.first_name + " " + self.content['last_name'])
+			prof_obj.reload()
 			return make_response("", 200)
 		else:
 			return make_response("User does not exist.", 404)
