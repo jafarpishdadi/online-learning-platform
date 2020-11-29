@@ -53,7 +53,7 @@ class ProfilePage extends Component {
                 this.setState({completedCourses:response.data['completed_courses']})
                 this.setState({languages: response.data['languages']})
                 this.setState({name: response.data['name']})
-                this.setState({description: response.data['educations']})
+                this.setState({description: response.data['description']})
                 this.setState({timeJoin: response.data['time_join']})
                 this.setState({firstName: response.data['first_name']})
                 this.setState({lastName: response.data['last_name']})

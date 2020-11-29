@@ -9,6 +9,7 @@ import del from '../../assets/del.png'
 import editButton from '../../assets/editButton.png'
 import './profile.css'
 import ColourText from './colourText.component.js'
+import axios from 'axios';
 
 
 class Profile extends Component {
@@ -43,16 +44,7 @@ class Profile extends Component {
                 {/* card with education info */}
                 <Card className = "edu">
                     <Card.Body>
-                        {this.state.displaying ? (
-                            <div className = "name">{ name }</div>
-                        ) : (
-                            <input
-                            className = "name"
-                            type="text"
-                            defaultValue={name}
-                            ref={this.newName}
-                            />
-                        )}
+                        <div className = "name">{ name }</div>
                         <div className = "date">Established: { timeJoin }</div>
                         <Card.Title className = "listed_titles">Education</Card.Title>
                         <Card.Text className = "listed_educations">
@@ -198,31 +190,55 @@ class Profile extends Component {
 		)
     }
     submit(e, description, name, firstName, lastName, phoneNumber) {
-        // e.preventDefault();
+        // e.preventdefault();
         if (this.newFirstName.current.value != firstName) {
-            alert(this.newFirstName.current.value)
+            axios.post('http://127.0.0.1:8103/api/db_update_profile_first_name', {
+                'first_name': this.newFirstName.current.value,
+                'username': localStorage.getItem('username')
+            })
+            .then(response => {
+				console.log(response.data)
+			})
+			.catch((error) => {
+			console.log(error)
+		    });
         }
         if (this.newLastName.current.value != lastName){
-            alert(this.newLastName.current.value)
+            axios.post('http://127.0.0.1:8103/api/db_update_profile_last_name', {
+                'last_name': this.newLastName.current.value,
+                'username': localStorage.getItem('username')
+            })
+            .then(response => {
+				console.log(response.data)
+			})
+			.catch((error) => {
+            console.log(error)
+            });
         }
         if (this.newPhoneNumber.current.value != phoneNumber){
-            alert(this.newPhoneNumber.current.value)
-        }
-        if (this.newName.current.value != name){
-            alert(this.newName.current.value)
+            axios.post('http://127.0.0.1:8103/api/db_update_profile_phone_number', {
+                'phone_number': this.newPhoneNumber.current.value,
+                'username': localStorage.getItem('username')
+            })
+            .then(response => {
+				console.log(response.data)
+			})
+			.catch((error) => {
+            console.log(error)
+            });
         }
         if (this.newDescription.current.value != description){
-            alert(this.newDescription.current.value)
+            axios.post('http://127.0.0.1:8103/api/db_update_profile_description', {
+                'description': this.newDescription.current.value,
+                'username': localStorage.getItem('username')
+            })
+            .then(response => {
+				console.log(response.data)
+			})
+			.catch((error) => {
+            console.log(error)
+            });
         }
-        
-        // axios.post('http://127.0.0.1:8103/api/db_create_user', {user_type:this.state.user_type, email: this.state.email,username:this.state.username, password: this.state.password })
-        //     .then(response => {
-		// 		console.log(response.data)
-		// 		this.setState({accountCreated:true});
-		// 	})
-		// 	.catch((error) => {
-		// 	console.log(error)
-		// });
     }
 }
 export default Profile
