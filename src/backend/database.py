@@ -95,32 +95,30 @@ def db_last_login():
 # creates a new profile and posts it to the database when provided with a json text formatted as {username: username}
 @app.route('/api/db_create_profile', methods=['POST'])
 def db_create_profile():
-	print(request.json)
 	return ProfileObj(request.json).db_create_profile()
 
 # returns the profile requested from the database when provided with a json text formatted as {username: username}
 @app.route('/api/db_get_profile', methods=['POST'])
 def db_get_profile():
-	print(request.json)
 	return ProfileObj(request.json).db_get_profile()
 
 # updates the user's phone number when provided with a json text formatted as {phone_number: phone_number, username: username} 
-@app.route('/api/db_update_profile_phone_number', methods=['PUT'])
+@app.route('/api/db_update_profile_phone_number', methods=['POST'])
 def db_update_profile_phone_number():
 	return ProfileObj(request.json).db_update_profile_phone_number()
 
 # updates the user's first name when provided with a json text formatted as {first_name: first_name, username: username} 
-@app.route('/api/db_update_profile_first_name', methods=['PUT'])
+@app.route('/api/db_update_profile_first_name', methods=['POST'])
 def db_update_profile_first_name():
 	return ProfileObj(request.json).db_update_profile_first_name()
 
 # updates the user's last name when provided with a json text formatted as {last_name: last_name, username: username} 
-@app.route('/api/db_update_profile_last_name', methods=['PUT'])
+@app.route('/api/db_update_profile_last_name', methods=['POST'])
 def db_update_profile_last_name():
 	return ProfileObj(request.json).db_update_profile_last_name()
 
 # updates the user's profile description when provided with a json text formatted as {description: description, username: username} 
-@app.route('/api/db_update_profile_description', methods=['PUT'])
+@app.route('/api/db_update_profile_description', methods=['POST'])
 def db_update_profile_description():
 	return ProfileObj(request.json).db_update_profile_description()
 

@@ -36,6 +36,8 @@ import ClassList  from  "./components/createClass/classList.component.js";
 import ProfilePage from "./pages/profile/profilePage.js";
 import FAQPage from "./pages/faq/faqPage.js";
 import Studentclasses from './components/Classes-Student/studentClasses.component.js'
+import DiscussionList from './components/discussion/discussionList.component.js'
+import DiscussionDetail from './components/discussion/discussionDetail.component.js'
 import MessagePage from './pages/message/MessagePage.js'
 import SpecifyUserPage from './pages/message/SpecifyUserPage.js'
 import Questionaire from './pages/Questionaire/Questionaire.js'
@@ -60,11 +62,19 @@ let headerItems = {link: '/profile', title: 'Dashboard', profileImg: profile }
     ReactDOM.render(
         <Router>
           <Switch>
+            // discussionList
+            <Route exact path="/discussionList">
+              <DiscussionList/>
+            </Route>
+            // discussionDetail
+            <Route exact path="/discussionDetail">
+              <DiscussionDetail/>
+            </Route>
             // FAQ page
             <Route exact path="/FAQ">
               <FAQPage/>
             </Route>
-          // profile page
+            // profile page
             <Route exact path="/profile">
               <ProfilePage/>
             </Route>

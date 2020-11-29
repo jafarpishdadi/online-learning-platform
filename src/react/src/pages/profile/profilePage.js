@@ -53,12 +53,20 @@ class ProfilePage extends Component {
                 this.setState({completedCourses:response.data['completed_courses']})
                 this.setState({languages: response.data['languages']})
                 this.setState({name: response.data['name']})
-                this.setState({description: response.data['educations']})
+                this.setState({description: response.data['description']})
                 this.setState({timeJoin: response.data['time_join']})
                 this.setState({firstName: response.data['first_name']})
                 this.setState({lastName: response.data['last_name']})
-                this.setState({email: response.data['phone_number']}) //Change this later XD no EMAIL yet
                 this.setState({phoneNumber: response.data['phone_number']})
+            })
+			.catch((error) => {
+			console.log(error)
+        });
+        axios.post('http://127.0.0.1:8103/api/db_get_user_email', {'username': localStorage.getItem('username')})
+            .then(response => {
+                console.log(response);
+                console.log(response.data['email'])
+                this.setState({email: response.data})
             })
 			.catch((error) => {
 			console.log(error)
