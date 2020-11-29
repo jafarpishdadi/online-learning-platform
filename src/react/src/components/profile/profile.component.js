@@ -10,42 +10,6 @@ import editButton from '../../assets/editButton.png'
 import './profile.css'
 import ColourText from './colourText.component.js'
 
-// Very helpful code below to make edit button work: 
-// {this.state.editing ? (
-//     <span className="birth-year">{birthYear}</span>
-//   ) : (
-//     <input
-//       type="text"
-//       defaultValue={birthYear}
-//       ref={node => {
-//         this.newbirthYear = node;
-//       }}
-//     />
-//   )}
-
-{/* <p>
-<span>Homeworld:</span>
-{this.state.editing ? (
-    <span className="home-world">{homeWorld}</span>
-) : (
-    <input
-    type="text"
-    defaultValue={homeWorld}
-    ref={node => {
-        this.newHomeWorld = node;
-    }}
-    />
-)}
-</p>
-<div align="center">
-<button
-    onClick={() => {
-    this.setState({ editing: true });
-    }}
->
-    Edit
-</button>
-</div> */}
 
 class Profile extends Component {
     constructor(props) {
@@ -54,38 +18,13 @@ class Profile extends Component {
             displaying : true,
             
         }
-        this.newFirstName = "";
-        this.newLastName = "";
-        this.newEmail = "";
-        this.newPhoneNumber = "";
-        this.newName = "";
-        this.newDescription = "";
-        this.handleChange = this.handleChange.bind(this);
-		this.onclick = this.onClick = this.onclick.bind(this);
+        this.newFirstName = React.createRef();
+        this.newLastName = React.createRef();
+        this.newPhoneNumber = React.createRef();
+        this.newName = React.createRef();
+        this.newDescription = React.createRef();
         this.submit = this.submit.bind(this);
     }
-
-    onclick(event){
-		let name = event.target.name;
-		let value = event.target.value;
-		console.log(name,value)
-		let data ={};
-		data[name] = value;
-
-		this.setState(data)
-	}
-
-    handleChange(event) {
-        let name = event.target.name;
-        let value = event.target.value;
-        console.log(name, value)
-        let data = {};
-        data[name] = value;
-
-        this.setState(data);
-
-
-	}
 	render() {
         const { educations } = this.props
         const { skills } = this.props
@@ -99,8 +38,8 @@ class Profile extends Component {
         const { email } = this.props
         const { phoneNumber } = this.props
 		return(
-            <div className="main">
-            <form id='my-form' onSubmit={this.submit}>
+            <form className="main" id='my-form' onSubmit={(e) => this.submit(e, description, 
+                                                            name, firstName, lastName, phoneNumber)}>
                 {/* card with education info */}
                 <Card className = "edu">
                     <Card.Body>
@@ -111,9 +50,7 @@ class Profile extends Component {
                             className = "name"
                             type="text"
                             defaultValue={name}
-                            ref={node => {
-                                this.newName = node;
-                            }}
+                            ref={this.newName}
                             />
                         )}
                         <div className = "date">Established: { timeJoin }</div>
@@ -145,9 +82,7 @@ class Profile extends Component {
                             className = "description"
                             type="text"
                             defaultValue={description}
-                            ref={node => {
-                                this.newDescription = node;
-                            }}
+                            ref={this.newDescription}
                             />
                         )}
                     </Card.Body>
@@ -168,9 +103,7 @@ class Profile extends Component {
                                 className = "body"
                                 type="text"
                                 defaultValue={firstName}
-                                ref={node => {
-                                    this.newFirstName = node;
-                                }}
+                                ref={this.newFirstName}
                                 />
                             )}
                         </Card.Body>
@@ -183,9 +116,7 @@ class Profile extends Component {
                                 className = "body"
                                 type="text"
                                 defaultValue={lastName}
-                                ref={node => {
-                                    this.newLastName = node;
-                                }}
+                                ref={this.newLastName}
                                 />
                             )}
                         </Card.Body>
@@ -204,9 +135,7 @@ class Profile extends Component {
                                 className = "body"
                                 type="text"
                                 defaultValue={phoneNumber}
-                                ref={node => {
-                                    this.newPhoneNumber = node;
-                                }}
+                                ref={this.newPhoneNumber}
                                 />
                             )}
                         </Card.Body>
@@ -246,39 +175,46 @@ class Profile extends Component {
                             </div>
                         </div>
                     </div>
-                    {this.state.displaying ? (
-                        <button 
-                        className = "edit_button" 
-                        onClick={() => {this.setState({ displaying: false });}
-                        }>
-                            Edit
-                        </button>
-                    ) : (
-                        <button 
-                        className = "edit_button" 
-                        form = "my-form"
-                        type = "submit"
-                        onClick={() => {this.setState({ displaying: true });}
-                        }>
-                            Save
-                        </button>
-                    )}
+                        <div style = {{flexDirection: "row", alignSelf: "flex-end"}}>
+                            <button 
+                            className = "edit_button" 
+                            type = "button"
+                            onClick={() => {this.setState({ displaying: false });}
+                            }>
+                                Edit
+                            </button>
+                            <button 
+                            className = "edit_button" 
+                            form = "my-form"
+                            type = "submit"
+                            onClick={() => {}
+                            }>
+                                Save
+                            </button>
+                        </div>
+                        
                 </Card>
             </form>
-            </div>
 		)
     }
-    submit(e) {
-        e.preventDefault();
-        console.log(this.newFirstName)
-        console.log(this.newLastName)
-        console.log(this.newEmail)
-        // this.newPhoneNumber
-        // this.newName
-        // this.newDescription
-
+    submit(e, description, name, firstName, lastName, phoneNumber) {
+        // e.preventDefault();
+        if (this.newFirstName.current.value != firstName) {
+            alert(this.newFirstName.current.value)
+        }
+        if (this.newLastName.current.value != lastName){
+            alert(this.newLastName.current.value)
+        }
+        if (this.newPhoneNumber.current.value != phoneNumber){
+            alert(this.newPhoneNumber.current.value)
+        }
+        if (this.newName.current.value != name){
+            alert(this.newName.current.value)
+        }
+        if (this.newDescription.current.value != description){
+            alert(this.newDescription.current.value)
+        }
         
-
         // axios.post('http://127.0.0.1:8103/api/db_create_user', {user_type:this.state.user_type, email: this.state.email,username:this.state.username, password: this.state.password })
         //     .then(response => {
 		// 		console.log(response.data)
