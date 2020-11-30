@@ -73,7 +73,7 @@ export default Modal = ({ handleClose, show, children }) => {
 					<form id="createEvent">
 						<div class="form-group pt-0 pl-2 pr-2">
 							<label for="inputEmail" class="text-dark font-weight-bold">Event Name</label>
-							<input type="text" class="form-control" name='eventName' onChange={handleChangeName} />
+							<textarea class="form-control" name='eventName' rows="1" onChange={handleChangeName} />
 						</div>
 						<div class="form-group pt-0 pl-2 pr-2">
 							<label for="inputInfo" class="text-dark font-weight-bold">Event Info</label>
