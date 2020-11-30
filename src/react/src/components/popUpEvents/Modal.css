@@ -9,9 +9,10 @@
   }
 
   
-  .modal-main-class {
+  .modal-main-event {
 	position:fixed;
-	background: url('../../assets/rsz_1backgroundgradient.png') !important;
+	border-radius: 25px 40px!important;
+	background: url('../../assets/fireworks.jpg') !important;
 	background-repeat:no-repeat!important;
 	width: 1430px;
 	height: 303px;
@@ -42,18 +43,18 @@
 	display: none;
   }
 
-.btn-outline-success{
+.btn-outline-je{
 	background: #A78EC3;
 	color:white;
 	border:none;
-	margin-top:10px;
+	margin-top:100px;
 	margin-left: 30px !important;
   }
 
-  .btn-outline-danger{
+  .btn-outline-can{
 	background: white;
 	color: #A78EC3;
 	border:none;
-	margin-top:10px;
+	margin-top:100px;
 	margin-left: 30px !important;
   }

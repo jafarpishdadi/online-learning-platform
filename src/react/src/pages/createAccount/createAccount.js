@@ -10,7 +10,7 @@ class CreateAccountPage extends Component {
 			<React.Fragment>
 				<OutsideNavbar/>
 				<div className="d-flex page">
-					<div className="picture">
+					<div className="picture-create">
 						<img src={Picture} alt="Map"></img>
 					</div>
 					<div className="create-account">

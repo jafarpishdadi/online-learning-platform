@@ -7,7 +7,7 @@
 body{
     background-color: #FCFCFB !important;
 }
-.picture-create{
+.picture{
     flex:1;
     background-color: #FCFCFB;
 }
@@ -16,4 +16,9 @@ img {
     max-width: 100%;
     height: auto;
     width: auto; /* ie8 */
+}
+
+.box-2{
+    margin-top: 10px;
+    margin-left: 300px;
 }

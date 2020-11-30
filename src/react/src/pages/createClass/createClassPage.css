@@ -1,0 +1,35 @@
+.page {
+    display:flex;
+    flex-direction: row;
+    height: 100%;
+    background-color: #FCFCFB !important;
+}
+body{
+    background-color: #FCFCFB !important;
+}
+.picture{
+    margin-left: 1250px;
+    margin-top:-80px;
+    background-color: #FCFCFB;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    width: auto; /* ie8 */
+}
+.header-create-class{
+    color:#7a7a7a;
+    font-size:30px !important;
+    margin-left: 80px;
+    margin-top: -40px;
+}
+p{
+    color:#7a7a7a;
+}
+.box-2{
+    margin-top: 20px;
+    margin-left: 320px;
+    width: 1400px;
+}
+
