@@ -17,7 +17,7 @@ import socialInitiatives from '../../assets/Welfare.png'
 import settings from '../../assets/settings.png'
 import dashboard from '../../assets/dashboard.png'
 import { Redirect } from 'react-router-dom';
-import Split from 'split.js'
+
 
 let headerItems = { link: '/profile', title: 'Dashboard', profileImg: profile }
 

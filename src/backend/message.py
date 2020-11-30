@@ -53,9 +53,6 @@ class MessageObj():
         self.Message(username1=self.content['username1'], username2=self.content['username2'], message=self.content['message'], time=datetime.now().strftime("%m/%d/%Y, %H:%M:%S")).save()
         return make_response("", 200)
     
-    def _extract_time(json):
-        return int(json['time'])
-
     def db_get_messages(self):
         """
         Gets all the messages between two users
@@ -96,6 +93,5 @@ class MessageObj():
         raw = self.Message.objects(username2=self.content['username']).all()
         for message in raw:
             messages.append(message.username1)
-
 
         return make_response(jsonify(messages), 200)
