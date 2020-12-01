@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Card } from 'react-bootstrap';
 import fb from '../../assets/fb.png'
 import li from '../../assets/li.png'
-import profilePic from '../../assets/profilepic.png'
+import profilePic from '../../assets/profilePic.png'
 import tinyprofilePic from '../../assets/tinyprofile.png'
 import up from '../../assets/up.png'
 import edit from '../../assets/edit.png'
