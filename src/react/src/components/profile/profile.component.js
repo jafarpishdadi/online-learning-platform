@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import { Card } from 'react-bootstrap';
 import fb from '../../assets/fb.png'
 import li from '../../assets/li.png'
-import profilePic from '../../assets/profilePic.png'
+import profilePic from '../../assets/profilepic.png'
+import tinyprofilePic from '../../assets/tinyprofile.png'
 import up from '../../assets/up.png'
 import edit from '../../assets/edit.png'
 import del from '../../assets/del.png'
@@ -44,8 +45,13 @@ class Profile extends Component {
                 {/* card with education info */}
                 <Card className = "edu">
                     <Card.Body>
+                        <div className = 'profilecard'>
+                        <div className = "profile_pic_slot">
+                                <img src={tinyprofilePic} className="elementPic"/>
+                            </div>
                         <div className = "name">{ name }</div>
                         <div className = "date">Established: { timeJoin }</div>
+                        </div>
                         <Card.Title className = "listed_titles">Education</Card.Title>
                         <Card.Text className = "listed_educations">
                             <ColourText textInfo = { educations }/>
