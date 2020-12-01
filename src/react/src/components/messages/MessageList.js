@@ -14,9 +14,9 @@ class MessageList extends Component {
                                     <div className='time mr-2 mt-1 text-right'>
                                         {message.time}
                                         </div>
-                                    <div className="user1 mr-2 text-right">{message.username1}</div>
+                                    <div className="user1 mr-3 text-right">{message.username1}</div>
                                 </div>
-                                <div className='mr-2 text-right'>{message.message}</div>
+                                <div className='mr-3 text-right'>{message.message}</div>
                             </li>
                     )
                     } else {
