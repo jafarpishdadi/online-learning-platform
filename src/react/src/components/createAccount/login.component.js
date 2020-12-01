@@ -41,7 +41,7 @@ class Login extends Component {
 	render() {
 		if(this.state.loggedIn){
 			if (this.state.firstLogIn){
-				return <Redirect to='/Questionaire'/>
+				return <Redirect to='/questionaire'/>
 			}
 			else{
 		    	return <Redirect to='/dashboard'/>
