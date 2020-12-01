@@ -156,7 +156,7 @@ let headerItems = {link: '/profile', title: 'Dashboard', profileImg: profile }
             <Sidebar books={navItems}/>
             <Headerbar icons={headerItems}/>
             </Route>
-                    </Route>
+            </Route>
           </Switch>
         </Router>,
             document.getElementById("root")

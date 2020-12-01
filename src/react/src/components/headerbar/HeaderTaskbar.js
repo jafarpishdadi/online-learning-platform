@@ -82,7 +82,7 @@ class HeaderTaskbar extends Component {
                     <form className='form-inline'>
                         <input className='form-control mr-sm-2' type='text' placeholder='Search'></input>
                         <button className='searchIcon my-2 my-sm-0' type='submit'>
-                            <img src={search}></img>
+                            <div className='searchImg'>                     <img src={search}></img></div>
                         </button>
                     </form>
                     <Profile
