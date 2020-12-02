@@ -49,12 +49,12 @@ class AllEventsList extends Component {
                         <Card.Header className='eventHeader' style={{height:'10rem', color:'white',background:'black' } }></Card.Header>
                         <div class="numberCircle" ></div>
                         <div class="titleCircle">{courses.dashevent_name}</div>
-                        <Card.Body style={{height:'10rem', width:  '18rem', color:'white'} }>                                          
-                            <p>{courses.extra_info}</p>
-                            <div className = 'buttons'>
+                        <Card.Body style={{height:'10rem', width:  '18rem', color:'white'} }>
+                        <div className = 'buttons'>
                             <button type="button" class="btn btn-primary3"  onClick={() => this.setState({clicked_course: courses.dashevent_name, clicked_name:courses.extra_info}) }>Select</button>
                                 <button type="button" class="btn btn-primary3"  onClick={this.showModal}>Join</button>
-                            </div>
+                            </div>                                          
+                            <p>{courses.extra_info}</p>
                         </Card.Body>
                     </Card>
                 )}
