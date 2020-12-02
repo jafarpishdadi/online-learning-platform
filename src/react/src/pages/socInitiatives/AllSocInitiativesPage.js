@@ -1,8 +1,7 @@
 import React, { Component } from "react";
-import "./classes.css";
-import Classes from "../..//components/yourClasses/yourClasses.component.js";
-import Events from "../..//components/events/events.component.js";
-import News from "../..//components/news/news.component.js";
+import SocInitiativesGrid from "../../components/socInitiatives/SocInitiativesGrid.js";
+import styled from "styled-components";
+
 import Headerbar from "../..//components/headerbar/HeaderTaskbar.js";
 import Sidebar from "../..//components/sidebar/sidebar.component.js";
 import DashboardCalendarComponent from "../..//components/calendar/dashboardCalendar.component.js";
@@ -16,10 +15,12 @@ import achievements from "../../assets/achievements.png";
 import socialInitiatives from "../../assets/Welfare.png";
 import settings from "../../assets/settings.png";
 import dashboard from "../../assets/dashboard.png";
-import { Redirect } from "react-router-dom";
-import AllClassList from "../..//components/Classes-Student/enrollClasses.component.js";
 
-let headerItems = { link: "/profile", title: "Classes", profileImg: profile };
+let headerItems = {
+  link: "/profile",
+  title: "Social Initiatives",
+  profileImg: profile
+};
 
 let navItems = [
   { id: 1, link: "/dashboard", imgSrc: dashboard, title: "Dashboard" },
@@ -37,21 +38,63 @@ let navItems = [
   { id: 8, link: "", imgSrc: settings, title: "Settings" }
 ];
 
-class AllClassListPage extends Component {
+class AllSocInitiativesPage extends Component {
   render() {
-    if (!localStorage.getItem("token")) {
-      return <Redirect to="/login" />;
-    }
     return (
       <React.Fragment>
-        <Sidebar books={navItems} />
-        <Headerbar icons={headerItems} />
-        <div class="box-2">
-          <AllClassList />
-        </div>
+        <OuterContainer>
+          <SidebarWrapper>
+            <Sidebar books={navItems} />
+          </SidebarWrapper>
+          <InnerContainer>
+            <HeaderbarWrapper>
+              <Headerbar icons={headerItems} />
+            </HeaderbarWrapper>
+            <GridWrapper>
+              <SocInitiativesGrid />
+            </GridWrapper>
+          </InnerContainer>
+        </OuterContainer>
       </React.Fragment>
     );
   }
 }
 
-export default AllClassListPage;
+const OuterContainer = styled.div`
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+`;
+
+const InnerContainer = styled.div`
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+const SidebarWrapper = styled.div`
+  height: 100%;
+  width: 100%;
+  display: flex;
+`;
+
+const HeaderbarWrapper = styled.div`
+  height: 100%;
+  width: 100%;
+  display: flex;
+`;
+
+const GridWrapper = styled.div`
+  height: 100%;
+  width: 100%;
+  display: flex;
+  margin-top: 3rem;
+`;
+
+export default AllSocInitiativesPage;
