@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import './dashboard.css'
 import Classes from '../..//components/yourClasses/yourClasses.component.js'
+import InstructorClasses from '../..//components/yourClasses/instructorClasses.component.js'
 import Events from '../..//components/events/events.component.js'
 import News from '../..//components/news/news.component.js'
 import Headerbar from '../..//components/headerbar/HeaderTaskbar.js'
@@ -61,7 +62,7 @@ class DashPage extends Component {
         )
     }
     if (localStorage.getItem('usertype') == 'instructor'){
-        return(
+        return (
 
             <React.Fragment>
                 <Sidebar books={navItems} />
@@ -70,6 +71,7 @@ class DashPage extends Component {
                     <div class="left-half">
                         <article>
                         <div><DashboardCalendarComponent/></div>
+                        <div class='classesbox'><InstructorClasses/></div>
                         </article>
                     </div>
                     <div class="right-half">
@@ -81,7 +83,7 @@ class DashPage extends Component {
                 </section>
             </React.Fragment>
         )
-}
+    }
 }
 }
 

@@ -23,7 +23,10 @@
       float:left;
   }
   
-
+  /* On mouse-over, add a deeper shadow */
+  .card:hover {
+    box-shadow: 0 30px 16px 0 rgba(0,0,0,0.2);
+  }
   
   /* Add some padding inside the card container */
   .container {
@@ -75,7 +78,12 @@
 }
 
   .addEventHeader{
-    background: url(https://img.icons8.com/cute-clipart/128/000000/calendar.png) !important;
+    background: url(https://img.icons8.com/cute-clipart/128/000000/calendar-plus.png) !important;
+    background-position: left 45px bottom 5px !important;
+    background-repeat: no-repeat !important;
+  }
+  .createEventHeader{
+    background: url(https://img.icons8.com/cute-clipart/128/000000/edit-calendar.png) !important;
     background-position: left 45px bottom 5px !important;
     background-repeat: no-repeat !important;
   }
@@ -152,3 +160,7 @@
 }
 
 
+
+.btn-e:hover {
+  box-shadow: 0 30px 16px 0 rgba(0,0,0,0.2);
+}
