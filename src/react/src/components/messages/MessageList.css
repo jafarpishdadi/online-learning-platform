@@ -33,3 +33,30 @@
 .time:hover {
     color: #919699;
 }
+
+.profilePic1 {
+    width: 5%;
+}
+
+.profilePic2 {
+    width: 5%;
+}
+
+.message1 {
+    color:#FCFCFB;
+    background-color: #A78EC3;
+    border-radius: 5px;
+    padding: 10px;
+    width: max-content;
+    margin-left: auto;
+    
+}
+
+.message2 {
+    color:#FCFCFB;
+    background-color: #919699;
+    border-radius: 5px;
+    padding: 10px;
+    width: max-content;
+    margin-left: 25px;
+}
