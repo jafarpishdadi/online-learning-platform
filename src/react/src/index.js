@@ -44,6 +44,8 @@ import Questionaire from "./pages/Questionaire/Questionaire.js";
 import AboutPage from "./pages/about/aboutPage.js";
 import SolutionsPage from "./pages/solutions/solutionsPage.js";
 import InstructorClasses from "./components/yourClasses/instructorClasses.component.js";
+import Solution from "./components/solutions/solutions";
+import AllSocInitiativesPage from "./pages/socInitiatives/AllSocInitiativesPage.js";
 
 window.token = localStorage.getItem("token");
 
@@ -160,11 +162,15 @@ ReactDOM.render(
       <Route exact path="/questionaire">
         <Questionaire />
       </Route>
+      // socialinitiatives
+      <Route exact path="/socialinitiatives">
+        <AllSocInitiativesPage />
+      </Route>
       // side bar
       <Route path="/sidebar">
-          <Sidebar books={navItems} />
-          <Headerbar icons={headerItems} />
-       </Route>
+        <Sidebar books={navItems} />
+        <Headerbar icons={headerItems} />
+      </Route>
     </Switch>
   </Router>,
   document.getElementById("root")
