@@ -1,13 +1,36 @@
 import React, { Component } from 'react'
 import './Questionaire.css'
-import OutsideNavbar from '../../components/navbar/outsideNavbar.js'
-import Picture from '../../assets/undraw_questions.png'
+import BackImage from '../../assets/undraw_questions.png'
 import Confirm from '../../assets/confirm.png'
+import Picture from '../../assets/createPicture.png'
+import profile from '../../assets/profile.png'
+import classes from '../../assets/classes.png'
+import scheduling from '../../assets/scheduling.png'
+import community from '../../assets/community.png'
+import mailbox from '../../assets/mailbox.png'
+import achievements from '../../assets/achievements.png'
+import socialInitiatives from '../../assets/Welfare.png'
+import settings from '../../assets/settings.png'
+import dashboard from '../../assets/dashboard.png'
 
-import ReactDOM from 'react-dom'
-import Card from 'react-bootstrap/Card'
-import axios from 'axios';
+import Headerbar from '../..//components/headerbar/HeaderTaskbar.js'
+import Sidebar from '../..//components/sidebar/sidebar.component.js'
+
 import {Redirect} from 'react-router-dom'
+
+let headerItems = { link: '/profile', title: 'Questionaire', profileImg: profile }
+
+let navItems = [
+    { id: 1, link: "/dashboard", imgSrc: dashboard, title: "Dashboard" },
+    { id: 2, link: "/allclasslist", imgSrc: classes, title: "Classes" },
+    { id: 3, link: "/schedule", imgSrc: scheduling, title: "Scheduling" },
+    { id: 4, link: "", imgSrc: community, title: "Community" },
+    { id: 5, link: "/messageuser", imgSrc: mailbox, title: "Messaging" },
+    { id: 6, link: "", imgSrc: achievements, title: "Achievements" },
+    { id: 7, link: "", imgSrc: socialInitiatives, title: "Social Initiatives" },
+    { id: 8, link: "", imgSrc: settings, title: "Settings" }
+]
+
 
 class Questionaire extends Component {
 
@@ -47,11 +70,13 @@ class Questionaire extends Component {
         }
         return(
             <React.Fragment>
-                <OutsideNavbar/>
+                <Sidebar books={navItems} />
+                <Headerbar icons={headerItems} />
+                <img class="image" src={BackImage} alt="Map"></img>
                 <form class="flex-column" onSubmit = {this.submit}>
                     <div className="d-flex page">
                         <div>
-                            <h1 class="text-dark font-weight-bold">Welcome to U-Impactify!</h1><br/>
+                            <h1 class="header text-dark font-weight-bold">Welcome to U-Impactify!</h1><br/>
                             <h2 class="text-dark font-weight-bold">Check all that apply. Do you identify as a:</h2><br/>
                             <div><input type="checkbox"></input>Social entrepreneurs or intrapreneurs</div><br/>
                             <div><input type="checkbox"></input>Worker at a charity or a non-profit organization</div><br/>
@@ -67,8 +92,8 @@ class Questionaire extends Component {
                             <div><input type="checkbox"></input>Social and Legal Services</div><br/>
                             <div><input type="checkbox"></input>Other:<input></input></div><br/>
 
-                            <h2 class="text-dark font-weight-bold">What do you want to learn more about?   (select all that apply)</h2><br/>
-                            <h3>You may change your answers afterward in the Profile page. </h3>
+                            <h2 class="text-dark font-weight-bold">What do you want to learn more about?   (select all that apply)
+                            <h3 class="note">You may change your answers afterward in the Profile page. </h3></h2><br/>
                             <div><input type="checkbox"></input>Accounting</div><br/>
                             <div><input type="checkbox"></input>Business</div><br/>
                             <div><input type="checkbox"></input>Communication</div><br/>
@@ -76,9 +101,6 @@ class Questionaire extends Component {
                             <div><input type="checkbox"></input>Finance</div><br/>
                             <div><input type="checkbox"></input>Project Management</div><br/>
                             <div><input type="checkbox"></input>Other:<input></input></div><br/>
-                        </div>
-                        <div className="picture">
-                            <img src={Picture} alt="Map"></img>
                         </div>
                     </div>
                     <button class="button">

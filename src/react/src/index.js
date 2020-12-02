@@ -151,15 +151,15 @@ ReactDOM.render(
       </Route>
       <Route exact path="/eventlist">
         <AllEventsList />
-        <Route exact path="/questionaire">
-          <Questionaire />
-        </Route>
-        // side bar
-        <Route path="/sidebar">
+      </Route>
+      <Route exact path="/questionaire">
+        <Questionaire />
+      </Route>
+      // side bar
+      <Route path="/sidebar">
           <Sidebar books={navItems} />
           <Headerbar icons={headerItems} />
-        </Route>
-      </Route>
+       </Route>
     </Switch>
   </Router>,
   document.getElementById("root")
