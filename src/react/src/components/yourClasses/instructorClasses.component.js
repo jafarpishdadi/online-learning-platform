@@ -1,18 +1,19 @@
 import React, { Component } from 'react'
-import ReactDOM from 'react-dom'
+import axios from 'axios'
 import Card from 'react-bootstrap/Card'
-import axios from 'axios';
-import {Redirect} from 'react-router-dom'
-import './events.css'
+import './yourClasses.css'
+import gradhat from '../../assets/gradhat.png'
+import youtube from '../../assets/youtube.png'
+import pen from '../../assets/pen.png'
+import { Redirect } from 'react-router-dom'
 
-
-class Events extends Component {
+class InstructorClasses extends Component {
     state = {
         courses: []
     }
 
     componentDidMount() {
-        axios.post(`http://127.0.0.1:8103/api/db_get_dashevents_of_student`, { 'student': localStorage.getItem('username') })
+        axios.post(`http://127.0.0.1:8103/api/db_get_courses_of_student`, { 'student': localStorage.getItem('username') })
             .then(res => {
                 const courses = res.data;
                 this.setState({ courses });
@@ -26,20 +27,20 @@ class Events extends Component {
             component: 'class'
         })
     }
-    eventRedirect = () => {
+    createClassRedirect = () => {
         this.setState({
             redirect: true,
-            component: 'event'
+            component: 'createClass'
         })
     }
 
     renderRedirect = () => {
         if (this.state.redirect) {
             if (this.state.component == "class") {
-                return <Redirect to='/alleventList' />
+                return <Redirect to='/allclassList' />
             }
-            if (this.state.component == "event") {
-                return <Redirect to='/eventcreation' />
+            if (this.state.component == "createClass") {
+                return <Redirect to='/classcreation' />
             }
         }
     }
@@ -47,12 +48,12 @@ class Events extends Component {
     render() {
         return (
             <div>
-                <Card.Title className="classCardTitleStyle">Your Events</Card.Title>
+                <Card.Title className="classCardTitleStyle">Your Courses</Card.Title>
                 <div>
                     {this.state.courses.map(courses =>
-                        <Card className='EventCards' bg="light" text="black" style={{ height: '14rem', width: '14rem' }}>
+                        <Card className='courseCards' bg="light" text="black" style={{ height: '14rem', width: '14rem' }}>
                             {this.renderRedirect()}
-                            <Card.Header className='EventClassHeader' style={{ height: '10rem', color: 'white', background: 'black' }}></Card.Header>
+                            <Card.Header className='instructorClassHeader' style={{ height: '10rem', color: 'white', background: 'black' }}></Card.Header>
                             <Card.Body>
                                 <Card.Title>{courses}</Card.Title>
                                 <Card.Text>
@@ -62,25 +63,25 @@ class Events extends Component {
                     )}
                 <Card className='courseCards' onClick={this.classRedirect} bg="light" text="black" style={{ height: '14rem', width: '14rem' }}>
                             {this.renderRedirect()}
-                            <Card.Header className='addEventHeader' style={{ height: '10rem', color: 'white', background: 'black' }}></Card.Header>
+                            <Card.Header className='addClassHeader' style={{ height: '10rem', color: 'white', background: 'black' }}></Card.Header>
                             <Card.Body>
-                                <Card.Title>Join new Event</Card.Title>
+                                <Card.Title>Join new Course</Card.Title>
                                 <Card.Text>
                                 </Card.Text>
                             </Card.Body>
                         </Card>
-                        <Card className='courseCards' onClick={this.eventRedirect} bg="light" text="black" style={{ height: '14rem', width: '14rem' }}>
+                        <Card className='createCourseCards' onClick={this.createClassRedirect} bg="light" text="black" style={{ height: '14rem', width: '14rem' }}>
                             {this.renderRedirect()}
-                            <Card.Header className='createEventHeader' style={{ height: '10rem', color: 'white', background: 'black' }}></Card.Header>
+                            <Card.Header className='createClassHeader' style={{ height: '10rem', color: 'white', background: 'black' }}></Card.Header>
                             <Card.Body>
-                                <Card.Title>Create new Event</Card.Title>
+                                <Card.Title>Add new Course</Card.Title>
                                 <Card.Text>
                                 </Card.Text>
                             </Card.Body>
                         </Card>
             </div>
-            </div>
+                        </div>
         )
     }
 }
-export default Events;
+export default InstructorClasses

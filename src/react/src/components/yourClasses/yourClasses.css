@@ -8,6 +8,16 @@
     margin: 0 10px;
     margin-bottom: 20px;
   }
+  .createCourseCards {
+    display: inline-flex;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 5%;
+    width:  12rem;
+    height: 12rem;
+    margin: 0 10px;
+    margin-bottom: 20px;
+  }
   .btn-e{
   
     border: none;
@@ -78,6 +88,11 @@
   .addClassHeader{
     background: url(https://img.icons8.com/bubbles/2x/paper-plane.png) !important;
     background-position: right 20px bottom -30px !important;
+  }
+  .createClassHeader{
+    background: url('../../assets/training-course.png') !important;
+    background-repeat:no-repeat!important;
+    background-position: right 45px bottom 10px !important;
   }
   .btnRegister{
     background-color: #A78EC3;

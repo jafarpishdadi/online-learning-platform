@@ -43,6 +43,7 @@ import AllEventsList from "./components/events/eventlist";
 import Questionaire from "./pages/Questionaire/Questionaire.js";
 import AboutPage from "./pages/about/aboutPage.js";
 import SolutionsPage from "./pages/solutions/solutionsPage.js";
+import InstructorClasses from "./components/yourClasses/instructorClasses.component.js";
 
 window.token = localStorage.getItem("token");
 
@@ -148,6 +149,10 @@ ReactDOM.render(
       // solutions
       <Route exact path="/solutions">
         <SolutionsPage />
+      </Route>
+      //instructorclass
+      <Route exact path="/iclasses">
+        <InstructorClasses />
       </Route>
       <Route exact path="/eventlist">
         <AllEventsList />
