@@ -1,12 +1,15 @@
 import React, { Component } from 'react'
 import { Card } from 'react-bootstrap'
 import './discussionList.css'
+import CreateThread from './createThread.component.js'
 
 let threads = [
     {id: 1, title: "Title 1", replies: 0, date: "Soon" },
     {id: 2, title: "Title 2", replies: 1, date: "Soon" },
-    {id: 3, title: "Title 3", replies: 2, date: "Soon" },   
+    {id: 3, title: "Title 3", replies: 2, date: "Soon" },
+    {id: 4, title: "Title 4", replies: 3, date: "Soon" },    
     ]
+
 
 class DiscussionList extends Component {
     constructor(props) {
@@ -15,6 +18,12 @@ class DiscussionList extends Component {
             newThread : false
         }
     }
+    createThreadToggle = () => {
+        this.setState({
+            newThread: !this.state.newThread
+        });
+
+    };
     render() {
         var divStyle = {
             margin: "1%",
@@ -27,9 +36,12 @@ class DiscussionList extends Component {
                 <div style = {{margin: "1%"}}>
                     Discussion Threads: 
                     <span>
-                        <button>Create Thread</button>
+                        <button onClick = {this.createThreadToggle}>Create Thread</button>
                     </span>
+                    {this.state.newThread ? <Card>Hello</Card> : null}
                 </div>
+                {this.state.newThread ? <CreateThread/> : null}
+                <CreateThread/>
                 <div className = 'discussion-list-list'>
                     {threads.map(
                         (thread) => 
