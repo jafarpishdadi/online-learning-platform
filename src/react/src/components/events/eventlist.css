@@ -22,16 +22,18 @@
     background: #A78EC3;
       color:white;
       border:none;
-    font-size:12px;
+    font-size:12.5px !important;
     width:60px !important;
   }
   
   .buttons{
+    display:flex;
+    justify-content: space-between;
     position: absolute;
     right:    0;
     bottom:   -1;
-    margin-top:-15px;
-    margin-right:23px;
+    margin-top: 60px;
+    margin-right:25px;
   }
   h1 {
     color: #999999;
