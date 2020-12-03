@@ -42,45 +42,23 @@ class AllSocInitiativesPage extends Component {
   render() {
     return (
       <React.Fragment>
-        <OuterContainer>
-          <SidebarWrapper>
-            <Sidebar books={navItems} />
-          </SidebarWrapper>
-          <InnerContainer>
-            <HeaderbarWrapper>
-              <Headerbar icons={headerItems} />
-            </HeaderbarWrapper>
-            <GridWrapper>
-              <SocInitiativesGrid />
-            </GridWrapper>
-          </InnerContainer>
-        </OuterContainer>
+        <SidebarWrapper>
+          <Sidebar books={navItems} />
+        </SidebarWrapper>
+        <HeaderbarWrapper>
+          <Headerbar icons={headerItems} />
+        </HeaderbarWrapper>
+        <GridWrapper>
+          <SocInitiativesGrid />
+        </GridWrapper>
       </React.Fragment>
     );
   }
 }
 
-const OuterContainer = styled.div`
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-`;
-
-const InnerContainer = styled.div`
-  height: 100%;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
-
 const SidebarWrapper = styled.div`
-  height: 100%;
   width: 100%;
+  height: 100%;
   display: flex;
 `;
 
