@@ -19,6 +19,18 @@ class DiscussionList extends Component {
             newThread : false
         }
     }
+    componentDidMount() {
+        axios.get('http://127.0.0.1:8103/api/db_get_all_threads')
+            .then(response => {
+
+                // console.log(response);
+                // console.log(response.data['email'])
+                // this.setState({email: response.data})
+            })
+			.catch((error) => {
+			console.log(error)
+        });
+    }
     createThreadToggle = () => {
         this.setState({
             newThread: !this.state.newThread

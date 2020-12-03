@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import './createThread.css'
 import axios from 'axios';
+import { Redirect } from 'react-router-dom';
 
 class CreateThread extends Component {
     constructor(props) {
@@ -13,7 +14,6 @@ class CreateThread extends Component {
         this.onChangeHandler = this.onChangeHandler.bind(this);
         this.onSubmitHandler = this.onSubmitHandler.bind(this);
     }
-
     onChangeHandler(event){
         let name = event.target.name;
         let value = event.target.value;
@@ -26,14 +26,18 @@ class CreateThread extends Component {
     onSubmitHandler(e){
         axios.post('http://127.0.0.1:8103/api/db_create_thread', 
             {'username': localStorage.getItem('username'), 'title': this.state.title,'body': this.state.body})
-            .then(response => {
-				console.log(response.data)
-			})
-			.catch((error) => {
-			console.log(error)
-		});
+        .then(response => {
+            console.log(response.data);
+        })
+        .catch((error) => {
+            console.log(error)
+        });
+        alert("submit successful");
     }
     render() {
+        if (!localStorage.getItem('token')) {
+            return <Redirect to='/login' />
+        }
         return(
             <div className = 'thread'>
                 <div className = 'thread_content'>
