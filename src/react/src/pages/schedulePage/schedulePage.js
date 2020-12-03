@@ -26,7 +26,7 @@ let navItems = [
   { id: 6, link: "", imgSrc: achievements, title: "Achievements" },
   {
     id: 7,
-    link: "",
+    link: "/socialinitiatives",
     imgSrc: socialInitiatives,
     title: "Social Initiatives"
   },

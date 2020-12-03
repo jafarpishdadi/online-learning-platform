@@ -5,8 +5,8 @@ import { SolutionsButton } from "./solutionsButton.js";
 import main from "../../assets/solutionsComponent.svg";
 
 export const Solution = () => {
-  const [firstStyle, setFirstStyle] = useState("btn--primary");
-  const [secondStyle, setSecondStyle] = useState("btn--secondary");
+  const [firstStyle, setFirstStyle] = useState("solutions--btn--primary");
+  const [secondStyle, setSecondStyle] = useState("solutions--btn--secondary");
 
   const [title, setTitle] = useState("Develop New Skills and Knowledge");
 
@@ -38,8 +38,8 @@ export const Solution = () => {
               className="firstButton"
               onClick={() => {
                 setUser(
-                  "btn--primary",
-                  "btn--secondary",
+                  "solutions--btn--primary",
+                  "solutions--btn--secondary",
                   "Develop New Skills and Knowledge",
                   "Enhance your skills sets and knowledges to advance your business.",
                   "solutionsStudent.svg"
@@ -53,8 +53,8 @@ export const Solution = () => {
             <SolutionsButton
               onClick={() => {
                 setUser(
-                  "btn--secondary",
-                  "btn--primary",
+                  "solutions--btn--secondary",
+                  "solutions--btn--primary",
                   "Teach or Coach for Students’ Success",
                   "Host live sessions with students and clients, anywhere, anytime with the U-Impactify.",
                   "solutionsInstructor.svg"
