@@ -48,7 +48,7 @@ export default Modal = ({ handleClose, show, children }) => {
                     <div class="form-group pt-0 pl-2 pr-2">
 					<div class="instructorname">{localStorage.getItem('instructor_name')}</div>
 					<div class= "course">{localStorage.getItem('course_name')}</div>
-					<div class= "courseDescription">Course description will be placed here</div>
+					<div class= "courseDescription">{localStorage.getItem('extra_info')}</div>
                     </div>
 					</form>
 				</div>

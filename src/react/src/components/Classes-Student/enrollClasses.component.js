@@ -15,14 +15,15 @@ class AllClassList extends Component {
         courses: [],
         show:false,
         clicked_course:"",
-        clicked_name:""
-        
+        clicked_name:"",
+        clicked_info:""
         };
         
     showModal = (clicked_course) => {
       this.setState({ show: true });
       localStorage.setItem('course_name', (this.state.clicked_course))
       localStorage.setItem('instructor_name', (this.state.clicked_name))
+      localStorage.setItem('extra_info', (this.state.clicked_info))
       console.log(this.state.clicked_course)
       console.log(this.state.clicked_name)
     };
@@ -45,27 +46,28 @@ class AllClassList extends Component {
                 <Modal show={this.state.show} handleClose={this.hideModal}></Modal>
                 <h1>Course List</h1>
                 { this.state.courses.map(courses =>
-                    <Card className='courseCards'  bg="light" text="black" style={{ height:'15rem', width: '25rem' }} name='course_name' value={courses.course_name}>
+                    <Card className='courseCards'  bg="light" text="black" style={{ height:'16rem', width: '25rem' }} name='course_name' value={courses.course_name}>
                         <Card.Header className='instructorHeader' style={{height:'9rem', color:'white',background:'black' } }></Card.Header>
                         <div class="numberCircle2" ></div>
                         <div class="titleCircle">{courses.course_instructor}</div>
                         <Card.Body>                                          
-                            <Card.Title>{courses.course_name}</Card.Title>
+                            <Card.Title className = 'courseNameCard'>{courses.course_name}</Card.Title>
                             <Card.Text>
+                            <div  className='extraInfo'>{courses.extra_info}</div>
                             <div class="card-img-top d-flex align-items-center bg-light">
                                 <div>
                                 <img src={gradhat} className="cardIcon" />
                                 </div>
-                                <p class="col p-2 m-0">12 lessons</p>
+                                <p2 class="col p-2 m-0">12 units</p2>
                                 <div>
                                 <img src={pen} className="cardIcon" />
                                 </div>
-                                <p class="col p-2 m-0">12 tasks</p>
+                                <p2 class="col p-2 m-0">12 tasks</p2>
                                 <div>
                                 <img src={youtube} className="cardIcon" />
                                 </div>
-                                <p class="col p-2 m-0">2 hours</p>
-                                <button type="button" class="btn btn-primary2"  onClick={() => this.setState({clicked_course: courses.course_name, clicked_name:courses.course_instructor}) }>Select</button>
+                                <p2 class="col p-2 m-0">2 hours</p2>
+                                <button type="button" class="btn btn-primary2"  onClick={() => this.setState({clicked_course: courses.course_name, clicked_name:courses.course_instructor, clicked_info: courses.extra_info}) }>Select</button>
                                 <button type="button" class="btn btn-primary2"  onClick={this.showModal}>Enroll</button>
                                 </div>
                             </Card.Text>
