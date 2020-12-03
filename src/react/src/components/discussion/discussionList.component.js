@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Card } from 'react-bootstrap'
 import './discussionList.css'
 import CreateThread from './createThread.component.js'
+import axios from 'axios';
 
 let threads = [
     {id: 1, title: "Title 1", replies: 0, date: "Soon" },
@@ -36,12 +37,12 @@ class DiscussionList extends Component {
                 <div style = {{margin: "1%"}}>
                     Discussion Threads: 
                     <span>
-                        <button onClick = {this.createThreadToggle}>Create Thread</button>
+                        <button onClick = {this.createThreadToggle}>
+                            {this.state.newThread ? 'Cancel' : 'CreateThread'}
+                        </button>
                     </span>
-                    {this.state.newThread ? <Card>Hello</Card> : null}
                 </div>
                 {this.state.newThread ? <CreateThread/> : null}
-                <CreateThread/>
                 <div className = 'discussion-list-list'>
                     {threads.map(
                         (thread) => 
