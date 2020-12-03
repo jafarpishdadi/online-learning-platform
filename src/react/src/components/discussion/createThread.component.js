@@ -24,7 +24,7 @@ class CreateThread extends Component {
         this.setState(data);
     }
     onSubmitHandler(e){
-        axios.post('http://127.0.0.1:8103/api/db_create_user', 
+        axios.post('http://127.0.0.1:8103/api/db_create_thread', 
             {'username': localStorage.getItem('username'), 'title': this.state.title,'body': this.state.body})
             .then(response => {
 				console.log(response.data)
