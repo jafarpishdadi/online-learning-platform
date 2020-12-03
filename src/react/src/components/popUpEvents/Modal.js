@@ -47,7 +47,6 @@ export default Modal = ({ handleClose, show, children }) => {
 					<form>
                     <div class="form-group pt-0 pl-2 pr-2">
 					<div class="instructorname">{localStorage.getItem('dashevent_name')}</div>
-					<div class= "course">{localStorage.getItem('extra_info')}</div>
                     </div>
 					</form>
 				</div>
