@@ -77,7 +77,7 @@ class Login extends Component {
 							<div class="mx-auto text-center p-0 col-md-12 mb-4 text-sm">
 							<div class="mx-auto text-center p-0 col-md-12 mb-4 text-sm">
 							Don't have an account? 
-								<a href="" class="ml-1 text-dark font-weight-bold"><u>Sign Up</u></a>
+								<a href="/create" class="ml-1 text-dark font-weight-bold"><u>Sign Up</u></a>
 							</div>
 							<div class="mx-auto text-center p-0 col-md-12 mb-4 text-sm">
 								</div>

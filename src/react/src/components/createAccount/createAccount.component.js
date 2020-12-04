@@ -88,7 +88,7 @@ class createAccount extends Component {
 			</form>
 			<div class="mx-auto text-center p-0 col-md-12 mb-4 text-sm">
 				Already have an account? 
-				<a href="" class="ml-1 text-dark font-weight-bold"><u>Log in</u></a>
+				<a href="/login" class="ml-1 text-dark font-weight-bold"><u>Log in</u></a>
 			</div>
 			<div class="mx-auto text-center p-0 col-md-12 mb-4 text-sm">
 				<button className="btnSignUp">SIGN UP</button>
