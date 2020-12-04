@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import Calendar from "../../components/calendar/calendar.component.js";
-import Schedule from "../../components/calendar/schedule.component.js";
-import SmallCards from "../../components/calendar/smallCards.component.js";
 import Header from "../../components/headerbar/HeaderTaskbar.js";
 import profile from "../../assets/profile.png";
 import Sidebar from "../..//components/sidebar/sidebar.component.js";
@@ -13,7 +11,6 @@ import achievements from "../../assets/achievements.png";
 import socialInitiatives from "../../assets/Welfare.png";
 import settings from "../../assets/settings.png";
 import dashboard from "../../assets/dashboard.png";
-import Events from "../../components/calendar/events.component.js";
 
 let headerItems = { link: "/profile", title: "Schedule", profileImg: profile };
 
@@ -22,17 +19,14 @@ let navItems = [
   { id: 2, link: "/allclasslist", imgSrc: classes, title: "Classes" },
   { id: 3, link: "/schedule", imgSrc: scheduling, title: "Scheduling" },
   { id: 4, link: "/discussionList", imgSrc: community, title: "Community" },
-  { id: 5, link: "/messageuser", imgSrc: mailbox, title: "Messaging" },
-  { id: 6, link: "", imgSrc: achievements, title: "Achievements" },
+  { id: 5, link: "/messageuser", imgSrc: mailbox, title: "Live Chat" },
   {
-    id: 7,
+    id: 6,
     link: "/socialinitiatives",
     imgSrc: socialInitiatives,
     title: "Social Initiatives"
-  },
-  { id: 8, link: "", imgSrc: settings, title: "Settings" }
+  }
 ];
-
 let selectedDate = [{ id: 1, date: window.localStorage.getItem("date") }];
 
 class SchedulePage extends Component {

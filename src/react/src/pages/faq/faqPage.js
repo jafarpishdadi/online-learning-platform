@@ -1,44 +1,15 @@
 import React, { Component } from "react";
 import FAQ from "../../components/faq/faq.js";
 import "./faqPage.css";
-import { Redirect } from "react-router-dom";
 import OutsideNavbar from "../../components/navbar/outsideNavbar.js";
 
 // Bunch of pictures
-import Headerbar from "../..//components/headerbar/HeaderTaskbar.js";
-import Sidebar from "../..//components/sidebar/sidebar.component.js";
-import profile from "../../assets/profile.png";
-import classes from "../../assets/classes.png";
-import scheduling from "../../assets/scheduling.png";
-import community from "../../assets/community.png";
-import mailbox from "../../assets/mailbox.png";
-import achievements from "../../assets/achievements.png";
-import socialInitiatives from "../../assets/Welfare.png";
-import settings from "../../assets/settings.png";
-import dashboard from "../../assets/dashboard.png";
 import Pricing from "../../assets/pricing.PNG";
 import styled from "styled-components";
 
 // End of pictures
 
 // Borrowed code from https://medium.com/javascript-in-plain-english/react-building-an-accessible-faq-component-bac135116532
-
-let headerItems = {
-  link: "/sidebar",
-  title: "Frequently Asked Questions",
-  profileImg: profile
-};
-
-let navItems = [
-  { id: 1, link: "", imgSrc: dashboard, title: "Dashboard" },
-  { id: 2, link: "", imgSrc: classes, title: "Classes" },
-  { id: 3, link: "", imgSrc: scheduling, title: "Scheduling" },
-  { id: 4, link: "", imgSrc: community, title: "Community" },
-  { id: 5, link: "", imgSrc: mailbox, title: "Mailbox" },
-  { id: 6, link: "", imgSrc: achievements, title: "Achievements" },
-  { id: 7, link: "", imgSrc: socialInitiatives, title: "Social Initiatives" },
-  { id: 8, link: "", imgSrc: settings, title: "Settings" }
-];
 
 class FAQPage extends Component {
   render() {
