@@ -11,6 +11,7 @@
     flex: 1;
     border-radius: 10px;
     height: fit-content;
+    box-shadow:none!important;
 }
 .person {
     display: flex;
@@ -20,6 +21,7 @@
 }
 .picture {
     flex: 1;
+    width: 120px;
 }
 .name_and_date {
     flex: 3;
@@ -28,14 +30,18 @@
     justify-content: center;
     margin-left: 10%;
 }
+
 .name {
     color: black;
     font-size: 34px;
-    margin-bottom: 15px;
+    margin-left:150px;
+    margin-top:-75px;
 }
 .date {
     color: grey;
     font-size: 18px;
+    margin-left:150px;
+    margin-top:5px;
 }
 .edit {
     padding: 0px;
@@ -73,17 +79,28 @@
 }
 .listed_titles {
     color: rgb(151, 151, 151);
-    font-size: 38px;
+    font-size: 28px;
+    margin-left:20px;
+    margin-top:30px;
 }
 .listed_bodies {
+    color: rgb(0, 0, 0);
+    font-size: 14px;
+    font-weight: normal;
+    margin-left: 5%;
+    margin-bottom:20px;
+}
+.description {
     color: grey;
     font-size: 14px;
     margin-left: 5%;
+    width: 25vw;
 }
 .info {
     flex: 1.5;
     border-radius: 10px;
     height: fit-content;
+    box-shadow:none !important;
 }
 .info_title {
     padding: 2%;
@@ -154,17 +171,17 @@
     padding-bottom: 20px;
 }
 .element_button {
-    flex: 1;
-    width: 150px;
-    height: 15px;
-    padding-bottom: 20px;
-    padding: 0px;
-    margin: 0px;
-    background-color: transparent;
-    border-radius: 5px;
-    padding-left: 10px;
-    padding-right: 10px;
-    border-color: #A78EC3;
+    background-color: #A78EC3;
+    color: white;
+    width: 100px;
+    height: 30px;
+    font-weight: 300;
+    font-family: "Open Sans";
+    box-shadow: none;
+    border: none;
+    border-radius: 10px;
+    position: center;
+    margin-top:10px;
 }
 .element_image {
     height: 40px;
@@ -178,15 +195,16 @@
 .edit_button {
     align-self: flex-end;
     margin: 0px 30px 40px 0px;
-    width: 150px;
+    width: 120px;
     height: 50px;
-    padding-bottom: 20px;
-    padding: 0px;
-    background-color: transparent;
-    border-radius: 5px;
-    padding-left: 10px;
-    padding-right: 10px;
-    border-color: #A78EC3;
+    font-weight: 600;
+    font-family: "Open Sans";
+    box-shadow: none;
+    border: none;
+    border-radius: 10px;
+    background-color: #A78EC3;
+    border-color: white !important;
+    color: white;
 }
 .divider {
     padding: 0px;

@@ -1,28 +1,18 @@
-.FAQBox{
-    background-color: #FCFCFB;
-    margin-left: 290px;
-    margin-top: 0px;
+.FAQBox {
+  background-color: #fcfcfb;
+  margin-left: 290px;
+  margin-top: 0px;
 }
-.faqAnswer{
-    background-color: #FCFCFB !important;
-    font-size:20px;
+.faqAnswer {
+  background-color: #fcfcfb !important;
+  font-size: 20px;
 }
-.faqQuestion{
-    background-color: #FCFCFB !important;
-    font: bold !important;
+.faqQuestion {
+  background-color: #fcfcfb !important;
+  font: bold !important;
 }
 .faq-header {
-    margin-left: 490px;
-    font-size: 30px;
-    font-weight: bold;
-}
-.picture{
-    flex:1;
-    background-color: #FCFCFB;
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-    width: auto; /* ie8 */
+  margin-left: 490px;
+  font-size: 30px;
+  font-weight: bold;
 }

@@ -7,13 +7,13 @@
 body{
     background-color: #FCFCFB !important;
 }
-.picture{
+.picture-create{
     flex:1;
     background-color: #FCFCFB;
 }
 
 img {
-    max-width: 100%;
+    max-width: 100% !;
     height: auto;
     width: auto; /* ie8 */
 }

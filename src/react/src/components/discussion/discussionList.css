@@ -1,0 +1,11 @@
+.discussion-list-container {
+    flex-direction: column;
+    border: 2px solid purple;
+    border-radius: 5px;
+    width: 80vw;
+}
+.discussion-list-list {
+    overflow-y: scroll;
+    height: 80vh;
+    
+}

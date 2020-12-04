@@ -7,27 +7,53 @@
 	background: rgba(0, 0, 0, 0.6);
 	
   }
+
   
-  .modal-main {
+  .modal-main-class {
 	position:fixed;
-	background: white;
-	width: 80%;
-	height: auto;
-	top:50%;
-	left:50%;
-	transform: translate(-50%,-50%);
-	filter: drop-shadow(0px 8px 16px rgba(137, 176, 175, 0.25));
-	border-radius: 10px;
-	border: none;
-	max-width: 45rem;
-	display: inline-block;
+	background: url('../../assets/rsz_1backgroundgradient.png') !important;
+	background-repeat:no-repeat!important;
+	width: 1430px;
+	height: 303px;
+	top:30%;
+	color: white;
+	left:30%;
 	font-family: "Open Sans" !important;
   }
-  
+  .instructorname{
+	  font-size: 40px!important;
+	  font-weight:bold !important;
+	  margin-left: 30px;
+  }
+  .course{
+	  font-weight: bold;
+	  margin-left: 30px;
+	  margin-top:10px;
+  }
+  .courseDescription{
+	margin-left: 30px;
+	margin-top:20px;
+}
   .display-block {
 	display: block;
   }
   
   .display-none {
 	display: none;
+  }
+
+.btn-outline-success{
+	background: #A78EC3;
+	color:white;
+	border:none;
+	margin-top:10px;
+	margin-left: 30px !important;
+  }
+
+  .btn-outline-danger{
+	background: white;
+	color: #A78EC3;
+	border:none;
+	margin-top:10px;
+	margin-left: 30px !important;
   }

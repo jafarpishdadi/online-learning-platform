@@ -87,6 +87,22 @@ class UserObj():
 		else:
 			return make_response("", 404)
 
+	
+	def db_last_login(self):
+		"""
+		Gets the last login time
+		"""
+
+		x = checkFields(self.content, fields=['username'])
+		if (x):
+			return make_response("Missing required field: " + x, 400)
+
+		user_obj = self.User.objects(username=self.content['username']).first()
+		if user_obj:
+			return make_response(jsonify(user_obj.last_login), 200)
+		else:
+			return make_response("", 404)
+
 	def db_get_user_email(self):
 		"""
 		Gets email based off of the username passed in.
