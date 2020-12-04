@@ -7,7 +7,9 @@ class OutsideNavbar extends Component {
   render() {
     return (
       <nav className="navbar navbar-expand-md sticky-top outsideNav m-2 d-flex align-content-between">
-        <img src={Logo} className="custom-logo" />
+        <Link to="/home" className="nav-item nav-link custom-link">
+          <button className="btn-logo"> <img src={Logo} className="custom-logo" /></button>
+        </Link>
         <div>
           <ul className="navbar-nav p-0">
             <li className="nav-item ml-5">

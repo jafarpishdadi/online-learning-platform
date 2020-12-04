@@ -46,6 +46,7 @@ import SolutionsPage from "./pages/solutions/solutionsPage.js";
 import InstructorClasses from "./components/yourClasses/instructorClasses.component.js";
 import Solution from "./components/solutions/solutions";
 import AllSocInitiativesPage from "./pages/socInitiatives/AllSocInitiativesPage.js";
+import HomePage from "./pages/home/homePage.js"
 
 window.token = localStorage.getItem("token");
 
@@ -65,6 +66,10 @@ let headerItems = { link: "/profile", title: "Dashboard", profileImg: profile };
 ReactDOM.render(
   <Router>
     <Switch>
+      // home page
+      <Route exact path="/home">
+        <HomePage />
+      </Route>
       // discussionList
       <Route exact path="/discussionList">
         <DiscussionList />

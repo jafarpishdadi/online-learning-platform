@@ -4,8 +4,13 @@
 }
 
 .custom-logo {
-	max-width: 5%;
-	max-height: 5%;
+	max-width: 100%;
+	max-height: 100%;
+}
+
+.btn-logo {
+	background: transparent;
+	border: transparent;
 }
 
 .custom-link {
