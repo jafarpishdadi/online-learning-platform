@@ -8,24 +8,25 @@ class DiscussionDetail extends Component {
         super(props)
         this.state = {
             newReply : false,
-            replies: []
+            replies: [{'bodies': '', 'timestamps': '', 'users': ''}],
+            title: "",
+            handle: this.props.match.params.handle,
         }
     }
     componentDidMount() {
         var resReply = {};
         var reply = [];
-        axios.post('http://127.0.0.1:8103/api/db_get_threads_id')
+        axios.post('http://127.0.0.1:8103/api/db_get_thread_id', {'_id': this.state.handle})
             .then(response => {
                 console.log(response.data);
-                for (var i = 0; i < response.data.length; i++){
-                    // resThread['id'] = response.data[i]._id;
-                    // resThread['title'] = response.data[i].title;
-                    // resThread['replies'] = response.data[i].bodies.length - 1;
-                    // resThread['date'] = response.data[i].timestamps[0];
+                for (var i = 0; i < response.data.bodies.length; i++){
+                    resReply['bodies'] = response.data.bodies[i];
+                    resReply['timestamps'] = response.data.timestamps[i];
+                    resReply['users'] = response.data.users[i];
                     reply[i] = JSON.parse(JSON.stringify(resReply));
                 }
                 console.log(reply);
-                this.setState({replies: reply})
+                this.setState({replies: reply, title: response.data.title})
             })
 			.catch((error) => {
 			console.log(error)
@@ -44,8 +45,28 @@ class DiscussionDetail extends Component {
             borderRadius: "5px",
             width: "75vw"
           };
+        console.log(this.state.replies)
         return(
             <div className = 'discussion-detail-container'>
+                <h3 style = {{margin: "1%"}}>
+                    Title: {this.state.title}
+                </h3>
+                <div>
+                    <span>
+                        Author: {this.state.replies[0].users}
+                    </span>
+                    <span>
+                        Date: {this.state.replies[0].timestamps}
+                    </span>
+                    <div style = {{marginLeft: "1%"}}>
+                        Body:
+                    </div>
+                    <div style = {{marginLeft: "1%", marginRight: "1%", padding: "10px", 
+                                    border: "2px solid grey", borderRadius: "5px"}}>
+                        {this.state.replies[0].bodies}
+                    </div>
+                </div>
+                <hr></hr>
                 <div style = {{margin: "1%"}}>
                     Replies: 
                     <span>
@@ -54,12 +75,20 @@ class DiscussionDetail extends Component {
                         </button>
                     </span>
                 </div>
-                {this.state.newReply ? <CreateReply/> : null}
+                <hr></hr>
+                {this.state.newReply ? <CreateReply _id = {"5fbd64b0197b82a53dac160b"}/> : null}
                 <div className = 'discussion-detail-list'>
-                    {this.state.replies.map(
+                    {this.state.replies.slice(1).map(
                         (reply) => 
-                            <div>
-                                Hello
+                            <div style = {{divStyle}}>
+                                <span>Author: {reply.users}</span>
+                                <span>Date: {reply.timestamps}</span>
+                                <div style = {{marginLeft: "1%"}}>
+                                    Body:
+                                </div>
+                                <div style = {{marginLeft: "1%", marginRight: "1%", padding: "10px", 
+                                    border: "2px solid grey", borderRadius: "5px"}}>{reply.bodies}</div>
+                                <hr></hr>
                             </div>
                     )}
                 </div>

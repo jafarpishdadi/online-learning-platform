@@ -70,8 +70,7 @@ ReactDOM.render(
         <DiscussionList />
       </Route>
       // discussionDetail
-      <Route exact path="/discussionDetail">
-        <DiscussionDetail />
+      <Route exact path="/discussionDetail/:handle" component = {DiscussionDetail}>
       </Route>
       // FAQ page
       <Route exact path="/FAQ">

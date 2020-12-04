@@ -7,7 +7,7 @@ class CreateReply extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            _id: "",
+            _id: this.props._id,
             body: "",
 
         }
@@ -25,7 +25,7 @@ class CreateReply extends Component {
     }
     onSubmitHandler(e){
         axios.put('http://127.0.0.1:8103/api/db_put_thread_reply', 
-            {'username': localStorage.getItem('username'), '_id': "12345",'body': this.state.body})
+            {'username': localStorage.getItem('username'), '_id': this.state._id,'body': this.state.body})
         .catch((error) => {
             console.log(error)
         });
