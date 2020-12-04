@@ -1,40 +1,39 @@
 import React, { Component } from 'react'
-import { Card } from 'react-bootstrap'
-import './discussionList.css'
-import CreateThread from './createThread.component.js'
+import './discussionDetail.css'
+import CreateReply from './createReply.component.js'
 import axios from 'axios';
 
-class DiscussionList extends Component {
+class DiscussionDetail extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            newThread : false,
-            threads: []
+            newReply : false,
+            replies: []
         }
     }
     componentDidMount() {
-        var resThread = {};
-        var thread = [];
-        axios.get('http://127.0.0.1:8103/api/db_get_all_threads')
+        var resReply = {};
+        var reply = [];
+        axios.post('http://127.0.0.1:8103/api/db_get_threads_id')
             .then(response => {
                 console.log(response.data);
                 for (var i = 0; i < response.data.length; i++){
-                    resThread['id'] = response.data[i]._id;
-                    resThread['title'] = response.data[i].title;
-                    resThread['replies'] = response.data[i].bodies.length - 1;
-                    resThread['date'] = response.data[i].timestamps[0];
-                    thread[i] = JSON.parse(JSON.stringify(resThread));
+                    // resThread['id'] = response.data[i]._id;
+                    // resThread['title'] = response.data[i].title;
+                    // resThread['replies'] = response.data[i].bodies.length - 1;
+                    // resThread['date'] = response.data[i].timestamps[0];
+                    reply[i] = JSON.parse(JSON.stringify(resReply));
                 }
-                console.log(thread);
-                this.setState({threads: thread})
+                console.log(reply);
+                this.setState({replies: reply})
             })
 			.catch((error) => {
 			console.log(error)
         });
     }
-    createThreadToggle = () => {
+    createReplyToggle = () => {
         this.setState({
-            newThread: !this.state.newThread
+            newReply: !this.state.newReply
         });
 
     };
@@ -46,34 +45,38 @@ class DiscussionList extends Component {
             width: "75vw"
           };
         return(
-            <div className = 'discussion-list-container'>
+            <div className = 'discussion-detail-container'>
                 <div style = {{margin: "1%"}}>
-                    Discussion Threads: 
+                    Replies: 
                     <span>
-                        <button onClick = {this.createThreadToggle}>
-                            {this.state.newThread ? 'Cancel' : 'CreateThread'}
+                        <button onClick = {this.createReplyToggle}>
+                            {this.state.newReply ? 'Cancel' : 'CreateReply'}
                         </button>
                     </span>
                 </div>
-                {this.state.newThread ? <CreateThread/> : null}
-                <div className = 'discussion-list-list'>
-                    {this.state.threads.map(
-                        (thread) => 
-                            <button key = {thread.id} style = {divStyle}>
-                                <div style = {{marginLeft: "20px"}}>
-                                    Title: {thread.title}
-                                </div>
-                                <div>
-                                    <span>Replies: {thread.replies}</span>
-                                    <span>Date: {thread.date}</span>
-                                </div>
-                            </button>
+                {this.state.newReply ? <CreateReply/> : null}
+                <div className = 'discussion-detail-list'>
+                    {this.state.replies.map(
+                        (reply) => 
+                            <div>
+                                Hello
+                            </div>
                     )}
-                    
                 </div>
-                
+                {/* <button key = {reply.id} style = {divStyle}>
+                    <div style = {{marginLeft: "20px"}}>
+                        Title: {reply.title}
+                    </div>
+                    <div>
+                        <span>Replies: {thread.replies}</span>
+                        <span>Date: {thread.date}</span>
+                    </div>
+                </button>
+                <div>
+                    Hello
+                </div> */}
             </div>
             )
         }
 }
-export default DiscussionList
+export default DiscussionDetail

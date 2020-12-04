@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { Card } from 'react-bootstrap'
 import './discussionList.css'
 import CreateThread from './createThread.component.js'
 import axios from 'axios';

@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
-import './createThread.css'
+import './createReply.css'
 import axios from 'axios';
 import { Redirect } from 'react-router-dom';
 
-class CreateThread extends Component {
+class CreateReply extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            title: "",
+            _id: "",
             body: "",
 
         }
@@ -24,11 +24,8 @@ class CreateThread extends Component {
         this.setState(data);
     }
     onSubmitHandler(e){
-        axios.post('http://127.0.0.1:8103/api/db_create_thread', 
-            {'username': localStorage.getItem('username'), 'title': this.state.title,'body': this.state.body})
-        .then(response => {
-            console.log(response.data);
-        })
+        axios.put('http://127.0.0.1:8103/api/db_put_thread_reply', 
+            {'username': localStorage.getItem('username'), '_id': "12345",'body': this.state.body})
         .catch((error) => {
             console.log(error)
         });
@@ -39,15 +36,10 @@ class CreateThread extends Component {
             return <Redirect to='/login' />
         }
         return(
-            <div className = 'thread'>
-                <div className = 'thread_content'>
+            <div className = 'reply'>
+                <div className = 'reply_content'>
                     <form onSubmit = {this.onSubmitHandler}>
-                        <h3>Post Thread</h3>
-                        <label>
-                            Title:
-                            <input type="text" className="title" name='title' value={this.state.title} onChange={this.onChangeHandler}/>
-                        </label>
-                        <br />
+                        <h3>Post Reply</h3>
                         <label>
                             Body:
                         </label>
@@ -61,4 +53,4 @@ class CreateThread extends Component {
         )
     }
 }
-export default CreateThread
+export default CreateReply
