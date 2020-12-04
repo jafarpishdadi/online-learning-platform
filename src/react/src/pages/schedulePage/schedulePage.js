@@ -21,7 +21,7 @@ let navItems = [
   { id: 1, link: "/dashboard", imgSrc: dashboard, title: "Dashboard" },
   { id: 2, link: "/allclasslist", imgSrc: classes, title: "Classes" },
   { id: 3, link: "/schedule", imgSrc: scheduling, title: "Scheduling" },
-  { id: 4, link: "", imgSrc: community, title: "Community" },
+  { id: 4, link: "/discussionList", imgSrc: community, title: "Community" },
   { id: 5, link: "/messageuser", imgSrc: mailbox, title: "Messaging" },
   { id: 6, link: "", imgSrc: achievements, title: "Achievements" },
   {

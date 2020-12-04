@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import { Card } from 'react-bootstrap'
 import './discussionList.css'
 import CreateThread from './createThread.component.js'
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 class DiscussionList extends Component {
     constructor(props) {
@@ -59,15 +59,18 @@ class DiscussionList extends Component {
                 <div className = 'discussion-list-list'>
                     {this.state.threads.map(
                         (thread) => 
-                            <button key = {thread.id} style = {divStyle}>
-                                <div style = {{marginLeft: "20px"}}>
-                                    Title: {thread.title}
-                                </div>
-                                <div>
-                                    <span>Replies: {thread.replies}</span>
-                                    <span>Date: {thread.date}</span>
-                                </div>
-                            </button>
+                            <div key = {thread.id} style = {divStyle}>
+                                <Link to = {'/discussionDetail/'.concat(thread.id)} style = {{color: 'black'}}>
+                                    <div style = {{marginLeft: "20px"}}>
+                                        Title: {thread.title}
+                                    </div>
+                                    <div>
+                                        <span>Replies: {thread.replies}</span>
+                                        <span>Date: {thread.date}</span>
+                                    </div>
+                                </Link>
+                            </div>
+                            
                     )}
                     
                 </div>
