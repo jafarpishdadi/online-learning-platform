@@ -10,7 +10,7 @@ class DiscussionDetail extends Component {
             newReply : false,
             replies: [{'bodies': '', 'timestamps': '', 'users': ''}],
             title: "",
-            handle: this.props.match.params.handle,
+            handle: this.props.handle,
         }
     }
     componentDidMount() {
@@ -76,7 +76,7 @@ class DiscussionDetail extends Component {
                     </span>
                 </div>
                 <hr></hr>
-                {this.state.newReply ? <CreateReply _id = {"5fbd64b0197b82a53dac160b"}/> : null}
+                {this.state.newReply ? <CreateReply _id = {this.state.handle}/> : null}
                 <div className = 'discussion-detail-list'>
                     {this.state.replies.slice(1).map(
                         (reply) => 
@@ -92,18 +92,6 @@ class DiscussionDetail extends Component {
                             </div>
                     )}
                 </div>
-                {/* <button key = {reply.id} style = {divStyle}>
-                    <div style = {{marginLeft: "20px"}}>
-                        Title: {reply.title}
-                    </div>
-                    <div>
-                        <span>Replies: {thread.replies}</span>
-                        <span>Date: {thread.date}</span>
-                    </div>
-                </button>
-                <div>
-                    Hello
-                </div> */}
             </div>
             )
         }

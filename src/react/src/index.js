@@ -33,8 +33,8 @@ import ClassList from "./components/createClass/classList.component.js";
 import ProfilePage from "./pages/profile/profilePage.js";
 import FAQPage from "./pages/faq/faqPage.js";
 import Studentclasses from "./components/Classes-Student/studentClasses.component.js";
-import DiscussionList from "./components/discussion/discussionList.component.js";
-import DiscussionDetail from "./components/discussion/discussionDetail.component.js";
+import DiscussionDetailPage from "./pages/discussion/discussionDetailPage.js";
+import DiscussionListPage from "./pages/discussion/discussionListPage.js"
 import MessagePage from "./pages/message/MessagePage.js";
 import SpecifyUserPage from "./pages/message/SpecifyUserPage.js";
 import CreateClassPage from "./pages/createClass/createClassPage.js";
@@ -67,10 +67,10 @@ ReactDOM.render(
     <Switch>
       // discussionList
       <Route exact path="/discussionList">
-        <DiscussionList />
+        <DiscussionListPage />
       </Route>
       // discussionDetail
-      <Route exact path="/discussionDetail/:handle" component = {DiscussionDetail}>
+      <Route exact path="/discussionDetail/:handle" component = {DiscussionDetailPage}>
       </Route>
       // FAQ page
       <Route exact path="/FAQ">
