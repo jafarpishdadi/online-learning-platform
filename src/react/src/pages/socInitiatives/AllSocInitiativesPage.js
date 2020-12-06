@@ -11,6 +11,7 @@ import community from "../../assets/community.png";
 import mailbox from "../../assets/mailbox.png";
 import socialInitiatives from "../../assets/Welfare.png";
 import dashboard from "../../assets/dashboard.png";
+import { Redirect } from "react-router-dom";
 
 let headerItems = {
   link: "/profile",
@@ -34,6 +35,9 @@ let navItems = [
 
 class AllSocInitiativesPage extends Component {
   render() {
+    if (!localStorage.getItem("token")) {
+      return <Redirect to="/login" />;
+    }
     return (
       <React.Fragment>
         <SidebarWrapper>
