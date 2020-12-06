@@ -12,7 +12,11 @@ import dashboard from "../../assets/dashboard.png";
 import { Redirect } from "react-router-dom";
 import AllEventsList from "../../components/events/eventlist.js";
 
-let headerItems = { link: "/profile", title: "Classes", profileImg: profile };
+let headerItems = {
+  link: "/profile",
+  title: "Join a New Event",
+  profileImg: profile
+};
 
 let navItems = [
   { id: 1, link: "/dashboard", imgSrc: dashboard, title: "Dashboard" },
