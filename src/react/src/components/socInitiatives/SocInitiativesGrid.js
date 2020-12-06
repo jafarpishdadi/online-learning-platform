@@ -18,25 +18,25 @@ export default function SocInitiativesGrid() {
     {
       title: "The Canadian Red Cross",
       text:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "The Canadian Red Cross is a Canadian humanitarian charitable organization, and one of 190 national Red Cross and Red Crescent societies. The organization receives funding from both private donations and from Canadian government departments.",
       image: "socIn12.svg"
     },
     {
       title: "Toronto Humane Society",
       text:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "It is the mission of Toronto Humane Society to promote the humane care and protection of all animals and to prevent cruelty and suffering. Following no kill principles, Toronto Humane Society aspires to be a best-in-class animal shelter – working in partnership with the community to find creative solutions and improve outcomes for all animals. Our 2020-2025 Strategic plan was created to guide us as we work to achieve that ambitious goal.",
       image: "socIn9.svg"
     },
     {
       title: "The Salvation Army",
       text:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "The Salvation Army is a Christian organization that gives hope and support to vulnerable people in 400 communities across Canada and in 131 countries. The Salvation Army exists to share the love of Jesus Christ, meet human needs and be a transforming influence in the communities of our world.",
       image: "socIn1.svg"
     },
     {
       title: "Canada Helps Canadon",
       text:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "CanadaHelps is a registered charity dedicated to increasing charitable giving across Canada. We do that by serving both donors and charities. For donors, we offer a one-stop shop for discovering, donating, or fundraising online for any registered Canadian charity. We process donations made using our site, disburse the funds to the charities and provide instant or anytime access tax receipts directly to the donors.",
       image: "socIn2.svg"
     },
     {

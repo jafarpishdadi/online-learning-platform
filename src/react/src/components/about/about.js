@@ -145,6 +145,7 @@ const Social = styled.div`
 
   img {
     height: 20rem;
+    margin-top: 0rem;
   }
 
   .title1 {
@@ -152,6 +153,7 @@ const Social = styled.div`
     color: rgba(0, 0, 0, 0.82);
     font-family: Open Sans;
     font-size: 32px;
+    margin-top: 0rem;
     margin-bottom: 0rem;
   }
 
@@ -169,7 +171,7 @@ const Social = styled.div`
     font-family: Open Sans;
     font-size: 22px;
     margin-top: 0rem;
-    margin-bottom: 9rem;
+    margin-bottom: 11rem;
   }
 `;
 
@@ -196,8 +198,8 @@ const Instructor = styled.div`
     color: #3e4345;
     font-family: Open Sans;
     font-size: 22px;
-    margin-top: 4rem;
-    margin-bottom: 24rem;
+    margin-top: 1rem;
+    margin-bottom: 27rem;
   }
 `;
 
