@@ -71,7 +71,7 @@ class DiscussionDetail extends Component {
                     Replies: 
                     <span>
                         <button onClick = {this.createReplyToggle}>
-                            {this.state.newReply ? 'Cancel' : 'CreateReply'}
+                            {this.state.newReply ? 'Cancel' : 'Create Reply'}
                         </button>
                     </span>
                 </div>

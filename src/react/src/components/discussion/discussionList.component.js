@@ -51,7 +51,7 @@ class DiscussionList extends Component {
                     Discussion Threads: 
                     <span>
                         <button onClick = {this.createThreadToggle}>
-                            {this.state.newThread ? 'Cancel' : 'CreateThread'}
+                            {this.state.newThread ? 'Cancel' : 'Create Thread'}
                         </button>
                     </span>
                 </div>

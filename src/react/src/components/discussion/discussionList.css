@@ -1,6 +1,5 @@
 .discussion-list-container {
     flex-direction: column;
-    border: 2px solid purple;
     border-radius: 5px;
     width: 80vw;
 }
