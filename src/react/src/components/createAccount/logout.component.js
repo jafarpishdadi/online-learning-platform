@@ -14,7 +14,7 @@ class Logout extends Component {
           <div className="App">
             
            <p>You are logged out!</p>
-
+           <a href="http://localhost:3000/login">Visit Home</a>
           </div>
     );
   }

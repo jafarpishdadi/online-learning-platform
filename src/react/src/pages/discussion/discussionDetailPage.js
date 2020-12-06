@@ -14,7 +14,7 @@ import socialInitiatives from "../../assets/Welfare.png";
 import dashboard from "../../assets/dashboard.png";
 // End of pictures
 
-let headerItems = { link: "/profile", title: "Profile", profileImg: profile };
+let headerItems = { link: "/profile", title: "Discussion Board", profileImg: profile };
 
 let navItems = [
   { id: 1, link: "/dashboard", imgSrc: dashboard, title: "Dashboard" },
