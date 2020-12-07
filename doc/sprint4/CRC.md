@@ -6,7 +6,7 @@ Classname Subclasses (if any): StudentUser <br />
 Responsibilities: 
 
 * Store data about the user
-* Gets data about the user
+* Gets data about the user  
 Collaborators: 
 * SignUp
 * SignIn
@@ -22,7 +22,7 @@ Classname Subclasses (if any):<br />
 Responsibilities: 
 * Same as Parent
 * Sign up for classes
-* Book an appointment (event) with a consultant
+* Book an appointment (event) with a consultant  
 Collaborators: 
 * Same as Parent
 * Course
@@ -34,7 +34,7 @@ Classname Subclasses (if any): <br />
 Responsibilities: 
 * Same as Parent
 * Book an appointment (event) with a student
-* Create a course
+* Create a course  
 Collaborators: 
 * Same as Parent
 _______
@@ -42,7 +42,7 @@ Class name: SignUp <br />
 Parent class (if any): <br />
 Classname Subclasses (if any): <br />
 Responsibilities: 
-* Create a new user
+* Create a new user  
 Collaborators: 
 * User
 _______
@@ -50,7 +50,7 @@ Class name: SignIn <br />
 Parent class (if any): <br />
 Classname Subclasses (if any): <br />
 Responsibilities: 
-* Login the user
+* Login the user  
 Collaborators: 
 * User
 _______
@@ -58,7 +58,7 @@ Class name: SignOut <br />
 Parent class (if any): <br />
 Classname Subclasses (if any): <br />
 Responsibilities: 
-* Logout the user
+* Logout the user  
 Collaborators: 
 * User
 
@@ -68,7 +68,7 @@ Classname Subclasses (if any): <br />
 Responsibilities: 
 * Store data about the course
 * Gets data about the course
-* Access, enroll and update currently enrolled courses for a user
+* Access, enroll and update currently enrolled courses for a user  
 Collaborators: 
 * User
 * Material
@@ -79,7 +79,7 @@ Classname Subclasses (if any): <br />
 Responsibilities: 
 * Store data about a course material
 * Gets data about a course material
-* Access, create and update course materials for a course
+* Access, create and update course materials for a course  
 Collaborators: 
 * Course
 _______
@@ -89,7 +89,7 @@ Classname Subclasses (if any): <br />
 Responsibilities: 
 * Store data about the event
 * Gets data about the event
-* Access, create and update calendar events
+* Access, create and update calendar events  
 Collaborators: 
 * User
 * Calendar
@@ -100,7 +100,7 @@ Classname Subclasses (if any): <br />
 Responsibilities: 
 * Store data about the message
 * Get data about the message
-* Access and create conversations with particular users
+* Access and create conversations with particular users  
 Collaborators: 
 * User
 _______
@@ -108,7 +108,7 @@ Class name: Dashboard <br />
 Parent class (if any): <br />
 Classname Subclasses (if any): <br />
 Responsibilities: 
-* Display Calendar, Courses, News
+* Display Calendar, Courses, News  
 Collaborators: 
 * Calendar
 * Courses
@@ -119,7 +119,7 @@ Parent class (if any): <br />
 Classname Subclasses (if any): <br />
 Responsibilities: 
 * Display Events
-* Organize events
+* Organize events  
 Collaborators: 
 * Dashboard
 * User
@@ -129,7 +129,7 @@ Class name: News <br />
 Parent class (if any): <br />
 Classname Subclasses (if any): <br />
 Responsibilities: 
-* Display News
+* Display News  
 Collaborators: 
 * Dashboard
 
