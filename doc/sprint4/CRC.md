@@ -90,6 +90,7 @@ Responsibilities:
 * Store data about the event
 * Gets data about the event
 * Access, create and update calendar events  
+
 Collaborators: 
 * User
 * Calendar
